@@ -9,6 +9,7 @@
     "industry": "Halbleiter – Leistungshalbleiter, Automotive-Chips, Sicherheits-ICs",
     "competitors": ["STMicroelectronics", "ON Semiconductor", "ROHM", "Wolfspeed", "NXP Semiconductors"]
   },
+  "tradingview_url": "https://www.tradingview.com/symbols/XETRA-IFX/",
   "summary": "Infineon ist Europas größter Halbleiterhersteller nach Umsatz und weltweiter Marktführer bei Automotive-Chips und Leistungshalbleitern. Kernstärken: SiC (Silicon Carbide) für Elektroauto-Inverter, GaN-Leistungshalbleiter, Radar-Chips (XENSIV) für ADAS und Robotik-Sensorik, sowie industrielle Motortreiber. Die Akquisition von Cypress Semiconductor (2020, $10 Mrd.) hat das MCU-Portfolio und die Automotive-Sicherheitssparte massiv erweitert. Infineon ist direkt im ROBO-ETF gelistet und im KOID-ETF vertreten.",
   "products": [
     "SiC-Module & MOSFETs (CoolSiC – #1 Marktanteil Automotive)",

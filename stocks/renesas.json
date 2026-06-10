@@ -9,6 +9,7 @@
     "industry": "Halbleiter – Automotive-MCUs, Industrie-MCUs, Analog & Mixed Signal",
     "competitors": ["STMicroelectronics", "NXP Semiconductors", "Infineon Technologies", "Texas Instruments", "Microchip Technology"]
   },
+  "tradingview_url": "https://www.tradingview.com/symbols/TSE-6723/",
   "summary": "Renesas ist Japans größter und weltweiter #3-Hersteller von Mikrocontrollern (MCUs). Automotive ist das Herzstück (~55% Umsatz): ADAS-Chips, Body-Controller, EV-Invertersteuerungen. Die Industrie-Sparte wächst mit Robotik und Fabrikautomation. 2023 übernahm Renesas Altium ($5,9 Mrd.) – den weltweiten Marktführer für PCB-Designsoftware – eine Softwarewette auf den Chip-Design-Ökosystem-Lock-in. RZ-Prozessoren mit Echtzeit-Cortex-R-Kernen werden zunehmend in Robotik-Controllern eingesetzt.",
   "products": [
     "RA/RX/RL78 Mikrocontroller-Familien (Industrie & IoT)",
