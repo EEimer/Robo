@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robotik-ETF Vergleich v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0F3;--panel:#FFFFFF;--ink:#131B26;--muted:#5A6573;--line:#D7DDE4;
+  --koid:#0F7B6C;--humn:#C0392B;--hk:#B07B1E;--botz:#2E5FA3;--rbot:#1F8A9E;--robo:#6B4FA0;--bott:#B03A6E;
+  --good:#0F7B6C;--bad:#C0392B;--warn:#B07B1E;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;font-size:15px;line-height:1.45}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px 80px}
+header{padding:36px 0 8px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(24px,4vw,38px);font-weight:800;letter-spacing:-.02em;margin:6px 0 4px}
+.sub{color:var(--muted);max-width:760px;font-size:14px}
+.datestamp{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:22px 0 8px}
+.chip{display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;border:2px solid var(--line);background:var(--panel);cursor:pointer;font-weight:700;font-size:12px;user-select:none;transition:all .15s;color:var(--muted)}
+.chip .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.chip.active .dot{box-shadow:0 0 0 2px rgba(255,255,255,0.7)}
+.chip.active{color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(0,0,0,.20)}
+.chip.off{opacity:.35;filter:grayscale(.5)}
+.chip:hover{opacity:1;filter:none;border-color:var(--ink)}
+h2{font-size:20px;font-weight:700;margin:42px 0 4px;letter-spacing:-.01em}
+.h2sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+
+/* ===== Kernzahlen Tabelle ===== */
+.tablewrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:1050px}
+th,td{padding:9px 12px;text-align:left;font-size:13px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;position:sticky;top:0;background:var(--panel);z-index:2;border-bottom:2px solid var(--ink)}
+thead th .tick{display:inline-block;padding:2px 8px;border-radius:5px;color:#fff;font-weight:700;font-size:12px}
+tbody th{font-weight:600;font-size:12px;color:var(--muted);white-space:nowrap;position:sticky;left:0;background:var(--panel);z-index:1;border-right:1px solid var(--line)}
+td.num{font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+tr.hl td,tr.hl th{background:#F6F8FA}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border-radius:5px}
+.tag.good{background:#E2F1ED;color:var(--good)}
+.tag.bad{background:#F7E5E2;color:var(--bad)}
+.tag.warn{background:#F5EDDC;color:#8A6112}
+td .small{font-size:11px;color:var(--muted);display:block;margin-top:2px}
+.hidden{display:none!important}
+
+/* ===== Geo bars ===== */
+.geo{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.geo-row{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center}
+.geo-lbl{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700}
+.bar{display:flex;height:28px;border-radius:6px;overflow:hidden;background:#E3E7EC}
+.seg{display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fff;white-space:nowrap;overflow:hidden;padding:0 4px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:5px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block;flex-shrink:0}
+.c-us{background:#33475C}.c-jp{background:#8A6FB8}.c-cn{background:#B5483A}.c-kr{background:#2E8AA8}
+.c-ch{background:#7A8896}.c-eu{background:#5E8F6E}.c-tw{background:#C2803A}.c-hk{background:#d4945a}
+.c-ca{background:#4a7a5e}.c-rest{background:#AEB7C0}
+
+/* ===== Cards ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px;margin-top:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.card-head{padding:14px 16px 10px;border-top:4px solid;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-head h3{font-size:19px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+.card-head .cname{font-size:11.5px;color:var(--muted);font-weight:500;margin-top:2px}
+.verdict{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.v-fit{background:#E2F1ED;color:var(--good)}
+.v-no{background:#F7E5E2;color:var(--bad)}
+.v-mid{background:#F5EDDC;color:#8A6112}
+.buyline{padding:2px 16px 12px;font-size:13px}
+.buyline b{font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kpi{padding:8px 10px;border-right:1px solid var(--line)}
+.kpi:last-child{border-right:none}
+.kpi .v{font-family:'IBM Plex Mono',monospace;font-size:13.5px;font-weight:600}
+.kpi .k{font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:1px}
+/* Holdings list */
+.hold{padding:12px 16px 4px;flex:1}
+.hold .ht{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:7px}
+.hrow{display:grid;grid-template-columns:minmax(0,1fr) 90px 44px;gap:6px;align-items:center;margin-bottom:4px}
+.hrow .hn{font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);display:flex;align-items:center;gap:4px;min-width:0}
+.hrow .hntext{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:1;min-width:0}
+.hrow .htick{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hrow .hb{height:8px;border-radius:4px;background:#E3E7EC;overflow:hidden}
+.hrow .hb i{display:block;height:100%;border-radius:4px}
+.hrow .hp{font-family:'IBM Plex Mono',monospace;font-size:11px;text-align:right;color:var(--muted);white-space:nowrap}
+details.more{margin:6px 0 2px}
+details.more summary{cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--muted);padding:5px 0;list-style:none;user-select:none;display:flex;align-items:center;gap:6px}
+details.more summary::before{content:"▸ ";color:var(--muted)}
+details[open].more summary::before{content:"▾ "}
+details.more summary:hover{color:var(--ink)}
+/* Layer tags */
+.layers{padding:8px 16px 12px;display:flex;flex-wrap:wrap;gap:5px;border-top:1px solid var(--line)}
+.layer{font-size:11px;font-weight:600;padding:3px 9px;border-radius:5px;background:#EEF1F4;color:#42505f}
+.note{padding:0 16px 12px;font-size:11px;color:var(--muted);line-height:1.5}
+/* country mini bar in card */
+.country-mini{padding:6px 16px 10px;border-top:1px solid var(--line)}
+.country-mini .clbl{font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:5px}
+.minibar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:#E3E7EC}
+.ministats{display:flex;flex-wrap:wrap;gap:8px;margin-top:5px;font-size:10.5px;color:var(--muted)}
+.ministats span{display:flex;align-items:center;gap:3px}
+.ministats i{width:8px;height:8px;border-radius:2px;display:inline-block;flex-shrink:0}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:1.6}
+/* cross-highlight */
+.hrow-match .hn{font-weight:700}
+.hrow-match{background:rgba(0,0,0,.025);border-radius:5px;padding:2px 4px;margin:0 -4px 4px}
+.xtags{display:inline-flex;flex-wrap:nowrap;gap:2px;flex-shrink:0}
+.xtag{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;white-space:nowrap;line-height:1.5}
+@media(max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}.kpi:nth-child(2){border-right:none}.hrow{grid-template-columns:120px 1fr 40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Robotik / Physical AI &middot; Sleeve 10% &middot; v3</div>
+  <h1>7 Robotik-ETFs im Vergleich</h1>
+  <p class="sub">Holdings aus offiziellen Anbieter-CSVs (Stand 09.–10. Juni 2026). Alle Positionen aufklappbar. RBTZ entfernt. Chips oben zum Ein-/Ausblenden.</p>
+  <div class="datestamp">KOID 09.06 &middot; HUMN 09.06 &middot; 2807 09.06 &middot; BOTT 10.06 &middot; ROBO 10.06 &middot; BOTZ/RBOT: ältere Quelle, Gewichte gerundet</div>
+</header>
+
+<div class="chips" id="chips">
+  <div class="chip active" data-etf="koid"><span class="dot" style="background:var(--koid)"></span>KOID</div>
+  <div class="chip active" data-etf="bott"><span class="dot" style="background:var(--bott)"></span>BOTT</div>
+  <div class="chip active" data-etf="humn"><span class="dot" style="background:var(--humn)"></span>HUMN</div>
+  <div class="chip off" data-etf="hk"><span class="dot" style="background:var(--hk)"></span>2807</div>
+  <div class="chip off" data-etf="botz"><span class="dot" style="background:var(--botz)"></span>BOTZ</div>
+  <div class="chip off" data-etf="rbot"><span class="dot" style="background:var(--rbot)"></span>RBOT</div>
+  <div class="chip off" data-etf="robo"><span class="dot" style="background:var(--robo)"></span>ROBO</div>
+</div>
+
+<!-- ===== KERNZAHLEN ===== -->
+<h2>Kernzahlen</h2>
+<p class="h2sub">Matrix-Vergleich. Erste Spalte bleibt beim Scrollen stehen. ETFs per Chip oben ein-/ausblenden.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+  <th></th>
+  <th class="col-koid"><span class="tick" style="background:var(--koid)">KOID</span></th>
+  <th class="col-bott"><span class="tick" style="background:var(--bott)">BOTT</span></th>
+  <th class="col-humn"><span class="tick" style="background:var(--humn)">HUMN</span></th>
+  <th class="col-hk"><span class="tick" style="background:var(--hk)">2807</span></th>
+  <th class="col-botz"><span class="tick" style="background:var(--botz)">BOTZ</span></th>
+  <th class="col-rbot"><span class="tick" style="background:var(--rbot)">RBOT</span></th>
+  <th class="col-robo"><span class="tick" style="background:var(--robo)">ROBO</span></th>
+</tr></thead>
+<tbody>
+<tr><th>Anbieter</th>
+  <td class="col-koid">KraneShares</td><td class="col-bott">Themes ETFs</td><td class="col-humn">Roundhill</td><td class="col-hk">Global X (Mirae, HK)</td>
+  <td class="col-botz">Global X</td><td class="col-rbot">iShares (BlackRock)</td>
+  <td class="col-robo">ROBO Global / L&amp;G</td></tr>
+<tr><th>Fokus</th>
+  <td class="col-koid">Humanoid-Ökosystem, Komponenten</td><td class="col-bott">Humanoid pur</td><td class="col-humn">Humanoid OEM-Conviction (aktiv)</td>
+  <td class="col-hk">China Robotik + AI</td><td class="col-botz">Breite Robotik + AI</td>
+  <td class="col-rbot">Automation sehr breit: Chips, Software, Industrie</td>
+  <td class="col-robo">Breite Robotik &amp; Automation (Equal-Weight)</td></tr>
+<tr class="hl"><th>TER</th>
+  <td class="num col-koid">0,69%</td><td class="num col-bott"><b>0,35%</b></td><td class="num col-humn">0,75%</td><td class="num col-hk">0,68%</td>
+  <td class="num col-botz">0,68% <span class="small">UCITS: 0,50%</span></td>
+  <td class="num col-rbot"><b>0,40%</b></td>
+  <td class="num col-robo">0,95%</td></tr>
+<tr class="hl"><th>AUM</th>
+  <td class="num col-koid">~$190M (US)<span class="small">UCITS-Tranche klein</span></td>
+  <td class="num col-bott">$62M</td>
+  <td class="num col-humn">~$85M</td>
+  <td class="num col-hk">~HK$540M ≈ $70M</td>
+  <td class="num col-botz">~$3,6 Mrd (US)<span class="small">UCITS ~$150M</span></td>
+  <td class="num col-rbot"><b>~$4 Mrd (UCITS!)</b></td>
+  <td class="num col-robo">~$255M (US)</td></tr>
+<tr><th>Holdings</th>
+  <td class="num col-koid">50</td><td class="num col-bott">30</td><td class="num col-humn">42</td><td class="num col-hk">25</td>
+  <td class="num col-botz">~66</td><td class="num col-rbot">~130</td>
+  <td class="num col-robo">78</td></tr>
+<tr class="hl"><th>Top-10-Anteil</th>
+  <td class="num col-koid"><b>~30%</b></td><td class="num col-bott">~54%</td><td class="num col-humn">~47%</td>
+  <td class="num col-hk">~62%</td><td class="num col-botz">~59%</td>
+  <td class="num col-rbot">~46%</td><td class="num col-robo"><b>~17%</b></td></tr>
+<tr><th>Größte Position</th>
+  <td class="col-koid">Credo 3,75%</td><td class="col-bott">Leader Harmonious 8,59%</td><td class="col-humn">Tesla 8,19%</td>
+  <td class="col-hk">Han's Laser 10,45%</td><td class="col-botz">ABB ~9,1%</td>
+  <td class="col-rbot">Intel 9,7%</td><td class="col-robo">Infineon 2,32%</td></tr>
+<tr><th>Nvidia-Gewicht</th>
+  <td class="num col-koid">1,85%</td><td class="num col-bott">4,56%</td><td class="num col-humn">4,05%</td><td class="num col-hk">0%</td>
+  <td class="num col-botz">~8,6%</td><td class="num col-rbot">2,87%</td>
+  <td class="num col-robo">1,33%</td></tr>
+<tr><th>Index / Stil</th>
+  <td class="col-koid">MerQube Humanoid &amp; Embodied Intel., Equal-Weight</td>
+  <td class="col-bott">Solactive Global Humanoid Robotics, Market-Cap</td>
+  <td class="col-humn">— aktiv gemanagt</td>
+  <td class="col-hk">FactSet China Robotics &amp; AI, Market-Cap</td>
+  <td class="col-botz">Indxx Global Robotics &amp; AI, Cap ~8%</td>
+  <td class="col-rbot">iSTOXX FactSet Automation &amp; Robotics, Sampling</td>
+  <td class="col-robo">ROBO Global Robotics, mod. Equal-Weight Cap 2,5%</td></tr>
+<tr><th>Launch</th>
+  <td class="num col-koid">Jun 2025</td><td class="num col-bott">Relaunch Okt 2025</td><td class="num col-humn">Jun 2025</td><td class="num col-hk">Aug 2020</td>
+  <td class="num col-botz">Sep 2016</td><td class="num col-rbot">Sep 2016</td>
+  <td class="num col-robo">Okt 2013</td></tr>
+<tr class="hl"><th>Listing / Währung</th>
+  <td class="col-koid"><b>LSE USD (UCITS)</b><span class="small">+ Nasdaq, Borsa Italiana, Xetra KBOT</span></td>
+  <td class="col-bott">Nasdaq USD<span class="small">keine UCITS</span></td>
+  <td class="col-humn">US Cboe USD<span class="small">keine UCITS</span></td>
+  <td class="col-hk">Hongkong HKD</td>
+  <td class="col-botz">Nasdaq USD<span class="small">UCITS: LSE USD, 0,50%, ~$150M</span></td>
+  <td class="col-rbot"><b>LSE USD (UCITS)</b><span class="small">IE00BYZK4552, thesaurierend</span></td>
+  <td class="col-robo">NYSE USD<span class="small">L&amp;G UCITS-Variante: LSE USD prüfen</span></td></tr>
+<tr class="hl"><th>Estate-Tax-Risiko</th>
+  <td class="col-koid"><span class="tag good">UCITS Irland = nein</span></td>
+  <td class="col-bott"><span class="tag bad">US = ja, kein Ausweg</span></td>
+  <td class="col-humn"><span class="tag bad">US = ja, kein Ausweg</span></td>
+  <td class="col-hk"><span class="tag warn">HK-Domizil = kein US-Risiko</span><span class="small">CN-Sanktionsrisiko bleibt</span></td>
+  <td class="col-botz"><span class="tag bad">US = ja</span><span class="small">UCITS-Var. = nein, aber dünn</span></td>
+  <td class="col-rbot"><span class="tag good">UCITS Irland = nein</span></td>
+  <td class="col-robo"><span class="tag bad">US = ja</span><span class="small">L&amp;G-UCITS = nein</span></td></tr>
+<tr><th>Schaufel-These-Fit</th>
+  <td class="col-koid"><span class="tag good">✓ passt</span></td>
+  <td class="col-bott"><span class="tag warn">Ergänzung: China-Wette</span></td>
+  <td class="col-humn"><span class="tag warn">nur als Conviction-Add-on</span></td>
+  <td class="col-hk"><span class="tag bad">raus</span></td>
+  <td class="col-botz"><span class="tag warn">Allwetter, nicht Schaufel</span></td>
+  <td class="col-rbot"><span class="tag warn">strukturell top, thematisch verfehlt</span></td>
+  <td class="col-robo"><span class="tag warn">zweite Wahl</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== LÄNDER ===== -->
+<h2>Länder-Exposure</h2>
+<p class="h2sub">Aus offiziellen Holdings-Daten (KOID, HUMN, 2807, BOTT, ROBO) und bekannten Index-Zusammensetzungen (BOTZ, RBOT) abgeleitet.</p>
+<div class="geo">
+  <div class="geo-row" data-etf="koid">
+    <span class="geo-lbl" style="color:var(--koid)">KOID</span>
+    <div class="bar">
+      <div class="seg c-us" style="width:33%">USA ~33</div>
+      <div class="seg c-cn" style="width:33%">China ~33</div>
+      <div class="seg c-jp" style="width:12%">JP ~12</div>
+      <div class="seg c-kr" style="width:8%">KR ~8</div>
+      <div class="seg c-eu" style="width:8%">EU ~8</div>
+      <div class="seg c-rest" style="width:6%">Rest</div>
+    </div>
+  </div>
+  <div class="geo-row" data-etf="bott">
+    <span class="geo-lbl" style="color:var(--bott)">BOTT</span>
+    <div class="bar">
+      <div class="seg c-cn" style="width:42%">China 41,8%</div>
+      <div class="seg c-us" style="width:24%">USA 24,3%</div>
+      <div class="seg c-kr" style="width:16%">Korea 15,8%</div>
+      <div class="seg c-hk" style="width:8%">HK 8,1%</div>
+      <div class="seg c-jp" style="width:6%">JP 5,6%</div>
+      <div class="seg c-ca" style="width:4%">CA</div>
+    </div>
+  </div>
+  <div class="geo-row" data-etf="humn">
+    <span class="geo-lbl" style="color:var(--humn)">HUMN</span>
+    <div class="bar">
+      <div class="seg c-us" style="width:27%">USA ~27</div>
+      <div class="seg c-hk" style="width:20%">HK/China ~20</div>
+      <div class="seg c-cn" style="width:13%">CN ~13</div>
+      <div class="seg c-kr" style="width:14%">KR ~14</div>
+      <div class="seg c-jp" style="width:12%">JP ~12</div>
+      <div class="seg c-eu" style="width:8%">EU ~8</div>
+      <div class="seg c-rest" style="width:6%">Rest</div>
+    </div>
+  </div>
+  <div class="geo-row" data-etf="hk">
+    <span class="geo-lbl" style="color:var(--hk)">2807</span>
+    <div class="bar">
+      <div class="seg c-cn" style="width:75%">China (A-Shares) ~75%</div>
+      <div class="seg c-hk" style="width:25%">HK-listed China ~25%</div>
+    </div>
+  </div>
+  <div class="geo-row" data-etf="botz">
+    <span class="geo-lbl" style="color:var(--botz)">BOTZ</span>
+    <div class="bar">
+      <div class="seg c-us" style="width:44%">USA ~44</div>
+      <div class="seg c-jp" style="width:27%">Japan ~27</div>
+      <div class="seg c-ch" style="width:10%">CH ~10</div>
+      <div class="seg c-cn" style="width:6%">CN ~6</div>
+      <div class="seg c-kr" style="width:4%">KR</div>
+      <div class="seg c-rest" style="width:9%">Rest</div>
+    </div>
+  </div>
+  <div class="geo-row" data-etf="rbot">
+    <span class="geo-lbl" style="color:var(--rbot)">RBOT</span>
+    <div class="bar">
+      <div class="seg c-us" style="width:54%">USA ~54</div>
+      <div class="seg c-jp" style="width:15%">Japan ~15</div>
+      <div class="seg c-eu" style="width:15%">Europa ~15</div>
+      <div class="seg c-tw" style="width:7%">TW ~7</div>
+      <div class="seg c-rest" style="width:9%">Rest</div>
+    </div>
+  </div>
+  <div class="geo-row" data-etf="robo">
+    <span class="geo-lbl" style="color:var(--robo)">ROBO</span>
+    <div class="bar">
+      <div class="seg c-us" style="width:35%">USA ~35</div>
+      <div class="seg c-jp" style="width:20%">Japan ~20</div>
+      <div class="seg c-tw" style="width:10%">Taiwan ~10</div>
+      <div class="seg c-eu" style="width:18%">Europa ~18</div>
+      <div class="seg c-kr" style="width:5%">KR</div>
+      <div class="seg c-rest" style="width:12%">Rest</div>
+    </div>
+  </div>
+</div>
+<div class="legend">
+  <span><i class="c-us"></i>USA</span>
+  <span><i class="c-cn"></i>China (A-Shares)</span>
+  <span><i class="c-hk"></i>HK-listed / CN</span>
+  <span><i class="c-jp"></i>Japan</span>
+  <span><i class="c-kr"></i>Korea</span>
+  <span><i class="c-tw"></i>Taiwan</span>
+  <span><i class="c-ch"></i>Schweiz</span>
+  <span><i class="c-eu"></i>Europa+</span>
+  <span><i class="c-ca"></i>Kanada</span>
+  <span><i class="c-rest"></i>Rest</span>
+</div>
+
+<!-- ===== HOLDINGS KARTEN ===== -->
+<h2>Holdings &amp; Industrie-Layer</h2>
+<p class="h2sub">Top 10 direkt sichtbar, alle weiteren Positionen aufklappbar. Daten aus offiziellen Anbieter-CSVs wo vorhanden.</p>
+<div class="grid" id="cards-grid"></div>
+
+<footer>
+  <b>v3-Änderungen:</b> Holdings aus offiziellen CSVs (KOID, HUMN, 2807, BOTT, ROBO vollständig). BOTT: AUM korrigiert auf $62M, Länderdaten aus CSV. RBTZ entfernt. RBOT mit vollständiger iShares-Liste. BOTZ: keine neue CSV, Gewichte approximiert.<br>
+  <b>Caveats:</b> Gewichte tagesabhängig — vor Order aktuelle Liste beim Anbieter ziehen. Keine Anlageberatung.
+</footer>
+</div>
+
+<script>
+const COLOR = {koid:'#0F7B6C',humn:'#C0392B',hk:'#B07B1E',botz:'#2E5FA3',rbot:'#1F8A9E',robo:'#6B4FA0',bott:'#B03A6E'};
+
+const DATA = {
+koid: [
+  {n:'Credo Technology Group',t:'CRDO',p:3.75},{n:'Leader Harmonious Drive Sys-A',t:'688017',p:3.38},
+  {n:'STMicroelectronics NV',t:'STMMI',p:3.29},{n:'Infineon Technologies AG',t:'IFX',p:3.05},
+  {n:'Renesas Electronics Corp',t:'6723',p:3.00},{n:'Harmonic Drive Systems Inc',t:'6324',p:2.82},
+  {n:'THK Co Ltd',t:'6481',p:2.41},{n:'China Leadshine Technology-A',t:'002979',p:2.38},
+  {n:'NXP Semiconductors NV',t:'NXPI',p:2.32},{n:'Melexis NV',t:'MELE',p:2.29},
+  {n:'Texas Instruments Inc',t:'TXN',p:2.29},{n:'Hiwin Technologies Corp',t:'2049',p:2.21},
+  {n:'Sensata Technologies',t:'ST',p:2.19},{n:'Doosan Co Ltd',t:'000150',p:2.16},
+  {n:'Jabil Inc',t:'JBL',p:2.14},{n:'Mobileye Global Inc-A',t:'MBLY',p:2.10},
+  {n:'Novanta Inc',t:'NOVT',p:2.08},{n:'Nidec Corp',t:'6594',p:2.04},
+  {n:'Ubtech Robotics Corp Ltd-H',t:'9880',p:2.01},{n:'Moog Inc-Class A',t:'MOG/A',p:2.00},
+  {n:'Schaeffler AG',t:'SHA',p:1.98},{n:'Keli Sensing Technology-A',t:'603662',p:1.98},
+  {n:'Analog Devices Inc',t:'ADI',p:1.95},{n:'Jiangsu Hengli Hydraulic-A',t:'601100',p:1.91},
+  {n:'Amphenol Corp-Cl A',t:'APH',p:1.90},{n:'Nabtesco Corp',t:'6268',p:1.90},
+  {n:'Zhejiang Shuanghuan Drive-A',t:'002472',p:1.90},{n:'Nvidia Corp',t:'NVDA',p:1.85},
+  {n:'Magna International Inc',t:'MG',p:1.82},{n:'Ningbo Tuopu Group-A',t:'601689',p:1.80},
+  {n:'Lingyi Itech Guangdong-A',t:'002600',p:1.76},{n:'Regal Rexnord Corp',t:'RRX',p:1.76},
+  {n:'Rainbow Robotics',t:'277810',p:1.75},{n:'MP Materials Corp',t:'MP',p:1.75},
+  {n:'Zhejiang Sanhua Intelligent-A',t:'002050',p:1.70},{n:'Shenzhen Inovance-A',t:'300124',p:1.68},
+  {n:'RBC Bearings Inc',t:'RBC',p:1.67},{n:'Shenzhen Zhaowei Machinery-A',t:'003021',p:1.66},
+  {n:'Tesla Inc',t:'TSLA',p:1.64},{n:'Shuanglin Co Ltd-A',t:'300100',p:1.60},
+  {n:'China Northern Rare Earth-A',t:'600111',p:1.57},{n:'Teledyne Technologies Inc',t:'TDY',p:1.56},
+  {n:'TE Connectivity PLC',t:'TEL',p:1.56},{n:'Aptiv PLC',t:'APTV',p:1.52},
+  {n:'XPeng Inc - Class A',t:'9868',p:1.39},{n:'Hexagon AB-B Shs',t:'HEXAB',p:1.38},
+  {n:'Lynas Rare Earths Ltd',t:'LYC',p:1.36},{n:'Robosense Technology Co Ltd',t:'2498',p:1.36},
+  {n:'Keyence Corp',t:'6861',p:1.26},{n:'Horizon Robotics Inc',t:'9660',p:1.08}
+],
+bott: [
+  {n:'Leader Harmonious Drive Systems',t:'688017 C1',p:8.59},{n:'Zhejiang Hechuan Technology',t:'688320 C1',p:5.25},
+  {n:'EFORT Intelligent Robot Co Ltd',t:'688165 C1',p:5.23},{n:'Richtech Robotics Inc',t:'RR',p:4.66},
+  {n:'Tesla Inc',t:'TSLA',p:4.62},{n:'Estun Automation Co Ltd',t:'002747 C2',p:4.61},
+  {n:'NVIDIA Corp',t:'NVDA',p:4.56},{n:'Yijiahe Technology Co Ltd',t:'603666 C1',p:4.53},
+  {n:'UBTech Robotics Corp Ltd',t:'9880 HK',p:4.39},{n:'Rainbow Robotics',t:'277810 KS',p:4.26},
+  {n:'MDA Space Ltd',t:'MDA CN',p:4.23},{n:'Ningbo PIA Automation',t:'688306 C1',p:4.17},
+  {n:'Ecovacs Robotics Co Ltd',t:'603486 C1',p:4.04},{n:'Palladyne AI Corp',t:'PDYN',p:4.01},
+  {n:'Teradyne Inc',t:'TER',p:3.94},{n:'XPeng Inc',t:'9868 HK',p:3.69},
+  {n:'Yujin Robot Co Ltd',t:'056080 KS',p:3.21},{n:'Hyulim ROBOT Co Ltd',t:'090710 KS',p:3.02},
+  {n:'Neuromeka Co Ltd',t:'348340 KS',p:2.90},{n:'Serve Robotics Inc',t:'SERV',p:2.50},
+  {n:'Nabtesco Corp',t:'6268 JP',p:2.31},{n:'CSG Smart Science Technology',t:'300222 C2',p:2.17},
+  {n:'Kudan Inc',t:'4425 JP',p:1.99},{n:'Shanghai Kelai Mechatronics',t:'603960 C1',p:1.87},
+  {n:'Hirata Corp',t:'6258 JP',p:1.32},{n:'T-Robotics Co Ltd',t:'117730 KS',p:1.28},
+  {n:'Guangdong Topstar Technology',t:'300607 C2',p:1.08},{n:'Clobot Co Ltd',t:'466100 KS',p:0.74},
+  {n:'CMES Robotics Inc',t:'475400 KS',p:0.40},{n:'Shenzhen Zhaowei Machinery',t:'003021 C2',p:0.27}
+],
+humn: [
+  {n:'Tesla Inc',t:'TSLA',p:8.19},{n:'UBTech Robotics Corp Ltd',t:'9880 HK',p:7.77},
+  {n:'Leader Harmonious Drive Systems',t:'688017 C1',p:5.40},{n:'Harmonic Drive Systems Inc',t:'6324 JP',p:4.53},
+  {n:'NVIDIA Corp',t:'NVDA',p:4.05},{n:'Rainbow Robotics',t:'277810 KS',p:3.98},
+  {n:'QUALCOMM Inc',t:'QCOM',p:3.42},{n:'XPeng Inc',t:'XPEV',p:2.99},
+  {n:'Robotis Co Ltd',t:'108490 KS',p:2.87},{n:'Hyundai Motor Co',t:'005380 KS',p:2.73},
+  {n:'Advanced Micro Devices Inc',t:'AMD',p:2.71},{n:'Shenzhen Dobot Corp Ltd',t:'2432 HK',p:2.70},
+  {n:'Amazon.com Inc',t:'AMZN',p:2.57},{n:'Teradyne Inc',t:'TER',p:2.55},
+  {n:'Ouster Inc',t:'OUST',p:2.54},{n:'Doosan Robotics Inc',t:'454910 KS',p:2.50},
+  {n:'ABB Ltd',t:'ABB SS',p:2.31},{n:'Hyundai Glovis Co Ltd',t:'086280 KS',p:2.28},
+  {n:'Alphabet Inc',t:'GOOGL',p:2.17},{n:'Nabtesco Corp',t:'6268 JP',p:1.98},
+  {n:'Schaeffler AG',t:'SHA0 GR',p:1.98},{n:'Alibaba Group Holding Ltd',t:'BABA',p:1.96},
+  {n:'Mobileye Global Inc',t:'MBLY',p:1.94},{n:'Hexagon AB',t:'HEXAB SS',p:1.87},
+  {n:'Hiwin Technologies Corp',t:'2049 TT',p:1.81},{n:'Xiaomi Corp',t:'1810 HK',p:1.80},
+  {n:'Yaskawa Electric Corp',t:'6506 JP',p:1.75},{n:'Minth Group Ltd',t:'425 HK',p:1.72},
+  {n:'FANUC Corp',t:'6954 JP',p:1.60},{n:'ARM Holdings PLC',t:'ARM',p:1.51},
+  {n:'Keyence Corp',t:'6861 JP',p:1.43},{n:'RoboSense Technology Co Ltd',t:'2498 HK',p:1.17},
+  {n:'Hesai Group',t:'HSAI',p:1.15},{n:'Kawasaki Heavy Industries',t:'7012 JP',p:1.10},
+  {n:'Shanghai Iluvatar CoreX Semi',t:'9903 HK',p:1.01},{n:'Cambricon Technologies',t:'688256 C1',p:0.97},
+  {n:'Timken Co',t:'TKR',p:0.82},{n:'THK Co Ltd',t:'6481 JP',p:0.79},
+  {n:'Rockwell Automation Inc',t:'ROK',p:0.73},{n:'SKF AB',t:'SKFB SS',p:0.64},
+  {n:'RBC Bearings Inc',t:'RBC',p:0.59},{n:'Octave Intelligence PLC',t:'OCTVSDB',p:0.39}
+],
+hk: [
+  {n:"Han's Laser Technology",t:'002008 C2',p:10.45},{n:'HGTech',t:'000988 C2',p:8.72},
+  {n:'Supcon Technology',t:'688777 C1',p:7.11},{n:'Shenzhen Inovance',t:'300124 C2',p:6.80},
+  {n:'Baidu Inc ADR',t:'BIDU US',p:6.37},{n:'Hangzhou Hikvision Digital',t:'002415 C2',p:6.34},
+  {n:'iFlytek',t:'002230 C2',p:5.70},{n:'Robotechnik Intelligent Tech',t:'300757 C2',p:4.79},
+  {n:'Shanghai Bochu Electronic',t:'688188 C1',p:3.64},{n:'Beijing Kingsoft Office',t:'688111 C1',p:3.62},
+  {n:'Wuhan Jingce Electronic',t:'300567 C2',p:3.59},{n:'Zhejiang Dahua Technology',t:'002236 C2',p:3.44},
+  {n:'Leader Harmonious Drive',t:'688017 C1',p:3.39},{n:'SenseTime Group-Class B',t:'20 HK',p:3.24},
+  {n:'Horizon Robotics Inc',t:'9660 HK',p:3.17},{n:'Optowide Technologies',t:'688195 C1',p:3.14},
+  {n:'MiniMax Group Inc',t:'100 HK',p:2.99},{n:'Thunder Software Technology',t:'300496 C2',p:2.47},
+  {n:'Zhejiang Shuanghuan Drive',t:'002472 C2',p:2.35},{n:'Siasun Robot Automation',t:'300024 C2',p:2.04},
+  {n:'Beijing Roborock Technology',t:'688169 C1',p:1.60},{n:'Guangdong Create Century',t:'300083 C2',p:1.41},
+  {n:'Hesai Group',t:'HSAI US',p:1.33},{n:'CETC Potevio Sci Tech',t:'002544 C2',p:1.09},
+  {n:"Xi'an Bright Laser Tech",t:'688333 C1',p:1.01}
+],
+botz: [
+  {n:'ABB Ltd',t:'ABBN',p:9.1},{n:'Keyence Corp',t:'6861',p:8.9},
+  {n:'Nvidia Corp',t:'NVDA',p:8.6},{n:'Fanuc Corp',t:'6954',p:8.5},
+  {n:'Intuitive Surgical Inc',t:'ISRG',p:5.8},{n:'Yaskawa Electric',t:'6506',p:4.2},
+  {n:'Mitsubishi Electric',t:'6503',p:4.0},{n:'SMC Corp',t:'6273',p:3.5},
+  {n:'Daifuku Co Ltd',t:'6383',p:3.3},{n:'Dynatrace Inc',t:'DT',p:3.1},
+  {n:'Omron Corp',t:'6645',p:2.8},{n:'Ubtech Robotics',t:'9880',p:2.5},
+  {n:'Rainbow Robotics',t:'277810',p:2.0},{n:'Doosan Robotics',t:'454910',p:1.5}
+],
+rbot: [
+  {n:'Intel Corporation',t:'INTC',p:9.68},{n:'Advanced Micro Devices',t:'AMD',p:7.64},
+  {n:'Advantest Corp',t:'6857',p:5.46},{n:'KLA Corp',t:'KLAC',p:4.95},
+  {n:'Teradyne Inc',t:'TER',p:3.62},{n:'ABB Ltd',t:'ABBN',p:3.45},
+  {n:'Nvidia Corp',t:'NVDA',p:2.87},{n:'Rockwell Automation',t:'ROK',p:2.81},
+  {n:'Microchip Technology',t:'MCHP',p:2.61},{n:'Fanuc Corp',t:'6954',p:2.50},
+  {n:'Credo Technology Group',t:'CRDO',p:2.43},{n:'Siemens AG',t:'SIE',p:2.41},
+  {n:'Snowflake Inc',t:'SNOW',p:2.28},{n:'Garmin Ltd',t:'GRMN',p:2.24},
+  {n:'Keyence Corp',t:'6861',p:2.23},{n:'Emerson Electric',t:'EMR',p:2.23},
+  {n:'Intuitive Surgical Inc',t:'ISRG',p:1.59},{n:'Autodesk Inc',t:'ADSK',p:1.49},
+  {n:'Lasertec Corp',t:'6920',p:1.45},{n:'Halma PLC',t:'HLMA',p:1.43},
+  {n:'Fortive Corp',t:'FTV',p:1.30},{n:'Constellation Software',t:'CSU',p:1.18},
+  {n:'SAP SE',t:'SAP',p:1.17},{n:'Roper Technologies',t:'ROP',p:1.16},
+  {n:'Lattice Semiconductor',t:'LSCC',p:1.16},{n:'Hexagon AB-B',t:'HEXA B',p:1.12},
+  {n:'Workday Inc',t:'WDAY',p:1.10},{n:'ServiceNow Inc',t:'NOW',p:1.05},
+  {n:'PTC Inc',t:'PTC',p:1.01},{n:'Dassault Systemes',t:'DSY',p:1.00},
+  {n:'Nordson Corp',t:'NDSN',p:0.96},{n:'Daifuku Co Ltd',t:'6383',p:0.95},
+  {n:'Nova Ltd',t:'NVMI',p:0.94},{n:'Lincoln Electric',t:'LECO',p:0.91},
+  {n:'Onto Innovation',t:'ONTO',p:0.81},{n:'Largan Precision',t:'3008',p:0.80},
+  {n:'Global Unichip Corp',t:'3443',p:0.73},{n:'Yaskawa Electric',t:'6506',p:0.65},
+  {n:'Strategy Inc',t:'MSTR',p:0.59},{n:'GEA Group AG',t:'G1A',p:0.56},
+  {n:'Omron Corp',t:'6645',p:0.45},{n:'Hiwin Technologies Corp',t:'2049',p:0.22},
+  {n:'Ubtech Robotics',t:'9880',p:0.23},{n:'Rainbow Robotics',t:'277810',p:0.22},
+  {n:'Harmonic Drive Systems',t:'6324',p:0.17},{n:'Doosan Robotics',t:'454910',p:0.10},
+  {n:'Ouster Inc',t:'OUST',p:0.12}
+],
+robo: [
+  {n:'Infineon Technologies AG',t:'IFX GR',p:2.32},{n:'Harmonic Drive Systems Inc',t:'6324 JP',p:2.28},
+  {n:'Hiwin Technologies Corp',t:'2049 TT',p:1.95},{n:'Celestica Inc',t:'CLS CN',p:1.94},
+  {n:'Teradyne Inc',t:'TER',p:1.91},{n:'Delta Electronics Inc',t:'2308 TT',p:1.91},
+  {n:'Jenoptik AG',t:'JEN GR',p:1.88},{n:'Rockwell Automation Inc',t:'ROK',p:1.86},
+  {n:'Novanta Inc',t:'NOVT',p:1.84},{n:'Hon Hai Precision Industry',t:'2317 TT',p:1.80},
+  {n:'Fanuc Corp',t:'6954 JP',p:1.74},{n:'QUALCOMM Inc',t:'QCOM',p:1.73},
+  {n:'Yaskawa Electric Corp',t:'6506 JP',p:1.71},{n:'Fuji Corporation',t:'6134 JP',p:1.70},
+  {n:'AirTac International Group',t:'1590 TT',p:1.68},{n:'Illumina Inc',t:'ILMN',p:1.65},
+  {n:'Ambarella Inc',t:'AMBA',p:1.64},{n:'Coherent Corp',t:'COHR',p:1.61},
+  {n:'THK Co Ltd',t:'6481 JP',p:1.55},{n:'Renishaw PLC',t:'RSW LN',p:1.48},
+  {n:'Advantech Co Ltd',t:'2395 TT',p:1.47},{n:'Cadence Design Systems',t:'CDNS',p:1.46},
+  {n:'Koh Young Technology Inc',t:'098460 KS',p:1.46},{n:'Daifuku Co Ltd',t:'6383 JP',p:1.45},
+  {n:'ABB Limited',t:'ABBN SW',p:1.42},{n:'AutoStore Holdings Ltd',t:'AUTO NO',p:1.41},
+  {n:'SoftBank Group Corp',t:'9984 JP',p:1.40},{n:'Keyence Corp',t:'6861 JP',p:1.40},
+  {n:'Microchip Technology',t:'MCHP',p:1.38},{n:'Intuitive Surgical Inc',t:'ISRG',p:1.36},
+  {n:'Nordson Corp',t:'NDSN',p:1.34},{n:'Emerson Electric Co',t:'EMR',p:1.34},
+  {n:'NVIDIA Corp',t:'NVDA',p:1.33},{n:'Ondas Inc',t:'ONDS',p:1.32},
+  {n:'Omron Corp',t:'6645 JP',p:1.31},{n:'Cognex Corp',t:'CGNX',p:1.29},
+  {n:'IPG Photonics Corp',t:'IPGP',p:1.25},{n:'Schneider Electric SE',t:'SU FP',p:1.25},
+  {n:'Nabtesco Corp',t:'6268 JP',p:1.20},{n:'ATS Corporation Canada',t:'ATS CN',p:1.20},
+  {n:'Samsara Inc',t:'IOT',p:1.18},{n:'Kardex Holding AG',t:'KARN SW',p:1.17},
+  {n:'Siemens AG',t:'SIE GR',p:1.17},{n:'Ubtech Robotics Corp Ltd',t:'9880 HK',p:1.17},
+  {n:'GEA Group AG',t:'G1A GR',p:1.16},{n:'Raspberry Pi Holdings PLC',t:'RPI LN',p:1.15},
+  {n:'Joby Aviation Inc',t:'JOBY',p:1.15},{n:'Optex Group Company Ltd',t:'6914 JP',p:1.15},
+  {n:'Symbotic Inc',t:'SYM',p:1.15},{n:'Krones AG',t:'KRN GR',p:1.14},
+  {n:'XPeng Inc',t:'XPEV',p:1.13},{n:'Deere Company',t:'DE',p:1.13},
+  {n:'Mitsubishi Electric Corp',t:'6503 JP',p:1.13},{n:'Zebra Technologies',t:'ZBRA',p:1.11},
+  {n:'Yokogawa Electric',t:'6841 JP',p:1.11},{n:'Globus Med Inc',t:'GMED',p:1.10},
+  {n:'SMC Corp',t:'6273 JP',p:1.07},{n:'Daihen Corp',t:'6622 JP',p:1.06},
+  {n:'JBT Marel Corp',t:'JBTM',p:1.03},{n:'Duerr AG',t:'DUE GR',p:1.01},
+  {n:'Kalmar OYJ',t:'KALMAR FH',p:0.99},{n:'Autodesk Inc',t:'ADSK',p:0.98},
+  {n:'Hexagon AB',t:'HEXAB SS',p:0.98},{n:'Tesla Inc',t:'TSLA',p:0.97},
+  {n:'Aptiv PLC',t:'APTV',p:0.97},{n:'PTC Inc',t:'PTC',p:0.94},
+  {n:'Xiaomi Corp',t:'1810 HK',p:0.91},{n:'Stratasys Ltd',t:'SSYS',p:0.87},
+  {n:'Trimble Inc',t:'TRMB',p:0.83},{n:'GXO Logistics Inc',t:'GXO',p:0.80},
+  {n:'Elekta AB',t:'EKTAB SS',p:0.77},{n:'Kion Group AG',t:'KGX GR',p:0.67},
+  {n:'Shibaura Machine Co Ltd',t:'6104 JP',p:0.64},{n:"Han's Laser Technology",t:'002008 C2',p:0.63},
+  {n:'Serve Robotics Inc',t:'SERV',p:0.61},{n:'Estun Automation Co Ltd',t:'002747 C2',p:0.58},
+  {n:'Shenzhen Inovance Technology',t:'300124 C2',p:0.31},{n:'Octave Intelligence PLC',t:'OCTVSDB SS',p:0.21}
+]
+};
+
+const CARDS = [
+{id:'koid',color:'#0F7B6C',name:'KOID',fullname:'KraneShares Global Humanoid Robotics & Physical AI',verdict:'PASST ZUR THESE',vclass:'v-fit',
+ kpis:[['0,69%','TER'],['~$190M','AUM'],['50','Holdings'],['~30%','Top 10']],
+ buyline:'Du kaufst: <b>die Schaufeln</b> - Equal-Weight über Aktuatoren, Getriebe, Rare Earths, Halbleiter. Kein Mega-Cap-Klumpen.',
+ layers:['Halbleiter/Compute','Aktuatoren & Getriebe','Rare Earths','Sensorik','OEMs (klein)'],
+ note:'UCITS LSE USD - deine handelbare Version. Auch Borsa Italiana & Xetra (KBOT). Datenstand: 09.06.2026.'},
+{id:'bott',color:'#B03A6E',name:'BOTT',fullname:'Themes Humanoid Robotics',verdict:'ERGÄNZUNG: CHINA-WETTE',vclass:'v-mid',
+ kpis:[['0,35%','TER'],['$62M','AUM'],['30','Holdings'],['~54%','Top 10']],
+ buyline:'Du kaufst: <b>China-Dominanz im Humanoid-BoM</b> - ~50% China/HK, konzentriert auf Aktuatoren-OEMs die auch Teslas Optimus beliefern. Günstigste TER der Liste.',
+ layers:['Aktuatoren/Getriebe (Leader, Hechuan, Yijiahe)','Service-Robotik (Richtech, Ecovacs)','AI-Software (Palladyne)','OEM (Tesla, XPeng)'],
+ note:'Länder: China 41,8% · USA 24,3% · Korea 15,8% · HK 8,1% · Japan 5,6% · Canada 4,2%. Hauptrisiko: Entity-List. US-Domizil, Dividenden ~0%. Datenstand: 10.06.2026.'},
+{id:'humn',color:'#C0392B',name:'HUMN',fullname:'Roundhill Humanoid Robotics (aktiv)',verdict:'OEM-WETTE + US-STEUER',vclass:'v-mid',
+ kpis:[['0,75%','TER'],['~$85M','AUM'],['42','Holdings'],['~47%','Top 10']],
+ buyline:'Du kaufst: <b>die Goldgräber</b> - aktive Wette auf Tesla, Ubtech, Leader Harmonious. Top 10 = fast die Hälfte.',
+ layers:['OEMs (Tesla, Ubtech, XPeng)','Aktuatoren (Harmonic, Leader)','Compute (Nvidia, Qualcomm)','Test/Integration (Teradyne)'],
+ note:'Sektoren: Industrials ~43%, Consumer ~28%, Tech ~27%. US-Domizil, keine UCITS-Alternative. Datenstand: 09.06.2026.'},
+{id:'hk',color:'#B07B1E',name:'2807',fullname:'Global X China Robotics & AI (Hongkong)',verdict:'CHINA-KLUMPEN',vclass:'v-no',
+ kpis:[['0,68%','TER'],['~$70M','AUM'],['25','Holdings'],['~62%','Top 10']],
+ buyline:'Du kaufst: <b>China pur</b> - Laser, Vision, AI-Software. Hikvision steht auf US-Sanktionslisten.',
+ layers:['Laser/Fertigung','Machine Vision','AI-Software (Baidu, iFlytek)','Industrieautomation'],
+ note:'HKD-Handel, ausschüttend. Alle 25 Holdings sind China/HK. Datenstand: 09.06.2026.'},
+{id:'botz',color:'#2E5FA3',name:'BOTZ',fullname:'Global X Robotics & Artificial Intelligence',verdict:'MEGA-CAP ALLWETTER',vclass:'v-mid',
+ kpis:[['0,68%','TER'],['$3,6Mrd','AUM'],['~66','Holdings'],['~59%','Top 10']],
+ buyline:'Du kaufst: <b>die etablierten Großen</b> - ABB, Fanuc, Keyence plus Nvidia. Liquidester Fonds, aber Mega-Cap-Klumpen.',
+ layers:['Industrieautomation (ABB, Fanuc, Yaskawa)','Machine Vision (Keyence)','Compute (Nvidia 8,6%)','MedTech-Robotik (Intuitive)'],
+ note:'Beta ~1,5. UCITS-Variante LSE USD existiert (0,50%, ~$150M, Spread ~1%). US-Domizil = Estate Tax. Gewichte approximiert.'},
+{id:'rbot',color:'#1F8A9E',name:'RBOT',fullname:'iShares Automation & Robotics UCITS',verdict:'STRUKTURELL TOP, THEMATISCH VERFEHLT',vclass:'v-mid',
+ kpis:[['0,40%','TER'],['~$4Mrd','AUM'],['~130','Holdings'],['~46%','Top 10']],
+ buyline:'Du kaufst: <b>Chip-Equipment + Software-Automation</b> - Intel, AMD, Testanlagen, Enterprise-SW. Strukturell perfekt, aber deine Humanoid-Schaufeln nur homöopathisch.',
+ layers:['Halbleiter & Chip-Equipment (Intel, AMD, KLA)','Enterprise-Software (Snowflake, SAP, Workday)','Industrieautomation (ABB, Rockwell, Fanuc)','Vision/Sensorik (Keyence, Hexagon)'],
+ note:'IE00BYZK4552, thesaurierend, seit 2016. Humanoid-Schaufeln zusammen weniger als 1,2% des Fonds. Datenstand: iShares offizielle Liste.'},
+{id:'robo',color:'#6B4FA0',name:'ROBO',fullname:'ROBO Global Robotics & Automation Index',verdict:'ZWEITE WAHL',vclass:'v-mid',
+ kpis:[['0,95%','TER'],['~$255M','AUM'],['78','Holdings'],['~17%','Top 10']],
+ buyline:'Du kaufst: <b>die breiteste Streuung</b> - 78 Positionen, keine über 2,5%. Real-World-Robotik, aber wenig Humanoid-Schaufeln.',
+ layers:['Industrieautomation (Fanuc, Yaskawa, Rockwell)','Präzisionskomponenten (Harmonic, Hiwin, THK)','Sensorik (Keyence, Renishaw, Cognex)','Healthcare-Robotik (Intuitive)','Logistik (Daifuku, Kardex, AutoStore)'],
+ note:'Ältester Robotik-ETF (2013). Datenstand: 10.06.2026. US-Domizil; L&G-UCITS-Variante auf Listing/Währung bei IBKR prüfen.'}
+];
+
+let visibleIds = ['koid','bott','humn'];
+
+// Set chip colors on load
+document.querySelectorAll('#chips .chip').forEach(chip => {
+  const key = chip.dataset.etf;
+  const cfg = CARDS.find(c=>c.id===key);
+  if(!cfg) return;
+  if(chip.classList.contains('active')) {
+    chip.style.background = cfg.color;
+  }
+  // hide table cols + geo rows for off chips
+  if(chip.classList.contains('off')) {
+    document.querySelectorAll('.col-'+key).forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('.geo-row[data-etf="'+key+'"]').forEach(el => el.classList.add('hidden'));
+  }
+});
+
+function normName(n) {
+  return n.toLowerCase()
+    .replace(/\b(inc|corp|ltd|co|ag|plc|nv|se|ab|sa|holdings|holding|group|technologies|technology|systems|system|electric|electronics|robotics|automation)\b/g,'')
+    .replace(/[-.,&\/\s]+/g,' ').trim();
+}
+
+function buildLookup(etfId) {
+  const map = new Map();
+  (DATA[etfId]||[]).forEach(h => {
+    if(h.p > 0) map.set(normName(h.n), {pct:h.p, name:h.n});
+  });
+  return map;
+}
+
+function findMatch(name, otherMap) {
+  const k = normName(name);
+  if(otherMap.has(k)) return otherMap.get(k);
+  for(const [ok, ov] of otherMap) {
+    if(k.length > 5 && ok.length > 5 && (k.includes(ok) || ok.includes(k))) return ov;
+  }
+  return null;
+}
+
+function makeBar(pct, color, max) {
+  const w = max > 0 ? Math.min(100,(pct/max)*100) : 0;
+  return '<div class="hb"><i style="width:'+w.toFixed(0)+'%;background:'+color+'"></i></div>';
+}
+
+function makeRows(cardId, color, holdings, top) {
+  const maxP = holdings[0] ? holdings[0].p : 1;
+  const doCross = visibleIds.length >= 2 && visibleIds.length <= 3;
+  const others = visibleIds.filter(id => id !== cardId);
+  const lookups = {};
+  if(doCross) others.forEach(id => { lookups[id] = buildLookup(id); });
+
+  function row(h) {
+    if(!h.p) return '<div style="font-size:11px;color:var(--muted);padding:3px 0">'+h.n+'</div>';
+    let tags = '';
+    if(doCross) {
+      others.forEach(oid => {
+        const m = findMatch(h.n, lookups[oid]);
+        if(m) {
+          const cfg = CARDS.find(c=>c.id===oid);
+          tags += '<span class="xtag" style="background:'+COLOR[oid]+'22;color:'+COLOR[oid]+';border:1px solid '+COLOR[oid]+'66">'+m.pct.toFixed(2)+'%</span>';
+        }
+      });
+    }
+    const highlight = tags ? ' hrow-match' : '';
+    return '<div class="hrow'+highlight+'"><span class="hn"><span class="hntext">'+h.n+'</span>'+(tags?'<span class="xtags">'+tags+'</span>':'')+'</span>'+makeBar(h.p,color,maxP)+'<span class="hp">'+h.p.toFixed(2)+'%</span></div>';
+  }
+
+  const shown = holdings.slice(0,top);
+  const rest = holdings.slice(top).filter(h=>h.p>0);
+  let html = shown.map(row).join('');
+  if(rest.length) {
+    const hint = doCross ? ' · farbige Tags = gleiche Position im anderen ETF' : '';
+    html += '<details class="more"><summary>+ '+rest.length+' weitere Positionen</summary><div>'+rest.map(row).join('')+'</div></details>';
+  }
+  return html;
+}
+
+function buildCards() {
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = '';
+  const doCross = visibleIds.length >= 2 && visibleIds.length <= 3;
+  for(const c of CARDS) {
+    if(!visibleIds.includes(c.id)) continue;
+    const h = DATA[c.id]||[];
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.dataset.etf = c.id;
+    const hint = doCross ? ' <span style="font-weight:400;color:var(--muted);font-size:10px">· farbige Tags zeigen gleiche Position im anderen ETF</span>' : '';
+    div.innerHTML =
+      '<div class="card-head" style="border-color:'+c.color+'"><div><h3>'+c.name+'</h3><div class="cname">'+c.fullname+'</div></div><span class="verdict '+c.vclass+'">'+c.verdict+'</span></div>'+
+      '<div class="buyline">'+c.buyline+'</div>'+
+      '<div class="kpis">'+c.kpis.map(k=>'<div class="kpi"><div class="v">'+k[0]+'</div><div class="k">'+k[1]+'</div></div>').join('')+'</div>'+
+      '<div class="hold"><div class="ht">Holdings'+hint+'</div>'+makeRows(c.id,c.color,h,10)+'</div>'+
+      '<div class="layers">'+c.layers.map(l=>'<span class="layer">'+l+'</span>').join('')+'</div>'+
+      '<div class="note">'+c.note+'</div>';
+    grid.appendChild(div);
+  }
+}
+
+buildCards();
+
+document.querySelectorAll('#chips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const key = chip.dataset.etf;
+    const cfg = CARDS.find(c=>c.id===key);
+    const isActive = chip.classList.contains('active');
+    if(isActive) {
+      chip.classList.remove('active');
+      chip.classList.add('off');
+      chip.style.background = '';
+    } else {
+      chip.classList.remove('off');
+      chip.classList.add('active');
+      chip.style.background = cfg.color;
+    }
+    const off = chip.classList.contains('off');
+    document.querySelectorAll('.col-'+key).forEach(el => el.classList.toggle('hidden', off));
+    document.querySelectorAll('.geo-row[data-etf="'+key+'"]').forEach(el => el.classList.toggle('hidden', off));
+    const order = ['koid','bott','humn','hk','botz','rbot','robo'];
+    visibleIds = order.filter(id => document.querySelector('.chip[data-etf="'+id+'"]').classList.contains('active'));
+    buildCards();
+  });
+});
+
+</script>
+</body>
+</html>
