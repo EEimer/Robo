@@ -362,8 +362,27 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 <div class="grid" id="cards-grid"></div>
 
 <footer>
-  <b>v3-Änderungen:</b> Holdings aus offiziellen CSVs (KOID, HUMN, 2807, BOTT, ROBO vollständig). BOTT: AUM korrigiert auf $62M, Länderdaten aus CSV. RBTZ entfernt. RBOT mit vollständiger iShares-Liste. BOTZ: keine neue CSV, Gewichte approximiert.<br>
-  <b>Caveats:</b> Gewichte tagesabhängig — vor Order aktuelle Liste beim Anbieter ziehen. Keine Anlageberatung.
+  <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start">
+    <div style="flex:1;min-width:220px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px">Features</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+        <li>✓ &nbsp;7 ETFs vergleichbar – per Chip ein-/ausblenden</li>
+        <li>✓ &nbsp;Holdings aus offiziellen Anbieter-CSVs (KOID, HUMN, 2807, BOTT, ROBO vollständig)</li>
+        <li>✓ &nbsp;Cross-ETF-Highlighting – gleiche Position farbig markiert</li>
+        <li>✓ &nbsp;Länder-Exposure als Balkenchart</li>
+        <li>✓ &nbsp;Stocks klickbar – Aktiendetails mit Kennzahlen, Produkt- &amp; Robotik-Analyse + TradingView-Link</li>
+      </ul>
+    </div>
+    <div style="flex:1;min-width:220px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px">Caveats</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+        <li>⚠ &nbsp;Gewichte tagesabhängig — vor Order aktuelle Liste beim Anbieter ziehen</li>
+        <li>⚠ &nbsp;BOTZ/RBOT: keine aktuelle CSV, Gewichte approximiert</li>
+        <li>⚠ &nbsp;Aktienkennzahlen: Schätzwerte, kein Live-Feed</li>
+        <li>⚠ &nbsp;Keine Anlageberatung</li>
+      </ul>
+    </div>
+  </div>
 </footer>
 </div>
 
