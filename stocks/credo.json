@@ -9,7 +9,7 @@
     "industry": "Halbleiter / Datacenter-Konnektivität",
     "competitors": ["Astera Labs", "Broadcom", "Alphawave Semi", "MediaTek", "MaxLinear"]
   },
-  "tradingview_url": "https://www.tradingview.com/symbols/NASDAQ-CRDO/",
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3ACRDO",
   "summary": "Credo entwickelt High-Speed-Konnektivitätslösungen für optisches und elektrisches Ethernet sowie PCIe-Anwendungen. Kernprodukte sind integrierte Schaltkreise, Active Electrical Cables (AECs) und SerDes-Chiplets, basierend auf proprietärer SerDes- und DSP-Technologie. Kunden sind Hyperscaler (Microsoft, Amazon, xAI etc.), OEMs/ODMs und optische Modulhersteller. Im Prinzip ein 'Schaufelverkäufer' des AI-Booms – wie Nvidia, nur eine Ebene tiefer bei der Verkabelung.",
   "products": [
     "HiWire Active Electrical Cables (AECs)",

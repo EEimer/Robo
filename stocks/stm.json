@@ -9,7 +9,7 @@
     "industry": "Halbleiter – Mikrocontroller, Leistungshalbleiter, MEMS-Sensoren",
     "competitors": ["Renesas Electronics", "NXP Semiconductors", "Infineon Technologies", "Texas Instruments", "Microchip Technology"]
   },
-  "tradingview_url": "https://www.tradingview.com/symbols/NYSE-STM/",
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NYSE%3ASTM",
   "summary": "STM ist ein europäisch-amerikanisches Chip-Schwergewicht, gegründet durch Fusion von SGS Microelectronics (IT) und Thomson Semiconductor (FR). Kerngeschäft: Mikrocontroller (STM32 – Weltmarktführer bei Arm-MCUs), MEMS-Sensoren, Leistungshalbleiter (SiC/GaN für EVs und Industrieautomation). Automotive macht ~45% des Umsatzes – der EV-Abschwung 2024/25 hat STM hart getroffen. Für Robotik ist vor allem die STM32-Familie (Motor Control, Sensor Fusion) und die SiC-Leistungselektronik für Antriebe relevant.",
   "products": [
     "STM32 Mikrocontroller (Arm Cortex-M, weltweite #1 bei 32-Bit-MCUs)",
