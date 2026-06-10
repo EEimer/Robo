@@ -703,6 +703,120 @@ function buildCards() {
 
 buildCards();
 
+// ===== Modal =====
+const overlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+
+function fmt(val, prefix, suffix) {
+  if(val === null || val === undefined) return '—';
+  return (prefix||'') + val + (suffix||'');
+}
+
+function openModal(stockKey) {
+  const s = STOCKS[stockKey];
+  if(!s) return;
+  const c = s.company;
+  const sd = s.stock_data;
+  const rel = s.humanoid_robot_relevance;
+
+  // find which ETFs hold this stock and at what weight
+  const presence = [];
+  Object.keys(DATA).forEach(etfId => {
+    (DATA[etfId]||[]).forEach(h => {
+      if(getStockKey(h.t||'') === stockKey) {
+        presence.push({etfId, pct:h.p, name:etfId.toUpperCase()});
+      }
+    });
+  });
+
+  const cur = sd.currency === 'EUR' ? '€' : sd.currency === 'JPY' ? '¥' : '$';
+  const mcap = sd.market_cap_usd_bn ? '$'+sd.market_cap_usd_bn+'B'
+    : sd.market_cap_eur_bn ? '€'+sd.market_cap_eur_bn+'B'
+    : sd.market_cap_cny_bn ? '¥'+sd.market_cap_cny_bn+'B CNY'
+    : sd.market_cap_jpy_bn ? '¥'+sd.market_cap_jpy_bn+'B JPY'
+    : '—';
+  const rev = sd.revenue_fy26_usd_bn ? '$'+sd.revenue_fy26_usd_bn+'B'
+    : sd.revenue_fy25_usd_bn ? '$'+sd.revenue_fy25_usd_bn+'B'
+    : sd.revenue_fy25_eur_bn ? '€'+sd.revenue_fy25_eur_bn+'B'
+    : sd.revenue_fy25_cny_bn ? '¥'+sd.revenue_fy25_cny_bn+'B'
+    : sd.revenue_fy25_jpy_bn ? '¥'+sd.revenue_fy25_jpy_bn+'B JPY'
+    : '—';
+  const growthVal = sd.revenue_growth_yoy_pct;
+  const growthStr = growthVal === null || growthVal === undefined ? '—'
+    : (growthVal > 0 ? '+' : '') + growthVal + '%';
+  const growthColor = growthVal > 20 ? '#0F7B6C' : growthVal > 0 ? '#2E5FA3' : '#C0392B';
+
+  const acClass = sd.analyst_consensus === 'Strong Buy' ? '#0F7B6C'
+    : sd.analyst_consensus === 'Buy' ? '#2E5FA3'
+    : '#B07B1E';
+
+  // determine accent color from ETF presence (first found)
+  const accentEtf = presence[0];
+  const accentColor = accentEtf ? COLOR[accentEtf.etfId] : '#131B26';
+
+  modalContent.innerHTML = `
+    <div class="modal-head">
+      <div class="modal-ticker-badge" style="background:${accentColor}">${c.ticker}</div>
+      <div class="modal-head-info">
+        <div class="modal-company">${c.name}</div>
+        <div class="modal-exch">${c.exchange} &middot; Gegr. ${c.founded}</div>
+        <span class="modal-industry">${c.industry}</span>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div>
+        <div class="modal-section-lbl">Überblick</div>
+        <p class="modal-summary">${s.summary}</p>
+      </div>
+      <div>
+        <div class="modal-section-lbl">Kennzahlen <span style="font-size:9px;font-weight:500;opacity:.6">Stand: ${sd.updated_at}</span></div>
+        <div class="modal-metrics">
+          <div class="modal-metric"><div class="mv">${mcap}</div><div class="mk">Market Cap</div></div>
+          <div class="modal-metric"><div class="mv">${fmt(sd.pe_forward)}x</div><div class="mk">KGV Forward</div></div>
+          <div class="modal-metric"><div class="mv">${fmt(sd.pe_trailing)}x</div><div class="mk">KGV Trailing</div></div>
+          <div class="modal-metric"><div class="mv" style="color:${growthColor}">${growthStr}</div><div class="mk">Umsatz YoY</div></div>
+          <div class="modal-metric"><div class="mv">${rev}</div><div class="mk">Umsatz FY25</div></div>
+          <div class="modal-metric"><div class="mv">${fmt(sd.price_to_sales_ttm)}x</div><div class="mk">P/S TTM</div></div>
+          <div class="modal-metric"><div class="mv" style="color:${acClass}">${sd.analyst_consensus||'—'}</div><div class="mk">Analysten</div></div>
+          <div class="modal-metric"><div class="mv">${fmt(sd.beta_5y)}</div><div class="mk">Beta 5J</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="modal-section-lbl">Produkte & Technologie</div>
+        <div class="modal-products">${(s.products||[]).map(p=>`<span class="modal-product">${p}</span>`).join('')}</div>
+      </div>
+      <div>
+        <div class="modal-section-lbl">Relevanz für Humanoid-Robotik</div>
+        <div class="modal-rel-type">${rel.relevance_type}</div>
+        <div class="modal-reasons">${(rel.reasons||[]).map(r=>`<div class="modal-reason">${r}</div>`).join('')}</div>
+      </div>
+      <div class="modal-risk">
+        <div class="modal-risk-lbl">⚠ Risiken</div>
+        <div class="modal-risk-text">${s.risk_notes}</div>
+      </div>
+      ${presence.length ? `<div>
+        <div class="modal-section-lbl">Enthalten in diesen ETFs</div>
+        <div class="modal-etf-chips">${presence.map(p=>`<span class="modal-etf-chip" style="background:${COLOR[p.etfId]}">${p.name} <span class="ep">${p.pct.toFixed(2)}%</span></span>`).join('')}</div>
+      </div>` : ''}
+    </div>`;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+document.getElementById('cards-grid').addEventListener('click', e => {
+  const link = e.target.closest('.stock-link');
+  if(link) openModal(link.dataset.stock);
+});
+
 document.querySelectorAll('#chips .chip').forEach(chip => {
   chip.addEventListener('click', () => {
     const key = chip.dataset.etf;
