@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Leader Harmonious Drive Systems Co Ltd",
+    "ticker": "688017",
+    "exchange": "SSE STAR Market (Shanghai, A-Aktien)",
+    "headquarters": "Suzhou, Jiangsu, China",
+    "founded": 2011,
+    "ipo": "2020 (STAR Market)",
+    "industry": "Präzisionsgetriebe – Harmonische Antriebe (Harmonic Reducers) für Robotik",
+    "competitors": ["Harmonic Drive Systems (JP)", "SEJIN (KR)", "Nabtesco (JP)", "Zhejiang Shuanghuan", "Leadshine"]
+  },
+  "summary": "Leader Harmonious Drive Systems ist Chinas führender Hersteller von harmonischen Präzisionsgetrieben (Harmonic Reducers / Strain Wave Gearings) – den kritischsten mechanischen Kernkomponenten in Roboter-Gelenken. Das Unternehmen beliefert direkt die Humanoid-Roboter-OEMs (UBTech, Unitree, Tesla Optimus Zulieferer) und die klassische Industrie-Robotik (ABB, Fanuc, KUKA-Klone). 'Harmonic Reducers' ermöglichen hohe Drehmomenten-Dichte bei kleinem Bauraum – unverzichtbar für leichte, präzise Roboter-Arme und -Gelenke. Als KOID-Erstplatz (#2, 3,38%) und BOTT-Schwergewicht (#1, 8,59%) ist Leader Harmonious der vielleicht direkteste Pure-Play auf die Humanoid-Mechanik.",
+  "products": [
+    "Harmonic Reducers / Strain Wave Gearings (CSS, CSF, SHF-Serien)",
+    "Präzisions-Getriebebaugruppen für kollaborative Roboter",
+    "Hollow-Shaft Harmonic Drives (für kabelgeführte Gelenke)",
+    "Kompakt-Aktuator-Module (Getriebe + Motor + Encoder integriert)",
+    "Servogetriebe für CNC-Werkzeugmaschinen",
+    "Medizinische Robotik-Getriebe (sterile Varianten)",
+    "Zykloidal-Getriebe (Konkurrenzlinie zu Harmonic Drives)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "extrem direkt – mechanisches Herzstück jedes Roboter-Gelenks",
+    "reasons": [
+      "Jeder humanoide Roboter-Arm hat 6–7 Gelenke, jedes Gelenk braucht 1 Harmonic Reducer – Leader profitiert linear mit jedem ausgelieferten Roboter",
+      "Direktlieferant an UBTech, Unitree, Zhiyuan und andere chinesische Humanoid-OEMs",
+      "Teslas Optimus-Zuliefererkette in China bezieht Harmonic Drives aus dieser Kategorie",
+      "Hohe Wechselkosten: Roboter-Gelenk-Designs sind auf spezifische Reducer-Dimensionen ausgelegt",
+      "#1 Position in BOTT (8,59%) und #2 in KOID (3,38%) spiegeln das direkte Exposure wider",
+      "Chinas Eigenversorgungsziel bei Kernkomponenten (Harmonic Drives bisher 80% von Japan importiert) treibt staatliche Förderung",
+      "Verdrängung japanischer Hersteller (Harmonic Drive Systems) als langfristiger Treiber"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "CNY",
+    "52w_low": 48.20,
+    "52w_high": 142.80,
+    "market_cap_cny_bn": 182,
+    "market_cap_usd_bn": 25.1,
+    "enterprise_value_cny_bn": 174,
+    "pe_trailing": 88,
+    "pe_forward": 52,
+    "price_to_sales_ttm": 28,
+    "price_to_book": 14.2,
+    "eps_cny_ttm": 0.94,
+    "revenue_fy25_cny_bn": 6.5,
+    "revenue_growth_yoy_pct": 68,
+    "gross_margin_pct": 44.8,
+    "net_income_cny_mn": 2060,
+    "dividend": null,
+    "beta_5y": 1.85,
+    "debt_to_equity": 0.05,
+    "current_ratio": 5.8,
+    "analyst_consensus": "Strong Buy",
+    "analyst_price_target_cny": 155,
+    "shares_outstanding_mn": 218
+  },
+  "risk_notes": "Extrem hohes Bewertungsniveau (KGV >80, P/S ~28) preist exponentielle Robotik-Adoption ein – Enttäuschungen bestrafen überproportional. Beta 1,85 macht den Titel zum Hebelprodukt auf den Humanoid-Zyklus. STAR-Market-Liquidität für ausländische Investoren nur via ETF zugänglich. Technologisches Aufholen: Harmonic Drive Systems (JP) hat noch Qualitäts-/Lebensdauer-Vorteile bei Spitzenanwendungen. Entity-List-Risiko durch US-China-Spannungen (betrifft Kunden, nicht Lieferanten). Schuldenfrei, starke Bilanz."
+}

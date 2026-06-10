@@ -1,0 +1,58 @@
+{
+  "company": {
+    "name": "STMicroelectronics NV",
+    "ticker": "STM",
+    "exchange": "NYSE / Borsa Italiana (STMMI) / Euronext Paris",
+    "headquarters": "Genf, Schweiz (inkorporiert: Niederlande)",
+    "founded": 1987,
+    "ipo": "1994 (NYSE)",
+    "industry": "Halbleiter – Mikrocontroller, Leistungshalbleiter, MEMS-Sensoren",
+    "competitors": ["Renesas Electronics", "NXP Semiconductors", "Infineon Technologies", "Texas Instruments", "Microchip Technology"]
+  },
+  "summary": "STM ist ein europäisch-amerikanisches Chip-Schwergewicht, gegründet durch Fusion von SGS Microelectronics (IT) und Thomson Semiconductor (FR). Kerngeschäft: Mikrocontroller (STM32 – Weltmarktführer bei Arm-MCUs), MEMS-Sensoren, Leistungshalbleiter (SiC/GaN für EVs und Industrieautomation). Automotive macht ~45% des Umsatzes – der EV-Abschwung 2024/25 hat STM hart getroffen. Für Robotik ist vor allem die STM32-Familie (Motor Control, Sensor Fusion) und die SiC-Leistungselektronik für Antriebe relevant.",
+  "products": [
+    "STM32 Mikrocontroller (Arm Cortex-M, weltweite #1 bei 32-Bit-MCUs)",
+    "SiC MOSFETs & Dioden (Automotive + Industrie)",
+    "MEMS-Sensoren (Accelerometer, Gyro, IMU – u.a. in Apple-Geräten)",
+    "Leistungsmodule für Motor Control (STSPIN-Serie)",
+    "Wireless Connectivity ICs (Bluetooth, Wi-Fi, Zigbee)",
+    "Imaging-ICs (ToF-Sensoren, SPAD)",
+    "AI-fähige Edge-MCUs (STM32N6 mit NPU)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Kernkomponenten für Robot-Joints & Sensorik",
+    "reasons": [
+      "STM32-MCUs steuern Motor-Encoder, Gelenk-Controller und Sensor-Fusion in Industrie- und Humanoid-Robotern",
+      "STSPIN-Motortreiber-ICs sind Standard in BLDC-Anwendungen (Roboter-Gelenke, Aktuatoren)",
+      "MEMS IMUs (LSM6DSx) für Balancing und Positionsregelung in humanoiden Systemen",
+      "SiC-Leistungshalbleiter für effiziente Antriebsstränge in mobilen Robotern",
+      "ToF/SPAD-Sensoren (VL53xx) für Hinderniserkennung und Näherungsdetektion",
+      "STM32N6 mit integrierter NPU ermöglicht Edge-AI direkt im Gelenk-Controller"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "USD",
+    "52w_low": 16.80,
+    "52w_high": 31.40,
+    "market_cap_usd_bn": 19.2,
+    "enterprise_value_usd_bn": 17.8,
+    "pe_trailing": 28,
+    "pe_forward": 16,
+    "price_to_sales_ttm": 1.5,
+    "price_to_book": 1.8,
+    "eps_ttm_usd": 0.74,
+    "revenue_fy25_usd_bn": 12.8,
+    "revenue_growth_yoy_pct": -4,
+    "gross_margin_pct": 37.5,
+    "net_income_usd_mn": 620,
+    "dividend_yield_pct": 0.8,
+    "beta_5y": 1.45,
+    "debt_to_equity": 0.08,
+    "current_ratio": 2.8,
+    "analyst_consensus": "Hold",
+    "analyst_price_target_usd": 29,
+    "shares_outstanding_mn": 890
+  },
+  "risk_notes": "Stark abhängig vom Automotive-Zyklus (EV-Schwäche 2024/25 drückt Umsatz und Margen erheblich). STM32-MCU-Markt unter Druck durch günstige chinesische Konkurrenz (GD32 etc.). SiC-Aufbau kostenintensiv, Preisverfall durch Überkapazitäten möglich. Halbstaatliche Eigentümerstruktur (FR/IT-Staaten) stabilisiert politisch, kann aber M&A-Agilität einschränken. Keine signifikante Verschuldung, solide Bilanz."
+}

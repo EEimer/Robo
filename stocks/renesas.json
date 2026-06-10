@@ -1,0 +1,61 @@
+{
+  "company": {
+    "name": "Renesas Electronics Corp",
+    "ticker": "6723",
+    "exchange": "Tokyo Stock Exchange (TSE Prime)",
+    "headquarters": "Kōtō, Tokyo, Japan",
+    "founded": 2010,
+    "ipo": "2003 (als Renesas Technology, Fusion Hitachi+Mitsubishi); 2010 Neugründung mit NEC Electronics",
+    "industry": "Halbleiter – Automotive-MCUs, Industrie-MCUs, Analog & Mixed Signal",
+    "competitors": ["STMicroelectronics", "NXP Semiconductors", "Infineon Technologies", "Texas Instruments", "Microchip Technology"]
+  },
+  "summary": "Renesas ist Japans größter und weltweiter #3-Hersteller von Mikrocontrollern (MCUs). Automotive ist das Herzstück (~55% Umsatz): ADAS-Chips, Body-Controller, EV-Invertersteuerungen. Die Industrie-Sparte wächst mit Robotik und Fabrikautomation. 2023 übernahm Renesas Altium ($5,9 Mrd.) – den weltweiten Marktführer für PCB-Designsoftware – eine Softwarewette auf den Chip-Design-Ökosystem-Lock-in. RZ-Prozessoren mit Echtzeit-Cortex-R-Kernen werden zunehmend in Robotik-Controllern eingesetzt.",
+  "products": [
+    "RA/RX/RL78 Mikrocontroller-Familien (Industrie & IoT)",
+    "RZ Mikroprozessoren (Linux-fähig, Echtzeit-Kerne – Robotik-Controller)",
+    "R-Car System-on-Chips (ADAS, Cockpit, autonomes Fahren)",
+    "Renesas Synergy Platform (IoT-Framework + MCU)",
+    "Analog Mixed Signal ICs (Power Management, Sensing)",
+    "Altium Designer / CircuitMaker (PCB-Designsoftware)",
+    "Automotive EV/HEV Power Train Controller ICs",
+    "Motor Control Lösungen (RX, RA + FSP-Framework)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – MCU & SoC für Roboter-Controller und Echtzeitsteuerungen",
+    "reasons": [
+      "RZ/T2M und RZ/T2L sind speziell für Servo-Roboter-Controller optimiert (EtherCAT, Echtzeit-PWM, Encoder)",
+      "RA6M5/RA8M1 MCUs mit TrustZone steuern Safety-kritische Gelenke und Greifer",
+      "R-Car V4H SoC (Vision AI) ermöglicht Kamerabilderverarbeitung direkt im Roboter",
+      "Renesas verfolgt aktiv den Robotik-Markt als Wachstumsfeld nach Automotive",
+      "Altium-Akquisition sichert Ökosystem-Lock-in bei Robot-PCB-Design",
+      "Japanisches Industrie-Netzwerk (Yaskawa, Fanuc, Kawasaki) als Stammkunden"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "JPY",
+    "52w_low": 1871,
+    "52w_high": 3058,
+    "market_cap_jpy_bn": 2640,
+    "market_cap_usd_bn": 17.6,
+    "enterprise_value_jpy_bn": 3220,
+    "pe_trailing": 17,
+    "pe_forward": 14,
+    "price_to_sales_ttm": 1.8,
+    "price_to_book": 2.1,
+    "eps_jpy_ttm": 139,
+    "revenue_fy25_jpy_bn": 1468,
+    "revenue_fy25_usd_bn": 9.8,
+    "revenue_growth_yoy_pct": 1,
+    "gross_margin_pct": 52.4,
+    "net_income_jpy_bn": 155,
+    "dividend_yield_pct": 1.6,
+    "beta_5y": 1.20,
+    "debt_to_equity": 0.55,
+    "current_ratio": 2.4,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_jpy": 3200,
+    "shares_outstanding_mn": 1178
+  },
+  "risk_notes": "Automotive-Abhängigkeit (~55%) macht Renesas anfällig für EV-Zyklen und ADAS-Budgetkürzungen. Altium-Akquisition war teuer ($5,9 Mrd. für ein Softwareunternehmen) – Integration und Synergien noch zu beweisen. Yen-Schwäche hilft Umsatz in JPY, schadet USD-Investoren. Starke Abhängigkeit von TSMC-Fertigungskapazitäten. Chinese Konkurrenz (NCET, GigaDevice) im MCU-Markt wächst aggressiv. Dividende moderat, kein Aktienrückkaufprogramm."
+}

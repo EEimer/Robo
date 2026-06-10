@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Infineon Technologies AG",
+    "ticker": "IFX",
+    "exchange": "XETRA / Frankfurt (IFX GR)",
+    "headquarters": "Neubiberg (München), Deutschland",
+    "founded": 1999,
+    "ipo": "2000 (Abspaltung von Siemens)",
+    "industry": "Halbleiter – Leistungshalbleiter, Automotive-Chips, Sicherheits-ICs",
+    "competitors": ["STMicroelectronics", "ON Semiconductor", "ROHM", "Wolfspeed", "NXP Semiconductors"]
+  },
+  "summary": "Infineon ist Europas größter Halbleiterhersteller nach Umsatz und weltweiter Marktführer bei Automotive-Chips und Leistungshalbleitern. Kernstärken: SiC (Silicon Carbide) für Elektroauto-Inverter, GaN-Leistungshalbleiter, Radar-Chips (XENSIV) für ADAS und Robotik-Sensorik, sowie industrielle Motortreiber. Die Akquisition von Cypress Semiconductor (2020, $10 Mrd.) hat das MCU-Portfolio und die Automotive-Sicherheitssparte massiv erweitert. Infineon ist direkt im ROBO-ETF gelistet und im KOID-ETF vertreten.",
+  "products": [
+    "SiC-Module & MOSFETs (CoolSiC – #1 Marktanteil Automotive)",
+    "GaN-Leistungshalbleiter (CoolGaN – Adapter, Netzteil, Industrie)",
+    "XENSIV Radar-Chips (60/77/120 GHz – Robotik-Präsenzdetektierung)",
+    "AURIX Automotive-MCUs (funktionale Sicherheit ISO 26262)",
+    "PSoC Mikrocontroller (ehemals Cypress – Motor Control, IoT)",
+    "Sicherheits-ICs (TPM, SIM, OPTIGA Trust)",
+    "Industrielle Motortreiber & Gate-Driver ICs",
+    "MEMS-Mikrofone (Roboter-Voice-Interface)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Leistungselektronik, Sensorik & Sicherheits-Chips für Roboter",
+    "reasons": [
+      "SiC/IGBT-Module für hocheffiziente Gelenk-Aktuatoren und Antriebssysteme in humanoiden Robotern",
+      "XENSIV-Radarchips ermöglichen berührungslose Präsenz- und Gestendetektion rund um Roboter",
+      "AURIX MCUs als funktional-sichere Steuereinheiten für kollaborative Roboter (ISO 13849)",
+      "PSoC MCUs mit FOC (Field-Oriented Control) steuern BLDC-Motoren in Roboter-Gelenken direkt",
+      "GaN-Konverter ermöglichen kompakte, leichte Netzteile für mobile humanoide Systeme",
+      "CoolMOS-Portfolio für Robotik-Servoantriebe und regenerative Bremsung"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "EUR",
+    "52w_low": 22.40,
+    "52w_high": 41.80,
+    "market_cap_eur_bn": 32.5,
+    "market_cap_usd_bn": 35.5,
+    "enterprise_value_eur_bn": 38.2,
+    "pe_trailing": 24,
+    "pe_forward": 18,
+    "price_to_sales_ttm": 2.1,
+    "price_to_book": 2.4,
+    "eps_eur_ttm": 1.18,
+    "revenue_fy25_eur_bn": 15.4,
+    "revenue_growth_yoy_pct": 3,
+    "gross_margin_pct": 40.2,
+    "net_income_eur_mn": 1340,
+    "dividend_yield_pct": 1.2,
+    "beta_5y": 1.35,
+    "debt_to_equity": 0.42,
+    "current_ratio": 2.1,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_eur": 42,
+    "shares_outstanding_mn": 1150
+  },
+  "risk_notes": "Abhängig vom Automotive-Zyklus (EV-Abschwung 2024/25 belastend). SiC-Überkapazitäten durch aggressiven China-Wettbewerb (BYD Semiconductor, SICC) drücken Preise. Cypress-Integration vollständig, aber hohe Goodwill-Bilanzposition. XENSIV-Radar verliert Auto-Marktanteile an Texas Instruments und NXP. Stark exportabhängig – Euro-Stärke belastend. Bundesrepublik-Nähe (IPCEI-Förderprojekte) schützt politisch. Dividende und Aktienrückkäufe solide."
+}
