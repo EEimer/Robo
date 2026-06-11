@@ -168,7 +168,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <div class="eyebrow">Robotik / Physical AI &middot; Sleeve 10% &middot; v3</div>
   <h1>7 Robotik-ETFs im Vergleich</h1>
   <p class="sub">Holdings aus offiziellen Anbieter-CSVs (Stand 09.–10. Juni 2026). Alle Positionen aufklappbar. RBTZ entfernt. Chips oben zum Ein-/Ausblenden.</p>
-  <div class="datestamp">KOID 09.06 &middot; HUMN 09.06 &middot; 2807 09.06 &middot; BOTT 10.06 &middot; ROBO 10.06 &middot; BOTZ/RBOT: ältere Quelle, Gewichte gerundet</div>
+  <div class="datestamp">KOID 09.06 &middot; HUMN 09.06 &middot; 2807 09.06 &middot; BOTT 10.06 &middot; BOTZ 10.06 &middot; ROBO 10.06 &middot; RBOT: ältere Quelle, Gewichte gerundet</div>
 </header>
 
 <div class="chips" id="chips">
@@ -221,19 +221,19 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <td class="num col-robo">~$255M (US)</td></tr>
 <tr><th>Holdings</th>
   <td class="num col-koid">50</td><td class="num col-bott">30</td><td class="num col-humn">42</td><td class="num col-hk">25</td>
-  <td class="num col-botz">~66</td><td class="num col-rbot">~130</td>
+  <td class="num col-botz">61</td><td class="num col-rbot">~130</td>
   <td class="num col-robo">78</td></tr>
 <tr class="hl"><th>Top-10-Anteil</th>
   <td class="num col-koid"><b>~30%</b></td><td class="num col-bott">~54%</td><td class="num col-humn">~47%</td>
-  <td class="num col-hk">~62%</td><td class="num col-botz">~59%</td>
+  <td class="num col-hk">~62%</td><td class="num col-botz">58,6%</td>
   <td class="num col-rbot">~46%</td><td class="num col-robo"><b>~17%</b></td></tr>
 <tr><th>Größte Position</th>
   <td class="col-koid">Credo 3,75%</td><td class="col-bott">Leader Harmonious 8,59%</td><td class="col-humn">Tesla 8,19%</td>
-  <td class="col-hk">Han's Laser 10,45%</td><td class="col-botz">ABB ~9,1%</td>
+  <td class="col-hk">Han's Laser 10,45%</td><td class="col-botz">ABB 9,2%</td>
   <td class="col-rbot">Intel 9,7%</td><td class="col-robo">Infineon 2,32%</td></tr>
 <tr><th>Nvidia-Gewicht</th>
   <td class="num col-koid">1,85%</td><td class="num col-bott">4,56%</td><td class="num col-humn">4,05%</td><td class="num col-hk">0%</td>
-  <td class="num col-botz">~8,6%</td><td class="num col-rbot">2,87%</td>
+  <td class="num col-botz">8,6%</td><td class="num col-rbot">2,87%</td>
   <td class="num col-robo">1,33%</td></tr>
 <tr><th>Index / Stil</th>
   <td class="col-koid">MerQube Humanoid &amp; Embodied Intel., Equal-Weight</td>
@@ -277,7 +277,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 
 <!-- ===== LÄNDER ===== -->
 <h2>Länder-Exposure</h2>
-<p class="h2sub">Aus offiziellen Holdings-Daten (KOID, HUMN, 2807, BOTT, ROBO) und bekannten Index-Zusammensetzungen (BOTZ, RBOT) abgeleitet.</p>
+<p class="h2sub">Aus offiziellen Holdings-Daten (KOID, HUMN, 2807, BOTT, BOTZ, ROBO) und bekannten Index-Zusammensetzungen (RBOT) abgeleitet.</p>
 <div class="geo">
   <div class="geo-row" data-etf="koid">
     <span class="geo-lbl" style="color:var(--koid)">KOID</span>
@@ -387,7 +387,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px">Caveats</div>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
         <li>⚠ &nbsp;Gewichte tagesabhängig — vor Order aktuelle Liste beim Anbieter ziehen</li>
-        <li>⚠ &nbsp;BOTZ/RBOT: keine aktuelle CSV, Gewichte approximiert</li>
+        <li>⚠ &nbsp;RBOT: keine aktuelle CSV, Gewichte approximiert</li>
         <li>⚠ &nbsp;Aktienkennzahlen: Schätzwerte, kein Live-Feed</li>
         <li>⚠ &nbsp;Keine Anlageberatung</li>
       </ul>
@@ -530,13 +530,37 @@ hk: [
   {n:"Xi'an Bright Laser Tech",t:'688333 C1',p:1.01}
 ],
 botz: [
-  {n:'ABB Ltd',t:'ABBN',p:9.1},{n:'Keyence Corp',t:'6861',p:8.9},
-  {n:'Nvidia Corp',t:'NVDA',p:8.6},{n:'Fanuc Corp',t:'6954',p:8.5},
-  {n:'Intuitive Surgical Inc',t:'ISRG',p:5.8},{n:'Yaskawa Electric',t:'6506',p:4.2},
-  {n:'Mitsubishi Electric',t:'6503',p:4.0},{n:'SMC Corp',t:'6273',p:3.5},
-  {n:'Daifuku Co Ltd',t:'6383',p:3.3},{n:'Dynatrace Inc',t:'DT',p:3.1},
-  {n:'Omron Corp',t:'6645',p:2.8},{n:'Ubtech Robotics',t:'9880',p:2.5},
-  {n:'Rainbow Robotics',t:'277810',p:2.0},{n:'Doosan Robotics',t:'454910',p:1.5}
+  {n:'ABB Ltd',t:'ABBN SW',p:9.20},{n:'Keyence Corp',t:'6861 JP',p:9.16},
+  {n:'Nvidia Corp',t:'NVDA',p:8.58},{n:'Fanuc Corp',t:'6954 JP',p:8.34},
+  {n:'Intuitive Surgical Inc',t:'ISRG',p:6.51},{n:'Shenzhen Inovance Technology',t:'300124 C2',p:4.46},
+  {n:'SMC Corp',t:'6273 JP',p:3.89},{n:'Daifuku Co Ltd',t:'6383 JP',p:3.32},
+  {n:'Robotechnik Intelligent Tech',t:'300757 C2',p:2.86},{n:'Alphabet Inc',t:'GOOGL',p:2.32},
+  {n:'Yaskawa Electric Corp',t:'6506 JP',p:2.19},{n:'Aurora Innovation Inc',t:'AUR',p:2.18},
+  {n:'Cognex Corp',t:'CGNX',p:2.14},{n:'Baidu Inc ADR',t:'BIDU',p:1.95},
+  {n:'AeroVironment Inc',t:'AVAV',p:1.90},{n:'Tesla Inc',t:'TSLA',p:1.85},
+  {n:'Horizon Robotics Inc',t:'9660 HK',p:1.67},{n:'Rainbow Robotics',t:'277810 KS',p:1.67},
+  {n:'Xiaomi Corp-Class B',t:'1810 HK',p:1.60},{n:'Omron Corp',t:'6645 JP',p:1.55},
+  {n:'XPeng Inc ADR',t:'XPEV',p:1.50},{n:'UBTech Robotics Corp Ltd-H',t:'9880 HK',p:1.37},
+  {n:'JBT Marel Corp',t:'JBTM',p:1.36},{n:'Symbotic Inc',t:'SYM',p:1.14},
+  {n:'UiPath Inc',t:'PATH',p:1.09},{n:'Renishaw PLC',t:'RSW LN',p:1.09},
+  {n:'Doosan Robotics Inc',t:'454910 KS',p:0.99},{n:'AutoStore Holdings Ltd',t:'AUTO NO',p:0.91},
+  {n:'Estun Automation Co Ltd',t:'002747 C2',p:0.87},{n:'AVIC Chengdu UAS Co Ltd',t:'688297 C1',p:0.84},
+  {n:'Hiab OYJ',t:'HIAB FH',p:0.77},{n:'Beijing Roborock Technology',t:'688169 C1',p:0.76},
+  {n:'Siasun Robot & Automation',t:'300024 C2',p:0.70},{n:'Shanghai Microport Medbot-H',t:'2252 HK',p:0.69},
+  {n:'Pony AI Inc',t:'PONY',p:0.63},{n:'Robotis Co Ltd',t:'108490 KS',p:0.58},
+  {n:'ATS Corp',t:'ATS CN',p:0.57},{n:'Tecan Group AG',t:'TECN SW',p:0.54},
+  {n:'Ouster Inc',t:'OUST',p:0.53},{n:'Hesai Group',t:'HSAI',p:0.50},
+  {n:'OneRobotics Shenzhen Co-H',t:'6600 HK',p:0.45},{n:'WeRide Inc ADR',t:'WRD',p:0.43},
+  {n:'RoboSense Technology Co Ltd',t:'2498 HK',p:0.41},{n:'Omnicell Inc',t:'OMCL',p:0.38},
+  {n:'Procept BioRobotics Corp',t:'PRCT',p:0.36},{n:'Shenzhen Dobot Corp Ltd-H',t:'2432 HK',p:0.31},
+  {n:'Exail Technologies',t:'EXA FP',p:0.31},{n:'EFORT Intelligent Robot Co',t:'688165 C1',p:0.29},
+  {n:'Appian Corp',t:'APPN',p:0.22},{n:'Robostar Co Ltd',t:'090360 KS',p:0.15},
+  {n:'Yuil Robotics Co Ltd',t:'388720 KS',p:0.14},{n:'Shibaura Machine Co Ltd',t:'6104 JP',p:0.13},
+  {n:'Hirata Corp',t:'6258 JP',p:0.12},{n:'Serve Robotics Inc',t:'SERV',p:0.11},
+  {n:'MiniEye Technology Co Ltd-H',t:'2431 HK',p:0.10},{n:'Cerence Inc',t:'CRNC',p:0.10},
+  {n:'Richtech Robotics Inc',t:'RR',p:0.09},{n:'EHang Holdings Ltd ADR',t:'EH',p:0.08},
+  {n:'AInnovation Technology Gro-H',t:'2121 HK',p:0.06},{n:'Angel Robotics Co Ltd',t:'455900 KS',p:0.05},
+  {n:'iMotion Automotive Technol-H',t:'1274 HK',p:0.00}
 ],
 rbot: [
   {n:'Intel Corporation',t:'INTC',p:9.68},{n:'Advanced Micro Devices',t:'AMD',p:7.64},
@@ -629,10 +653,10 @@ const CARDS = [
  layers:['⚡ Laser/Fertigung','👁️ Machine Vision','🧠 AI-Software (Baidu, iFlytek)','🏭 Industrieautomation'],
  note:'HKD-Handel, ausschüttend. Alle 25 Holdings sind China/HK. Datenstand: 09.06.2026.'},
 {id:'botz',color:'#2E5FA3',name:'BOTZ',fullname:'Global X Robotics & Artificial Intelligence',verdict:'MEGA-CAP ALLWETTER',vclass:'v-mid',
- kpis:[['0,68%','TER'],['$3,6Mrd','AUM'],['~66','Holdings'],['~59%','Top 10']],
+ kpis:[['0,68%','TER'],['$3,6Mrd','AUM'],['61','Holdings'],['58,6%','Top 10']],
  buyline:'Du kaufst: <b>die etablierten Großen</b> - ABB, Fanuc, Keyence plus Nvidia. Liquidester Fonds, aber Mega-Cap-Klumpen.',
  layers:['🏭 Industrieautomation (ABB, Fanuc, Yaskawa)','👁️ Machine Vision (Keyence)','💡 Compute (Nvidia 8,6%)','🏥 MedTech-Robotik (Intuitive)'],
- note:'Beta ~1,5. UCITS-Variante LSE USD existiert (0,50%, ~$150M, Spread ~1%). US-Domizil = Estate Tax. Gewichte approximiert.'},
+ note:'Beta ~1,5. UCITS-Variante LSE USD existiert (0,50%, ~$150M, Spread ~1%). US-Domizil = Estate Tax. Datenstand: 10.06.2026.'},
 {id:'rbot',color:'#1F8A9E',name:'RBOT',fullname:'iShares Automation & Robotics UCITS',verdict:'STRUKTURELL TOP, THEMATISCH VERFEHLT',vclass:'v-mid',
  kpis:[['0,40%','TER'],['~$4Mrd','AUM'],['~130','Holdings'],['~46%','Top 10']],
  buyline:'Du kaufst: <b>Chip-Equipment + Software-Automation</b> - Intel, AMD, Testanlagen, Enterprise-SW. Strukturell perfekt, aber deine Humanoid-Schaufeln nur homöopathisch.',
