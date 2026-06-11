@@ -160,6 +160,31 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 .xtags{display:inline-flex;flex-wrap:nowrap;gap:2px;flex-shrink:0}
 .xtag{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;white-space:nowrap;line-height:1.5}
 @media(max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}.kpi:nth-child(2){border-right:none}.hrow{grid-template-columns:120px 1fr 40px}}
+
+/* ===== Alle Firmen ===== */
+.sort-tabs{display:flex;gap:6px;margin-bottom:16px}
+.sort-tab{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;padding:5px 13px;border-radius:6px;border:1.5px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;transition:all .12s}
+.sort-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sort-tab:hover:not(.active){border-color:var(--ink);color:var(--ink)}
+.firmen-list{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.firmen-row{display:grid;grid-template-columns:36px minmax(180px,2fr) 1fr 72px;gap:10px;align-items:center;padding:7px 14px;border-bottom:1px solid var(--line);transition:background .1s}
+.firmen-row:last-child{border-bottom:none}
+.firmen-row:hover{background:#F6F8FA}
+.firmen-rank{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-align:right}
+.firmen-info{display:flex;flex-direction:column;gap:1px;min-width:0}
+.firmen-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.firmen-name.stock-link{cursor:pointer;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(0,0,0,.2)}
+.firmen-name.stock-link:hover{text-decoration-color:var(--ink)}
+.firmen-tick{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted)}
+.firmen-chips{display:flex;flex-wrap:wrap;gap:3px}
+.fetf-chip{font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.firmen-sum-col{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.firmen-sum{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;text-align:right}
+.firmen-count{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);text-align:right}
+.firmen-header{display:grid;grid-template-columns:36px minmax(180px,2fr) 1fr 72px;gap:10px;padding:7px 14px 5px;border-bottom:2px solid var(--ink)}
+.firmen-header span{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.firmen-header span:last-child{text-align:right}
+@media(max-width:680px){.firmen-row,.firmen-header{grid-template-columns:28px 1fr 52px}.firmen-chips-col{display:none}}
 </style>
 </head>
 <body>
@@ -370,6 +395,16 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 <h2>Holdings &amp; Industrie-Layer</h2>
 <p class="h2sub">Top 10 direkt sichtbar, alle weiteren Positionen aufklappbar. Daten aus offiziellen Anbieter-CSVs wo vorhanden.</p>
 <div class="grid" id="cards-grid"></div>
+
+<!-- ===== ALLE FIRMEN ===== -->
+<h2>Alle Firmen</h2>
+<p class="h2sub">Alle Positionen über alle 7 ETFs aggregiert. Gleiche Firma in mehreren ETFs wird zusammengeführt.</p>
+<div class="sort-tabs" id="firmen-sort">
+  <button class="sort-tab active" data-sort="sum" onclick="buildAllFirmen('sum',this)">Gewichtssumme</button>
+  <button class="sort-tab" data-sort="count" onclick="buildAllFirmen('count',this)">Anzahl ETFs</button>
+  <button class="sort-tab" data-sort="max" onclick="buildAllFirmen('max',this)">Max. Einzelgewicht</button>
+</div>
+<div id="firmen-table"></div>
 
 <footer>
   <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start">
@@ -774,6 +809,79 @@ function buildCards() {
 }
 
 buildCards();
+
+// ===== Alle Firmen =====
+function buildAllFirmen(sortBy, btn) {
+  if(btn) {
+    document.querySelectorAll('#firmen-sort .sort-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  const map = new Map();
+  Object.keys(DATA).forEach(etfId => {
+    (DATA[etfId]||[]).forEach(h => {
+      if(!h.p) return;
+      const key = normName(h.n);
+      if(!map.has(key)) map.set(key, {name: h.n, ticker: h.t||'', etfs: []});
+      const entry = map.get(key);
+      // avoid duplicate etf entry (shouldn't happen but guard)
+      if(!entry.etfs.find(x => x.etfId === etfId)) {
+        entry.etfs.push({etfId, pct: h.p});
+      }
+    });
+  });
+
+  let entries = [...map.values()];
+  entries.forEach(e => {
+    e.sum = e.etfs.reduce((s, x) => s + x.pct, 0);
+    e.count = e.etfs.length;
+    e.max = Math.max(...e.etfs.map(x => x.pct));
+  });
+
+  if(sortBy === 'count') {
+    entries.sort((a, b) => b.count - a.count || b.sum - a.sum);
+  } else if(sortBy === 'max') {
+    entries.sort((a, b) => b.max - a.max || b.sum - a.sum);
+  } else {
+    entries.sort((a, b) => b.sum - a.sum || b.count - a.count);
+  }
+
+  const container = document.getElementById('firmen-table');
+  const etfOrder = ['koid','bott','humn','hk','botz','rbot','robo'];
+
+  let html = '<div class="firmen-list">';
+  html += '<div class="firmen-header"><span>#</span><span>Firma</span><span class="firmen-chips-col">ETFs</span><span>Summe</span></div>';
+
+  entries.forEach((e, i) => {
+    const etfChips = e.etfs
+      .slice().sort((a, b) => etfOrder.indexOf(a.etfId) - etfOrder.indexOf(b.etfId))
+      .map(x => `<span class="fetf-chip" style="background:${COLOR[x.etfId]}22;color:${COLOR[x.etfId]};border:1px solid ${COLOR[x.etfId]}55">${x.etfId === 'hk' ? '2807' : x.etfId.toUpperCase()} ${x.pct.toFixed(2)}%</span>`)
+      .join('');
+
+    const sk = getStockKey(e.ticker);
+    const nameEl = sk
+      ? `<span class="firmen-name stock-link" data-stock="${sk}" style="cursor:pointer">${e.name}</span>`
+      : `<span class="firmen-name">${e.name}</span>`;
+
+    const countLabel = e.count > 1 ? `${e.count} ETFs` : '1 ETF';
+
+    html += `<div class="firmen-row">
+      <span class="firmen-rank">${i + 1}</span>
+      <div class="firmen-info">${nameEl}<span class="firmen-tick">${e.ticker}</span></div>
+      <div class="firmen-chips firmen-chips-col">${etfChips}</div>
+      <div class="firmen-sum-col"><span class="firmen-sum">${e.sum.toFixed(2)}%</span><span class="firmen-count">${countLabel}</span></div>
+    </div>`;
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+
+  container.querySelectorAll('.stock-link').forEach(el => {
+    el.addEventListener('click', () => openModal(el.dataset.stock));
+  });
+}
+
+buildAllFirmen('sum');
 
 // ===== Modal =====
 const overlay = document.getElementById('modal-overlay');
