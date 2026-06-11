@@ -137,6 +137,16 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 .modal-risk{background:#FEF9F0;border:1px solid #EDD9A3;border-radius:12px;padding:14px 16px}
 .modal-risk-lbl{font-weight:700;color:#8A6112;margin-bottom:6px;font-size:10.5px;text-transform:uppercase;letter-spacing:.09em}
 .modal-risk-text{font-size:12.5px;line-height:1.65;color:#5a4220}
+.modal-segments{display:flex;flex-direction:column;gap:10px}
+.modal-seg{display:flex;flex-direction:column;gap:5px}
+.modal-seg-bar-row{display:grid;grid-template-columns:130px 1fr 44px 70px;gap:8px;align-items:center}
+.modal-seg-lbl{font-size:12px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.modal-seg-track{background:#EEF1F4;border-radius:5px;height:22px;overflow:hidden}
+.modal-seg-fill{height:100%;border-radius:5px;display:flex;align-items:center;padding-left:7px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:#fff;min-width:22px}
+.modal-seg-pct{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;text-align:right;color:var(--ink)}
+.modal-seg-rev{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-align:right;white-space:nowrap}
+.modal-seg-desc{font-size:11.5px;color:var(--muted);line-height:1.55;padding-left:2px}
+@media(max-width:500px){.modal-seg-bar-row{grid-template-columns:90px 1fr 36px 58px}}
 .modal-etf-chips{display:flex;flex-wrap:wrap;gap:8px}
 .modal-etf-chip{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:9px;font-size:12px;font-weight:700;color:#fff}
 .modal-etf-chip .ep{font-family:'IBM Plex Mono',monospace;font-size:10.5px;opacity:.85}
@@ -397,11 +407,20 @@ const COLOR = {koid:'#0F7B6C',humn:'#C0392B',hk:'#B07B1E',botz:'#2E5FA3',rbot:'#
 
 let STOCKS = {};
 Promise.all([
-  ['crdo',   'stocks/credo.json'],
-  ['leader', 'stocks/leader.json'],
-  ['stm',    'stocks/stm.json'],
-  ['infineon','stocks/infineon.json'],
-  ['renesas', 'stocks/renesas.json'],
+  ['crdo',     'stocks/credo.json'],
+  ['leader',   'stocks/leader.json'],
+  ['stm',      'stocks/stm.json'],
+  ['infineon', 'stocks/infineon.json'],
+  ['renesas',  'stocks/renesas.json'],
+  ['hechuan',  'stocks/hechuan.json'],
+  ['efort',    'stocks/efort.json'],
+  ['richtech', 'stocks/richtech.json'],
+  ['tesla',    'stocks/tesla.json'],
+  ['ubtech',   'stocks/ubtech.json'],
+  ['harmonic', 'stocks/harmonic.json'],
+  ['nvidia',   'stocks/nvidia.json'],
+  ['rainbow',  'stocks/rainbow.json'],
+  ['qualcomm', 'stocks/qualcomm.json'],
 ].map(([key, path]) => fetch(path).then(r => r.json()).then(d => { STOCKS[key] = d; })))
 .catch(err => console.error('Stock JSON load error:', err));
 
@@ -410,7 +429,16 @@ const TICKER_MAP = {
   '688017':'leader',
   'STMMI':'stm','STM':'stm',
   'IFX':'infineon',
-  '6723':'renesas'
+  '6723':'renesas',
+  '688320':'hechuan',
+  '688165':'efort',
+  'RR':'richtech',
+  'TSLA':'tesla',
+  '9880':'ubtech',
+  '6324':'harmonic',
+  'NVDA':'nvidia',
+  '277810':'rainbow',
+  'QCOM':'qualcomm'
 };
 
 function getStockKey(ticker) {
@@ -793,6 +821,22 @@ function openModal(stockKey) {
         <div class="modal-section-lbl">Überblick</div>
         <p class="modal-summary">${s.summary}</p>
       </div>
+      ${s.business_segments ? `<div>
+        <div class="modal-section-lbl">Umsatz-Segmente <span style="font-size:9px;font-weight:500;opacity:.6">FY${s.business_segments[0].revenue_fy24_usd_bn ? '2024' : '2024'} actual</span></div>
+        <div class="modal-segments">${s.business_segments.map(seg => {
+          const revStr = seg.revenue_fy24_usd_bn ? '$'+seg.revenue_fy24_usd_bn.toFixed(1)+'B' : '—';
+          const fillColor = accentColor;
+          return `<div class="modal-seg">
+            <div class="modal-seg-bar-row">
+              <span class="modal-seg-lbl">${seg.name}</span>
+              <div class="modal-seg-track"><div class="modal-seg-fill" style="width:${seg.share_pct}%;background:${fillColor}">&nbsp;</div></div>
+              <span class="modal-seg-pct">${seg.share_pct}%</span>
+              <span class="modal-seg-rev">${revStr}</span>
+            </div>
+            <div class="modal-seg-desc">${seg.description}</div>
+          </div>`;
+        }).join('')}</div>
+      </div>` : ''}
       <div>
         <div class="modal-section-lbl">Kennzahlen <span style="font-size:9px;font-weight:500;opacity:.6">Stand: ${sd.updated_at}</span></div>
         <div class="modal-metrics">

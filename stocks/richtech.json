@@ -1,0 +1,57 @@
+{
+  "company": {
+    "name": "Richtech Robotics Inc",
+    "ticker": "RR",
+    "exchange": "Nasdaq",
+    "headquarters": "Las Vegas, Nevada, USA",
+    "founded": 2018,
+    "ipo": "September 2023 (Nasdaq)",
+    "industry": "Service-Robotik – autonome Roboter für Gastronomie, Hotellerie & Reinigung",
+    "competitors": ["Bear Robotics", "Keenon Robotics", "Aethon", "Cobalt Robotics", "Pudu Robotics"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3ARR",
+  "summary": "Richtech Robotics baut autonome Service-Roboter für die Hospitality-Industrie – Hotels, Restaurants, Bars und Casinos. Flaggschiff ist 'Adam', ein vollautomatischer Cocktail- und Getränkeroboter der selbstständig mixt, zapft und serviert. Daneben 'Scorpion' für Küchendienste und Reinigungsroboter für Hotels. Das Unternehmen ist profitfern, wächst aber schnell und hat eine starke Nische in Las Vegas (dem größten Hospitality-Markt der USA). Für einen Humanoid-Robotik-ETF wie BOTT ist Richtech ein Service-Robotik-Exposure – kein Humanoid, aber Teil der breiteren Physical-AI-Wette.",
+  "products": [
+    "Adam (autonomer Cocktail- & Getränkeroboter für Bars und Restaurants)",
+    "Scorpion (Küchenroboter – Wok-Kochen, Frittiertätigkeiten)",
+    "Matradee / Matradee X (Servier- und Lieferroboter, Restaurant-Floor)",
+    "DUST-E (autonomer Reinigungsroboter für Hotels & Flughäfen)",
+    "RICH (Empfangs- und Concierge-Roboter für Hotels)",
+    "RaaS-Modell (Robotics-as-a-Service – Abo statt Kauf, monatliche Gebühr)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "indirekt – Service-Robotik-Pure-Play (kein Humanoid)",
+    "reasons": [
+      "Richtech adressiert denselben Arbeitskräftemangel in Gastronomie/Hotellerie, den langfristig humanoide Roboter lösen sollen",
+      "Autonome Navigation, Mensch-Roboter-Interaktion und Greifsysteme sind Vorstufen humanoider Fähigkeiten",
+      "Las Vegas-Fokus: Casinos und Resorts sind Early-Adopter mit hohem Budget und Innovationsinteresse",
+      "RaaS-Geschäftsmodell (Abo) erzeugt Recurring Revenue – skalierbar ohne Kapitalintensität beim Kunden",
+      "Nachweis für kommerzielle Service-Robotik-Akzeptanz stärkt das gesamte Robotik-Narrativ im ETF-Kontext"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "USD",
+    "52w_low": 0.82,
+    "52w_high": 4.85,
+    "market_cap_usd_bn": 0.22,
+    "enterprise_value_usd_bn": 0.19,
+    "pe_trailing": null,
+    "pe_forward": null,
+    "price_to_sales_ttm": 14,
+    "price_to_book": 3.1,
+    "eps_ttm_usd": -0.18,
+    "revenue_fy25_usd_mn": 15.8,
+    "revenue_growth_yoy_pct": 88,
+    "gross_margin_pct": 38.5,
+    "net_income_usd_mn": -9.4,
+    "dividend": null,
+    "beta_5y": 2.80,
+    "debt_to_equity": 0.09,
+    "current_ratio": 4.2,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_usd": 5.50,
+    "shares_outstanding_mn": 138
+  },
+  "risk_notes": "Micro-Cap (~$220M) mit allen typischen Risiken: geringe Liquidität, hohe Volatilität (Beta ~2.8), pre-profitabel. Umsatz noch sehr klein (~$16M) – jede Verlangsamung wird bestraft. RaaS-Modell erzeugt Burn, bis kritische Stückzahl erreicht. Starke Abhängigkeit vom US-Hospitality-Markt (konjunktursensibel). Technologischer Wettbewerb durch günstigere chinesische Anbieter (Pudu, Keenon) wächst. Kein Schutzwall (Moat) durch Patente oder Wechselkosten. Für konservative Anleger kein geeignetes Direktinvestment – nur als ETF-Beimischung sinnvoll."
+}

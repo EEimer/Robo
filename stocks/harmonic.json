@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Harmonic Drive Systems Inc",
+    "ticker": "6324",
+    "exchange": "Tokyo Stock Exchange (TSE Prime)",
+    "headquarters": "Shinagawa, Tokyo, Japan",
+    "founded": 1970,
+    "ipo": "1995 (TSE)",
+    "industry": "Präzisionsgetriebe – Harmonic Drive® Originaltechnologie, Premium-Robotik-Aktuatoren",
+    "competitors": ["Leader Harmonious Drive (CN)", "SEJIN (KR)", "Nabtesco (Zykloidal)", "Nidec Shimpo", "Spinea (SK)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=TSE%3A6324",
+  "summary": "Harmonic Drive Systems ist der Erfinder und globale Marktführer des harmonischen Antriebs (Strain Wave Gearing) – der Präzisionstechnologie hinter 90%+ aller Roboter-Gelenke in Industrie und Raumfahrt. Gegründet als japanische Lizenznehmerin der US-amerikanischen Harmonic Drive LLC (heute: Harmonic Drive AG, Tochter), hat das Unternehmen das Original-IP weiterentwickelt. Kunden: FANUC, ABB, KUKA, Yaskawa, NASA, Raumfahrtbehörden. Qualitäts- und Lebensdauervorteil gegenüber chinesischen Kopien (Leader Harmonious) ist real, aber der Preisabstand läuft gegen sie.",
+  "products": [
+    "Component Sets (CS / CSF / CSG) – Getriebe-Bausätze für OEM-Integration",
+    "Unit Type (SHF / SHG) – schlüsselfertige Getriebeeinheiten",
+    "Hollow Shaft Actuators (SHA / FHA) – integrierte Aktuatoren mit Motor",
+    "Linear Actuators (LM) – für lineare Robotikbewegungen",
+    "Mini Harmonic Drive (CSD / CUSF) – Ultra-Kompakt für kleine Gelenke",
+    "Space-Grade Harmonic Drives (für NASA, ESA, JAXA-Missionen)",
+    "Medical-Grade Einheiten (für Operationsroboter, Reinraum-zertifiziert)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "extrem direkt – Original-IP der mechanischen Kernkomponente jedes Roboter-Gelenks",
+    "reasons": [
+      "Harmonic Drive ist die de-facto-Standardtechnologie für Roboter-Gelenkreducer – patentiert, über 50 Jahre Erfahrung",
+      "Präzisionsvorteil: Winkelgenauigkeit <1 Bogensekunde, Lebensdauer >15.000h – übertrifft chinesische Konkurrenten noch deutlich",
+      "Raumfahrt-Vertrauen (NASA Mars Rover, ISS, Hubble-Reparatur) als Beweis für höchste Zuverlässigkeit",
+      "Premium-Humanoids (Boston Dynamics Atlas, Agility Digit) verwenden Harmonic Drive statt billigerer Alternativen",
+      "Jeder humanoide Roboter-Arm hat 6–7 Gelenke × 1 Reducer = direkter linearer Hebel auf Stückzahl",
+      "Aber: Chinesische OEMs (Unitree, UBTech) wechseln zu günstigeren Lokallieferanten (Leader Harmonious) – Marktanteilsrisiko"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "JPY",
+    "52w_low": 3640,
+    "52w_high": 8450,
+    "market_cap_jpy_bn": 285,
+    "market_cap_usd_bn": 1.9,
+    "enterprise_value_jpy_bn": 268,
+    "pe_trailing": 46,
+    "pe_forward": 36,
+    "price_to_sales_ttm": 5.2,
+    "price_to_book": 4.8,
+    "eps_jpy_ttm": 108,
+    "revenue_fy25_jpy_bn": 54.8,
+    "revenue_growth_yoy_pct": 18,
+    "gross_margin_pct": 48.2,
+    "net_income_jpy_bn": 6.2,
+    "dividend_yield_pct": 0.9,
+    "beta_5y": 1.25,
+    "debt_to_equity": 0.08,
+    "current_ratio": 4.6,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_jpy": 9200,
+    "shares_outstanding_mn": 53
+  },
+  "risk_notes": "Größtes Risiko: günstige chinesische Harmonic-Drive-Kopien (Leader Harmonious Drive, 688017) holen technologisch auf und gewinnen bei kostengetriebenen Kunden. Yen-Schwäche hilft JPY-Umsatz, schadet USD-Rendite für ausländische Anleger. Kleines Unternehmen (~¥285B Marktkapitalisierung, ~$1,9B) mit begrenzter Liquidität. Konzentrations-Risiko: stark abhängig vom Wachstum der Industrierobotik und Raumfahrt. Positiv: Patent-IP, Premium-Marke und Raumfahrt-Qualifikationen als echten Burggraben."
+}

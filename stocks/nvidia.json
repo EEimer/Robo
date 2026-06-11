@@ -1,0 +1,87 @@
+{
+  "company": {
+    "name": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "exchange": "Nasdaq",
+    "headquarters": "Santa Clara, Kalifornien, USA",
+    "founded": 1993,
+    "ipo": "Januar 1999 (Nasdaq)",
+    "industry": "Halbleiter – GPUs, KI-Chips, Automotive, Robotik-Plattformen",
+    "competitors": ["AMD", "Intel", "Qualcomm", "Google (TPU)", "Amazon (Trainium/Inferentia)", "Cerebras", "Groq"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3ANVDA",
+  "summary": "NVIDIA hat sich vom Gaming-GPU-Hersteller zum De-facto-Monopolisten der KI-Infrastruktur gewandelt. H100/H200/B200 Blackwell-GPUs sind das kritische Mittel für KI-Training und -Inferenz – Nachfrage übersteigt Angebot bei weitem. Das Data-Center-Segment macht 88%+ des Umsatzes aus. Für Robotik: Isaac-Plattform für Sim-to-Real-Training, DRIVE Thor für Automotive, Jetson-Module als Edge-AI-Gehirn in Robotern. NVIDIA positioniert sich aktiv als KI-Betriebssystem für physische Welt – von Rechenzentrum bis Roboter.",
+  "business_segments": [
+    {
+      "name": "Data Center",
+      "revenue_fy25_usd_bn": 115.2,
+      "revenue_fy24_usd_bn": 47.5,
+      "share_pct": 88,
+      "description": "H100/H200/B100/B200 Blackwell-GPUs für KI-Training und -Inferenz. NVLink, NVSwitch, DGX-Systeme. Hyperscaler (Microsoft, Google, Amazon, Meta) + Enterprises + Souveräne KI-Projekte. Wartelisten trotz Rekordausbau."
+    },
+    {
+      "name": "Gaming",
+      "revenue_fy25_usd_bn": 11.4,
+      "revenue_fy24_usd_bn": 10.4,
+      "share_pct": 9,
+      "description": "GeForce RTX 40/50-Serien (DLSS 3, Frame Generation). Ada Lovelace → Blackwell für Consumer. PC-Gaming + Laptops. DLSS/KI-Upscaling als Differenzierungsmerkmal."
+    },
+    {
+      "name": "Automotive & Sonstiges",
+      "revenue_fy25_usd_bn": 4.0,
+      "revenue_fy24_usd_bn": 2.7,
+      "share_pct": 3,
+      "description": "DRIVE Thor/Orin SoC für autonomes Fahren (Mercedes, BYD, Waymo, Li Auto etc.). Jetson AGX für Robotik-Edge-AI. Isaac Robotics Platform (Sim-to-Real). Professional Visualization (Omniverse, RTX für Workstation)."
+    }
+  ],
+  "products": [
+    "H100 / H200 Hopper GPUs (KI-Training, Datenzentren)",
+    "B100 / B200 / GB200 Blackwell GPUs (nächste Generation, 2024/25)",
+    "DGX / HGX Systeme (schlüsselfertige KI-Supercomputer)",
+    "NVLink / NVSwitch (GPU-Verbindungsnetzwerk für Cluster)",
+    "CUDA & cuDNN (Software-Ökosystem – stärkster Burggraben)",
+    "DRIVE Thor / Orin (Automotive-SoC, autonomes Fahren)",
+    "Jetson AGX / Orin (Edge-KI-Module für Roboter)",
+    "Isaac Robotics Platform (Sim-to-Real-Training, Isaac Gym/Lab)",
+    "Omniverse (3D-Kollaborations- & Simulationsplattform)",
+    "GeForce RTX 40/50 (Consumer-Gaming-GPUs)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "extrem direkt – KI-Infrastruktur + dedizierte Robotik-Plattform",
+    "reasons": [
+      "Jedes Foundation Model für Robotik (Gemini Robotics, Pi0, OpenVLA) wird auf NVIDIA-GPUs trainiert",
+      "Isaac Gym / Isaac Lab: NVIDIA's Sim-to-Real-Plattform – humanoide Roboter trainieren physikalisches Verhalten in simulierter GPU-Welt, dann Transfer in echte Hardware",
+      "Jetson AGX Orin ist das bevorzugte Edge-AI-Gehirn in Humanoid-Prototypen (Agility, Figure, Apptronik nutzen Jetson)",
+      "DRIVE Thor-SoC soll in autonomen humanoiden Systemen der nächsten Generation verbaut werden",
+      "GR00T Foundation Model (NVIDIA, 2024): speziell für humanoide Roboter, trainiert auf Isaac-Plattform",
+      "Project GROOT & Newton (NVIDIA + Google + Disney): physikbasiertes Modell für Roboter-Bewegung",
+      "NVIDIA ist der einzige Anbieter, der Training (Rechenzentrum) + Sim-to-Real (Omniverse/Isaac) + Edge-Inferenz (Jetson) in einem Ökosystem hat"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "USD",
+    "52w_low": 86.22,
+    "52w_high": 174.00,
+    "market_cap_usd_bn": 3280,
+    "enterprise_value_usd_bn": 3250,
+    "pe_trailing": 42,
+    "pe_forward": 28,
+    "price_to_sales_ttm": 25,
+    "price_to_book": 38,
+    "eps_ttm_usd": 3.16,
+    "revenue_fy26_usd_bn": 195,
+    "revenue_fy25_usd_bn": 130.5,
+    "revenue_growth_yoy_pct": 49,
+    "gross_margin_pct": 74.6,
+    "net_income_usd_bn": 73,
+    "dividend_yield_pct": 0.03,
+    "beta_5y": 1.85,
+    "debt_to_equity": 0.41,
+    "current_ratio": 4.2,
+    "analyst_consensus": "Strong Buy",
+    "analyst_price_target_usd": 175,
+    "shares_outstanding_mn": 24400
+  },
+  "risk_notes": "Bewertung ($3,3T+) setzt dauerhaftes Wachstum von 30-50%/Jahr voraus. Exportkontrollen USA → China (H20-Chips betroffen) kosten Milliarden-Umsatz. Kundenkomplexitätsrisiko: Hyperscaler entwickeln eigene Chips (Google TPU, Amazon Trainium, Microsoft Athena) – mittel- bis langfristiger Marktanteilsdruck. CUDA-Burggraben sehr stark, aber ROCm (AMD) schließt Lücke. Lieferkette: TSMC-Abhängigkeit für N4/N3-Fertigung. Regulierung (US-China-Tech-Krieg) strukturelles Risiko. Insgesamt: dominante Position, aber nicht monopolsicher."
+}

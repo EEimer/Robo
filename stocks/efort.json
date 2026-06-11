@@ -1,0 +1,61 @@
+{
+  "company": {
+    "name": "EFORT Intelligent Equipment Co Ltd",
+    "ticker": "688165",
+    "exchange": "SSE STAR Market (Shanghai, A-Aktien)",
+    "headquarters": "Wuhu, Anhui, China",
+    "founded": 2008,
+    "ipo": "2020 (STAR Market)",
+    "industry": "Industrierobotik – Articulated Robots, Schweißroboter, Kollaborative Roboter",
+    "competitors": ["SIASUN", "ESTUN Automation", "GSK CNC", "FANUC (global)", "KUKA (Midea)", "ABB Robotics", "Yaskawa"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=SSE%3A688165",
+  "summary": "EFORT (埃夫特) ist einer der 'Chinesischen Vier' der Industrierobotik – neben SIASUN, ESTUN und GSK. Gegründet 2008 in Wuhu (Anhui), profitierte EFORT früh von der Nähe zu Chinas Automobilindustrie (Fiat Chrysler war Frühkunde und Investor). Das Kerngeschäft sind 6-Achs-Gelenkarmroboter für Schweißen, Handling und Montage – heute in Automotive, Elektronik und Metallverarbeitung. EFORT hat über die Cloos-Kooperation (dt. Schweißrobotik-Marke) eine Europa-Brücke. Humanoid-Roboter sind ein aktives F&E-Feld, aber noch nicht im Kerngeschäft.",
+  "products": [
+    "6-Achs-Gelenkarmroboter (ER-Serien, 3–500 kg Traglast)",
+    "SCARA-Roboter (schnelle Flächenmanipulation, Elektronikfertigung)",
+    "Delta-Roboter (Hochgeschwindigkeits-Picking, Food & Pharma)",
+    "Schweißroboter-Systeme (Lichtbogen- und Punktschweißen, Cloos-Kooperation)",
+    "Kollaborative Roboter / Cobots (Mensch-Roboter-Kollaboration)",
+    "Roboter-Steuerungen & Software (eigene Controller-Plattform)",
+    "Humanoid-Roboter-Prototypen (F&E-Stadium, intern 'ART'-Projekt)",
+    "Systemintegrations-Lösungen (schlüsselfertige Roboterzellen)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "mittel-direkt – Industrieroboter-OEM mit Humanoid-R&D",
+    "reasons": [
+      "EFORT entwickelt aktiv humanoide Roboter-Prototypen (intern bekannt als 'ART'-Projekt) – noch kein kommerzielles Produkt",
+      "Know-how aus Gelenk-Kinematik, Controller-Entwicklung und Systemintegration übertragbar auf humanoide Plattformen",
+      "Bestehendes Kunden-Ökosystem (200+ OEM-Kunden) als potenzielle Erstabnehmer für Humanoid-Industrierobotik",
+      "Cloos-Kooperation bringt europäisches Fertigungs-Know-how für Präzisionsmechanik",
+      "Chinas 'Made in China 2025'-Förderung bevorzugt EFORT als nationalen Champion",
+      "Wenn Humanoid-Roboter Industriearbeitsplätze ersetzen, ist EFORT als Integrator/OEM strategisch positioniert"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "CNY",
+    "52w_low": 14.80,
+    "52w_high": 52.30,
+    "market_cap_cny_bn": 38,
+    "market_cap_usd_bn": 5.2,
+    "enterprise_value_cny_bn": 34,
+    "pe_trailing": 72,
+    "pe_forward": 44,
+    "price_to_sales_ttm": 12,
+    "price_to_book": 6.8,
+    "eps_cny_ttm": 0.34,
+    "revenue_fy25_cny_bn": 3.2,
+    "revenue_growth_yoy_pct": 34,
+    "gross_margin_pct": 28.5,
+    "net_income_cny_mn": 528,
+    "dividend": null,
+    "beta_5y": 1.55,
+    "debt_to_equity": 0.18,
+    "current_ratio": 3.8,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_cny": 58,
+    "shares_outstanding_mn": 155
+  },
+  "risk_notes": "EFORT konkurriert mit global etablierten Playern (FANUC, ABB, KUKA/Midea) mit deutlich mehr Ressourcen und IP. Humanoid-Roboter-Ambitionen noch im F&E-Stadium – kein Umsatzbeitrag absehbar. Niedrige Bruttomarge (~28%) im Vergleich zu Komponentenherstellern – Integratoren verdienen weniger. Automotive-Abhängigkeit (~45% der Kunden) macht EFORT anfällig für Zyklen. Mittlere Bewertung für chinesische Robotik-Verhältnisse, aber fundamental weniger clear-cut als reine Komponentenlieferanten."
+}

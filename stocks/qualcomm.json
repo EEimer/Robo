@@ -1,0 +1,86 @@
+{
+  "company": {
+    "name": "QUALCOMM Incorporated",
+    "ticker": "QCOM",
+    "exchange": "Nasdaq",
+    "headquarters": "San Diego, Kalifornien, USA",
+    "founded": 1985,
+    "ipo": "Dezember 1991 (Nasdaq)",
+    "industry": "Halbleiter – Mobile SoCs, Automotive, IoT & Robotik, Lizenzierung",
+    "competitors": ["MediaTek", "Apple (intern)", "Samsung (Exynos)", "NVIDIA (Automotive)", "Intel", "Renesas", "NXP Semiconductors"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3AQCOM",
+  "summary": "Qualcomm dominiert den Markt für mobile Anwendungsprozessoren (Snapdragon) und verdient zusätzlich an jedem Smartphone durch sein Patentlizenzierungsmodell (QTL). Das Kerngeschäft steht unter Druck durch Apples Chip-Eigenentwicklung, wird aber durch starke Diversifikation kompensiert: Automotive (Snapdragon Digital Chassis) und IoT/Robotik (Snapdragon RB-Plattform) wachsen zweistellig. Für humanoide Roboter ist Qualcomm relevant als Lieferant hochperformanter Edge-AI-SoCs, die KI-Inferenz direkt im Roboter-Kopf ermöglichen.",
+  "business_segments": [
+    {
+      "name": "QCT – Chips (Handsets)",
+      "revenue_fy24_usd_bn": 24.9,
+      "share_pct": 64,
+      "description": "Snapdragon 8 Gen 3/4 für Android-Flaggschiffe (Samsung, Xiaomi, OnePlus, OPPO). Modem-Chips (5G). Unter Druck durch Apple-eigene Chips und MediaTek-Konkurrenz im Mid-Range."
+    },
+    {
+      "name": "QCT – IoT & Automotive",
+      "revenue_fy24_usd_bn": 6.3,
+      "share_pct": 16,
+      "description": "Snapdragon RB3/RB5/RB6 für Roboter und IoT-Edge-Devices. Snapdragon Ride/Digital Chassis für Infotainment und ADAS (BMW, GM, Mercedes, Volvo, BYD). Wachstumsmotor: Automotive-Backlog >$30 Mrd."
+    },
+    {
+      "name": "QTL – Lizenzierung",
+      "revenue_fy24_usd_bn": 5.0,
+      "share_pct": 13,
+      "description": "Patentlizenzierung: Jedes 3G/4G/5G-Smartphone zahlt Qualcomm ~2–5% Lizenzgebühr. Hohe Margen (~70%), aber regulatorisches Risiko durch Kartellbehörden weltweit. Apple-Lizenz bis ~2027."
+    },
+    {
+      "name": "QCT – PCs & Sonstiges",
+      "revenue_fy24_usd_bn": 2.8,
+      "share_pct": 7,
+      "description": "Snapdragon X Elite/Plus für Windows-on-ARM-Laptops (Microsoft Copilot+ PCs, Dell, HP, Lenovo). Neues Wachstumsfeld. Qualcomm-eigene Oryon-CPU-Architektur (von ex-Apple-Chip-Ingenieuren)."
+    }
+  ],
+  "products": [
+    "Snapdragon 8 Gen 3 / Gen 4 (Flagship-Mobile-SoC)",
+    "Snapdragon X Elite / Plus (Windows-on-ARM PC-SoC, Oryon CPU)",
+    "Snapdragon RB3 Gen 2 / RB5 (Roboter-Plattform, Edge-AI)",
+    "Snapdragon Digital Chassis / Ride (Automotive Infotainment + ADAS)",
+    "FastConnect WiFi/Bluetooth-Module",
+    "QSM Modem-Chips (5G – in Apple iPhones bis ~2026)",
+    "Qualcomm AI Hub (Edge-AI Deployment Platform)",
+    "Hexagon NPU (dedizierter KI-Prozessor in Snapdragon-SoCs)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Edge-AI-SoCs für Roboter-Gehirne (Snapdragon RB-Plattform)",
+    "reasons": [
+      "Snapdragon RB5 / RB6: hochperformante SoCs speziell für autonome Roboter und Drohnen – Qualcomm's dedizierte Robotik-Plattform",
+      "Hexagon NPU (bis zu 73 TOPS auf RB6) ermöglicht KI-Inferenz (Perception, Planning) direkt im Roboter ohne Cloud-Latenz",
+      "Vollständiges Wireless-Stack (5G + WiFi 7 + BT) in einem Chip – kritisch für kabellose Kommunikation in mobilen Robotern",
+      "Qualcomm AI Hub: fertige KI-Modelle (YOLO, SAM, Whisper) optimiert für Snapdragon NPU – reduziert Robotik-Entwicklungszeit massiv",
+      "Automotive-Snapdragon-DNA übertragbar auf Robotik: Safety-Zertifizierungen (ISO 26262), Sensor-Fusion, Redundanz",
+      "Qualcomm's Power-Effizienz-Vorteil (mobile Herkunft) = längere Akkulaufzeit in mobilen Humanoid-Plattformen"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "USD",
+    "52w_low": 118.00,
+    "52w_high": 230.00,
+    "market_cap_usd_bn": 178,
+    "enterprise_value_usd_bn": 174,
+    "pe_trailing": 18,
+    "pe_forward": 14,
+    "price_to_sales_ttm": 4.5,
+    "price_to_book": 6.2,
+    "eps_ttm_usd": 9.21,
+    "revenue_fy25_usd_bn": 42.2,
+    "revenue_growth_yoy_pct": 8,
+    "gross_margin_pct": 55.8,
+    "net_income_usd_bn": 10.1,
+    "dividend_yield_pct": 2.1,
+    "beta_5y": 1.30,
+    "debt_to_equity": 0.55,
+    "current_ratio": 2.4,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_usd": 210,
+    "shares_outstanding_mn": 1120
+  },
+  "risk_notes": "Apple entwickelt eigene 5G-Modems – Verlust des größten Einzelkunden möglich (ab ~2026/27). Kartellrechtliche Risiken beim QTL-Lizenzmodell (EU, China, Korea haben bereits Bußgelder verhängt). MediaTek holt im Flaggschiff-Segment auf. Automotive-Backlog ($30+ Mrd.) ist beeindruckend, aber Umsatz kommt erst mit Volumen. Robotik-Umsatz noch marginal. Moderate Bewertung (KGV 14x forward) macht Qualcomm zum Value-Play im Chip-Sektor."
+}

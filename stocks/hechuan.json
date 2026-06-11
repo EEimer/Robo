@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Zhejiang Hechuan Technology Co Ltd",
+    "ticker": "688320",
+    "exchange": "SSE STAR Market (Shanghai, A-Aktien)",
+    "headquarters": "Hangzhou, Zhejiang, China",
+    "founded": 2012,
+    "ipo": "2021 (STAR Market)",
+    "industry": "Servo-Systeme & Motion Control – Kernkomponenten für Robotik und Automation",
+    "competitors": ["Inovance Technology", "Estun Automation", "Leadshine", "Panasonic (Servo)", "Yaskawa (Servo)", "Delta Electronics"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=SSE%3A688320",
+  "summary": "Zhejiang Hechuan Technology ist Chinas aufstrebender Spezialist für Servo-Drives, Servo-Motoren und Motion-Controller – das elektronische Nervensystem jedes Industrieroboters. Während Leader Harmonious die Mechanik (Getriebe) liefert, steuert Hechuan die präzise elektrische Ansteuerung der Gelenke. Das Unternehmen profitiert direkt vom Hochlauf der humanoiden und industriellen Robotikproduktion in China: Mehr Roboter = mehr Servo-Antriebsachsen. Hechuan hat sich zudem in Encoder-ICs und industrielle IoT-Kommunikationsmodule diversifiziert.",
+  "products": [
+    "AC-Servo-Drives (SV-Serien – präzise Gelenk-Ansteuerung für Roboter)",
+    "Servo-Motoren (integriert mit Encoder, verschiedene Baugrößen)",
+    "Motion-Controller (mehrachsige Koordination für Roboter-Arme)",
+    "SPS/PLC-Module (Industriesteuerung)",
+    "Encoder-ICs (absolute + inkrementale Geber für Gelenk-Positionsrückmeldung)",
+    "Industrielle IoT-Kommunikationsmodule (EtherCAT, CANopen, Profibus)",
+    "Integrierte Servo-Aktuator-Module (Drive + Motor kombiniert)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Servo-Drives sind die elektrische Steuerung jedes Roboter-Gelenks",
+    "reasons": [
+      "Jedes Roboter-Gelenk (6–7 pro Arm) braucht einen dedizierten Servo-Drive für präzise Strom-/Drehmomentkontrolle",
+      "Hechuan liefert Servo-Systeme direkt an chinesische Robotik-OEMs (Unitree, UBTech, EFORT, Estun etc.)",
+      "Encoder-ICs sind essenziell für millimetergenaue Gelenkwinkel-Rückmeldung in Echtzeit",
+      "Hochlauf chinesischer Humanoid-Produktion 2025/26 = direkte Mengensteigerung für Servo-Lieferanten",
+      "Chinas Importabhängigkeit bei Servo-Systemen (Panasonic, Yaskawa) wird durch lokale Anbieter wie Hechuan aktiv reduziert",
+      "EtherCAT-fähige Motion-Controller koordinieren mehrachsige Bewegungen in humanoiden Systemen"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "CNY",
+    "52w_low": 32.40,
+    "52w_high": 98.60,
+    "market_cap_cny_bn": 78,
+    "market_cap_usd_bn": 10.8,
+    "enterprise_value_cny_bn": 71,
+    "pe_trailing": 62,
+    "pe_forward": 38,
+    "price_to_sales_ttm": 18,
+    "price_to_book": 9.4,
+    "eps_cny_ttm": 0.88,
+    "revenue_fy25_cny_bn": 4.3,
+    "revenue_growth_yoy_pct": 52,
+    "gross_margin_pct": 41.2,
+    "net_income_cny_mn": 1260,
+    "dividend": null,
+    "beta_5y": 1.70,
+    "debt_to_equity": 0.04,
+    "current_ratio": 6.2,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_cny": 108,
+    "shares_outstanding_mn": 144
+  },
+  "risk_notes": "Hohes Bewertungsniveau (KGV ~62) trotz noch vergleichsweise kleiner Umsatzbasis. Wettbewerb durch Inovance Technology (Shenzhen, 300124) – deutlich größer und günstiger produzierend. Japanische Servo-Anbieter (Yaskawa, Panasonic) halten bei Spitzenanwendungen Technologievorsprung. STAR-Market nur via ETF für Ausländer zugänglich. Margendruck wenn Robotik-Hochlauf zu aggressivem Preiskampf führt. Schuldenfrei, starke Bilanz."
+}

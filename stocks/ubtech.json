@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "UBTech Robotics Corp Ltd",
+    "ticker": "9880",
+    "exchange": "Hong Kong Stock Exchange (HKEX)",
+    "headquarters": "Shenzhen, Guangdong, China",
+    "founded": 2012,
+    "ipo": "Dezember 2023 (HKEX)",
+    "industry": "Humanoid-Robotik – Walker-Serie, Bildungsroboter, KI-gestützte Automation",
+    "competitors": ["Figure AI", "1X Technologies (NEO)", "Agility Robotics", "Boston Dynamics", "Unitree Robotics", "Fourier Intelligence", "Tesla Optimus"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=HKEX%3A9880",
+  "summary": "UBTech ist Chinas führender börsennotierter Humanoid-Roboter-Hersteller und einer der wenigen weltweit, die bereits kommerzielle humanoide Einheiten ausliefern. Die Walker X / Walker S-Serie wird in Automobilfabriken (BYD, AITO/Huawei) zur Montage und Inspektion eingesetzt. Parallel betreibt UBTech ein profitables Bildungsroboter-Geschäft (Alpha-Serie, JIMU-Kits) als Cash-Cow. Das Unternehmen kooperiert mit Tencent (KI), NVIDIA (Isaac-Plattform) und Huawei (HiSilicon-Chips).",
+  "products": [
+    "Walker S (Humanoid-Roboter, industrieller Einsatz – BYD-Fabriken)",
+    "Walker X (Humanoid, fortgeschrittene Manipulation & Navigation)",
+    "Walker S Lite (leichtere Industrieversion für breiteren Einsatz)",
+    "Alpha Mini / Alpha E (Bildungsroboter, Konsument)",
+    "JIMU Robot (modulare Baukastensysteme für Kinder & MINT)",
+    "UBTECH AI Education Platform (Software-as-a-Service für Schulen)",
+    "Industrielle Inspektionsroboter (für Rechenzentren, Infrastruktur)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "extrem direkt – einer der wenigen Humanoid-OEMs mit kommerzieller Produktion",
+    "reasons": [
+      "Walker S: Bereits in BYD-Automobilfabriken im produktiven Einsatz – einer der wenigen Humanoids weltweit in echter Industriearbeit",
+      "AITO / Seres-Kooperation: Humanoid-Roboter für Qualitätskontrolle und Montage in Huawei-Ecosystemen",
+      "NVIDIA-Partnerschaft: UBTech nutzt Isaac-Plattform für Sim-to-Real-Training der Walker-Bewegungsmodelle",
+      "Tencent-Investment + KI-Kooperation: Large Language Model Integration für Sprachsteuerung und Aufgabenplanung",
+      "Bildungsbereich als strategischer Moat: 10+ Jahre Erfahrung in Kinematik und Mensch-Roboter-Interaktion",
+      "Erste chinesische Humanoid-Company an der Börse – direktes Exposure für öffentliche Märkte"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "HKD",
+    "52w_low": 18.40,
+    "52w_high": 62.80,
+    "market_cap_hkd_bn": 48,
+    "market_cap_usd_bn": 6.2,
+    "enterprise_value_hkd_bn": 44,
+    "pe_trailing": null,
+    "pe_forward": null,
+    "price_to_sales_ttm": 22,
+    "price_to_book": 5.8,
+    "eps_hkd_ttm": -1.44,
+    "revenue_fy25_hkd_bn": 2.18,
+    "revenue_growth_yoy_pct": 41,
+    "gross_margin_pct": 34.2,
+    "net_income_hkd_mn": -580,
+    "dividend": null,
+    "beta_5y": 2.20,
+    "debt_to_equity": 0.22,
+    "current_ratio": 3.1,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_hkd": 68,
+    "shares_outstanding_mn": 1080
+  },
+  "risk_notes": "Pre-profitabel bei hohen R&D-Ausgaben für Walker-Serie. Humanoid-Hochlauf kapitalintensiv – Cash-Burn-Risiko trotz HKEX-IPO-Erlösen. Intensiver Wettbewerb von Unitree (aggressiver Preis), Fourier, Tesla Optimus und westlichen Startups. US-Exportkontrollen könnten Chip-Zugang (NVIDIA Jetson) einschränken. Walker-Roboter noch nicht eigenständig profitabel – Bildungsgeschäft quersubventioniert. HKD-Kurs und China-Sentiment beeinflussen stark. Für konservative Anleger: nur als ETF-Position sinnvoll."
+}

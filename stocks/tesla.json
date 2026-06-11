@@ -1,0 +1,86 @@
+{
+  "company": {
+    "name": "Tesla Inc",
+    "ticker": "TSLA",
+    "exchange": "Nasdaq",
+    "headquarters": "Austin, Texas, USA",
+    "founded": 2003,
+    "ipo": "Juni 2010 (Nasdaq)",
+    "industry": "Elektrofahrzeuge · Energie · KI · Humanoid-Robotik",
+    "competitors": ["BYD", "Rivian", "Lucid Motors", "Volkswagen Group", "Toyota", "Boston Dynamics", "Figure AI", "1X Technologies", "Agility Robotics"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3ATSLA",
+  "summary": "Tesla ist weit mehr als ein Autobauer. CEO Elon Musk positioniert das Unternehmen als 'AI & Robotics Company, die zufällig auch Autos baut'. Das Automotive-Segment generiert 79% des Umsatzes und finanziert die anderen Wetten: Energie/Speicher (Megapack) ist profitabler als EVs und wächst schneller. FSD (Full Self-Driving) soll zum Robotaxi-Netzwerk werden. Optimus – der humanoide Tesla-Roboter – ist die größte Optionalität: Musk peilt 10–20 Mio. Einheiten/Jahr bei ~$20K Stückpreis an, mehr Umsatz als alle Autos zusammen. Derzeit Pilotproduktion in Tesla-eigenen Fabriken.",
+  "business_segments": [
+    {
+      "name": "Automotive",
+      "revenue_fy24_usd_bn": 77.1,
+      "share_pct": 79,
+      "description": "Model 3/Y (Volumen-Bestseller), Model S/X (Premium), Cybertruck. Inkl. Regulatory Credits (~$2,8 Mrd.), Leasing & Used Vehicles. FSD-Subscriptions (~$99/Mo.) hier gebucht. Bruttomargen 2024 unter Druck (~18%) durch Preissenkungen."
+    },
+    {
+      "name": "Energie & Speicher",
+      "revenue_fy24_usd_bn": 10.1,
+      "share_pct": 10,
+      "description": "Megapack (Utility-Scale Grid Storage, ~4 MWh/Einheit – Boom-Segment mit ~25% Bruttomarge), Powerwall / Powerwall 3 (Heim-Batterie), Solar Panels & Solarglass Roof. Wächst schneller und profitabler als EVs."
+    },
+    {
+      "name": "Services & Other",
+      "revenue_fy24_usd_bn": 10.5,
+      "share_pct": 11,
+      "description": "Supercharger-Netzwerk (V3/V4, 60.000+ Stationen, seit 2023 für andere OEMs geöffnet), Tesla Insurance, Werkstatt & Ersatzteile, Merchandise. Wachsendes Recurring-Revenue-Modell."
+    }
+  ],
+  "products": [
+    "Model 3 / Model Y (Volumen-EVs, globale Bestseller)",
+    "Model S / Model X (Premium Long Range & Plaid)",
+    "Cybertruck (Elektro-Pickup, US-Launch 2023)",
+    "Optimus Gen 2 (Humanoid-Roboter – Pilotproduktion in Tesla-Fabriken)",
+    "Full Self-Driving FSD v12/13 (End-to-End Neural Net, Subscription)",
+    "Dojo Supercomputer (Custom AI-Trainingscluster, D1-Chip)",
+    "Megapack (Utility-Scale Batteriespeicher)",
+    "Powerwall 3 (Heim-Batteriespeicher, 13,5 kWh)",
+    "Solar Panels & Solarglass Roof",
+    "Supercharger-Netzwerk (60.000+ Stationen weltweit, für alle OEMs offen)",
+    "Tesla Insurance (USA rollout)",
+    "Robotaxi / Cybercab (in Entwicklung / Pilotbetrieb)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "extrem direkt – Tesla IST Humanoid-Roboter-OEM (Optimus)",
+    "reasons": [
+      "Optimus Gen 2: Tesla entwickelt und produziert eigene humanoide Roboter – zunächst intern in Fabriken eingesetzt, dann Verkauf an Dritte geplant",
+      "Elon Musk-Ziel: 10–20 Mio. Einheiten/Jahr bei ~$20K Stückpreis – potenziell größeres Geschäft als das gesamte Automotive-Segment",
+      "Dieselbe FSD-KI (Vision-only, End-to-End Neural Net) steuert Auto und Roboter – gemeinsame Software-Plattform spart Entwicklungskosten massiv",
+      "Dojo-Supercomputer trainiert FSD- und Optimus-Modelle auf derselben Infrastruktur",
+      "Tesla entwickelt Aktuatoren (Rotary + Linear) vollständig intern – keine Abhängigkeit von Leader Harmonious oder Japanern",
+      "Stand ~2025: 1.000+ Optimus-Prototypen in Fremont & Giga Texas im Fabrikbetrieb",
+      "2026 = erste externe Verkäufe geplant; 2027+ skalierte Produktion angepeilt"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "USD",
+    "52w_low": 214.00,
+    "52w_high": 479.86,
+    "market_cap_usd_bn": 985,
+    "enterprise_value_usd_bn": 966,
+    "pe_trailing": 148,
+    "pe_forward": 95,
+    "price_to_sales_ttm": 9.8,
+    "price_to_book": 18.2,
+    "eps_ttm_usd": 2.15,
+    "revenue_fy25_usd_bn": 108,
+    "revenue_fy24_usd_bn": 97.7,
+    "revenue_growth_yoy_pct": 11,
+    "gross_margin_pct": 19.8,
+    "net_income_usd_bn": 3.2,
+    "dividend": null,
+    "beta_5y": 2.30,
+    "debt_to_equity": 0.12,
+    "current_ratio": 1.65,
+    "analyst_consensus": "Hold",
+    "analyst_price_target_usd": 310,
+    "shares_outstanding_mn": 3210
+  },
+  "risk_notes": "Bewertung preist Optimus-Erfolg, FSD-Monetarisierung UND EV-Marktführerschaft gleichzeitig ein – alle drei müssen liefern. Marktanteilsverluste an BYD und chinesische OEMs, vor allem in China. Musk-Ablenkungsrisiko (xAI, DOGE, SpaceX, X/Twitter). FSD-Regulierung unklar – kein Fully-Autonomous-Approval in den meisten Märkten. Optimus-Zeitplan wurde mehrfach verschoben. Harter Preiskrieg im EV-Segment drückt Margen dauerhaft. Bull-Case hängt fast vollständig an nicht-automotive Revenues (Optimus, FSD, Energie) bis 2030."
+}

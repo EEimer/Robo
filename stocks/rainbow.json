@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Rainbow Robotics Co Ltd",
+    "ticker": "277810",
+    "exchange": "Korea Exchange (KRX / KOSDAQ)",
+    "headquarters": "Daejeon, Südkorea",
+    "founded": 2011,
+    "ipo": "2021 (KOSDAQ)",
+    "industry": "Kollaborative Roboter & Humanoid-Robotik – Cobots + RB-Y1 Humanoid",
+    "competitors": ["Doosan Robotics", "Neuromeka", "Universal Robots (UR)", "FANUC (Cobot)", "ABB (YuMi/GoFa)", "Agility Robotics", "Figure AI"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=KRX%3A277810",
+  "summary": "Rainbow Robotics ist Südkoreas führendes Robotik-Startup – gegründet von KAIST-Professoren, die zuvor den humanoiden Forschungsroboter HUBO entwickelten. Das Unternehmen macht zwei Dinge: Kollaborative Roboter (RB-Cobot-Serie, 5–16 kg Traglast) als laufendes Geschäft, und die Entwicklung des humanoiden Roboters RB-Y1. Samsung Electronics ist mit ~14,7% größter Einzelaktionär und strategischer Partner – ein massiver Vertrauensbeweis. Rainbow ist in KOID, HUMN, BOTT und BOTZ vertreten und damit einer der am breitesten gehaltenen Korea-Robotik-Pure-Plays.",
+  "products": [
+    "RB5 / RB10 / RB16 (Kollaborative Roboter – 5/10/16 kg Traglast)",
+    "RB-Y1 (Humanoid-Roboter, vollwertiger Zweibein-Arm-Roboter, 2024 vorgestellt)",
+    "RB-Mobile (mobile Basis für Cobot-Einsatz)",
+    "Rainbow Robotics Software Suite (Programmierung, Simulation)",
+    "Roboter-Endeffektoren & Greifer",
+    "Systemintegrations-Lösungen für Fertigungsautomation"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Humanoid-OEM mit KAIST-Forschungsherkunft und Samsung-Backing",
+    "reasons": [
+      "RB-Y1: vollwertiger humanoider Roboter (Demo 2024) – einer der wenigen asiatischen Konkurrenten zu Tesla Optimus, Figure, Agility",
+      "KAIST-DNA: Gründerteam hat HUBO entwickelt, einen der ersten großen humanoiden Forschungsroboter weltweit – technologische Glaubwürdigkeit",
+      "Samsung-Partnerschaft: Samsung könnte RB-Y1 in eigene Fabrikautomation integrieren – direkter industrieller Absatzkanal",
+      "Cobot-Geschäft generiert Umsatz und Cashflow, der die Humanoid-R&D finanziert – selteneres Geschäftsmodell als reine Startup-Wette",
+      "Präsenz in 4 Robotik-ETFs (KOID, BOTT, HUMN, BOTZ) macht Rainbow zum am breitesten investierten Korea-Play",
+      "Korea-Regierung fördert Robotik massiv als nationalen Exportsektor – struktureller Rückenwind"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-09",
+    "currency": "KRW",
+    "52w_low": 42300,
+    "52w_high": 148000,
+    "market_cap_krw_bn": 1840,
+    "market_cap_usd_bn": 1.4,
+    "enterprise_value_krw_bn": 1720,
+    "pe_trailing": null,
+    "pe_forward": 88,
+    "price_to_sales_ttm": 38,
+    "price_to_book": 12.4,
+    "eps_krw_ttm": -1240,
+    "revenue_fy25_krw_bn": 48,
+    "revenue_fy25_usd_mn": 36,
+    "revenue_growth_yoy_pct": 62,
+    "gross_margin_pct": 42.8,
+    "net_income_krw_bn": -18,
+    "dividend": null,
+    "beta_5y": 2.10,
+    "debt_to_equity": 0.06,
+    "current_ratio": 7.8,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_krw": 165000,
+    "shares_outstanding_mn": 20
+  },
+  "risk_notes": "Pre-profitabel – Cobot-Umsatz (~₩48B) deckt noch nicht die RB-Y1-Entwicklungskosten. Sehr kleine Umsatzbasis, P/S ~38x ist reine Optionalitäts-Bewertung auf RB-Y1-Erfolg. Samsung-Partnerschaft ist strategisch wertvoll, aber kein Kaufvertrag für Humanoid-Roboter. Intensiver Wettbewerb im Cobot-Markt (Universal Robots, Doosan). Beta ~2.1 macht den Titel sehr volatil. Niedrige Liquidität (kleiner Float) verstärkt Ausschläge. Nur als ETF-Baustein geeignet – Direktinvestment hochspekulativ."
+}
