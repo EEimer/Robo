@@ -1,0 +1,59 @@
+{
+  "company": {
+    "name": "XPeng Inc",
+    "ticker": "XPEV",
+    "exchange": "NYSE (ADR) / HKEX 9868",
+    "headquarters": "Guangzhou, Guangdong, China",
+    "founded": 2014,
+    "ipo": "2020 (NYSE), 2021 (Hongkong Dual-Listing)",
+    "industry": "Elektrofahrzeuge, autonomes Fahren, humanoide Roboter, eVTOL",
+    "competitors": ["Tesla", "BYD", "NIO", "Li Auto", "Xiaomi EV", "Unitree (Humanoid)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NYSE%3AXPEV",
+  "summary": "XPeng ist Chinas technologiegetriebenster EV-Hersteller mit Full-Stack-Eigenentwicklung: eigene Fahrassistenz-Software (XNGP), eigene KI-Chips (Turing), eigene Foundation-Models. CEO He Xiaopeng positioniert XPeng explizit als 'Physical-AI-Unternehmen' nach Tesla-Vorbild: Die gleiche KI-, Chip- und Fertigungsbasis treibt Autos, den humanoiden Roboter IRON und eVTOL-Fluggeräte (AeroHT). IRON wurde mit Hüft-/Hand-Detailgrad und eigener Turing-Chip-Bestückung vorgestellt; Serienfertigung für Industrieeinsatz ist angekündigt – XPeng ist damit neben Tesla der prominenteste Auto-OEM mit ernsthaftem Humanoid-Programm.",
+  "products": [
+    "EV-Modellpalette (G6, G9, P7+, X9, Mona M03)",
+    "XNGP autonomes Fahrsystem (kamerabasiert, ohne HD-Karten)",
+    "Turing AI-Chip (Eigenentwicklung, ~3x Orin-Leistung, für Auto + Roboter)",
+    "IRON humanoider Roboter (62 DoF, Turing-Chips, Vision-Language-Action-Modell)",
+    "AeroHT eVTOL-Fluggeräte (Tochter, 'fliegendes Auto')",
+    "XOS Fahrzeug-Betriebssystem und Foundation-Model-Stack",
+    "Superchargin-Netzwerk (S4/S5 Ultra-Fast-Charging)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – OEM mit eigenem humanoidem Roboter (IRON) und eigener Chip-/KI-Plattform",
+    "reasons": [
+      "IRON: eigener Humanoid mit ~62 Freiheitsgraden, präsentiert mit lauffähiger Hardware – geplanter Industrieeinsatz in XPeng-Werken zuerst",
+      "Eigene Turing-KI-Chips treiben Auto und Roboter – vertikale Integration wie bei Tesla/Optimus",
+      "Vision-Language-Action-Modelle aus dem autonomen Fahren werden direkt für Robotersteuerung wiederverwendet",
+      "EV-Fertigungskompetenz (Aktuatoren, Batterien, Massenproduktion) senkt Humanoid-Stückkosten",
+      "Synergie-These: Auto-Absatz finanziert die Robotik-Entwicklung, Roboter arbeiten in der Auto-Fertigung",
+      "Chinesische Industriepolitik fördert heimische Humanoid-Champions – XPeng prominent positioniert"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-12",
+    "currency": "USD",
+    "52w_low": 17.20,
+    "52w_high": 41.50,
+    "market_cap_usd_bn": 30,
+    "enterprise_value_usd_bn": 27,
+    "pe_trailing": null,
+    "pe_forward": 65,
+    "price_to_sales_ttm": 2.4,
+    "price_to_book": 4.2,
+    "eps_ttm_usd": -0.35,
+    "revenue_fy25_usd_bn": 12.5,
+    "revenue_growth_yoy_pct": 55,
+    "gross_margin_pct": 15.5,
+    "net_income_usd_bn": -0.4,
+    "dividend": null,
+    "beta_5y": 2.40,
+    "debt_to_equity": 0.45,
+    "current_ratio": 1.2,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_usd": 32,
+    "shares_outstanding_mn": 1905
+  },
+  "risk_notes": "Kerngeschäft EV ist ein brutaler Verdrängungsmarkt (Preiskrieg mit BYD, Tesla, Xiaomi) – XPeng erreichte erst zuletzt die Gewinnschwelle. Humanoid-Programm IRON ist vielversprechend, aber Jahre von relevantem Umsatz entfernt; hohe F&E-Last parallel zu Auto, Chips und eVTOL. ADR-/China-Regulierungsrisiko (Delisting-Szenarien, Datenrecht). Sehr hohe Volatilität (Beta ~2,4). Verwässerungshistorie durch Kapitalerhöhungen. Wer XPeng kauft, kauft primär einen EV-Hersteller mit Humanoid-Option."
+}

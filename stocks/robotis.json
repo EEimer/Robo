@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Robotis Co Ltd",
+    "ticker": "108490",
+    "exchange": "KOSDAQ (Seoul)",
+    "headquarters": "Seoul, Südkorea",
+    "founded": 1999,
+    "ipo": "2018 (KOSDAQ)",
+    "industry": "Robotik-Komponenten – Smart-Aktuatoren (Dynamixel), Roboterplattformen, autonome Serviceroboter",
+    "competitors": ["Harmonic Drive (Getriebe)", "Hebi Robotics", "Leadshine (Aktuatoren)", "Doosan Robotics", "Rainbow Robotics"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=KRX%3A108490",
+  "summary": "Robotis ist der weltweit bekannteste Hersteller integrierter Smart-Aktuatoren: Die Dynamixel-Module (Motor + Getriebe + Encoder + Controller + Netzwerk in einem Gehäuse) sind seit zwei Jahrzehnten der De-facto-Standard in Forschungs- und Bildungsrobotik und stecken in unzähligen humanoiden Prototypen weltweit. Dazu kommen eigene Roboterplattformen (TurtleBot als ROS-Referenzplattform, OP-Humanoid-Serie) und autonome Lieferroboter (Gaemi). Hyundai Motor Group ist strategischer Großaktionär – Robotis gilt als Komponenten-Zulieferer für Koreas Humanoid-Ökosystem.",
+  "products": [
+    "Dynamixel Smart-Aktuatoren (X/Y/P-Serien – integrierte Gelenkmodule)",
+    "Dynamixel Drive (DYD) Zykloidgetriebe (Eigenentwicklung, Harmonic-Alternative)",
+    "TurtleBot (offizielle ROS-Referenzplattform, mit Open Robotics)",
+    "ROBOTIS OP / DARwIn-OP Humanoid-Forschungsplattformen",
+    "Gaemi autonome Liefer-/Serviceroboter (Indoor & Outdoor)",
+    "Manipulator-Arme und Greifer-Kits",
+    "Bildungsrobotik (ROBOTIS DREAM, STEAM-Kits)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Standard-Lieferant integrierter Gelenk-Aktuatoren für Humanoid-Entwicklung",
+    "reasons": [
+      "Dynamixel-Aktuatoren sind das weltweit meistgenutzte Gelenkmodul in humanoiden Forschungs- und Prototyp-Robotern",
+      "Eigenes Zykloidgetriebe (DYD) reduziert Abhängigkeit von Harmonic Drive und senkt Kosten pro Gelenk",
+      "Hyundai Motor Group als strategischer Investor (~7%) – Anbindung an Boston Dynamics' Ökosystem",
+      "Korea-Cluster: Zulieferbeziehungen zu Rainbow Robotics, Doosan und koreanischen Humanoid-Startups",
+      "TurtleBot/ROS-Verankerung = Robotis-Hardware ist in der globalen Entwickler-Community gesetzt",
+      "Vom Prototyp zur Serie: Wenn Humanoid-OEMs skalieren, skaliert der Aktuator-Zulieferer mit"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-12",
+    "currency": "KRW",
+    "52w_low": 18900,
+    "52w_high": 64200,
+    "market_cap_krw_bn": 1150,
+    "market_cap_usd_bn": 0.8,
+    "enterprise_value_krw_bn": 1090,
+    "pe_trailing": null,
+    "pe_forward": 95,
+    "price_to_sales_ttm": 28,
+    "price_to_book": 9.5,
+    "eps_krw_ttm": -310,
+    "revenue_fy25_krw_bn": 38,
+    "revenue_growth_yoy_pct": 22,
+    "gross_margin_pct": 48.0,
+    "net_income_krw_bn": -8,
+    "dividend": null,
+    "beta_5y": 1.85,
+    "debt_to_equity": 0.12,
+    "current_ratio": 4.5,
+    "analyst_consensus": "Hold",
+    "analyst_price_target_krw": 52000,
+    "shares_outstanding_mn": 28
+  },
+  "risk_notes": "Sehr kleine Umsatzbasis (~$28M) bei extremer Bewertung (P/S ~28) – der Kurs lebt fast vollständig von der Humanoid-Story und der Hyundai-Beteiligung. Noch unprofitabel; Forschungs-/Bildungsmarkt allein trägt keine Serienfertigungs-Skalierung. Konkurrenz durch chinesische Aktuator-Anbieter mit aggressiven Preisen. KOSDAQ-Titel mit hoher Volatilität und begrenzter Liquidität. Schuldenfreie Bilanz gibt Spielraum, aber die Aktie ist ein hochspekulatives Komponenten-Play."
+}

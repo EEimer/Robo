@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Estun Automation Co Ltd",
+    "ticker": "002747",
+    "exchange": "Shenzhen Stock Exchange (A-Aktien)",
+    "headquarters": "Nanjing, Jiangsu, China",
+    "founded": 1993,
+    "ipo": "2015 (Shenzhen)",
+    "industry": "Industrieroboter & Automatisierung – Chinas größter heimischer Roboter-OEM",
+    "competitors": ["FANUC", "Yaskawa", "KUKA (Midea)", "ABB Robotics", "Siasun", "Inovance"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=SZSE%3A002747",
+  "summary": "Estun Automation ist Chinas größter einheimischer Industrieroboter-Hersteller (nach Stückzahlen) und das chinesische Gegenstück zu FANUC oder Yaskawa. Das Unternehmen ist voll vertikal integriert: eigene Servo-Antriebe, Steuerungen und Roboterarme. Mit der Übernahme von Cloos (Deutschland, Schweißrobotik) und Trio Motion (UK, Motion Control) hat Estun westliche Technologie zugekauft. Estun entwickelt zudem humanoide Roboter (Codroid-Programm) und liefert Kernkomponenten an andere chinesische Humanoid-OEMs – doppelte Positionierung als OEM und Zulieferer.",
+  "products": [
+    "Sechsachs-Industrieroboter (3–700 kg Traglast, >25.000 Einheiten/Jahr)",
+    "SCARA- und Delta-Roboter (Elektronik-Montage)",
+    "Schweißroboter (Cloos – Premium-Segment)",
+    "AC-Servo-Systeme und Antriebe (Eigenfertigung)",
+    "Robotersteuerungen und Motion-Controller (Trio Motion)",
+    "Codroid humanoide Roboter-Plattform (Entwicklung)",
+    "Schlüsselfertige Automatisierungslinien (PV, Batterie, Metall)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Roboter-OEM mit eigenem Humanoid-Programm und Komponentengeschäft",
+    "reasons": [
+      "Codroid-Humanoid-Programm: Estun entwickelt eigene humanoide Roboter auf Basis seiner Industrierobotik-Plattform",
+      "Vertikale Integration (Servos, Steuerung, Mechanik) = alle Kernkompetenzen für Humanoid-Bau im Haus",
+      "Größter chinesischer Roboter-OEM – natürlicher Profiteur der staatlichen 'Embodied AI'-Industriepolitik",
+      "Servo- und Motion-Control-Komponenten werden auch an andere Humanoid-Hersteller geliefert",
+      "Bestehende Massenfertigung (>25.000 Roboter/Jahr) als Blaupause für Humanoid-Serienproduktion",
+      "Cloos- und Trio-Technologie (Bahnplanung, Echtzeit-Motion-Control) direkt humanoid-relevant"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-12",
+    "currency": "CNY",
+    "52w_low": 14.80,
+    "52w_high": 38.90,
+    "market_cap_cny_bn": 26,
+    "market_cap_usd_bn": 3.6,
+    "enterprise_value_cny_bn": 30,
+    "pe_trailing": null,
+    "pe_forward": 75,
+    "price_to_sales_ttm": 5.5,
+    "price_to_book": 6.8,
+    "eps_cny_ttm": -0.12,
+    "revenue_fy25_cny_bn": 4.8,
+    "revenue_growth_yoy_pct": 6,
+    "gross_margin_pct": 30.0,
+    "net_income_cny_mn": -105,
+    "dividend": null,
+    "beta_5y": 1.45,
+    "debt_to_equity": 0.95,
+    "current_ratio": 1.3,
+    "analyst_consensus": "Hold",
+    "analyst_price_target_cny": 28,
+    "shares_outstanding_mn": 870
+  },
+  "risk_notes": "Trotz Marktführerschaft bei Stückzahlen kaum profitabel – brutaler Preiskampf im chinesischen Robotermarkt drückt die Margen, zuletzt Nettoverluste. Hohe Verschuldung aus den Übernahmen (Cloos, Trio). Humanoid-Programm noch im Entwicklungsstadium ohne nennenswerten Umsatz. Bewertung preist die Humanoid-Story aggressiv ein (P/S >5 bei einstelliger Wachstumsrate). Japanische Premium-Anbieter dominieren weiter das High-End. A-Aktie nur via Stock Connect / ETF zugänglich."
+}

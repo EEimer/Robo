@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Melexis NV",
+    "ticker": "MELE",
+    "exchange": "Euronext Brussels",
+    "headquarters": "Ieper, Belgien",
+    "founded": 1988,
+    "ipo": "1997 (Euronext)",
+    "industry": "Halbleiter – Sensor-ICs (Magnetik, Strom, Temperatur, Druck) und Treiber-ICs",
+    "competitors": ["Allegro MicroSystems", "Infineon (Sensorik)", "TDK-Micronas", "ams OSRAM", "Texas Instruments (Sensing)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=EURONEXT%3AMELE",
+  "summary": "Melexis ist ein belgischer Spezialist für Mixed-Signal-Sensor-ICs mit Fokus auf Magnetfeld-Positionssensoren – weltweit führend bei Hall-Sensoren für Automotive (durchschnittlich >18 Melexis-Chips pro Neuwagen). Genau diese magnetischen Positions- und Stromsensoren sind die Standard-Messtechnik in Roboter-Gelenken: Sie melden Winkelposition und Motorstrom an den Servo-Regler zurück. Melexis adressiert Robotik explizit als Wachstumsfeld ('Adjacent Markets') und liefert bereits Triaxis-Positionssensoren an Robotik- und Aktuator-Hersteller.",
+  "products": [
+    "Triaxis Hall-Positionssensoren (3D-Magnetfeld – Gelenkwinkel-Messung)",
+    "Stromsensor-ICs (Motorstrom-Regelung in Echtzeit)",
+    "Induktive Resolver-ICs (hochpräzise Rotorlage für Servo-Motoren)",
+    "Motor-Treiber-ICs (integrierte BLDC-Ansteuerung)",
+    "MEMS-Drucksensoren und Infrarot-Temperatursensoren",
+    "Time-of-Flight-Sensoren (Näherungserkennung)",
+    "LIN/CAN-Interface-ICs für Aktuator-Netzwerke"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Positions- und Stromsensoren sind in jedem Roboter-Gelenk verbaut",
+    "reasons": [
+      "Jedes Gelenk eines Humanoiden braucht Winkelposition + Motorstrom-Messung – Kerngeschäft von Melexis",
+      "Triaxis-Sensoren ermöglichen kontaktlose, verschleißfreie Positionsmessung – ideal für langlebige Robotergelenke",
+      "Induktive Resolver-ICs sind die präzisere Alternative zu optischen Encodern bei Vibration und Temperatur",
+      "Ein Humanoid mit ~40 Aktuatoren benötigt ein Vielfaches der Sensorik eines Autos – starker Content-Hebel",
+      "Automotive-Qualifikation (AEC-Q100, Funktionale Sicherheit) überträgt sich direkt auf Robotik-Anforderungen",
+      "Melexis nennt Robotik/Humanoide explizit als strategisches Wachstumsfeld neben Automotive"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-12",
+    "currency": "EUR",
+    "52w_low": 48.20,
+    "52w_high": 92.40,
+    "market_cap_eur_bn": 3.4,
+    "market_cap_usd_bn": 3.7,
+    "enterprise_value_eur_bn": 3.4,
+    "pe_trailing": 22,
+    "pe_forward": 18,
+    "price_to_sales_ttm": 3.6,
+    "price_to_book": 4.8,
+    "eps_eur_ttm": 3.80,
+    "revenue_fy25_eur_bn": 0.95,
+    "revenue_growth_yoy_pct": -2,
+    "gross_margin_pct": 43.0,
+    "net_income_eur_mn": 154,
+    "dividend_yield_pct": 4.3,
+    "beta_5y": 1.10,
+    "debt_to_equity": 0.15,
+    "current_ratio": 3.2,
+    "analyst_consensus": "Hold",
+    "analyst_price_target_eur": 88,
+    "shares_outstanding_mn": 40
+  },
+  "risk_notes": "~90% des Umsatzes hängen am zyklischen Automobilmarkt – die Auto-Halbleiter-Schwäche 2024/25 traf Melexis direkt (rückläufiger Umsatz). Robotik-Umsatz noch klein, der Humanoid-Hebel ist Zukunftsmusik. Fabless-Modell mit Abhängigkeit von Foundry-Partner X-FAB (gemeinsamer Großaktionär – Governance-Thema). Geringe Liquidität der Aktie (Streubesitz begrenzt). Dafür hohe Dividendenrendite, nahezu schuldenfrei und technologisch führend in der Magnetsensorik."
+}

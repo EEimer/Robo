@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Yijiahe Technology Co Ltd",
+    "ticker": "603666",
+    "exchange": "Shanghai Stock Exchange (A-Aktien)",
+    "headquarters": "Nanjing, Jiangsu, China",
+    "founded": 2013,
+    "ipo": "2018 (Shanghai)",
+    "industry": "Spezial- & Service-Robotik – Inspektionsroboter, Löschroboter, Embodied AI",
+    "competitors": ["Siasun", "CSG Smart Science", "Unitree (Quadruped)", "State-Grid-interne Anbieter", "Guozi Robotics"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=SSE%3A603666",
+  "summary": "Yijiahe Technology ist Chinas führender Anbieter von Inspektions- und Spezialrobotern für die Energieinfrastruktur: Roboter, die Umspannwerke, Schaltanlagen und Tunnel autonom inspizieren, sowie Lösch- und Hochspannungs-Arbeitsroboter ('Live-Line Robots'), die unter Spannung an Stromleitungen arbeiten. Hauptkunden sind die staatlichen Netzbetreiber State Grid und Southern Grid. Auf dieser Basis autonomer Navigation, Manipulation und Computer Vision baut Yijiahe eine Embodied-AI-Strategie auf – inklusive humanoider und radgetriebener Operationsroboter für Industrieanlagen.",
+  "products": [
+    "Inspektionsroboter für Umspannwerke und Schaltanlagen (Marktführer China)",
+    "Live-Line-Arbeitsroboter (Manipulation an Leitungen unter Spannung)",
+    "Lösch- und Rettungsroboter (Feuerwehr, Tunnel, Chemie)",
+    "Schienen- und Tunnel-Inspektionssysteme",
+    "Intelligente Betriebs- & Wartungsplattform (Flottenmanagement, KI-Auswertung)",
+    "Humanoide / mobile Operationsroboter für Industrieanlagen (Entwicklung)",
+    "Autonome Navigations- und Vision-Stacks (Eigenentwicklung)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Service-Roboter-OEM mit Migration zu Embodied AI / Humanoiden",
+    "reasons": [
+      "Live-Line-Roboter beherrschen bereits autonome Manipulation in unstrukturierter Umgebung – die Kernfähigkeit humanoider Roboter",
+      "Eigene Stacks für Navigation, Perception und Greifplanung sind direkt auf humanoide Plattformen übertragbar",
+      "Entwicklung humanoider Operationsroboter für Kraftwerks- und Anlagenwartung läuft",
+      "Etablierte Großkunden (State Grid, Southern Grid) als Abnehmer für neue Roboter-Generationen",
+      "Profitiert von Chinas Embodied-AI-Förderpolitik und Ersatz menschlicher Arbeit in Gefahrenumgebungen",
+      "Eines der wenigen profitabel skalierten Service-Robotik-Geschäfte Chinas (kein reines Konzept-Play)"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-12",
+    "currency": "CNY",
+    "52w_low": 18.50,
+    "52w_high": 78.20,
+    "market_cap_cny_bn": 13,
+    "market_cap_usd_bn": 1.8,
+    "enterprise_value_cny_bn": 12,
+    "pe_trailing": 68,
+    "pe_forward": 45,
+    "price_to_sales_ttm": 7.0,
+    "price_to_book": 4.5,
+    "eps_cny_ttm": 0.92,
+    "revenue_fy25_cny_bn": 1.9,
+    "revenue_growth_yoy_pct": 18,
+    "gross_margin_pct": 42.0,
+    "net_income_cny_mn": 195,
+    "dividend_yield_pct": 0.5,
+    "beta_5y": 1.60,
+    "debt_to_equity": 0.20,
+    "current_ratio": 2.6,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_cny": 70,
+    "shares_outstanding_mn": 210
+  },
+  "risk_notes": "Starke Kundenkonzentration auf die staatlichen Netzbetreiber – Auftragsvolumen hängt an deren Budgetzyklen. Humanoid-/Embodied-AI-Ambitionen sind früh und tragen noch kaum Umsatz, treiben aber die Bewertung (KGV ~68). Kursverdreifachung im Humanoid-Hype 2025 = hohe Rückschlagsgefahr. Wettbewerb um Embodied-AI-Talente und -Aufträge mit deutlich größeren Playern. Kleine, wenig liquide A-Aktie, nur via Stock Connect / ETF zugänglich. Bilanz solide, profitabel."
+}

@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Shenzhen Leadshine Technology Co Ltd",
+    "ticker": "002979",
+    "exchange": "Shenzhen Stock Exchange (A-Aktien)",
+    "headquarters": "Shenzhen, Guangdong, China",
+    "founded": 1997,
+    "ipo": "2020 (Shenzhen)",
+    "industry": "Motion Control – Schrittmotoren, Servo-Systeme, integrierte Antriebe",
+    "competitors": ["Inovance Technology", "Hechuan Technology", "Estun (Antriebe)", "Oriental Motor", "Panasonic (Servo)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=SZSE%3A002979",
+  "summary": "China Leadshine Technology ist einer der führenden chinesischen Anbieter für Motion-Control-Komponenten: Schrittmotor-Systeme (Marktführer in China), AC-Servos, integrierte Smart-Motoren und Motion-Controller. Leadshine bedient Logistikautomation, Photovoltaik-Equipment, 3D-Druck und zunehmend Robotik. Für humanoide Roboter positioniert sich Leadshine mit rahmenlosen Torque-Motoren, integrierten Gelenk-Aktuatormodulen und Hohlwellen-Servoantrieben – genau die Bauteile, die humanoide OEMs in hoher Stückzahl benötigen.",
+  "products": [
+    "Schrittmotor-Treiber und Closed-Loop-Stepper (Marktführer China)",
+    "AC-Servo-Systeme (iSV / EL-Serien)",
+    "Rahmenlose Torque-Motoren (frameless – für Robotergelenke)",
+    "Integrierte Gelenk-Aktuatormodule (Motor + Encoder + Treiber)",
+    "Motion-Controller und Mehrachs-Steuerungen (EtherCAT)",
+    "Hohlwellen-Direktantriebe für kompakte Gelenke",
+    "Smart-Motoren für Logistik- und Lagerautomation (AGV/AMR)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Gelenk-Motoren und integrierte Aktuatormodule für Robotik-OEMs",
+    "reasons": [
+      "Rahmenlose Torque-Motoren sind die Standard-Motorbauform in Humanoid-Gelenken – Leadshine produziert sie in Serie",
+      "Integrierte Aktuatormodule (Motor + Encoder + Treiber in einem Gehäuse) reduzieren Integrationsaufwand für Humanoid-OEMs",
+      "Bestehende Großserien-Fertigung aus dem Stepper-Geschäft = Kostenvorteil beim Skalieren von Gelenk-Komponenten",
+      "Beliefert chinesische Robotik- und AMR-Hersteller, die ihre Lieferketten lokal aufbauen",
+      "Profitiert von Chinas Lokalisierungspolitik bei Automatisierungskomponenten",
+      "Motion-Controller mit EtherCAT koordinieren die 30–40 Achsen eines humanoiden Roboters"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-12",
+    "currency": "CNY",
+    "52w_low": 28.10,
+    "52w_high": 89.50,
+    "market_cap_cny_bn": 32,
+    "market_cap_usd_bn": 4.4,
+    "enterprise_value_cny_bn": 31,
+    "pe_trailing": 95,
+    "pe_forward": 58,
+    "price_to_sales_ttm": 17,
+    "price_to_book": 11.2,
+    "eps_cny_ttm": 0.84,
+    "revenue_fy25_cny_bn": 1.9,
+    "revenue_growth_yoy_pct": 28,
+    "gross_margin_pct": 38.5,
+    "net_income_cny_mn": 340,
+    "dividend_yield_pct": 0.3,
+    "beta_5y": 1.55,
+    "debt_to_equity": 0.10,
+    "current_ratio": 3.8,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_cny": 92,
+    "shares_outstanding_mn": 402
+  },
+  "risk_notes": "Sehr hohe Bewertung (KGV ~95 trailing) bei kleiner Umsatzbasis – der Kurs preist erheblichen Humanoid-Erfolg vorweg. Kerngeschäft Schrittmotoren ist margenschwächer und zyklisch (Logistik-/PV-Capex). Übermächtiger Lokalrivale Inovance und spezialisierte Konkurrenz (Hechuan) im Servo-Segment. A-Aktie nur via Stock Connect / ETF zugänglich. Solide, fast schuldenfreie Bilanz."
+}

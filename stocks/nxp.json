@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "NXP Semiconductors NV",
+    "ticker": "NXPI",
+    "exchange": "Nasdaq",
+    "headquarters": "Eindhoven, Niederlande",
+    "founded": 2006,
+    "ipo": "2010 (Nasdaq, Abspaltung von Philips)",
+    "industry": "Halbleiter – Automotive, Industrial & IoT, Mobile, Kommunikationsinfrastruktur",
+    "competitors": ["Infineon", "STMicroelectronics", "Texas Instruments", "Renesas", "Qualcomm (Auto)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3ANXPI",
+  "summary": "NXP ist nach Infineon einer der größten Automotive-Halbleiterhersteller der Welt und Marktführer bei Auto-Mikrocontrollern, Fahrzeugnetzwerken und sicherer Konnektivität (NFC, UWB). Über die Hälfte des Umsatzes kommt aus dem Auto, der Rest aus Industrial/IoT, Mobile und Kommunikationsinfrastruktur. Für Robotik liefert NXP Echtzeit-Mikrocontroller, Crossover-Prozessoren (i.MX) mit NPU, Sensorik-Interfaces und funktionale Sicherheit – das deterministische 'Kleinhirn', das neben dem KI-Hauptprozessor Motorsteuerung und Safety übernimmt.",
+  "products": [
+    "S32 Automotive-Prozessorfamilie (Zonal-Architektur, ADAS, Safety)",
+    "i.MX Applikations-Prozessoren mit NPU (Edge-AI für Industrie & Robotik)",
+    "i.MX RT Crossover-MCUs (Echtzeit-Motorsteuerung)",
+    "CAN/LIN/Ethernet-Transceiver (Fahrzeug- und Roboter-Bordnetz)",
+    "UWB- und NFC-Chips (sichere Lokalisierung, Zugang)",
+    "Radar-Chipsätze (77GHz – Fahrzeuge und mobile Roboter)",
+    "EdgeLock Security-Elemente (Hardware-Sicherheit für vernetzte Geräte)",
+    "eIQ ML-Software-Stack (Modell-Deployment auf NXP-Chips)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "indirekt-direkt – Echtzeit-MCUs, Edge-Prozessoren und Safety-Chips für Robotersteuerung",
+    "reasons": [
+      "Jedes Robotergelenk braucht Echtzeit-Motorsteuerung – i.MX RT MCUs sind dafür ausgelegt (deterministische Regelung im kHz-Takt)",
+      "i.MX 9-Prozessoren mit NPU übernehmen Sensor-Fusion und lokale KI-Vorverarbeitung neben dem Haupt-KI-Chip",
+      "Funktionale Sicherheit (ISO 26262 / IEC 61508 Know-how aus Automotive) wird für Humanoide im Menschenumfeld Pflicht",
+      "In-Vehicle-Networking-Portfolio (CAN, Automotive Ethernet) ist direkt auf die Bordnetze humanoider Roboter übertragbar",
+      "Radar- und UWB-Chips ermöglichen Näherungserkennung und präzise Indoor-Lokalisierung mobiler Roboter",
+      "Breite Industrial-Kundschaft: NXP-Chips stecken bereits in AMRs, Cobots und Lagerautomation"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-12",
+    "currency": "USD",
+    "52w_low": 158.00,
+    "52w_high": 262.00,
+    "market_cap_usd_bn": 58,
+    "enterprise_value_usd_bn": 66,
+    "pe_trailing": 22,
+    "pe_forward": 15,
+    "price_to_sales_ttm": 4.6,
+    "price_to_book": 6.0,
+    "eps_ttm_usd": 10.40,
+    "revenue_fy25_usd_bn": 12.6,
+    "revenue_growth_yoy_pct": 1,
+    "gross_margin_pct": 56.5,
+    "net_income_usd_bn": 2.6,
+    "dividend_yield_pct": 1.8,
+    "beta_5y": 1.35,
+    "debt_to_equity": 1.15,
+    "current_ratio": 2.1,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_usd": 255,
+    "shares_outstanding_mn": 254
+  },
+  "risk_notes": "Hohe Abhängigkeit vom zyklischen Automobilmarkt (>55% Umsatz) – Auto-Halbleiter steckten 2024/25 in einer Lagerkorrektur. China-Exposure erheblich (Absatzmarkt + lokale Konkurrenz durch SemiDrive & Co.). Robotik-Umsatz heute noch klein und nicht separat ausgewiesen. Höhere Verschuldung als Peers (Übernahmen, Buybacks). Moderate Bewertung; Qualitäts-Compounder mit Safety-Burggraben, aber kein pure Robotik-Play."
+}

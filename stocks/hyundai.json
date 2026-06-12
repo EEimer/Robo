@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Hyundai Motor Co",
+    "ticker": "005380",
+    "exchange": "KRX (Seoul)",
+    "headquarters": "Seoul, Südkorea",
+    "founded": 1967,
+    "ipo": "1974 (KRX)",
+    "industry": "Automobilhersteller – Pkw, EVs, Wasserstoff; Mehrheitseigner von Boston Dynamics",
+    "competitors": ["Toyota", "Volkswagen", "GM", "Tesla", "BYD", "Kia (Schwester)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=KRX%3A005380",
+  "summary": "Hyundai Motor ist (mit Kia) der drittgrößte Autohersteller der Welt – und über die 2021 übernommene Mehrheit an Boston Dynamics der Konzern hinter den bekanntesten Robotern der Welt (Atlas, Spot, Stretch). Der elektrische Atlas wird für den Einsatz in Hyundai-Fabriken industrialisiert; der Metaplant-Standort in Georgia (USA) dient als Testfeld für robotergestützte Fertigung. Hyundai kombiniert solide Auto-Cashflows (Ioniq-EV-Linie, Hybride, Wasserstoff) mit der wohl tiefsten Humanoid-Forschungskompetenz außerhalb der Tech-Branche – zu einer klassischen Auto-Bewertung.",
+  "products": [
+    "Pkw- und SUV-Palette (Tucson, Santa Fe, Palisade)",
+    "Ioniq EV-Linie (Ioniq 5/6/9, E-GMP-Plattform)",
+    "NEXO Wasserstoff-Brennstoffzellen-Fahrzeuge",
+    "Boston Dynamics Atlas (elektrischer Humanoid, Fabrik-Pilotierung)",
+    "Boston Dynamics Spot (Quadruped, Inspektion) und Stretch (Logistik)",
+    "Robotics LAB: Wearable Robots (X-ble Exoskelette), DAL-e Serviceroboter",
+    "Supernal eVTOL (Advanced Air Mobility, Tochter)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Mehrheitseigner von Boston Dynamics, Atlas-Industrialisierung in eigenen Werken",
+    "reasons": [
+      "~80% an Boston Dynamics: Atlas ist technologisch führend bei dynamischer Ganzkörper-Kontrolle",
+      "Elektrischer Atlas wird gezielt für Hyundai-Fabrikeinsatz entwickelt – konzerninterner Erstkunde mit Skalenbedarf",
+      "Partnerschaft Boston Dynamics + Toyota Research Institute für Large Behavior Models (KI-Steuerung)",
+      "Eigenes Robotics LAB liefert Exoskelette und Serviceroboter bereits kommerziell",
+      "Auto-Fertigungskompetenz (Aktuatoren, Einkauf, Qualität) beschleunigt Humanoid-Industrialisierung",
+      "Koreas Regierung fördert Robotik massiv – Hyundai ist nationaler Champion des Ökosystems"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-06-12",
+    "currency": "KRW",
+    "52w_low": 178000,
+    "52w_high": 305000,
+    "market_cap_krw_bn": 58000,
+    "market_cap_usd_bn": 42,
+    "enterprise_value_krw_bn": 150000,
+    "pe_trailing": 6,
+    "pe_forward": 5,
+    "price_to_sales_ttm": 0.3,
+    "price_to_book": 0.6,
+    "eps_krw_ttm": 42000,
+    "revenue_fy25_usd_bn": 132,
+    "revenue_growth_yoy_pct": 7,
+    "gross_margin_pct": 20.5,
+    "net_income_usd_bn": 8.5,
+    "dividend_yield_pct": 4.8,
+    "beta_5y": 0.95,
+    "debt_to_equity": 1.40,
+    "current_ratio": 1.1,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_krw": 320000,
+    "shares_outstanding_mn": 209
+  },
+  "risk_notes": "Boston Dynamics ist ein winziger, defizitärer Teil eines $130-Mrd-Autokonzerns – der Humanoid-Hebel auf den Aktienkurs ist begrenzt ('Korea Discount' inklusive: KGV ~6, P/B ~0,6). Kerngeschäft trägt US-Zoll- und EV-Nachfragerisiken; hohe Konzern-Verschuldung stammt großteils aus der Finanzsparte (Captive). Komplexe Chaebol-Governance und Cross-Holdings. Dafür: hohe Dividende, Rückkäufe, und Atlas als realste 'kostenlose' Humanoid-Option im Value-Mantel."
+}

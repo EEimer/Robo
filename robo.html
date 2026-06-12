@@ -456,6 +456,15 @@ Promise.all([
   ['nvidia',   'stocks/nvidia.json'],
   ['rainbow',  'stocks/rainbow.json'],
   ['qualcomm', 'stocks/qualcomm.json'],
+  ['thk',      'stocks/thk.json'],
+  ['leadshine','stocks/leadshine.json'],
+  ['nxp',      'stocks/nxp.json'],
+  ['melexis',  'stocks/melexis.json'],
+  ['estun',    'stocks/estun.json'],
+  ['yijiahe',  'stocks/yijiahe.json'],
+  ['xpeng',    'stocks/xpeng.json'],
+  ['robotis',  'stocks/robotis.json'],
+  ['hyundai',  'stocks/hyundai.json'],
 ].map(([key, path]) => fetch(path).then(r => r.json()).then(d => { STOCKS[key] = d; })))
 .catch(err => console.error('Stock JSON load error:', err));
 
@@ -473,7 +482,16 @@ const TICKER_MAP = {
   '6324':'harmonic',
   'NVDA':'nvidia',
   '277810':'rainbow',
-  'QCOM':'qualcomm'
+  'QCOM':'qualcomm',
+  '6481':'thk',
+  '002979':'leadshine',
+  'NXPI':'nxp',
+  'MELE':'melexis',
+  '002747':'estun',
+  '603666':'yijiahe',
+  'XPEV':'xpeng','9868':'xpeng',
+  '108490':'robotis',
+  '005380':'hyundai'
 };
 
 function getStockKey(ticker) {
@@ -917,9 +935,11 @@ function openModal(stockKey) {
     : '—';
   const rev = sd.revenue_fy26_usd_bn ? '$'+sd.revenue_fy26_usd_bn+'B'
     : sd.revenue_fy25_usd_bn ? '$'+sd.revenue_fy25_usd_bn+'B'
+    : sd.revenue_fy25_usd_mn ? '$'+sd.revenue_fy25_usd_mn+'M'
     : sd.revenue_fy25_eur_bn ? '€'+sd.revenue_fy25_eur_bn+'B'
     : sd.revenue_fy25_cny_bn ? '¥'+sd.revenue_fy25_cny_bn+'B'
     : sd.revenue_fy25_jpy_bn ? '¥'+sd.revenue_fy25_jpy_bn+'B JPY'
+    : sd.revenue_fy25_krw_bn ? '₩'+sd.revenue_fy25_krw_bn+'B KRW'
     : '—';
   const growthVal = sd.revenue_growth_yoy_pct;
   const growthStr = growthVal === null || growthVal === undefined ? '—'
