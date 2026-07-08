@@ -159,6 +159,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 .hrow-match{background:rgba(0,0,0,.025);border-radius:5px;padding:2px 4px;margin:0 -4px 4px}
 .xtags{display:inline-flex;flex-wrap:nowrap;gap:2px;flex-shrink:0}
 .xtag{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;white-space:nowrap;line-height:1.5}
+.xtag.compact{font-size:8px;padding:0 4px}
 @media(max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}.kpi:nth-child(2){border-right:none}.hrow{grid-template-columns:120px 1fr 40px}}
 
 /* ===== Alle Firmen ===== */
@@ -850,7 +851,8 @@ function makeBar(pct, color, max) {
 
 function makeRows(cardId, color, holdings, top) {
   const maxP = holdings[0] ? holdings[0].p : 1;
-  const doCross = visibleIds.length >= 2 && visibleIds.length <= 3;
+  const doCross = visibleIds.length >= 2 && visibleIds.length <= 4;
+  const compact = visibleIds.length === 4;
   const others = visibleIds.filter(id => id !== cardId);
   const lookups = {};
   if(doCross) others.forEach(id => { lookups[id] = buildLookup(id); });
@@ -863,7 +865,8 @@ function makeRows(cardId, color, holdings, top) {
         const m = findMatch(h.n, lookups[oid]);
         if(m) {
           const cfg = CARDS.find(c=>c.id===oid);
-          tags += '<span class="xtag" style="background:'+COLOR[oid]+'22;color:'+COLOR[oid]+';border:1px solid '+COLOR[oid]+'66">'+m.pct.toFixed(2)+'%</span>';
+          const pctStr = compact ? m.pct.toFixed(1) : m.pct.toFixed(2);
+          tags += '<span class="xtag'+(compact?' compact':'')+'" style="background:'+COLOR[oid]+'22;color:'+COLOR[oid]+';border:1px solid '+COLOR[oid]+'66">'+pctStr+'%</span>';
         }
       });
     }
@@ -880,7 +883,7 @@ function makeRows(cardId, color, holdings, top) {
   let html = shown.map(row).join('');
   if(rest.length) {
     const hint = doCross ? ' · farbige Tags = gleiche Position im anderen ETF' : '';
-    html += '<details class="more"><summary>+ '+rest.length+' weitere Positionen</summary><div>'+rest.map(row).join('')+'</div></details>';
+    html += '<details class="more" open><summary>+ '+rest.length+' weitere Positionen</summary><div>'+rest.map(row).join('')+'</div></details>';
   }
   return html;
 }
@@ -888,7 +891,7 @@ function makeRows(cardId, color, holdings, top) {
 function buildCards() {
   const grid = document.getElementById('cards-grid');
   grid.innerHTML = '';
-  const doCross = visibleIds.length >= 2 && visibleIds.length <= 3;
+  const doCross = visibleIds.length >= 2 && visibleIds.length <= 4;
   for(const c of CARDS) {
     if(!visibleIds.includes(c.id)) continue;
     const h = DATA[c.id]||[];
