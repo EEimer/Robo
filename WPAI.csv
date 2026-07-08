@@ -1,0 +1,75 @@
+Group,Name,Security Ticker,FIGI,Shares,Weight
+Industrials,Leader Harmonious Drive Sy-A,688017 C1,FIGI-PENDING-Y5208X109,"141,104",5.11%
+Industrials,Ubtech Robotics Corp Ltd-H,9880 HK,BBG01KPDM897,"602,741",3.80%
+Industrials,Harmonic Drive Systems Inc,6324 JT,BBG000BCZQ59,"136,672",3.55%
+Industrials,Aerovironment Inc,AVAV UQ,BBG000GX14P2,"33,539",2.89%
+Industrials,Red Cat Holdings Inc,RCAT US,BBG000BQRFM2,"554,797",2.71%
+Industrials,Siasun Robot & Automation-A,300024 C2,FIGI-PENDING-Y7912E104,"1,938,100",2.50%
+Industrials,Siemens Ag-Reg,SIE GR,BBG000BCCRV3,"13,138",2.14%
+Industrials,Yaskawa Electric Corp,6506 JT,BBG000BDCFJ1,"93,457",2.11%
+Industrials,Symbotic Inc,SYM US,BBG00ZK05N67,"90,260",1.97%
+Industrials,Amprius Technologies Inc,AMPX US,BBG019MBDC63,"308,533",1.91%
+Industrials,Allient Inc,ALNT UQ,BBG000BKVYJ3,"43,360",1.89%
+Industrials,Fanuc Ltd,6954 JT,BBG000BM3VX0,"81,641",1.89%
+Industrials,Shenzhen Dobot Corp Ltd-H,2432 HK,FIGI-PENDING-Y7T4HZ103,"1,007,262",1.79%
+Industrials,Rainbow Robotics,277810 KS,BBG00CGP9WC7,"9,616",1.53%
+Industrials,Beta Technologies Inc -Cl A,BETA US,BBG000MBSFT5,"164,024",1.47%
+Industrials,Exail Technologies,EXA FP,BBG005P1W1F4,"17,875",1.35%
+Industrials,Shenzhen Inovance Technology-A,300124 C2,BBG00F139TZ7,"244,700",1.26%
+Industrials,Archer Aviation Inc-A,ACHR US,BBG00YGCK455,"413,622",1.08%
+Industrials,Rockwell Automation Inc/DE,ROK UN,BBG000BBCDZ2,"3,867",0.96%
+Industrials,AutoStore Holdings Ltd.,AUTO,FIGI-PENDING-G0670A109,"1,108,217",0.71%
+Industrials,Nabtesco Corp,6268 JT,BBG000Q04VM3,"38,568",0.70%
+Industrials,Kawasaki Heavy Industries Ltd,7012 JT,BBG000BM73C1,"69,223",0.66%
+Industrials,Daifuku Co Ltd,6383 JP,BBG000BLQSJ0,"28,902",0.65%
+Industrials,Ehang Holdings Ltd-Sps Adr,EH US,FIGI-PENDING-26853E102,"202,506",0.59%
+Industrials,Richtech Robotics Inc-Cl B,RR US,BBG01HRPF6Y9,"579,067",0.56%
+Industrials,Daihen Corp,6622 JT,BBG000BLWKJ0,"10,481",0.55%
+Industrials,Jungheinrich - Prfd,JUN3 GR,FIGI-PENDING-D37552102,"36,076",0.54%
+Industrials,Airo Group Holdings Inc,AIRO US,BBG01FRGW2W5,"147,387",0.54%
+Industrials,Doosan Robotics Inc,454910 KS,BBG00CX1V045,"18,822",0.51%
+Industrials,Kubota Corp,6326 JT,BBG000BGGZQ8,"53,330",0.48%
+Industrials,Vertical Aerospace Ltd,EVTL US,FIGI-PENDING-G9471C206,"339,413",0.32%
+Consumer Discretionary,Tesla Inc,TSLA UQ,BBG000N9MNX3,"12,499",2.67%
+Consumer Discretionary,Thunder Tiger Corp,8033 TT,BBG000F716Y5,"642,105",2.19%
+Consumer Discretionary,Hyundai Motor Co,005380 KS,BBG000BCVDK5,"11,627",1.93%
+Consumer Discretionary,Mobileye Global Inc-A,MBLY US,BBG019X46Z37,"298,533",1.50%
+Consumer Discretionary,Amazon.com Inc,AMZN UQ,BBG000BVPV84,"10,293",1.34%
+Consumer Discretionary,Schaeffler Ag,SHA0 GR,BBG01Q3G2JM4,"212,483",1.10%
+Consumer Discretionary,Hesai Group,2525 HK,FIGI-PENDING-G4417G106,"116,140",1.07%
+Consumer Discretionary,Serve Robotics Inc,SERV US,BBG0123N71Y3,"261,161",0.84%
+Information Technology,Nvidia Corp,NVDA UQ,BBG000BBJQV0,"23,424",2.44%
+Information Technology,Pony Ai Inc-Class A,2026 HK,FIGI-PENDING-G7171B106,"631,335",2.29%
+Information Technology,Ouster Inc,OUST US,BBG00XRTSTR1,"96,212",2.24%
+Information Technology,Omron Corp,6645 JT,BBG000BGJDG5,"110,567",2.10%
+Information Technology,Ondas Inc,ONDS US,BBG009HYYCD9,"493,057",1.92%
+Information Technology,Samsara Inc-Cl A,IOT US,BBG012CPBT63,"97,260",1.87%
+Information Technology,China Leadshine Technology-A,002979 C2,FIGI-PENDING-Y14765104,"342,200",1.85%
+Information Technology,Allegro Microsystems Inc,ALGM US,BBG00XZQH039,"61,284",1.67%
+Information Technology,Vishay Precision Group Inc,VPG UN,BBG000PRQ0V9,"27,438",1.58%
+Information Technology,Keyence Corp,6861 JT,BBG000BQF8C2,"5,574",1.42%
+Information Technology,Unusual Machines Inc /Us,UMAC US,BBG01M9MT5P2,"121,540",1.29%
+Information Technology,Aurora Innovation Inc,AUR US,BBG00Z92Y6X1,"338,604",1.13%
+Information Technology,Robotis Co Ltd,108490 KS,BBG00JR8F3N3,"14,901",1.09%
+Information Technology,Robosense Technology Co Ltd,2498 HK,BBG01N8DD3R1,"698,024",1.07%
+Information Technology,Horizon Robotics Inc,9660 HK,BBG01Q9Y2TG4,"3,108,974",0.93%
+Information Technology,Kraken Robotics Inc,PNG CN,BBG000GNJQ85,"340,960",0.77%
+Information Technology,Cognex Corp,CGNX UQ,BBG000BPBVW5,"21,090",0.72%
+Information Technology,Teradyne Inc,TER UN,BBG000BV4DR6,"3,896",0.71%
+EQ,XPeng Inc - Class A Shares,9868 HK,BBG014V3MFS1,"657,815",2.32%
+EQ,Xiaomi Corp-Class B,1810 HK,BBG00KVTBY91,"1,373,523",2.14%
+EQ,Google Inc,GOOGL UQ,BBG009S39JX6,"6,967",1.35%
+EQ,Kratos Defense &amp; Security Solu,KTOS,BBG000C1HQ43,"50,267",1.34%
+EQ,Joby Aviation Inc,JOBY US,BBG00Y1DKJS1,"260,070",1.12%
+EQ,Ambarella Inc,AMBA US,BBG001QZCPJ2,"22,701",0.86%
+EQ,Dassault Systemes SE,DSY FP,BBG000MGHYG9,"55,683",0.63%
+EQ,Deere &amp; Co,DE UN,BBG000BH1NH9,"1,569",0.50%
+EQ,CASH W-O,—,—,"310,976",0.16%
+EQ,HONG KONG DOLLAR,—,—,"358,624",0.02%
+EQ,CANADIAN DOLLAR,—,—,"13,469",0.01%
+EQ,NORWEGIAN KRONE,—,—,"86,608",0.00%
+EQ,EURO INCOME A/C,—,—,"4,185",0.00%
+EQ,SWISS FRANC,—,—,"2,185",0.00%
+EQ,STERLING POUND,—,—,"1,475",0.00%
+EQ,JAPANESE YEN,—,—,"140,110",0.00%
+Health Care,Intuitive Surgical Inc,ISRG UQ,BBG000BJPDZ1,"4,777",1.08%

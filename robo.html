@@ -9,7 +9,7 @@
 <style>
 :root{
   --bg:#EDF0F3;--panel:#FFFFFF;--ink:#131B26;--muted:#5A6573;--line:#D7DDE4;
-  --koid:#0F7B6C;--humn:#C0392B;--hk:#B07B1E;--botz:#2E5FA3;--rbot:#1F8A9E;--robo:#6B4FA0;--bott:#B03A6E;
+  --koid:#0F7B6C;--humn:#C0392B;--hk:#B07B1E;--botz:#2E5FA3;--rbot:#1F8A9E;--robo:#6B4FA0;--bott:#B03A6E;--wpai:#E2672A;
   --good:#0F7B6C;--bad:#C0392B;--warn:#B07B1E;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -191,12 +191,13 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 <div class="wrap">
 <header>
   <div class="eyebrow">Robotik / Physical AI &middot; Sleeve 10% &middot; v3</div>
-  <h1>7 Robotik-ETFs im Vergleich</h1>
-  <p class="sub">Holdings aus offiziellen Anbieter-CSVs (Stand 09.–10. Juni 2026). Alle Positionen aufklappbar. RBTZ entfernt. Chips oben zum Ein-/Ausblenden.</p>
-  <div class="datestamp">KOID 09.06 &middot; HUMN 09.06 &middot; 2807 09.06 &middot; BOTT 10.06 &middot; BOTZ 10.06 &middot; ROBO 10.06 &middot; RBOT: ältere Quelle, Gewichte gerundet</div>
+  <h1>8 Robotik-ETFs im Vergleich</h1>
+  <p class="sub">Holdings aus offiziellen Anbieter-CSVs (Stand 09.06.–07.07.2026). Alle Positionen aufklappbar. RBTZ entfernt. Chips oben zum Ein-/Ausblenden.</p>
+  <div class="datestamp">WPAI 07.07 &middot; KOID 09.06 &middot; HUMN 09.06 &middot; 2807 09.06 &middot; BOTT 10.06 &middot; BOTZ 10.06 &middot; ROBO 10.06 &middot; RBOT: ältere Quelle, Gewichte gerundet</div>
 </header>
 
 <div class="chips" id="chips">
+  <div class="chip active" data-etf="wpai"><span class="dot" style="background:var(--wpai)"></span>WPAI</div>
   <div class="chip active" data-etf="koid"><span class="dot" style="background:var(--koid)"></span>KOID</div>
   <div class="chip active" data-etf="bott"><span class="dot" style="background:var(--bott)"></span>BOTT</div>
   <div class="chip active" data-etf="humn"><span class="dot" style="background:var(--humn)"></span>HUMN</div>
@@ -213,6 +214,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 <table>
 <thead><tr>
   <th></th>
+  <th class="col-wpai"><span class="tick" style="background:var(--wpai)">WPAI</span></th>
   <th class="col-koid"><span class="tick" style="background:var(--koid)">KOID</span></th>
   <th class="col-bott"><span class="tick" style="background:var(--bott)">BOTT</span></th>
   <th class="col-humn"><span class="tick" style="background:var(--humn)">HUMN</span></th>
@@ -223,20 +225,24 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 </tr></thead>
 <tbody>
 <tr><th>Anbieter</th>
+  <td class="col-wpai">WisdomTree</td>
   <td class="col-koid">KraneShares</td><td class="col-bott">Themes ETFs</td><td class="col-humn">Roundhill</td><td class="col-hk">Global X (Mirae, HK)</td>
   <td class="col-botz">Global X</td><td class="col-rbot">iShares (BlackRock)</td>
   <td class="col-robo">ROBO Global / L&amp;G</td></tr>
 <tr><th>Fokus</th>
+  <td class="col-wpai">Physical AI: Humanoide, Drohnen, Smart Factories, Logistik</td>
   <td class="col-koid">Humanoid-Ökosystem, Komponenten</td><td class="col-bott">Humanoid pur</td><td class="col-humn">Humanoid OEM-Conviction (aktiv)</td>
   <td class="col-hk">China Robotik + AI</td><td class="col-botz">Breite Robotik + AI</td>
   <td class="col-rbot">Automation sehr breit: Chips, Software, Industrie</td>
   <td class="col-robo">Breite Robotik &amp; Automation (Equal-Weight)</td></tr>
 <tr class="hl"><th>TER</th>
+  <td class="num col-wpai">0,45%</td>
   <td class="num col-koid">0,69%</td><td class="num col-bott"><b>0,35%</b></td><td class="num col-humn">0,75%</td><td class="num col-hk">0,68%</td>
   <td class="num col-botz">0,68% <span class="small">UCITS: 0,50%</span></td>
   <td class="num col-rbot"><b>0,40%</b></td>
   <td class="num col-robo">0,95%</td></tr>
 <tr class="hl"><th>AUM</th>
+  <td class="num col-wpai">$188M</td>
   <td class="num col-koid">~$190M (US)<span class="small">UCITS-Tranche klein</span></td>
   <td class="num col-bott">$62M</td>
   <td class="num col-humn">~$85M</td>
@@ -245,22 +251,27 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <td class="num col-rbot"><b>~$4 Mrd (UCITS!)</b></td>
   <td class="num col-robo">~$255M (US)</td></tr>
 <tr><th>Holdings</th>
+  <td class="num col-wpai">66</td>
   <td class="num col-koid">50</td><td class="num col-bott">30</td><td class="num col-humn">42</td><td class="num col-hk">25</td>
   <td class="num col-botz">61</td><td class="num col-rbot">~130</td>
   <td class="num col-robo">78</td></tr>
 <tr class="hl"><th>Top-10-Anteil</th>
+  <td class="num col-wpai">~30%</td>
   <td class="num col-koid"><b>~30%</b></td><td class="num col-bott">~54%</td><td class="num col-humn">~47%</td>
   <td class="num col-hk">~62%</td><td class="num col-botz">58,6%</td>
   <td class="num col-rbot">~46%</td><td class="num col-robo"><b>~17%</b></td></tr>
 <tr><th>Größte Position</th>
+  <td class="col-wpai">Leader Harmonious 5,11%</td>
   <td class="col-koid">Credo 3,75%</td><td class="col-bott">Leader Harmonious 8,59%</td><td class="col-humn">Tesla 8,19%</td>
   <td class="col-hk">Han's Laser 10,45%</td><td class="col-botz">ABB 9,2%</td>
   <td class="col-rbot">Intel 9,7%</td><td class="col-robo">Infineon 2,32%</td></tr>
 <tr><th>Nvidia-Gewicht</th>
+  <td class="num col-wpai">2,44%</td>
   <td class="num col-koid">1,85%</td><td class="num col-bott">4,56%</td><td class="num col-humn">4,05%</td><td class="num col-hk">0%</td>
   <td class="num col-botz">8,6%</td><td class="num col-rbot">2,87%</td>
   <td class="num col-robo">1,33%</td></tr>
 <tr><th>Index / Stil</th>
+  <td class="col-wpai">WisdomTree Physical AI, Relevancy-/Thematic-Score gewichtet</td>
   <td class="col-koid">MerQube Humanoid &amp; Embodied Intel., Equal-Weight</td>
   <td class="col-bott">Solactive Global Humanoid Robotics, Market-Cap</td>
   <td class="col-humn">— aktiv gemanagt</td>
@@ -269,10 +280,12 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <td class="col-rbot">iSTOXX FactSet Automation &amp; Robotics, Sampling</td>
   <td class="col-robo">ROBO Global Robotics, mod. Equal-Weight Cap 2,5%</td></tr>
 <tr><th>Launch</th>
+  <td class="num col-wpai">Feb 2026</td>
   <td class="num col-koid">Jun 2025</td><td class="num col-bott">Relaunch Okt 2025</td><td class="num col-humn">Jun 2025</td><td class="num col-hk">Aug 2020</td>
   <td class="num col-botz">Sep 2016</td><td class="num col-rbot">Sep 2016</td>
   <td class="num col-robo">Okt 2013</td></tr>
 <tr class="hl"><th>Listing / Währung</th>
+  <td class="col-wpai"><b>LSE USD (UCITS)</b><span class="small">+ LSE GBp (PAIG), Borsa Italiana, Xetra, Euronext Paris, SIX</span></td>
   <td class="col-koid"><b>LSE USD (UCITS)</b><span class="small">+ Nasdaq, Borsa Italiana, Xetra KBOT</span></td>
   <td class="col-bott">Nasdaq USD<span class="small">keine UCITS</span></td>
   <td class="col-humn">US Cboe USD<span class="small">keine UCITS</span></td>
@@ -281,6 +294,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <td class="col-rbot"><b>LSE USD (UCITS)</b><span class="small">IE00BYZK4552, thesaurierend</span></td>
   <td class="col-robo">NYSE USD<span class="small">L&amp;G UCITS-Variante: LSE USD prüfen</span></td></tr>
 <tr class="hl"><th>Estate-Tax-Risiko</th>
+  <td class="col-wpai"><span class="tag good">UCITS Irland = nein</span></td>
   <td class="col-koid"><span class="tag good">UCITS Irland = nein</span></td>
   <td class="col-bott"><span class="tag bad">US = ja, kein Ausweg</span></td>
   <td class="col-humn"><span class="tag bad">US = ja, kein Ausweg</span></td>
@@ -289,6 +303,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <td class="col-rbot"><span class="tag good">UCITS Irland = nein</span></td>
   <td class="col-robo"><span class="tag bad">US = ja</span><span class="small">L&amp;G-UCITS = nein</span></td></tr>
 <tr><th>Schaufel-These-Fit</th>
+  <td class="col-wpai"><span class="tag good">✓ passt</span></td>
   <td class="col-koid"><span class="tag good">✓ passt</span></td>
   <td class="col-bott"><span class="tag warn">Ergänzung: China-Wette</span></td>
   <td class="col-humn"><span class="tag warn">nur als Conviction-Add-on</span></td>
@@ -304,6 +319,18 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 <h2>Länder-Exposure</h2>
 <p class="h2sub">Aus offiziellen Holdings-Daten (KOID, HUMN, 2807, BOTT, BOTZ, ROBO) und bekannten Index-Zusammensetzungen (RBOT) abgeleitet.</p>
 <div class="geo">
+  <div class="geo-row" data-etf="wpai">
+    <span class="geo-lbl" style="color:var(--wpai)">WPAI</span>
+    <div class="bar">
+      <div class="seg c-us" style="width:43%">USA 42,75%</div>
+      <div class="seg c-cn" style="width:27%">China 26,75%</div>
+      <div class="seg c-jp" style="width:14%">Japan 14,14%</div>
+      <div class="seg c-kr" style="width:5%">Korea 5,08%</div>
+      <div class="seg c-eu" style="width:6%">EU (DE/FR/UK) ~6,1</div>
+      <div class="seg c-tw" style="width:2%">TW 2,19%</div>
+      <div class="seg c-rest" style="width:3%">Rest (IL/CA)</div>
+    </div>
+  </div>
   <div class="geo-row" data-etf="koid">
     <span class="geo-lbl" style="color:var(--koid)">KOID</span>
     <div class="bar">
@@ -398,7 +425,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 
 <!-- ===== ALLE FIRMEN ===== -->
 <h2>Alle Firmen</h2>
-<p class="h2sub">Alle Positionen über alle 7 ETFs aggregiert. Gleiche Firma in mehreren ETFs wird zusammengeführt.</p>
+<p class="h2sub">Alle Positionen über alle 8 ETFs aggregiert. Gleiche Firma in mehreren ETFs wird zusammengeführt.</p>
 <div class="sort-tabs" id="firmen-sort">
   <button class="sort-tab active" data-sort="sum" onclick="buildAllFirmen('sum',this)">Gewichtssumme</button>
   <button class="sort-tab" data-sort="count" onclick="buildAllFirmen('count',this)">Anzahl ETFs</button>
@@ -411,7 +438,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
     <div style="flex:1;min-width:220px">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px">Features</div>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
-        <li>✓ &nbsp;7 ETFs vergleichbar – per Chip ein-/ausblenden</li>
+        <li>✓ &nbsp;8 ETFs vergleichbar – per Chip ein-/ausblenden</li>
         <li>✓ &nbsp;Holdings aus offiziellen Anbieter-CSVs (KOID, HUMN, 2807, BOTT, ROBO vollständig)</li>
         <li>✓ &nbsp;Cross-ETF-Highlighting – gleiche Position farbig markiert</li>
         <li>✓ &nbsp;Länder-Exposure als Balkenchart</li>
@@ -438,7 +465,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 </div>
 
 <script>
-const COLOR = {koid:'#0F7B6C',humn:'#C0392B',hk:'#B07B1E',botz:'#2E5FA3',rbot:'#1F8A9E',robo:'#6B4FA0',bott:'#B03A6E'};
+const COLOR = {koid:'#0F7B6C',humn:'#C0392B',hk:'#B07B1E',botz:'#2E5FA3',rbot:'#1F8A9E',robo:'#6B4FA0',bott:'#B03A6E',wpai:'#E2672A'};
 
 let STOCKS = {};
 Promise.all([
@@ -500,6 +527,41 @@ function getStockKey(ticker) {
 }
 
 const DATA = {
+wpai: [
+  {n:'Leader Harmonious Drive Systems',t:'688017 C1',p:5.11},{n:'Ubtech Robotics Corp Ltd-H',t:'9880 HK',p:3.80},
+  {n:'Harmonic Drive Systems Inc',t:'6324 JT',p:3.55},{n:'Aerovironment Inc',t:'AVAV UQ',p:2.89},
+  {n:'Red Cat Holdings Inc',t:'RCAT US',p:2.71},{n:'Tesla Inc',t:'TSLA UQ',p:2.67},
+  {n:'Siasun Robot & Automation-A',t:'300024 C2',p:2.50},{n:'Nvidia Corp',t:'NVDA UQ',p:2.44},
+  {n:'XPeng Inc - Class A Shares',t:'9868 HK',p:2.32},{n:'Pony Ai Inc-Class A',t:'2026 HK',p:2.29},
+  {n:'Ouster Inc',t:'OUST US',p:2.24},{n:'Thunder Tiger Corp',t:'8033 TT',p:2.19},
+  {n:'Siemens AG-Reg',t:'SIE GR',p:2.14},{n:'Xiaomi Corp-Class B',t:'1810 HK',p:2.14},
+  {n:'Yaskawa Electric Corp',t:'6506 JT',p:2.11},{n:'Omron Corp',t:'6645 JT',p:2.10},
+  {n:'Symbotic Inc',t:'SYM US',p:1.97},{n:'Hyundai Motor Co',t:'005380 KS',p:1.93},
+  {n:'Ondas Inc',t:'ONDS US',p:1.92},{n:'Amprius Technologies Inc',t:'AMPX US',p:1.91},
+  {n:'Allient Inc',t:'ALNT UQ',p:1.89},{n:'Fanuc Ltd',t:'6954 JT',p:1.89},
+  {n:'Samsara Inc-Cl A',t:'IOT US',p:1.87},{n:'China Leadshine Technology-A',t:'002979 C2',p:1.85},
+  {n:'Shenzhen Dobot Corp Ltd-H',t:'2432 HK',p:1.79},{n:'Allegro Microsystems Inc',t:'ALGM US',p:1.67},
+  {n:'Vishay Precision Group Inc',t:'VPG UN',p:1.58},{n:'Rainbow Robotics',t:'277810 KS',p:1.53},
+  {n:'Mobileye Global Inc-A',t:'MBLY US',p:1.50},{n:'Beta Technologies Inc-Cl A',t:'BETA US',p:1.47},
+  {n:'Keyence Corp',t:'6861 JT',p:1.42},{n:'Exail Technologies',t:'EXA FP',p:1.35},
+  {n:'Google Inc',t:'GOOGL UQ',p:1.35},{n:'Kratos Defense & Security Solutions',t:'KTOS',p:1.34},
+  {n:'Amazon.com Inc',t:'AMZN UQ',p:1.34},{n:'Unusual Machines Inc',t:'UMAC US',p:1.29},
+  {n:'Shenzhen Inovance Technology-A',t:'300124 C2',p:1.26},{n:'Aurora Innovation Inc',t:'AUR US',p:1.13},
+  {n:'Joby Aviation Inc',t:'JOBY US',p:1.12},{n:'Schaeffler AG',t:'SHA0 GR',p:1.10},
+  {n:'Robotis Co Ltd',t:'108490 KS',p:1.09},{n:'Archer Aviation Inc-A',t:'ACHR US',p:1.08},
+  {n:'Intuitive Surgical Inc',t:'ISRG UQ',p:1.08},{n:'Hesai Group',t:'2525 HK',p:1.07},
+  {n:'Robosense Technology Co Ltd',t:'2498 HK',p:1.07},{n:'Rockwell Automation Inc/DE',t:'ROK UN',p:0.96},
+  {n:'Horizon Robotics Inc',t:'9660 HK',p:0.93},{n:'Ambarella Inc',t:'AMBA US',p:0.86},
+  {n:'Serve Robotics Inc',t:'SERV US',p:0.84},{n:'Kraken Robotics Inc',t:'PNG CN',p:0.77},
+  {n:'Cognex Corp',t:'CGNX UQ',p:0.72},{n:'AutoStore Holdings Ltd',t:'AUTO',p:0.71},
+  {n:'Teradyne Inc',t:'TER UN',p:0.71},{n:'Nabtesco Corp',t:'6268 JT',p:0.70},
+  {n:'Kawasaki Heavy Industries Ltd',t:'7012 JT',p:0.66},{n:'Daifuku Co Ltd',t:'6383 JP',p:0.65},
+  {n:'Dassault Systemes SE',t:'DSY FP',p:0.63},{n:'Ehang Holdings Ltd-Sps Adr',t:'EH US',p:0.59},
+  {n:'Richtech Robotics Inc-Cl B',t:'RR US',p:0.56},{n:'Daihen Corp',t:'6622 JT',p:0.55},
+  {n:'Jungheinrich-Prfd',t:'JUN3 GR',p:0.54},{n:'Airo Group Holdings Inc',t:'AIRO US',p:0.54},
+  {n:'Doosan Robotics Inc',t:'454910 KS',p:0.51},{n:'Deere & Co',t:'DE UN',p:0.50},
+  {n:'Kubota Corp',t:'6326 JT',p:0.48},{n:'Vertical Aerospace Ltd',t:'EVTL US',p:0.32}
+],
 koid: [
   {n:'Credo Technology Group',t:'CRDO',p:3.75},{n:'Leader Harmonious Drive Systems',t:'688017',p:3.38},
   {n:'STMicroelectronics NV',t:'STMMI',p:3.29},{n:'Infineon Technologies AG',t:'IFX',p:3.05},
@@ -685,6 +747,11 @@ robo: [
 };
 
 const CARDS = [
+{id:'wpai',color:'#E2672A',name:'WPAI',fullname:'WisdomTree Physical AI, Humanoids and Drones UCITS ETF',verdict:'PASST ZUR THESE',vclass:'v-fit',
+ kpis:[['0,45%','TER'],['$188M','AUM'],['66','Holdings'],['~30%','Top 10']],
+ buyline:'Du kaufst: <b>die breiteste Physical-AI-Definition</b> - Humanoide, Drohnen/autonome Mobilität, Smart Factories, Logistik-Robotik und weitere Anwendungen, Relevancy-/Thematic-Score-gewichtet statt reinem Market-Cap.',
+ layers:['🤖 Humanoid-Robotik (Ubtech, Harmonic, Leader)','🚁 Drohnen & autonome Mobilität (AeroVironment, Red Cat, Archer, Joby)','🏭 Smart Factories (Siasun, Yaskawa, Fanuc, Symbotic)','📦 Logistik-Robotik (AutoStore, Daifuku, Kawasaki)','💡 Compute & Sensorik (Nvidia, Ouster, RoboSense, Hesai)'],
+ note:'UCITS Irish ICAV, LSE USD (+ GBp-Linie PAIG, Borsa Italiana, Xetra, Euronext Paris, SIX). Inception 10.02.2026, quartalsweise rebalanciert, Mindestens 25 Titel laut Methodik. Datenstand: 07.07.2026.'},
 {id:'koid',color:'#0F7B6C',name:'KOID',fullname:'KraneShares Global Humanoid Robotics & Physical AI',verdict:'PASST ZUR THESE',vclass:'v-fit',
  kpis:[['0,69%','TER'],['~$190M','AUM'],['50','Holdings'],['~30%','Top 10']],
  buyline:'Du kaufst: <b>die Schaufeln</b> - Equal-Weight über Aktuatoren, Getriebe, Rare Earths, Halbleiter. Kein Mega-Cap-Klumpen.',
@@ -722,21 +789,35 @@ const CARDS = [
  note:'Ältester Robotik-ETF (2013). Datenstand: 10.06.2026. US-Domizil; L&G-UCITS-Variante auf Listing/Währung bei IBKR prüfen.'}
 ];
 
-let visibleIds = ['koid','bott','humn'];
+const ETF_ORDER = ['wpai','koid','bott','humn','hk','botz','rbot','robo'];
+const ETF_STORAGE_KEY = 'robo-etf-selection';
+const DEFAULT_VISIBLE = ['wpai','koid','bott','humn'];
 
-// Set chip colors on load
+function loadSavedSelection() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(ETF_STORAGE_KEY));
+    if(Array.isArray(saved) && saved.length) return ETF_ORDER.filter(id => saved.includes(id));
+  } catch(e) {}
+  return DEFAULT_VISIBLE.slice();
+}
+
+function saveSelection() {
+  try { localStorage.setItem(ETF_STORAGE_KEY, JSON.stringify(visibleIds)); } catch(e) {}
+}
+
+let visibleIds = loadSavedSelection();
+
+// Apply saved/default selection to chips, table cols + geo rows on load
 document.querySelectorAll('#chips .chip').forEach(chip => {
   const key = chip.dataset.etf;
   const cfg = CARDS.find(c=>c.id===key);
   if(!cfg) return;
-  if(chip.classList.contains('active')) {
-    chip.style.background = cfg.color;
-  }
-  // hide table cols + geo rows for off chips
-  if(chip.classList.contains('off')) {
-    document.querySelectorAll('.col-'+key).forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.geo-row[data-etf="'+key+'"]').forEach(el => el.classList.add('hidden'));
-  }
+  const active = visibleIds.includes(key);
+  chip.classList.toggle('active', active);
+  chip.classList.toggle('off', !active);
+  chip.style.background = active ? cfg.color : '';
+  document.querySelectorAll('.col-'+key).forEach(el => el.classList.toggle('hidden', !active));
+  document.querySelectorAll('.geo-row[data-etf="'+key+'"]').forEach(el => el.classList.toggle('hidden', !active));
 });
 
 function normName(n) {
@@ -865,7 +946,7 @@ function buildAllFirmen(sortBy, btn) {
   }
 
   const container = document.getElementById('firmen-table');
-  const etfOrder = ['koid','bott','humn','hk','botz','rbot','robo'];
+  const etfOrder = ETF_ORDER;
 
   let html = '<div class="firmen-list">';
   html += '<div class="firmen-header"><span>#</span><span>Firma</span><span class="firmen-chips-col">ETFs</span><span>Summe</span></div>';
@@ -1055,8 +1136,8 @@ document.querySelectorAll('#chips .chip').forEach(chip => {
     const off = chip.classList.contains('off');
     document.querySelectorAll('.col-'+key).forEach(el => el.classList.toggle('hidden', off));
     document.querySelectorAll('.geo-row[data-etf="'+key+'"]').forEach(el => el.classList.toggle('hidden', off));
-    const order = ['koid','bott','humn','hk','botz','rbot','robo'];
-    visibleIds = order.filter(id => document.querySelector('.chip[data-etf="'+id+'"]').classList.contains('active'));
+    visibleIds = ETF_ORDER.filter(id => document.querySelector('.chip[data-etf="'+id+'"]').classList.contains('active'));
+    saveSelection();
     buildCards();
   });
 });
