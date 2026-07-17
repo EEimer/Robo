@@ -186,6 +186,22 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 .firmen-header span{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
 .firmen-header span:last-child{text-align:right}
 @media(max-width:680px){.firmen-row,.firmen-header{grid-template-columns:28px 1fr 52px}.firmen-chips-col{display:none}}
+
+/* ===== Segmented Control + ETF Blender ===== */
+.segctl{display:inline-flex;background:#E0E4E9;border-radius:11px;padding:3px;gap:2px;margin:4px 0 8px}
+.segbtn{border:none;background:transparent;padding:8px 18px;border-radius:9px;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap}
+.segbtn:hover{color:var(--ink)}
+.segbtn.active{background:var(--panel);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.14)}
+.blender-inputs{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.binput{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.binput .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.binput label{font-weight:700;font-size:13px;min-width:42px}
+.binput input{width:68px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:right;background:var(--bg)}
+.binput input:focus{outline:2px solid var(--ink);border-color:transparent}
+.blender-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 4px}
+.blender-sum{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--good)}
+.blender-sum.bad{color:var(--warn)}
+.blender-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:18px 0 16px}
 </style>
 </head>
 <body>
@@ -208,6 +224,12 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <div class="chip off" data-etf="robo"><span class="dot" style="background:var(--robo)"></span>ROBO</div>
 </div>
 
+<div class="segctl" id="segctl">
+  <button class="segbtn active" data-view="kern" onclick="setViewMode('kern')">Kernzahlen &amp; Holdings</button>
+  <button class="segbtn" data-view="blender" onclick="setViewMode('blender')">ETF Blender</button>
+</div>
+
+<div id="view-kernzahlen">
 <!-- ===== KERNZAHLEN ===== -->
 <h2>Kernzahlen</h2>
 <p class="h2sub">Matrix-Vergleich. Erste Spalte bleibt beim Scrollen stehen. ETFs per Chip oben ein-/ausblenden.</p>
@@ -433,6 +455,20 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <button class="sort-tab" data-sort="max" onclick="buildAllFirmen('max',this)">Max. Einzelgewicht</button>
 </div>
 <div id="firmen-table"></div>
+</div><!-- /view-kernzahlen -->
+
+<!-- ===== ETF BLENDER ===== -->
+<div id="view-blender" class="hidden">
+  <h2>ETF Blender</h2>
+  <p class="h2sub">Gewichte je ETF eingeben (Auswahl über die Chips oben) – darunter entsteht der resultierende Gesamt-Mix. Basis: Holdings-Snapshots wie in der Kernzahlen-Ansicht.</p>
+  <div class="blender-inputs" id="blender-inputs"></div>
+  <div class="blender-actions">
+    <button class="sort-tab" onclick="blenderEqualize()">Gleich verteilen</button>
+    <button class="sort-tab" onclick="blenderNormalize()">Auf 100% normieren</button>
+    <span id="blender-sum" class="blender-sum"></span>
+  </div>
+  <div id="blender-output"></div>
+</div>
 
 <footer>
   <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start">
@@ -985,6 +1021,160 @@ function buildAllFirmen(sortBy, btn) {
 
 buildAllFirmen('sum');
 
+// ===== ETF Blender =====
+const TER_MAP = {wpai:0.45,koid:0.69,bott:0.35,humn:0.75,hk:0.68,botz:0.68,rbot:0.40,robo:0.95};
+const GEO_MAP = {
+  wpai:{us:42.75,cn:26.75,jp:14.14,kr:5.08,eu:6.1,tw:2.19,rest:2.99},
+  koid:{us:33,cn:33,jp:12,kr:8,eu:8,rest:6},
+  bott:{cn:41.8,us:24.3,kr:15.8,hk:8.1,jp:5.6,ca:4.2,rest:0.2},
+  humn:{us:27,hk:20,cn:13,kr:14,jp:12,eu:8,rest:6},
+  hk:{cn:75,hk:25},
+  botz:{us:44,jp:27,ch:10,cn:6,kr:4,rest:9},
+  rbot:{us:54,jp:15,eu:15,tw:7,rest:9},
+  robo:{us:35,jp:20,tw:10,eu:18,kr:5,rest:12}
+};
+const GEO_ORDER = ['us','cn','hk','jp','kr','tw','ch','eu','ca','rest'];
+const GEO_LABEL = {us:'USA',cn:'China (A)',hk:'HK/CN',jp:'Japan',kr:'Korea',tw:'Taiwan',ch:'Schweiz',eu:'Europa+',ca:'Kanada',rest:'Rest'};
+const BLEND_KEY = 'robo-blender-weights';
+const MODE_KEY = 'robo-view-mode';
+
+function etfLabel(id){ return id==='hk' ? '2807' : id.toUpperCase(); }
+
+let blendW = (function(){
+  try { const s = JSON.parse(localStorage.getItem(BLEND_KEY)); if(s && typeof s==='object') return s; } catch(e) {}
+  return {};
+})();
+function saveBlend(){ try { localStorage.setItem(BLEND_KEY, JSON.stringify(blendW)); } catch(e) {} }
+
+function setViewMode(m){
+  document.querySelectorAll('#segctl .segbtn').forEach(b=>b.classList.toggle('active', b.dataset.view===m));
+  document.getElementById('view-kernzahlen').classList.toggle('hidden', m!=='kern');
+  document.getElementById('view-blender').classList.toggle('hidden', m!=='blender');
+  try { localStorage.setItem(MODE_KEY, m); } catch(e) {}
+  if(m==='blender') buildBlender();
+}
+
+function eqWeights(){
+  const n = visibleIds.length; if(!n) return;
+  const each = Math.floor(1000/n)/10;
+  visibleIds.forEach((id,i)=>{ blendW[id] = i===0 ? Math.round((100-each*(n-1))*10)/10 : each; });
+}
+function blenderEqualize(){ eqWeights(); saveBlend(); buildBlender(); }
+function blenderNormalize(){
+  const tot = visibleIds.reduce((s,id)=>s+(+blendW[id]||0),0);
+  if(tot<=0){ blenderEqualize(); return; }
+  visibleIds.forEach(id=>{ blendW[id] = Math.round((+blendW[id]||0)/tot*1000)/10; });
+  saveBlend(); buildBlender();
+}
+
+function buildBlender(){
+  const wrap = document.getElementById('blender-inputs');
+  if(!wrap) return;
+  if(!visibleIds.some(id=>+blendW[id]>0)) eqWeights();
+  wrap.innerHTML = visibleIds.map(id=>{
+    const v = +blendW[id]||0;
+    return '<div class="binput"><span class="dot" style="background:'+COLOR[id]+'"></span><label>'+etfLabel(id)+'</label>'
+      +'<input type="number" min="0" max="100" step="any" value="'+v+'" data-etf="'+id+'" inputmode="decimal">'
+      +'<span style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--muted)">%</span></div>';
+  }).join('');
+  wrap.querySelectorAll('input').forEach(inp=>{
+    inp.addEventListener('input', ()=>{ blendW[inp.dataset.etf] = parseFloat(inp.value)||0; saveBlend(); renderBlend(); });
+  });
+  renderBlend();
+}
+
+function kpiCell(v,k){ return '<div class="modal-metric"><div class="mv">'+v+'</div><div class="mk">'+k+'</div></div>'; }
+function de(n,d){ return n.toFixed(d).replace('.',','); }
+
+function renderBlend(){
+  const out = document.getElementById('blender-output');
+  const sumEl = document.getElementById('blender-sum');
+  const tot = visibleIds.reduce((s,id)=>s+(+blendW[id]||0),0);
+  const off100 = Math.abs(tot-100)>0.05;
+  sumEl.textContent = 'Summe: '+de(tot,1)+'%'+(off100 && tot>0 ? ' → Mix wird auf 100% normiert' : '');
+  sumEl.classList.toggle('bad', off100);
+  if(tot<=0 || !visibleIds.length){
+    out.innerHTML = '<p class="h2sub" style="margin-top:12px">Gewichte eingeben oder „Gleich verteilen“ klicken.</p>';
+    return;
+  }
+  const shares = {}; visibleIds.forEach(id=>{ shares[id]=(+blendW[id]||0)/tot; });
+  const active = visibleIds.filter(id=>shares[id]>0);
+
+  let ter = 0; const geo = {};
+  active.forEach(id=>{
+    ter += shares[id]*(TER_MAP[id]||0);
+    const g = GEO_MAP[id]||{}; const gs = Object.values(g).reduce((a,b)=>a+b,0)||100;
+    Object.keys(g).forEach(k=>{ geo[k]=(geo[k]||0)+shares[id]*g[k]*100/gs; });
+  });
+
+  const map = new Map();
+  const tickIdx = new Map(); // ticker root -> map key
+  function blendKey(k, troot){
+    if(troot && tickIdx.has(troot)) return tickIdx.get(troot);
+    if(map.has(k)) return k;
+    if(k.length>=5){
+      for(const ok of map.keys()){
+        if(ok.length>=5 && (k.includes(ok)||ok.includes(k))) return ok;
+      }
+    }
+    return k;
+  }
+  active.forEach(id=>{
+    (DATA[id]||[]).forEach(h=>{
+      if(!h.p) return;
+      const troot = (h.t||'').split(' ')[0];
+      const k = blendKey(normName(h.n), troot);
+      if(!map.has(k)) map.set(k, {name:h.n, ticker:h.t||'', mix:0, parts:[]});
+      if(troot && !tickIdx.has(troot)) tickIdx.set(troot, k);
+      const e = map.get(k);
+      e.mix += h.p*shares[id];
+      e.parts.push({etfId:id, contrib:h.p*shares[id]});
+    });
+  });
+  const entries = [...map.values()].sort((a,b)=>b.mix-a.mix);
+  const top10 = entries.slice(0,10).reduce((s,e)=>s+e.mix,0);
+  const usPct = geo.us||0, cnPct = (geo.cn||0)+(geo.hk||0);
+
+  let html = '<div class="blender-kpis">'
+    + kpiCell(de(ter,2)+'%','TER (gewichtet)')
+    + kpiCell(de(usPct,1)+'%','USA-Anteil')
+    + kpiCell(de(cnPct,1)+'%','China+HK')
+    + kpiCell(String(entries.length),'Positionen')
+    + kpiCell(de(top10,1)+'%','Top-10-Anteil')
+    + '</div>';
+
+  const segs = GEO_ORDER.filter(k=>(geo[k]||0)>=0.5);
+  html += '<div class="geo-row" style="grid-template-columns:64px 1fr"><span class="geo-lbl">MIX</span><div class="bar">'
+    + segs.map(k=>'<div class="seg c-'+k+'" style="width:'+geo[k].toFixed(1)+'%">'+GEO_LABEL[k]+' '+de(geo[k],1)+'%</div>').join('')
+    + '</div></div>';
+  html += '<div class="legend" style="margin-bottom:20px">'
+    + segs.map(k=>'<span><i class="c-'+k+'"></i>'+GEO_LABEL[k]+' '+de(geo[k],1)+'%</span>').join('')+'</div>';
+
+  html += '<div class="firmen-list"><div class="firmen-header"><span>#</span><span>Firma</span><span class="firmen-chips-col">Beitrag je ETF</span><span>Mix</span></div>';
+  entries.forEach((e,i)=>{
+    const chips = e.parts.slice().sort((a,b)=>ETF_ORDER.indexOf(a.etfId)-ETF_ORDER.indexOf(b.etfId))
+      .map(p=>'<span class="fetf-chip" style="background:'+COLOR[p.etfId]+'22;color:'+COLOR[p.etfId]+';border:1px solid '+COLOR[p.etfId]+'55">'+etfLabel(p.etfId)+' '+p.contrib.toFixed(2)+'%</span>').join('');
+    const sk = getStockKey(e.ticker);
+    const nameEl = sk
+      ? '<span class="firmen-name stock-link" data-stock="'+sk+'">'+e.name+'</span>'
+      : '<span class="firmen-name">'+e.name+'</span>';
+    const cnt = e.parts.length>1 ? e.parts.length+' ETFs' : '1 ETF';
+    html += '<div class="firmen-row"><span class="firmen-rank">'+(i+1)+'</span>'
+      + '<div class="firmen-info">'+nameEl+'<span class="firmen-tick">'+e.ticker+'</span></div>'
+      + '<div class="firmen-chips firmen-chips-col">'+chips+'</div>'
+      + '<div class="firmen-sum-col"><span class="firmen-sum">'+e.mix.toFixed(2)+'%</span><span class="firmen-count">'+cnt+'</span></div></div>';
+  });
+  html += '</div>';
+  out.innerHTML = html;
+  out.querySelectorAll('.stock-link').forEach(el=>el.addEventListener('click', ()=>openModal(el.dataset.stock)));
+}
+
+(function(){
+  let m = 'kern';
+  try { if(localStorage.getItem(MODE_KEY)==='blender') m='blender'; } catch(e) {}
+  setViewMode(m);
+})();
+
 // ===== Modal =====
 const overlay = document.getElementById('modal-overlay');
 const modalContent = document.getElementById('modal-content');
@@ -1142,6 +1332,7 @@ document.querySelectorAll('#chips .chip').forEach(chip => {
     visibleIds = ETF_ORDER.filter(id => document.querySelector('.chip[data-etf="'+id+'"]').classList.contains('active'));
     saveSelection();
     buildCards();
+    buildBlender();
   });
 });
 
