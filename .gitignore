@@ -1,0 +1,6 @@
+# Lokale Claude-Einstellungen (maschinenspezifisch)
+.claude/settings.local.json
+
+# LibreOffice / Excel Sperrdateien
+.~lock.*#
+~$*
