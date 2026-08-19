@@ -174,7 +174,9 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 .firmen-rank{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-align:right}
 .firmen-info{display:flex;flex-direction:column;gap:1px;min-width:0}
 .firmen-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.firmen-name.stock-link{cursor:pointer;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(0,0,0,.2)}
+/* align-self haelt die Unterstreichung am Text: als Flex-Item wird der Span blockifiziert und
+   zieht die Linie sonst ueber die ganze Spaltenbreite. max-width laesst das Kuerzen intakt. */
+.firmen-name.stock-link{cursor:pointer;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(0,0,0,.2);align-self:flex-start;max-width:100%}
 .firmen-name.stock-link:hover{text-decoration-color:var(--ink)}
 .firmen-tick{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted)}
 .firmen-chips{display:flex;flex-wrap:wrap;gap:3px}
@@ -201,7 +203,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 .blender-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 4px}
 .blender-basis{display:flex;gap:6px}
 .blender-basis:not(:empty){margin-right:6px;padding-right:12px;border-right:1px solid var(--line)}
-.blender-note{font-size:11px;color:var(--muted);margin:-10px 0 18px}
+.blender-note{font-size:11px;line-height:1.45;color:var(--muted);margin:0 0 20px}
 .blender-sum{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--good)}
 .blender-sum.bad{color:var(--warn)}
 .blender-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:18px 0 16px}
@@ -1273,14 +1275,18 @@ function renderBlend(){
   html += '<div class="geo-row" style="grid-template-columns:64px 1fr"><span class="geo-lbl">MIX</span><div class="bar">'
     + segs.map(k=>'<div class="seg c-'+k+'" style="width:'+geo[k].toFixed(1)+'%">'+GEO_LABEL[k]+' '+de(geo[k],1)+'%</div>').join('')
     + '</div></div>';
-  html += '<div class="legend"'+(geoCovered<0.999 ? '' : ' style="margin-bottom:20px"')+'>'
+  // Die Legende traegt den Abstand nur, wenn kein Hinweis folgt – sonst stossen beide aneinander.
+  const geoNote = geoCovered > 0 && geoCovered < 0.999;
+  html += '<div class="legend" style="margin-bottom:'+(geoNote ? '8px' : '20px')+'">'
     + segs.map(k=>'<span><i class="c-'+k+'"></i>'+GEO_LABEL[k]+' '+de(geo[k],1)+'%</span>').join('')+'</div>';
-  if(geoCovered > 0 && geoCovered < 0.999){
+  if(geoNote){
     html += '<p class="blender-note">Länderaufteilung nur über die ETF-Anteile ('+de(geoCovered*100,1)+'% des Mix). '
       + 'Für die Einzelaktien liegt keine Länderzuordnung vor.</p>';
   }
 
-  html += '<div class="firmen-list"><div class="firmen-header"><span>#</span><span>Firma</span><span class="firmen-chips-col">Gewicht im ETF</span><span>Mix</span></div>';
+  const ownActive = active.includes(OWN_ID);
+  html += '<div class="firmen-list"><div class="firmen-header"><span>#</span><span>Firma</span>'
+    + '<span class="firmen-chips-col">'+(ownActive ? 'Gewicht im ETF / Depot' : 'Gewicht im ETF')+'</span><span>Mix</span></div>';
   entries.forEach((e,i)=>{
     const chips = e.parts.slice().sort((a,b)=>ETF_ORDER.indexOf(a.etfId)-ETF_ORDER.indexOf(b.etfId))
       .map(p=>'<span class="fetf-chip" style="background:'+COLOR[p.etfId]+'22;color:'+COLOR[p.etfId]+';border:1px solid '+COLOR[p.etfId]+'55">'+etfLabel(p.etfId)+' '+p.raw.toFixed(2)+'%</span>').join('');
@@ -1288,7 +1294,9 @@ function renderBlend(){
     const nameEl = sk
       ? '<span class="firmen-name stock-link" data-stock="'+sk+'">'+e.name+'</span>'
       : '<span class="firmen-name">'+e.name+'</span>';
-    const cnt = e.parts.length>1 ? e.parts.length+' ETFs' : '1 ETF';
+    // "4 ETFs" waere gelogen, sobald die eigene Position mitzaehlt – die ist kein ETF.
+    const cnt = e.parts.some(p=>p.etfId===OWN_ID) ? e.parts.length+'x'
+      : e.parts.length>1 ? e.parts.length+' ETFs' : '1 ETF';
     html += '<div class="firmen-row"><span class="firmen-rank">'+(i+1)+'</span>'
       + '<div class="firmen-info">'+nameEl+'<span class="firmen-tick">'+e.ticker+'</span></div>'
       + '<div class="firmen-chips firmen-chips-col">'+chips+'</div>'
