@@ -858,6 +858,37 @@ function normName(n) {
     .replace(/[-.,&\/\s]+/g,' ').trim();
 }
 
+/**
+ * Fasst Positionen derselben Firma zusammen. Zwei Wege, weil keiner allein reicht:
+ *
+ *  - Firmenschluessel aus TICKER_MAP. Faengt Zweitlistings, die unter verschiedenen Tickern
+ *    laufen – XPeng steht in den ETF-Daten mal als '9868 HK', mal als 'XPEV'.
+ *  - Normalisierter Name. Faengt Firmen, fuer die es noch keinen TICKER_MAP-Eintrag gibt.
+ *
+ * Der Ticker geht vor: Namen wie 'XPEV' gegen 'XPeng Inc - Class A Shares' bringt kein
+ * Textvergleich zusammen.
+ */
+function makeHoldingMerger() {
+  const map = new Map();
+  const byTicker = new Map();
+  return {
+    map,
+    keyFor(h) {
+      const root = getStockKey(h.t) || (h.t || '').split(' ')[0];
+      if(root && byTicker.has(root)) return byTicker.get(root);
+      const n = normName(h.n);
+      let k = n;
+      if(!map.has(n) && n.length >= 5) {
+        for(const ok of map.keys()) {
+          if(ok.length >= 5 && (n.includes(ok) || ok.includes(n))) { k = ok; break; }
+        }
+      }
+      if(root && !byTicker.has(root)) byTicker.set(root, k);
+      return k;
+    },
+  };
+}
+
 function buildLookup(etfId) {
   const map = new Map();
   (DATA[etfId]||[]).forEach(h => {
@@ -950,11 +981,14 @@ function buildAllFirmen(sortBy, btn) {
     btn.classList.add('active');
   }
 
-  const map = new Map();
-  Object.keys(DATA).forEach(etfId => {
+  const merger = makeHoldingMerger();
+  const map = merger.map;
+  // Bewusst ETF_ORDER statt Object.keys(DATA): der Einzelaktien-Bucket aus der URL ist kein ETF
+  // und hat in dieser Uebersicht nichts zu suchen.
+  ETF_ORDER.forEach(etfId => {
     (DATA[etfId]||[]).forEach(h => {
       if(!h.p) return;
-      const key = normName(h.n);
+      const key = merger.keyFor(h);
       if(!map.has(key)) map.set(key, {name: h.n, ticker: h.t||'', etfs: []});
       const entry = map.get(key);
       // avoid duplicate etf entry (shouldn't happen but guard)
@@ -1211,25 +1245,13 @@ function renderBlend(){
     Object.keys(geo).forEach(k=>{ geo[k] /= geoCovered; });
   }
 
-  const map = new Map();
-  const tickIdx = new Map(); // ticker root -> map key
-  function blendKey(k, troot){
-    if(troot && tickIdx.has(troot)) return tickIdx.get(troot);
-    if(map.has(k)) return k;
-    if(k.length>=5){
-      for(const ok of map.keys()){
-        if(ok.length>=5 && (k.includes(ok)||ok.includes(k))) return ok;
-      }
-    }
-    return k;
-  }
+  const merger = makeHoldingMerger();
+  const map = merger.map;
   active.forEach(id=>{
     (DATA[id]||[]).forEach(h=>{
       if(!h.p) return;
-      const troot = (h.t||'').split(' ')[0];
-      const k = blendKey(normName(h.n), troot);
+      const k = merger.keyFor(h);
       if(!map.has(k)) map.set(k, {name:h.n, ticker:h.t||'', mix:0, parts:[]});
-      if(troot && !tickIdx.has(troot)) tickIdx.set(troot, k);
       const e = map.get(k);
       e.mix += h.p*shares[id];
       e.parts.push({etfId:id, contrib:h.p*shares[id], raw:h.p});
