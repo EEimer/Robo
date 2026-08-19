@@ -199,6 +199,9 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 .binput input{width:68px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:right;background:var(--bg)}
 .binput input:focus{outline:2px solid var(--ink);border-color:transparent}
 .blender-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 4px}
+.blender-basis{display:flex;gap:6px}
+.blender-basis:not(:empty){margin-right:6px;padding-right:12px;border-right:1px solid var(--line)}
+.blender-note{font-size:11px;color:var(--muted);margin:-10px 0 18px}
 .blender-sum{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--good)}
 .blender-sum.bad{color:var(--warn)}
 .blender-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:18px 0 16px}
@@ -463,6 +466,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <p class="h2sub">Gewichte je ETF eingeben (Auswahl über die Chips oben) – darunter entsteht der resultierende Gesamt-Mix. Basis: Holdings-Snapshots wie in der Kernzahlen-Ansicht.</p>
   <div class="blender-inputs" id="blender-inputs"></div>
   <div class="blender-actions">
+    <span id="blender-basis" class="blender-basis"></span>
     <button class="sort-tab" onclick="blenderEqualize()">Gleich verteilen</button>
     <button class="sort-tab" onclick="blenderNormalize()">Auf 100% normieren</button>
     <span id="blender-sum" class="blender-sum"></span>
@@ -844,18 +848,9 @@ function saveSelection() {
 
 let visibleIds = loadSavedSelection();
 
-// Apply saved/default selection to chips, table cols + geo rows on load
-document.querySelectorAll('#chips .chip').forEach(chip => {
-  const key = chip.dataset.etf;
-  const cfg = CARDS.find(c=>c.id===key);
-  if(!cfg) return;
-  const active = visibleIds.includes(key);
-  chip.classList.toggle('active', active);
-  chip.classList.toggle('off', !active);
-  chip.style.background = active ? cfg.color : '';
-  document.querySelectorAll('.col-'+key).forEach(el => el.classList.toggle('hidden', !active));
-  document.querySelectorAll('.geo-row[data-etf="'+key+'"]').forEach(el => el.classList.toggle('hidden', !active));
-});
+// Apply saved/default selection to chips, table cols + geo rows on load.
+// syncChips() steht weiter unten – Funktionsdeklarationen sind gehoisted.
+syncChips();
 
 function normName(n) {
   return n.toLowerCase()
@@ -1038,7 +1033,105 @@ const GEO_LABEL = {us:'USA',cn:'China (A)',hk:'HK/CN',jp:'Japan',kr:'Korea',tw:'
 const BLEND_KEY = 'robo-blender-weights';
 const MODE_KEY = 'robo-view-mode';
 
-function etfLabel(id){ return id==='hk' ? '2807' : id.toUpperCase(); }
+function etfLabel(id){ return id==='hk' ? '2807' : id===OWN_ID ? 'EIGEN' : id.toUpperCase(); }
+
+/* ===== Blend per URL (GET) =====
+   ?etf=wpai:35:12.5,koid:35:11.6,bott:15:6.9   je ETF   id:soll:ist   (ist optional)
+   &own=15                                       Soll-Quote des Einzelaktien-Buckets
+   &stk=TSLA:Tesla:8.17,086280:H. Glovis:7.7     je Aktie ticker:name:ist
+   &mode=soll|ist                                womit die Seite aufmacht
+
+   Alle Prozente sind Anteile desselben Bezugsrahmens; der Blender normiert ohnehin auf 100.
+   Die Einzelaktien landen als Pseudo-ETF "EIGEN" in DATA und laufen dadurch ohne Sonderfall
+   durch Merge, Mix-Rechnung und Firmentabelle. Eine eigene Soll-Quote je Einzelaktie gibt das
+   Statut nicht her, darum wird `own` nach dem Ist-Verhaeltnis auf die Aktien verteilt. */
+const OWN_ID = 'eigen';
+let URLBLEND = null;
+
+function parseUrlBlend(){
+  const q = new URLSearchParams(location.search);
+  const etfRaw = q.get('etf') || '', stkRaw = q.get('stk') || '';
+  if(!etfRaw && !stkRaw) return null;
+
+  const soll = {}, ist = {}, ids = [];
+  let hasIst = false;
+  etfRaw.split(',').forEach(part=>{
+    const seg = part.split(':');
+    const id = (seg[0]||'').trim().toLowerCase();
+    if(!id || !ETF_ORDER.includes(id) || ids.includes(id)) return;
+    const s = parseFloat(seg[1]);
+    const i = parseFloat(seg[2]);
+    ids.push(id);
+    soll[id] = isFinite(s) ? s : 0;
+    if(isFinite(i)){ ist[id] = i; hasIst = true; } else { ist[id] = soll[id]; }
+  });
+
+  const stocks = [];
+  stkRaw.split(',').forEach(part=>{
+    const seg = part.split(':');
+    if(seg.length < 3) return;
+    const t = (seg[0]||'').trim();
+    const n = (seg[1]||'').trim();
+    const v = parseFloat(seg[2]);
+    if(!n || !(v > 0)) return;
+    stocks.push({t, n, ist:v});
+  });
+
+  if(!ids.length && !stocks.length) return null;
+
+  if(stocks.length){
+    const ownIst = stocks.reduce((s,x)=>s+x.ist, 0);
+    const ownSoll = q.has('own') ? (parseFloat(q.get('own')) || 0) : ownIst;
+    soll[OWN_ID] = ownSoll;
+    ist[OWN_ID] = ownIst;
+    if(Math.abs(ownSoll-ownIst) > 0.005) hasIst = true;
+    DATA[OWN_ID] = stocks.map(s=>({n:s.n, t:s.t, p: ownIst > 0 ? s.ist/ownIst*100 : 0}));
+    COLOR[OWN_ID] = '#5B6B7C';
+    TER_MAP[OWN_ID] = 0; // direkt gehaltene Aktien kosten keine Fondsgebuehr
+  } else {
+    delete DATA[OWN_ID];
+  }
+
+  return {ids, soll, ist, stocks, hasIst, basis: q.get('mode')==='ist' ? 'ist' : 'soll'};
+}
+
+/** ETFs plus – falls per URL geliefert – der Einzelaktien-Bucket. Nur der Blender kennt ihn. */
+function blendIds(){
+  return URLBLEND && DATA[OWN_ID] ? visibleIds.concat([OWN_ID]) : visibleIds;
+}
+
+function setBlendBasis(basis, skipRender){
+  if(!URLBLEND) return;
+  URLBLEND.basis = basis;
+  const src = basis==='ist' ? URLBLEND.ist : URLBLEND.soll;
+  blendIds().forEach(id=>{ blendW[id] = +src[id] || 0; });
+  saveBlend();
+  if(!skipRender) buildBlender();
+}
+
+function renderBasisToggle(){
+  const el = document.getElementById('blender-basis');
+  if(!el) return;
+  if(!URLBLEND || !URLBLEND.hasIst){ el.innerHTML = ''; return; }
+  el.innerHTML = [['soll','Soll'],['ist','Ist']].map(([b,label])=>
+    '<button class="sort-tab'+(URLBLEND.basis===b ? ' active' : '')+'" data-basis="'+b+'">'+label+'</button>').join('');
+  el.querySelectorAll('button').forEach(b=>b.addEventListener('click', ()=>setBlendBasis(b.dataset.basis)));
+}
+
+/** Chips, Tabellenspalten und Geo-Zeilen auf visibleIds ziehen. */
+function syncChips(){
+  document.querySelectorAll('#chips .chip').forEach(chip=>{
+    const key = chip.dataset.etf;
+    const cfg = CARDS.find(c=>c.id===key);
+    if(!cfg) return;
+    const active = visibleIds.includes(key);
+    chip.classList.toggle('active', active);
+    chip.classList.toggle('off', !active);
+    chip.style.background = active ? cfg.color : '';
+    document.querySelectorAll('.col-'+key).forEach(el=>el.classList.toggle('hidden', !active));
+    document.querySelectorAll('.geo-row[data-etf="'+key+'"]').forEach(el=>el.classList.toggle('hidden', !active));
+  });
+}
 
 let blendW = (function(){
   try { const s = JSON.parse(localStorage.getItem(BLEND_KEY)); if(s && typeof s==='object') return s; } catch(e) {}
@@ -1055,23 +1148,26 @@ function setViewMode(m){
 }
 
 function eqWeights(){
-  const n = visibleIds.length; if(!n) return;
+  const ids = blendIds();
+  const n = ids.length; if(!n) return;
   const each = Math.floor(1000/n)/10;
-  visibleIds.forEach((id,i)=>{ blendW[id] = i===0 ? Math.round((100-each*(n-1))*10)/10 : each; });
+  ids.forEach((id,i)=>{ blendW[id] = i===0 ? Math.round((100-each*(n-1))*10)/10 : each; });
 }
 function blenderEqualize(){ eqWeights(); saveBlend(); buildBlender(); }
 function blenderNormalize(){
-  const tot = visibleIds.reduce((s,id)=>s+(+blendW[id]||0),0);
+  const ids = blendIds();
+  const tot = ids.reduce((s,id)=>s+(+blendW[id]||0),0);
   if(tot<=0){ blenderEqualize(); return; }
-  visibleIds.forEach(id=>{ blendW[id] = Math.round((+blendW[id]||0)/tot*1000)/10; });
+  ids.forEach(id=>{ blendW[id] = Math.round((+blendW[id]||0)/tot*1000)/10; });
   saveBlend(); buildBlender();
 }
 
 function buildBlender(){
   const wrap = document.getElementById('blender-inputs');
   if(!wrap) return;
-  if(!visibleIds.some(id=>+blendW[id]>0)) eqWeights();
-  wrap.innerHTML = visibleIds.map(id=>{
+  renderBasisToggle();
+  if(!blendIds().some(id=>+blendW[id]>0)) eqWeights();
+  wrap.innerHTML = blendIds().map(id=>{
     const v = +blendW[id]||0;
     return '<div class="binput"><span class="dot" style="background:'+COLOR[id]+'"></span><label>'+etfLabel(id)+'</label>'
       +'<input type="number" min="0" max="100" step="any" value="'+v+'" data-etf="'+id+'" inputmode="decimal">'
@@ -1089,23 +1185,31 @@ function de(n,d){ return n.toFixed(d).replace('.',','); }
 function renderBlend(){
   const out = document.getElementById('blender-output');
   const sumEl = document.getElementById('blender-sum');
-  const tot = visibleIds.reduce((s,id)=>s+(+blendW[id]||0),0);
+  const ids = blendIds();
+  const tot = ids.reduce((s,id)=>s+(+blendW[id]||0),0);
   const off100 = Math.abs(tot-100)>0.05;
   sumEl.textContent = 'Summe: '+de(tot,1)+'%'+(off100 && tot>0 ? ' → Mix wird auf 100% normiert' : '');
   sumEl.classList.toggle('bad', off100);
-  if(tot<=0 || !visibleIds.length){
+  if(tot<=0 || !ids.length){
     out.innerHTML = '<p class="h2sub" style="margin-top:12px">Gewichte eingeben oder „Gleich verteilen“ klicken.</p>';
     return;
   }
-  const shares = {}; visibleIds.forEach(id=>{ shares[id]=(+blendW[id]||0)/tot; });
-  const active = visibleIds.filter(id=>shares[id]>0);
+  const shares = {}; ids.forEach(id=>{ shares[id]=(+blendW[id]||0)/tot; });
+  const active = ids.filter(id=>shares[id]>0);
 
-  let ter = 0; const geo = {};
+  let ter = 0, geoCovered = 0; const geo = {};
   active.forEach(id=>{
     ter += shares[id]*(TER_MAP[id]||0);
     const g = GEO_MAP[id]||{}; const gs = Object.values(g).reduce((a,b)=>a+b,0)||100;
+    if(!Object.keys(g).length) return; // Einzelaktien-Bucket: keine Laenderaufteilung hinterlegt
+    geoCovered += shares[id];
     Object.keys(g).forEach(k=>{ geo[k]=(geo[k]||0)+shares[id]*g[k]*100/gs; });
   });
+  // Der Balken soll voll sein und Prozente zeigen, die sich auf 100 summieren – sonst liest er sich
+  // wie eine Luecke im Portfolio statt wie eine Luecke in den Daten. Der Hinweis darunter sagt, worauf er sich bezieht.
+  if(geoCovered > 0 && geoCovered < 0.999){
+    Object.keys(geo).forEach(k=>{ geo[k] /= geoCovered; });
+  }
 
   const map = new Map();
   const tickIdx = new Map(); // ticker root -> map key
@@ -1147,8 +1251,12 @@ function renderBlend(){
   html += '<div class="geo-row" style="grid-template-columns:64px 1fr"><span class="geo-lbl">MIX</span><div class="bar">'
     + segs.map(k=>'<div class="seg c-'+k+'" style="width:'+geo[k].toFixed(1)+'%">'+GEO_LABEL[k]+' '+de(geo[k],1)+'%</div>').join('')
     + '</div></div>';
-  html += '<div class="legend" style="margin-bottom:20px">'
+  html += '<div class="legend"'+(geoCovered<0.999 ? '' : ' style="margin-bottom:20px"')+'>'
     + segs.map(k=>'<span><i class="c-'+k+'"></i>'+GEO_LABEL[k]+' '+de(geo[k],1)+'%</span>').join('')+'</div>';
+  if(geoCovered > 0 && geoCovered < 0.999){
+    html += '<p class="blender-note">Länderaufteilung nur über die ETF-Anteile ('+de(geoCovered*100,1)+'% des Mix). '
+      + 'Für die Einzelaktien liegt keine Länderzuordnung vor.</p>';
+  }
 
   html += '<div class="firmen-list"><div class="firmen-header"><span>#</span><span>Firma</span><span class="firmen-chips-col">Gewicht im ETF</span><span>Mix</span></div>';
   entries.forEach((e,i)=>{
@@ -1172,6 +1280,13 @@ function renderBlend(){
 (function(){
   let m = 'kern';
   try { if(localStorage.getItem(MODE_KEY)==='blender') m='blender'; } catch(e) {}
+  // Kommt der Aufruf mit Gewichten aus dem Wealth-System, gewinnt die URL gegen den gespeicherten Zustand.
+  URLBLEND = parseUrlBlend();
+  if(URLBLEND){
+    if(URLBLEND.ids.length){ visibleIds = ETF_ORDER.filter(id=>URLBLEND.ids.includes(id)); syncChips(); buildCards(); }
+    setBlendBasis(URLBLEND.basis, true);
+    m = 'blender';
+  }
   setViewMode(m);
 })();
 
