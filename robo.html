@@ -1128,7 +1128,7 @@ function renderBlend(){
       if(troot && !tickIdx.has(troot)) tickIdx.set(troot, k);
       const e = map.get(k);
       e.mix += h.p*shares[id];
-      e.parts.push({etfId:id, contrib:h.p*shares[id]});
+      e.parts.push({etfId:id, contrib:h.p*shares[id], raw:h.p});
     });
   });
   const entries = [...map.values()].sort((a,b)=>b.mix-a.mix);
@@ -1150,10 +1150,10 @@ function renderBlend(){
   html += '<div class="legend" style="margin-bottom:20px">'
     + segs.map(k=>'<span><i class="c-'+k+'"></i>'+GEO_LABEL[k]+' '+de(geo[k],1)+'%</span>').join('')+'</div>';
 
-  html += '<div class="firmen-list"><div class="firmen-header"><span>#</span><span>Firma</span><span class="firmen-chips-col">Beitrag je ETF</span><span>Mix</span></div>';
+  html += '<div class="firmen-list"><div class="firmen-header"><span>#</span><span>Firma</span><span class="firmen-chips-col">Gewicht im ETF</span><span>Mix</span></div>';
   entries.forEach((e,i)=>{
     const chips = e.parts.slice().sort((a,b)=>ETF_ORDER.indexOf(a.etfId)-ETF_ORDER.indexOf(b.etfId))
-      .map(p=>'<span class="fetf-chip" style="background:'+COLOR[p.etfId]+'22;color:'+COLOR[p.etfId]+';border:1px solid '+COLOR[p.etfId]+'55">'+etfLabel(p.etfId)+' '+p.contrib.toFixed(2)+'%</span>').join('');
+      .map(p=>'<span class="fetf-chip" style="background:'+COLOR[p.etfId]+'22;color:'+COLOR[p.etfId]+';border:1px solid '+COLOR[p.etfId]+'55">'+etfLabel(p.etfId)+' '+p.raw.toFixed(2)+'%</span>').join('');
     const sk = getStockKey(e.ticker);
     const nameEl = sk
       ? '<span class="firmen-name stock-link" data-stock="'+sk+'">'+e.name+'</span>'
