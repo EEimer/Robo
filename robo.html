@@ -198,8 +198,26 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
 .binput{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
 .binput .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .binput label{font-weight:700;font-size:13px;min-width:42px}
-.binput input{width:68px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:right;background:var(--bg)}
+/* Vierstellige Werte mit Nachkommastelle (11,33) muessen ganz reinpassen – inklusive der
+   Spinner, die Chrome beim Hover ueber dem rechtsbuendigen Text einblendet. Darum breiter
+   und ohne Spinner; die Pfeiltasten steppen weiterhin. */
+.binput input{width:88px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:right;background:var(--bg)}
+.binput input[type=number]{appearance:textfield;-moz-appearance:textfield}
+.binput input[type=number]::-webkit-outer-spin-button,
+.binput input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .binput input:focus{outline:2px solid var(--ink);border-color:transparent}
+.binput input[readonly]{background:transparent;border-color:transparent;color:var(--muted);cursor:default}
+.binput input[readonly]:focus{outline:none}
+.binput .unit{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)}
+.blender-own{width:max-content;max-width:100%;margin-top:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px 12px}
+.blender-own-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:9px}
+.blender-own-title{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.blender-own-hint{font-size:11px;color:var(--muted)}
+.blender-own-list{display:flex;flex-wrap:wrap;gap:8px}
+.bstock{padding:6px 10px;border-radius:9px}
+.bstock .dot{width:8px;height:8px}
+.bstock label{font-weight:600;font-size:12px;min-width:0;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bstock input{width:82px;padding:5px 7px;font-size:12px}
 .blender-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 4px}
 .blender-basis{display:flex;gap:6px}
 .blender-basis:not(:empty){margin-right:6px;padding-right:12px;border-right:1px solid var(--line)}
@@ -467,6 +485,7 @@ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-si
   <h2>ETF Blender</h2>
   <p class="h2sub">Gewichte je ETF eingeben (Auswahl über die Chips oben) – darunter entsteht der resultierende Gesamt-Mix. Basis: Holdings-Snapshots wie in der Kernzahlen-Ansicht.</p>
   <div class="blender-inputs" id="blender-inputs"></div>
+  <div class="blender-own hidden" id="blender-own"></div>
   <div class="blender-actions">
     <span id="blender-basis" class="blender-basis"></span>
     <button class="sort-tab" onclick="blenderEqualize()">Gleich verteilen</button>
@@ -1079,8 +1098,9 @@ function etfLabel(id){ return id==='hk' ? '2807' : id===OWN_ID ? 'EIGEN' : id.to
 
    Alle Prozente sind Anteile desselben Bezugsrahmens; der Blender normiert ohnehin auf 100.
    Die Einzelaktien landen als Pseudo-ETF "EIGEN" in DATA und laufen dadurch ohne Sonderfall
-   durch Merge, Mix-Rechnung und Firmentabelle. Eine eigene Soll-Quote je Einzelaktie gibt das
-   Statut nicht her, darum wird `own` nach dem Ist-Verhaeltnis auf die Aktien verteilt. */
+   durch Merge, Mix-Rechnung und Firmentabelle. Eine eigene Soll-Quote je Einzelaktie gibt die
+   URL nicht her, darum ist `own` nur der Startwert und wird nach dem Ist-Verhaeltnis auf die
+   Aktien verteilt – danach ist jede Position im Blender einzeln einstellbar (stockW). */
 const OWN_ID = 'eigen';
 let URLBLEND = null;
 
@@ -1141,6 +1161,8 @@ function setBlendBasis(basis, skipRender){
   URLBLEND.basis = basis;
   const src = basis==='ist' ? URLBLEND.ist : URLBLEND.soll;
   blendIds().forEach(id=>{ blendW[id] = +src[id] || 0; });
+  stockW = ownWeightsFor(basis); // Soll/Ist setzt die Einzelquoten auf den URL-Stand zurueck
+  syncOwnBucket();
   saveBlend();
   if(!skipRender) buildBlender();
 }
@@ -1175,6 +1197,55 @@ let blendW = (function(){
 })();
 function saveBlend(){ try { localStorage.setItem(BLEND_KEY, JSON.stringify(blendW)); } catch(e) {} }
 
+/* ===== Einzelpositionen im EIGEN-Bucket =====
+   stockW haelt je Aktie ein eigenes Gewicht im selben Bezugsrahmen wie die ETF-Gewichte
+   (Index-parallel zu URLBLEND.stocks, damit doppelte Ticker nicht kollidieren). EIGEN oben
+   ist dann kein eigenes Eingabefeld mehr, sondern nur noch deren Summe – der Bucket bleibt
+   ein Pseudo-ETF, dessen Innenaufteilung frei durchprobiert werden kann. */
+let stockW = [];
+function ownStocks(){ return (URLBLEND && URLBLEND.stocks) || []; }
+function ownTotal(){ return stockW.reduce((s,x)=>s+(+x||0), 0); }
+
+/** Auf zwei Nachkommastellen runden und den Rundungsrest der groessten Position aufbuerden –
+    sonst summieren sich die angezeigten Einzelwerte nicht auf das angezeigte EIGEN. */
+function roundToTarget(raw, target){
+  if(!raw.length) return [];
+  const r = raw.map(v=>Math.round(v*100)/100);
+  let big = 0; r.forEach((v,i)=>{ if(v > r[big]) big = i; });
+  r[big] = Math.round((r[big] + target - r.reduce((s,v)=>s+v, 0))*100)/100;
+  return r;
+}
+
+/** Startwerte aus der URL: Ist direkt uebernehmen, Soll anteilig zum Ist verteilen. */
+function ownWeightsFor(basis){
+  const st = ownStocks();
+  if(!st.length) return [];
+  const istSum = st.reduce((s,x)=>s+x.ist, 0);
+  const target = basis==='ist' ? istSum : (+URLBLEND.soll[OWN_ID] || 0);
+  return roundToTarget(st.map(x=> istSum > 0 ? target*x.ist/istSum : target/st.length), target);
+}
+
+/** Bucket-Gewicht und Innenaufteilung von DATA[EIGEN] aus stockW nachziehen. */
+function syncOwnBucket(){
+  const st = ownStocks();
+  if(!st.length) return;
+  const tot = Math.round(ownTotal()*1e6)/1e6; // Float-Rauschen aus der Summe halten
+  blendW[OWN_ID] = tot;
+  DATA[OWN_ID] = st.map((x,i)=>({n:x.n, t:x.t, p: tot > 0 ? (+stockW[i]||0)/tot*100 : 0}));
+}
+
+/** Bucket von aussen auf ein Gewicht setzen (Gleich verteilen / Normieren) – die Einzelwerte
+    ziehen anteilig mit, damit die Aufteilung innerhalb von EIGEN erhalten bleibt. */
+function scaleOwnTo(target){
+  const st = ownStocks();
+  if(!st.length) return;
+  const tot = ownTotal();
+  stockW = roundToTarget(st.map((x,i)=> tot > 0 ? target*(+stockW[i]||0)/tot : target/st.length), target);
+  syncOwnBucket();
+}
+
+function esc(v){ return String(v).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
 function setViewMode(m){
   document.querySelectorAll('#segctl .segbtn').forEach(b=>b.classList.toggle('active', b.dataset.view===m));
   document.getElementById('view-kernzahlen').classList.toggle('hidden', m!=='kern');
@@ -1188,6 +1259,7 @@ function eqWeights(){
   const n = ids.length; if(!n) return;
   const each = Math.floor(1000/n)/10;
   ids.forEach((id,i)=>{ blendW[id] = i===0 ? Math.round((100-each*(n-1))*10)/10 : each; });
+  scaleOwnTo(+blendW[OWN_ID] || 0);
 }
 function blenderEqualize(){ eqWeights(); saveBlend(); buildBlender(); }
 function blenderNormalize(){
@@ -1195,6 +1267,7 @@ function blenderNormalize(){
   const tot = ids.reduce((s,id)=>s+(+blendW[id]||0),0);
   if(tot<=0){ blenderEqualize(); return; }
   ids.forEach(id=>{ blendW[id] = Math.round((+blendW[id]||0)/tot*1000)/10; });
+  scaleOwnTo(+blendW[OWN_ID] || 0);
   saveBlend(); buildBlender();
 }
 
@@ -1203,16 +1276,57 @@ function buildBlender(){
   if(!wrap) return;
   renderBasisToggle();
   if(!blendIds().some(id=>+blendW[id]>0)) eqWeights();
+  syncOwnBucket();
   wrap.innerHTML = blendIds().map(id=>{
     const v = +blendW[id]||0;
-    return '<div class="binput"><span class="dot" style="background:'+COLOR[id]+'"></span><label>'+etfLabel(id)+'</label>'
+    const head = '<span class="dot" style="background:'+COLOR[id]+'"></span><label>'+etfLabel(id)+'</label>';
+    // EIGEN wird nicht mehr direkt getippt, sondern ergibt sich aus den Einzelpositionen darunter.
+    if(id===OWN_ID){
+      return '<div class="binput" title="Summe der Einzelpositionen – je Aktie darunter einstellbar">'+head
+        +'<input type="text" readonly tabindex="-1" id="blend-own-total" value="'+de(v,2)+'">'
+        +'<span class="unit">%</span></div>';
+    }
+    return '<div class="binput">'+head
       +'<input type="number" min="0" max="100" step="any" value="'+v+'" data-etf="'+id+'" inputmode="decimal">'
-      +'<span style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--muted)">%</span></div>';
+      +'<span class="unit">%</span></div>';
   }).join('');
-  wrap.querySelectorAll('input').forEach(inp=>{
+  wrap.querySelectorAll('input[data-etf]').forEach(inp=>{
     inp.addEventListener('input', ()=>{ blendW[inp.dataset.etf] = parseFloat(inp.value)||0; saveBlend(); renderBlend(); });
   });
+  renderOwnInputs();
   renderBlend();
+}
+
+/** Ein Prozentfeld je Einzelaktie. Getippt wird hier, EIGEN oben zeigt nur die Summe. */
+function renderOwnInputs(){
+  const box = document.getElementById('blender-own');
+  if(!box) return;
+  const st = ownStocks();
+  box.classList.toggle('hidden', !st.length);
+  if(!st.length){ box.innerHTML = ''; return; }
+  box.innerHTML = '<div class="blender-own-head">'
+    + '<span class="blender-own-title">Eigene Einzelpositionen</span>'
+    + '<span class="blender-own-hint">Gleicher Bezugsrahmen wie die ETF-Gewichte oben – ihre Summe ist EIGEN.</span>'
+    + '</div><div class="blender-own-list">'
+    + st.map((x,i)=>'<div class="binput bstock">'
+        + '<span class="dot" style="background:'+COLOR[OWN_ID]+'"></span>'
+        + '<label title="'+esc(x.t)+'">'+esc(x.n)+'</label>'
+        + '<input type="number" min="0" max="100" step="any" inputmode="decimal" data-stk="'+i+'" value="'+(+stockW[i]||0)+'">'
+        + '<span class="unit">%</span></div>').join('')
+    + '</div>';
+  box.querySelectorAll('input[data-stk]').forEach(inp=>{
+    inp.addEventListener('input', ()=>{
+      stockW[+inp.dataset.stk] = Math.max(0, parseFloat(inp.value)||0);
+      syncOwnBucket();
+      saveBlend();
+      const tot = document.getElementById('blend-own-total');
+      if(tot) tot.value = de(+blendW[OWN_ID]||0, 2);
+      renderBlend();
+    });
+    // Beim Verlassen auf den tatsaechlich gespeicherten Wert schnappen – sonst steht im Feld
+    // noch "-5" oder ein halb getippter Rest, waehrend der Mix laengst mit 0 rechnet.
+    inp.addEventListener('change', ()=>{ inp.value = +stockW[+inp.dataset.stk] || 0; });
+  });
 }
 
 function kpiCell(v,k){ return '<div class="modal-metric"><div class="mv">'+v+'</div><div class="mk">'+k+'</div></div>'; }
