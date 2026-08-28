@@ -1,0 +1,70 @@
+{
+  "company": {
+    "name": "Thunder Tiger Corporation",
+    "ticker": "8033",
+    "exchange": "Taipei Exchange (TPEx)",
+    "headquarters": "Taichung, Taiwan",
+    "founded": 1979,
+    "ipo": null,
+    "industry": "Unbemannte Systeme – militärische und zivile Drohnen, USV/AUV; historisch RC-Modellbau und Dentaltechnik",
+    "competitors": ["Coretronic Intelligent Robotics (CIRC)", "GEOSAT Aerospace", "AeroVironment", "Anduril Industries", "Teledyne FLIR", "Baykar", "NCSIST (staatliches Institut Taiwans)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=TPEX%3A8033",
+  "summary": "Thunder Tiger wurde 1979 in Taichung als Hersteller ferngesteuerter Modellflugzeuge gegründet und über Jahrzehnte um Dentalinstrumente (TTBIO), Aluminiumboote und Aseptik-Verpackungen erweitert. Seit dem russischen Angriff auf die Ukraine hat Taiwan seine Drohnenbeschaffung für private Auftragnehmer geöffnet – Thunder Tiger ist dabei zum sichtbarsten börsennotierten Profiteur geworden. Die Overkill-FPV-Loitering-Munition (bis 120 km/h, 30 Minuten Flugzeit, Nutzlastvarianten von 1,5 bis 7 kg) erhielt am 21. September 2025 als bislang einziges taiwanesisches Produkt die Aufnahme in die Blue-UAS-Cleared-List des US-Verteidigungsministeriums. Hinzu kommen der Multirotor TM-450 Tettron, das unbemannte Überwasserfahrzeug Sea Shark 400 und das autonome Unterwasserfahrzeug Seawolf 400. Software-Partnerschaften mit Auterion (Rahmenvereinbarung über 25.000 Drohnen) und seit Mai 2026 mit Shield AI (Integration der Hivemind-Autonomie in Thunder-Tiger-Seedrohnen) sollen die Autonomiefähigkeit liefern, die das Unternehmen selbst nicht hat. Für den US-Markt wurde im ersten Quartal 2026 eine Montagestätte in Ohio eröffnet, die Kapazität in Taiwan wird mit über 1.000 Militärdrohnen pro Monat angegeben. Wichtig für die Einordnung: Im Abschluss ist von alledem noch wenig zu sehen. Der Umsatz FY2025 lag bei nur TWD 1,42 Mrd., davon entfielen TWD 777 Mio. auf die Modellbau-Sparte, TWD 399 Mio. auf Dentaltechnik und TWD 262 Mio. auf Aseptik-Verpackungen; das operative Ergebnis war mit TWD -36,5 Mio. negativ.",
+  "products": [
+    "Overkill FPV-Loitering-Munition (Blue-UAS-Cleared-List des US DoD, September 2025)",
+    "TM-450 Tettron Multirotor-Drohne für Militär und Behörden",
+    "Sea Shark 400 – unbemanntes Überwasserfahrzeug (USV), 4 m, bis 65 km/h",
+    "Seawolf 400 – autonomes Unterwasserfahrzeug (AUV), ca. 1.000 kg, 8–10 h Tauchdauer",
+    "Aufklärungsdrohnen für taiwanesische Streitkräfte und Behörden",
+    "RC-Modellbau: Flugzeuge, Hubschrauber (Raptor), Autos (Associated Electrics), Boote, Motoren",
+    "Dentalinstrumente und Handstücke über die Tochter TTBIO",
+    "Aluminiumboote und Aseptik-Verpackungsmaterialien"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "kein Bezug – reines Drohnen- und Defense-Play ohne Humanoid- oder Industrierobotik-Exposure",
+    "reasons": [
+      "Das Portfolio besteht aus unbemannten Luft-, Über- und Unterwassersystemen – keine Aktuatoren, Präzisionsgetriebe, Gelenke oder Servomotoren, die in humanoide Roboter einfließen",
+      "Thunder Tiger fertigt keine Sensorik-, Antriebs- oder Getriebekomponenten, die in Humanoid-Lieferketten münden würden",
+      "Die Autonomie-Software kommt von Partnern (Auterion, Shield AI Hivemind), nicht aus eigener Entwicklung – es gibt also auch keinen übertragbaren Robotik-Software-Stack",
+      "Der verbleibende Umsatz stammt aus RC-Modellbau, Dentalinstrumenten und Aseptik-Verpackungen und hat ebenfalls keinen Robotik-Bezug",
+      "Eine Aufnahme in ein Robotik-Universum lässt sich allenfalls über den weiten Begriff 'unbemannte Systeme / Physical AI' begründen, nicht über die Humanoid-Wertschöpfungskette",
+      "Der Investment-Case ist Taiwans Verteidigungsbudget und die US-Drohnenbeschaffung, nicht der Humanoid-Zyklus"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "TWD",
+    "52w_low": 99.7,
+    "52w_high": 272.0,
+    "market_cap_twd_bn": 28.2,
+    "market_cap_usd_bn": 0.89,
+    "enterprise_value_twd_bn": 29.2,
+    "pe_trailing": 274.9,
+    "pe_forward": null,
+    "price_to_sales_ttm": 19.3,
+    "price_to_book": 13.4,
+    "eps_twd_ttm": 0.67,
+    "revenue_fy25_twd_bn": 1.42,
+    "revenue_growth_yoy_pct": 14.4,
+    "gross_margin_pct": 37.3,
+    "net_income_twd_bn": 0.088,
+    "dividend_yield_pct": 0,
+    "beta_5y": 0.75,
+    "debt_to_equity": 0.68,
+    "current_ratio": 2.19,
+    "analyst_consensus": null,
+    "analyst_price_target_twd": null,
+    "shares_outstanding_mn": 152.6,
+    "sources": [
+      "https://stockanalysis.com/quote/tpe/8033/",
+      "https://stockanalysis.com/quote/tpe/8033/statistics/",
+      "https://stockanalysis.com/quote/tpe/8033/financials/",
+      "https://www.armyrecognition.com/news/army-news/2025/taiwans-thunder-tiger-targets-u-s-army-drone-dominance-drone-orders",
+      "https://www.armyrecognition.com/news/navy-news/2026/taiwan-moves-toward-autonomous-coastal-denial-network-with-shield-ai-hivemind-powered-thunder-tiger-sea-drones",
+      "https://en.wikipedia.org/wiki/Thunder_Tiger",
+      "https://tradingeconomics.com/taiwan/currency"
+    ]
+  },
+  "risk_notes": "Ausdrücklich ein Defense-Play mit geringer Liquidität – kein Robotik-Titel. Mit rund TWD 28 Mrd. (etwa 0,9 Mrd. USD) Marktkapitalisierung, 152,6 Mio. Aktien, nur 208 Mitarbeitern und einem Streubesitz von rund 128 Mio. Aktien ist Thunder Tiger ein Small Cap am taiwanesischen TPEx-Markt; Ausführung größerer Orders kann den Kurs bewegen, und für ausländische Anleger kommen Handelszugang und TWD-Währungsrisiko hinzu. Es gibt keine Analystenabdeckung: weder Konsensrating noch Kursziel noch Forward-Schätzungen – alle entsprechenden Felder sind bewusst null gesetzt, es wäre nichts als Rateraten. Die Bewertung ist extrem: KGV 275 und Kurs/Umsatz 19 bei TWD 1,46 Mrd. Umsatz (TTM), Kurs/Buchwert 13,4. Dabei ist das operative Ergebnis negativ (FY2025: TWD -36,5 Mio.); der ausgewiesene Nettogewinn von TWD 88 Mio. entsteht erst unterhalb der operativen Linie. Der Kapazitätsaufbau verbrennt Geld: Investitionen von TWD 866 Mio. in zwölf Monaten führten zu einem freien Cashflow von TWD -820 Mio., die Bruttoverschuldung ist binnen eines Jahres von TWD 733 Mio. auf TWD 1,45 Mrd. gestiegen, der Piotroski-F-Score liegt bei 2. Es wird keine Dividende gezahlt, die Aktienzahl ist im Jahresvergleich um 6,3% gestiegen (Verwässerung). Der eigentliche Hebel – Aufträge aus Taiwans Verteidigungsministerium (Ausschreibung über rund 175 Mio. USD für etwa 3.200 Drohnen in fünf Jahren) und aus US-Programmen wie Drone Dominance – ist politisch, zeitlich und im Volumen unsicher und bislang nicht als eigenes Umsatzsegment im Abschluss sichtbar. Die 52-Wochen-Spanne von TWD 99,70 bis 272,00 zeigt, wie stark der Kurs an Nachrichtenlage und Geopolitik hängt. Echte Assets sind die Blue-UAS-Zertifizierung als Marktzugang zum US-Verteidigungsmarkt und der Status als einer der wenigen nicht-chinesischen FPV-Serienfertiger."
+}

@@ -1,0 +1,106 @@
+{
+  "company": {
+    "name": "Siemens AG",
+    "ticker": "SIE",
+    "exchange": "XETRA / Frankfurt (SIE GY)",
+    "headquarters": "München / Berlin, Deutschland",
+    "founded": 1847,
+    "ipo": "1899 (Erstnotiz Siemens & Halske an der Berliner Börse); heute XETRA/Frankfurt, ADR-Programm SIEGY in den USA",
+    "industry": "Technologiekonzern – Fabrikautomatisierung, Industriesoftware, Elektrifizierung & Gebäudetechnik, Bahntechnik, Medizintechnik",
+    "competitors": ["ABB", "Schneider Electric", "Rockwell Automation", "Mitsubishi Electric", "Honeywell", "Emerson Electric", "Dassault Systèmes", "PTC", "Alstom"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=XETR%3ASIE",
+  "summary": "Siemens ist Europas größter Industriekonzern und deckt Fabrikautomatisierung, Industriesoftware, Elektrifizierung und Gebäudetechnik, Bahntechnik sowie – noch – Medizintechnik ab. Im Geschäftsjahr 2025 (Ende 30.09.2025) erzielte der Konzern 78,9 Mrd. EUR Umsatz (+4% nominal, +5% vergleichbar) bei 88,4 Mrd. EUR Auftragseingang; das Nettoergebnis erreichte mit 10,4 Mrd. EUR einen Rekord, enthielt allerdings den Buchgewinn aus dem Innomotics-Verkauf. Kurstreiber im laufenden Geschäftsjahr 2026 ist Smart Infrastructure: Rechenzentrums- und Elektrifizierungsnachfrage ließ die Aufträge im dritten Quartal (6. August 2026) auf ein Rekordniveau von 27,9 Mrd. EUR steigen, der Auftragsbestand liegt bei 132 Mrd. EUR, die EPS-pre-PPA-Prognose wurde auf 11,20–11,50 EUR angehoben. Robotikrelevant ist vor allem Digital Industries mit Simatic-Steuerungen, Sinamics/Simotics-Antriebstechnik, Sinumerik-CNC sowie der Softwarepalette NX, Teamcenter und Simcenter – nach den Zukäufen Altair und Dotmatics (rund 14,2 Mrd. EUR Akquisitionsausgaben im GJ 2025) ergänzt um Simulation, HPC und KI. Strukturell prägend sind der Konzernumbau zur \"ONE Tech Company\" und die vorbereitete Abspaltung von Siemens Healthineers.",
+  "business_segments": [
+    {
+      "name": "Digital Industries",
+      "revenue_fy25_eur_bn": 17.79,
+      "revenue_fy24_eur_bn": 18.54,
+      "share_pct": 23,
+      "description": "Fabrik- und Prozessautomatisierung (Simatic SPS, TIA Portal, Sinamics-Umrichter, Simotics-Servomotoren, Sinumerik-CNC) sowie das Softwaregeschäft mit NX, Teamcenter, Simcenter, EDA (Siemens EDA) und seit 2025 Altair und Dotmatics. Umsatz im GJ 2025 −4%, Marge von 18,9% auf 14,9% gefallen; hohe Abfindungsaufwendungen für Kapazitätsanpassungen in der Automatisierung. Q4 FY2025 zeigte mit +30% Auftragseingang und +10% Umsatz eine Trendwende, getragen von kurzzyklischer Fabrikautomatisierung und PLM-Software. Dies ist das robotiknächste Segment des Konzerns."
+    },
+    {
+      "name": "Smart Infrastructure",
+      "revenue_fy25_eur_bn": 22.99,
+      "revenue_fy24_eur_bn": 21.37,
+      "share_pct": 29,
+      "description": "Mittel- und Niederspannungstechnik, Elektrifizierung, Netzsoftware, Gebäudeautomation (Desigo) und Rechenzentrums-Infrastruktur. Ertragsstärkstes Segment mit 4,5 Mrd. EUR Ergebnis und 19,6% Marge im GJ 2025. Aktueller Wachstumsmotor des Konzerns: In den ersten neun Monaten des GJ 2026 stiegen Rechenzentrums-Aufträge dreistellig auf rund 6 Mrd. EUR, der zugehörige Umsatz um über 50% auf 3,1 Mrd. EUR. Prognose GJ 2026 auf 10–11% vergleichbares Wachstum und 18,5–19,5% Marge angehoben."
+    },
+    {
+      "name": "Mobility",
+      "revenue_fy25_eur_bn": 12.44,
+      "revenue_fy24_eur_bn": 11.42,
+      "share_pct": 16,
+      "description": "Bahntechnik: Rollmaterial (Velaro, Vectron, Mireo), Bahnautomatisierung und Zugsicherung, Bahnstromversorgung und Instandhaltungsdienstleistungen. Umsatz im GJ 2025 +9% bei 1,1 Mrd. EUR Ergebnis und 8,8% Marge – strukturell die margenschwächste Sparte. Langlaufender Auftragsbestand mit hoher Visibilität, u. a. ein Rahmenvertrag über rund 3 Mrd. EUR mit Italo (Juli 2026) über 26 Hochgeschwindigkeitszüge. Robotikbezug nur mittelbar über Fertigungsautomatisierung."
+    },
+    {
+      "name": "Siemens Healthineers (Beteiligung)",
+      "revenue_fy25_eur_bn": 23.38,
+      "revenue_fy24_eur_bn": 22.36,
+      "share_pct": 30,
+      "description": "Medizintechnik: Bildgebung, Diagnostik, Advanced Therapies und Varian-Strahlentherapie. Bis zur Entkonsolidierung voll im Siemens-Konzernabschluss enthalten und damit umsatzstärkstes Segment (3,5 Mrd. EUR Ergebnis, 15,1% Marge im GJ 2025). Nach dem Verkauf eines 4%-Pakets hielt Siemens zum 30.09.2025 noch 69%. Geplant ist eine Abspaltung nach deutschem Umwandlungsgesetz: 30% sollen direkt an die Siemens-Aktionäre übertragen werden, die Abstimmung ist für die ordentliche Hauptversammlung im Februar 2027 vorgesehen, mittelfristig soll die Beteiligung unter 20% sinken. Ohne Robotikbezug – ein reiner Verwässerungsblock für ein Robotik-Investment."
+    }
+  ],
+  "products": [
+    "Simatic S7 SPS & TIA Portal (Steuerungen und Engineering-Framework der Fabrikautomatisierung)",
+    "Sinamics Umrichter & Simotics Servomotoren (Motion Control, Antriebstechnik)",
+    "Sinumerik CNC-Steuerungen (Werkzeugmaschinen, Bearbeitungszentren)",
+    "NX (CAD/CAM/CAE) & Teamcenter (Product Lifecycle Management)",
+    "Simcenter (Mehrkörper-, System- und FEM-Simulation, Testing)",
+    "Altair HyperWorks & Dotmatics (Simulation, HPC, KI/Data Science – Zukäufe GJ 2025)",
+    "Siemens EDA (Chip- und Leiterplattenentwurf; erweiterte NVIDIA-Partnerschaft für agentische KI-Workflows, 2026)",
+    "Xcelerator (offene Digital-Business-Plattform inkl. Industrial Copilot)",
+    "Sirius & Sentron Schaltgeräte, funktional sichere Steuerungen (Safety Integrated)",
+    "Smart Infrastructure: Mittel-/Niederspannung, Rechenzentrums-Elektrifizierung, Desigo Gebäudeautomation",
+    "Mobility: Velaro/Vectron/Mireo Rollmaterial, Zugsicherung, Bahnstromversorgung",
+    "Siemens Healthineers (69%-Beteiligung): Bildgebung, Labordiagnostik, Varian-Strahlentherapie"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "indirekt – Steuerungs-, Antriebs- und Simulationsbasis für Robotik, aber nur ein kleiner Teil eines sehr breiten Mischkonzerns",
+    "reasons": [
+      "Digital Industries liefert mit Simatic-SPS, Sinamics-Umrichtern und Simotics-Servomotoren genau die Steuerungs- und Antriebsschicht, auf der Industrierobotik in Fabriken aufsetzt – inklusive funktional sicherer Steuerungen für den Betrieb neben Menschen",
+      "Simcenter und NX werden für Mehrkörpersimulation, Aktuator-Auslegung und digitale Zwillinge von Robotersystemen genutzt und sind damit Teil des Sim-to-Real-Werkzeugkastens",
+      "Die Altair-Übernahme (GJ 2025) erweitert Simulations-, Optimierungs- und HPC-Kompetenz – relevant für Leichtbau-Gelenke, Strukturauslegung und Aktuatorik humanoider Systeme",
+      "Siemens testete im April 2026 im Elektronikwerk Erlangen den radgestützten Humanoiden HMND 01 Alpha des Startups Humanoid, gebaut auf dem NVIDIA-Physical-AI-Stack (Jetson Thor); alle Zielwerte wurden erreicht: 60 Behälterbewegungen pro Stunde, über 8 Stunden Verfügbarkeit, über 90% autonome Pick-and-Place-Erfolgsquote",
+      "Nach dem erfolgreichen Pilot wollen Siemens und Humanoid die Partnerschaft vertiefen; Mehrroboter-Pilotprojekte an weiteren Siemens-Standorten werden für die kommenden zwölf Monate geprüft",
+      "Siemens ist damit doppelt positioniert: als Technologielieferant für Robotik-Integratoren und als potenzieller Großanwender humanoider Roboter in eigenen Werken",
+      "Einschränkung: Siemens baut selbst keine Roboter, weder Industrie- noch Humanoid-Hardware, und besitzt kein eigenes Robotik-Foundation-Model – die Wertschöpfung bleibt Steuerung, Software und Integration"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "EUR",
+    "52w_low": 198.00,
+    "52w_high": 291.50,
+    "market_cap_eur_bn": 221.3,
+    "market_cap_usd_bn": 258.0,
+    "enterprise_value_eur_bn": 261.2,
+    "pe_trailing": 28.8,
+    "pe_forward": 22.0,
+    "price_to_sales_ttm": 2.65,
+    "price_to_book": 2.86,
+    "eps_eur_ttm": 10.10,
+    "revenue_fy25_eur_bn": 78.91,
+    "revenue_fy24_eur_bn": 75.93,
+    "revenue_growth_yoy_pct": 3.9,
+    "gross_margin_pct": 39.4,
+    "net_income_eur_mn": 7950,
+    "dividend_yield_pct": 1.93,
+    "beta_5y": 1.28,
+    "debt_to_equity": 0.66,
+    "current_ratio": 1.44,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_eur": 300.76,
+    "shares_outstanding_mn": 768,
+    "sources": [
+      "https://stockanalysis.com/quote/etr/SIE/",
+      "https://stockanalysis.com/quote/etr/SIE/statistics/",
+      "https://assets.new.siemens.com/siemens/assets/api/uuid:7fdd21fb-c248-43a3-b475-f2e618fbae88/2025-q4-earnings-release-en.pdf",
+      "https://press.siemens.com/global/en/pressrelease/record-third-quarter-outlook-raised",
+      "https://press.siemens.com/global/en/pressrelease/siemens-clarifies-timeline-spin-siemens-healthineers-shares",
+      "https://press.siemens.com/global/en/pressrelease/siemens-and-humanoid-bring-physical-ai-factory-floor-deploying-humanoids-industrial",
+      "https://tradingeconomics.com/euro-area/currency"
+    ]
+  },
+  "risk_notes": "Verwässerungsrisiko für ein Robotik-Investment: Der robotiknahe Konzernteil (Digital Industries mit Automatisierung, Motion Control und Simulationssoftware) steuerte im GJ 2025 rund 17,8 Mrd. EUR bzw. gut 22% des Konzernumsatzes bei – und davon ist wiederum nur ein Bruchteil unmittelbar Robotik. Der Aktienkurs wird derzeit primär von Smart Infrastructure (Rechenzentren, Elektrifizierung, rund 29% Umsatzanteil) getrieben, nicht von Robotik; wer Siemens als Robotik-Position hält, kauft faktisch überwiegend Elektrifizierung, Bahntechnik und Medizintechnik mit. Digital Industries war im GJ 2025 zudem das schwächste Segment: Umsatz −4%, Marge von 18,9% auf 14,9% gefallen, hohe Abfindungsaufwendungen; das kurzzyklische Fabrikautomatisierungsgeschäft bleibt China- und maschinenbauzyklisch. Der Healthineers-Spin-off (Aktionärsabstimmung auf der ordentlichen Hauptversammlung im Februar 2027, Direktübertragung von 30% an die Aktionäre, steuerfreie Behandlung mit den deutschen Behörden geklärt, mittelfristige Reduktion unter 20%) verkleinert Umsatz und Gewinn strukturell und verändert die Bewertungsbasis – historische KGV-Vergleiche sind danach nur eingeschränkt aussagekräftig; der Zeitplan hat sich gegenüber der ursprünglichen Ankündigung vom November 2025 bereits verschoben. Bilanzseitig stehen 40,7 Mrd. EUR Goodwill nach den Zukäufen Altair und Dotmatics (14,2 Mrd. EUR Akquisitionsausgaben im GJ 2025), 49,9 Mrd. EUR Bruttoverschuldung und 12,2 Mrd. EUR Industrie-Nettoschulden zu Buche; Debt/Equity 0,66, Current Ratio 1,44. Negative Währungseffekte belasten das GJ 2026 nominal spürbar. Operativ-regulatorisches Risiko: Im August 2026 warnten mehrere US-Behörden vor angreifbaren Siemens-Steuerungsgeräten in Wasser- und kritischer Infrastruktur. Positiv: Rekord-Auftragsbestand von 132 Mrd. EUR, Rekord-Free-Cash-Flow von 10,8 Mrd. EUR im GJ 2025, angehobene Prognose, Dividende von 5,35 EUR je Aktie und ein laufendes, beschleunigtes Aktienrückkaufprogramm."
+}

@@ -1,0 +1,73 @@
+{
+  "company": {
+    "name": "Siasun Robot & Automation Co Ltd",
+    "ticker": "300024",
+    "exchange": "Shenzhen Stock Exchange – ChiNext (A-Aktien)",
+    "headquarters": "Shenyang, Liaoning, China",
+    "founded": 2000,
+    "ipo": "2009 (ChiNext, Erstlisting-Charge vom 30. Oktober 2009)",
+    "industry": "Industrierobotik, mobile Robotik (AGV/AMR), Halbleiter-Handhabung und Intelligent-Manufacturing-Lösungen",
+    "competitors": ["Estun Automation", "Efort Intelligent Equipment", "Inovance Technology", "ABB", "Fanuc", "Yaskawa", "KUKA (Midea)", "UBTech"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=SZSE%3A300024",
+  "summary": "Siasun ist Chinas ältester und bekanntester Industrieroboter-Konzern und ging 2000 als Ausgründung des Shenyang Institute of Automation der Chinesischen Akademie der Wissenschaften (CAS) hervor; Gründer war der CAS-Forscher Qu Daokui. Mit dem Listing am 30. Oktober 2009 gehörte Siasun zur ersten Charge des ChiNext-Segments. Das Portfolio reicht von klassischen Knickarm- und SCARA-Robotern über mobile Roboter (AGV/AMR) und Cobots bis zu Wafer-Handling-Systemen für die Halbleiterfertigung. Seit 2024 hat Siasun eigene Humanoid-Plattformen vorgestellt – den radgetriebenen 'Songyi' (松羿) beziehungsweise die MR73A-Serie mit 38 angetriebenen Gelenken sowie den zweibeinigen 'Songxing' (松行). Wirtschaftlich steht dem Technologieanspruch eine schwache Realität gegenüber: Der Umsatz stagniert seit fünf Jahren bei rund 4 Mrd. CNY, die Bruttomarge liegt bei nur rund 10,6 %, und das Unternehmen schreibt seit 2024 wieder Verluste. Siasun ist damit weniger ein Wachstums-Play als ein Restrukturierungsfall mit Optionscharakter auf Chinas Robotik-Industriepolitik.",
+  "products": [
+    "Industrieroboter: SCARA, Desktop-Typ, Knickarm-Roboter von kleiner bis Ultra-High-Payload-Klasse (bis 360 kg)",
+    "Kollaborative Roboter: GCR-Serie, ex-geschützte Varianten, Palettier- und Schweiß-Workstations, DUCO Mobile Cobot",
+    "Mobile Roboter (AGV/AMR): Gabelstapler-, Behälter-, Unterfahr-Hub- und Werksgelände-Transportroboter",
+    "Industrielle Reinigungsroboter",
+    "Truss-/Portalroboter der MGI-, MGH- und MGA-Serien",
+    "Halbleiter-Handhabungsrobotik entlang der Kette Wafer-Fertigung, Wafer-Processing, Advanced Packaging und Test",
+    "Radgetriebener Humanoid 'Songyi' (松羿) / MR73A mit 38 angetriebenen Gelenken und ±0,03 mm Wiederholgenauigkeit der Doppelarme",
+    "Zweibeiniger Humanoid 'Songxing' (松行) für Industrie-, Service- und Assistenzszenarien",
+    "Intelligente Verkehrstechnik: automatische Zugangsschranken, Ticket- und Internet-Ticketautomaten"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – etablierter Industrieroboter-OEM mit eigenen Humanoid-Plattformen, jedoch ohne bisher messbaren Ergebnisbeitrag",
+    "reasons": [
+      "Siasun baut selbst Humanoide: 'Songyi'/MR73A (radgetrieben, 38 Gelenke) und 'Songxing' (zweibeinig) wurden auf der World Robot Conference in Peking gezeigt",
+      "Als CAS-Ausgründung mit staatlicher Rückendeckung ist Siasun ein politisch gesetzter Champion in Chinas Roboter-Eigenversorgungsstrategie",
+      "Anwendungsfokus deckt genau die Felder ab, in denen Humanoide zuerst wirtschaftlich werden: Automobilfertigung, Elektronik/Halbleiter, Luft- und Raumfahrt, Lagerlogistik",
+      "Bestehende Kundenbeziehungen (u. a. JD Logistics, China Railway Materials) und eine installierte Basis an Industrierobotern senken die Vertriebshürde für Humanoid-Piloten",
+      "Vorhandene Kompetenz in Gelenkantrieben, Steuerungssoftware und 3D-Vision ist direkt in die Humanoid-Entwicklung übertragbar",
+      "Umgekehrt gilt: Die Humanoid-Produkte sind bislang Demonstratoren und tragen nicht erkennbar zum Umsatz bei – die These ist Zukunftsoption, nicht laufendes Geschäft"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "CNY",
+    "52w_low": 14.13,
+    "52w_high": 22.00,
+    "market_cap_cny_bn": 24.7,
+    "market_cap_usd_bn": 3.7,
+    "enterprise_value_cny_bn": 25.7,
+    "pe_trailing": null,
+    "pe_forward": null,
+    "price_to_sales_ttm": 6.08,
+    "price_to_book": 5.70,
+    "eps_cny_ttm": -0.28,
+    "revenue_fy25_cny_bn": 4.12,
+    "revenue_growth_yoy_pct": -0.4,
+    "revenue_growth_ttm_yoy_pct": -0.7,
+    "gross_margin_pct": 10.6,
+    "net_income_cny_mn": -397.9,
+    "net_income_ttm_cny_mn": -440.1,
+    "dividend": null,
+    "beta_5y": 0.45,
+    "debt_to_equity": 0.55,
+    "current_ratio": 1.25,
+    "analyst_consensus": null,
+    "analyst_price_target_cny": null,
+    "shares_outstanding_mn": 1566,
+    "sources": [
+      "https://stockanalysis.com/quote/she/300024/statistics/",
+      "https://stockanalysis.com/quote/she/300024/financials/",
+      "https://stockanalysis.com/quote/she/300024/",
+      "https://stockanalysis.com/quote/she/300024/company/",
+      "https://www.siasun.com/products/",
+      "https://en.wikipedia.org/wiki/Siasun_Robotics",
+      "https://tradingeconomics.com/china/currency"
+    ]
+  },
+  "risk_notes": "Siasun ist der schwächste Fundamentalfall unter Chinas Robotik-Blue-Chips: Der Umsatz stagniert seit 2021 zwischen 3,3 und 4,1 Mrd. CNY, FY2025 sank er leicht auf 4,12 Mrd. CNY, und der Nettoverlust weitete sich auf 398 Mio. CNY aus (TTM: -440 Mio. CNY). Die Bruttomarge von rund 10,6 % ist für einen Roboter-OEM außergewöhnlich niedrig und zeigt, dass ein Großteil des Geschäfts margenarmes Systemintegrations- und Projektgeschäft ist. KGV existiert nicht (defizitär); die Bewertung stützt sich allein auf P/S ~6 und P/B ~5,7 – hoch für ein Unternehmen ohne Gewinn und ohne Wachstum. Bilanz mit Debt/Equity 0,55 und Current Ratio 1,25 ist deutlich angespannter als bei Wettbewerbern, der Altman-Z-Score von 2,57 signalisiert erhöhtes Bilanzrisiko. Wettbewerbsdruck steigt: Estun und Inovance gewinnen Anteile, und der Cobot-Markt wird durch eine große Zahl neuer heimischer Anbieter kommoditisiert. Sell-Side-Coverage ist praktisch nicht vorhanden – es liegt kein belastbarer Analysten-Konsens und kein Kursziel vor, entsprechend stehen diese Felder auf null. ChiNext-Titel sind für ausländische Investoren nur über Stock Connect, QFII oder ETFs zugänglich. Positiv: niedriges Beta (0,45) und die staatsnahe Eigentümerstruktur, die eine Abwicklung praktisch ausschließt und Fördermittelzugang sichert."
+}

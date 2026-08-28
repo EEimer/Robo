@@ -1,0 +1,96 @@
+{
+  "company": {
+    "name": "Ondas Inc. (vormals Ondas Holdings Inc., umbenannt im Januar 2026)",
+    "ticker": "ONDS",
+    "exchange": "Nasdaq",
+    "headquarters": "West Palm Beach, Florida, USA (Ondas Defense Ltd. mit Schwerpunkt Israel)",
+    "founded": 2014,
+    "ipo": "Dezember 2020 (Nasdaq-Uplisting; Börsennotiz seit September 2018 via Reverse Merger)",
+    "industry": "Autonome Systeme & Verteidigungstechnik – Drohnen, Counter-UAS, Bodenrobotik, private Breitband-Funknetze",
+    "competitors": ["AeroVironment", "Red Cat Holdings", "Kratos Defense", "Elbit Systems", "Anduril Industries (privat)", "DroneShield", "Teledyne FLIR", "Rafael Advanced Defense Systems (staatlich)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3AONDS",
+  "summary": "Ondas hat sich in nur rund zwei Jahren durch eine Serie von Übernahmen von einem Nischenanbieter für private Funknetze zu einem breit aufgestellten Konzern für autonome Verteidigungssysteme gewandelt. Der historische Kern ist Ondas Networks mit der patentierten FullMAX-Software-Defined-Radio-Plattform für sichere, private Breitbandnetze bei Eisenbahnen, Energieversorgern sowie in Öl und Gas. Das Wachstum stammt heute nahezu vollständig aus dem zweiten Segment Ondas Autonomous Systems (OAS), das aus den Zukäufen American Robotics und Airobotics hervorging – Letzteres liefert die Optimus-Plattform, ein vollautonomes Drone-in-a-Box-System. Ergänzt wurde OAS um Iron Drone Raider (kinetischer Interceptor gegen feindliche Drohnen), Sentrycs (Cyber-over-RF Counter-UAS), Roboteam (taktische unbemannte Bodenfahrzeuge) und Apeiro Motion (Autonomie- und Mobilitätssoftware für Roboterplattformen). Allein 2026 kamen World View (Stratosphärenballons), Mistral (US-Systemintegrator mit einem 982-Mio.-USD-IDIQ der US Army für Loitering Munition), Omnisys (Gefechtsfeld-Optimierungssoftware), DZYNE (Langstrecken-ISR und Präzisionsschlag) und Cyberhawk (KI-gestützte Infrastrukturinspektion) hinzu; die US-Aktivitäten wurden unter der Marke Ondas Sentinel gebündelt. Das zweite Quartal 2026 brachte einen Rekordumsatz von 83,8 Mio. USD, eine Verdreizehnfachung gegenüber Vorjahr, einen Pro-forma-Auftragsbestand von 757 Mio. USD und eine Anhebung des Jahresziels auf 525–550 Mio. USD. Dem stehen ein operativer Verlust von 162,9 Mio. USD im Quartal und eine Verwässerung um 297% binnen zwölf Monaten gegenüber.",
+  "business_segments": [
+    {
+      "name": "Ondas Networks",
+      "revenue_fy25_usd_mn": null,
+      "share_pct": null,
+      "description": "Ursprungsgeschäft: FullMAX Software-Defined-Radio-Plattform für private, sichere Weitverkehrs-Breitbandnetze. Kunden sind Eisenbahnen, Energieversorger sowie Öl- und Gasbetreiber; Erlöse aus Hardware, Wartungsverträgen, Lizenzen und Ingenieurdienstleistungen. Umsatzanteil ist nach der Expansion von OAS nur noch marginal; eine separate Segmentumsatzangabe liegt für 2025/26 nicht öffentlich vor."
+    },
+    {
+      "name": "Ondas Autonomous Systems (OAS)",
+      "revenue_fy25_usd_mn": null,
+      "share_pct": null,
+      "description": "Trägt praktisch das gesamte Wachstum. Umfasst autonome Drohnenplattformen (Optimus), Counter-UAS in zwei Ansätzen – kinetisch über Iron Drone Raider und cyber-/RF-basiert über Sentrycs CoRF –, taktische Bodenroboter von Roboteam, Minenräumsysteme (4M Defense), Loitering Munition sowie seit 2026 die unter Ondas Sentinel gebündelten US-Einheiten Mistral, World View, DZYNE und Cyberhawk. Eine separate Segmentumsatzangabe liegt für 2025/26 nicht öffentlich vor; berichtet wird nach Erlösarten (Produkt 109,6 Mio. USD, Service/Abo 39,9 Mio. USD, Entwicklung 24,7 Mio. USD, jeweils TTM)."
+    }
+  ],
+  "products": [
+    "FullMAX Software-Defined Radio (private, sichere Breitband-Funknetze für Bahn, Versorger, Öl & Gas)",
+    "Optimus System (vollautonome Drone-in-a-Box-Plattform für Überwachung und Inspektion)",
+    "Iron Drone Raider (autonomer Interceptor zur kinetischen Abwehr kleiner feindlicher Drohnen)",
+    "Sentrycs CoRF (Cyber-over-RF Counter-UAS: Detektion, Identifikation, Tracking, Übernahme)",
+    "Roboteam UGVs (taktische unbemannte Bodenfahrzeuge und Bodenrobotik)",
+    "Apeiro Motion (Autonomie- und Mobilitätssoftware für Roboterplattformen)",
+    "4M Defense (Systeme zur Minenräumung und Kampfmittelbeseitigung)",
+    "Lethal Unmanned Systems / Loitering Munition (Mistral, unter dem 982-Mio.-USD-IDIQ der US Army)",
+    "ULTRA und IonStrike (Langstrecken-ISR und Präzisionsschlag, aus der DZYNE-Übernahme)",
+    "Stratollite / HAPS-Stratosphärenballons (World View) für persistente ISR ohne Satelliten",
+    "Cyberhawk (KI-gestützte autonome Inspektion kritischer Infrastruktur)",
+    "LADOS und SkyWeaver (KI-Softwareschicht, letztere gemeinsam mit Palantir entwickelt)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "kein Humanoid-Bezug – autonome Luft-, Boden- und Stratosphärensysteme mit Verteidigungsschwerpunkt, mit dem substanziellsten Bodenrobotik-Anteil der drei Drohnentitel",
+    "reasons": [
+      "Ondas entwickelt keine humanoiden Roboter. Das Portfolio besteht aus Drohnen, Counter-UAS, Stratosphärenplattformen und taktischen Bodenrobotern – die Einordnung als Robotik-Titel ist nur über die letzte Kategorie überhaupt vertretbar",
+      "Über die Tochter Roboteam besitzt Ondas mit unbemannten Bodenfahrzeugen das direkteste Robotik-Asset der drei hier betrachteten Drohnenfirmen, inklusive Fahrwerks-, Manipulator- und Fernsteuerungstechnik. Laut Q2-2026-Bericht zeigte die UGV-Sparte starke Auftragsdynamik in den Bereichen taktische Robotik, Minenräumung, Grenzinfrastruktur und unbemannte schwere Baumaschinen",
+      "Apeiro Motion liefert Autonomie- und Mobilitätssoftware explizit für Roboterplattformen: Navigation, Pfadplanung und Hindernisvermeidung sind Bausteine, die auch humanoide Systeme benötigen – allerdings auf Fahrzeugebene, nicht auf Ebene der Ganzkörper-Regelung",
+      "Substanzielle Sensorik-Kompetenz als generische Robotik-Technologie: LiDAR (LOCATE), RF-Sensorik und Computer Vision, jeweils ausgelegt auf Edge-Autonomie in GNSS-verweigerten Umgebungen",
+      "Die Integration von Palantir Foundry und die gemeinsame Entwicklung von SkyWeaver zielen auf eine softwaredefinierte System-of-Systems-Architektur – Multi-Agenten-Koordination statt Intelligenz im Einzelroboter",
+      "Kein Bezug zu Humanoid-spezifischer Technik: keine Harmonic Drives oder Zykloidgetriebe, keine Kraft-Drehmoment- oder taktile Sensorik, keine Ganzkörper-Regelung, keine Zulieferbeziehung zu Humanoid-OEMs und keine Beteiligung an Foundation Models für verkörperte KI",
+      "Einordnung fürs Dashboard: primär ein Defense- und Autonomie-Play mit einem echten, aber gemessen am Gesamtgeschäft kleinen Bodenrobotik-Anteil. Kein Humanoid-Exposure"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "USD",
+    "price_usd": 8.75,
+    "52w_low": 4.90,
+    "52w_high": 15.28,
+    "market_cap_usd_bn": 4.99,
+    "enterprise_value_usd_bn": 3.65,
+    "pe_trailing": null,
+    "pe_forward": null,
+    "price_to_sales_ttm": 28.67,
+    "price_to_book": 2.77,
+    "eps_ttm_usd": 0.19,
+    "revenue_ttm_usd_mn": 174.10,
+    "revenue_fy25_usd_mn": 50.73,
+    "revenue_fy24_usd_mn": 7.19,
+    "revenue_growth_yoy_pct": 605.3,
+    "revenue_guidance_fy26_usd_mn_low": 525,
+    "revenue_guidance_fy26_usd_mn_high": 550,
+    "gross_margin_pct": 43.7,
+    "net_income_usd_mn": 85.75,
+    "operating_income_ttm_usd_mn": -210.7,
+    "backlog_proforma_usd_mn": 757,
+    "net_cash_usd_bn": 1.34,
+    "dividend": null,
+    "beta_5y": 2.75,
+    "debt_to_equity": 0.03,
+    "current_ratio": 9.85,
+    "analyst_consensus": "Strong Buy",
+    "analyst_price_target_usd": 19.42,
+    "analyst_count": 9,
+    "shares_outstanding_mn": 570.55,
+    "short_interest_pct_of_shares": 40.40,
+    "sources": [
+      "https://stockanalysis.com/stocks/onds/",
+      "https://stockanalysis.com/stocks/onds/statistics/",
+      "https://stockanalysis.com/stocks/onds/financials/",
+      "https://stockanalysis.com/stocks/onds/company/",
+      "https://www.sec.gov/Archives/edgar/data/0001646188/000119312526347973/onds-ex99_1.htm"
+    ]
+  },
+  "risk_notes": "Wichtigster Hinweis zur Kennzahlenqualität: Datenanbieter weisen für Ondas ein positives TTM-Nettoergebnis von 85,8 Mio. USD und daraus abgeleitet ein KGV von rund 45 aus. Diese Zahl ist irreführend und wurde hier bewusst auf null gesetzt. Der Gewinn stammt vollständig aus der nicht zahlungswirksamen Neubewertung von Bezugsrechten (Warrant-Verbindlichkeit von 1,04 Mrd. USD zum 30. Juni 2026), die im ersten Quartal 2026 einen Sondereffekt von rund 450 Mio. USD im Finanzergebnis erzeugte. Operativ steht ein TTM-Verlust von 210,7 Mio. USD, im Q2 2026 allein ein operativer Verlust von 162,9 Mio. USD und ein bereinigter EBITDA-Verlust von 50,6 Mio. USD. Ein Forward-KGV existiert nicht, da Konsensschätzungen weiterhin Verluste unterstellen. Zweitens die Verwässerung: Die Aktienzahl stieg binnen zwölf Monaten um 297% auf 570,6 Mio. Stück – der Umsatzsprung wurde weitgehend mit Eigenkapital gekauft. Drittens das Integrationsrisiko: Mindestens acht Übernahmen in rund achtzehn Monaten haben Goodwill von 661 Mio. USD und immaterielle Vermögenswerte von 583 Mio. USD aufgebaut; zusammen sind das rund 79% des ausgewiesenen Eigenkapitals von 1,58 Mrd. USD und damit erhebliches Abschreibungspotenzial. Der Altman-Z-Score von 1,79 signalisiert trotz hoher Liquidität ein erhöhtes Bilanzrisiko. Viertens die Bewertung: Ein Kurs-Umsatz-Verhältnis von 28,7 preist die Erfüllung der auf 525–550 Mio. USD angehobenen Jahresprognose bereits ein, wobei allein das dritte Quartal 140–155 Mio. USD liefern müsste – gegenüber 83,8 Mio. USD im Vorquartal. Fünftens die Positionierung: 40,4% der ausstehenden Aktien beziehungsweise 43,2% des Streubesitzes sind leerverkauft, kombiniert mit einem Beta von 2,75 ergibt das einen extrem hebelnden Titel in beide Richtungen. Sechstens ein geopolitisches Konzentrationsrisiko durch die starke Israel-Exponierung über Ondas Defense, Sentrycs und die geplante Aran-Defense-Übernahme. Entlastend wirken 1,34 Mrd. USD Netto-Cash, eine praktisch schuldenfreie Bilanz (Debt/Equity 0,03), ein Pro-forma-Auftragsbestand von 757 Mio. USD und die in Aussicht gestellte bereinigte EBITDA-Profitabilität auf Plattformebene ab Q4 2026. Für ein Robotik-Dashboard gilt: Ondas ist ein Defense- und Autonomie-Titel mit einem kleinen echten Bodenrobotik-Kern, kein Robotik-Reinvestment."
+}

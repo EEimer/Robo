@@ -1,0 +1,81 @@
+{
+  "company": {
+    "name": "Pony AI Inc (Pony.ai)",
+    "ticker": "PONY",
+    "exchange": "Nasdaq (ADS) / HKEX 2026 – Dual-Primary-Listing",
+    "headquarters": "Guangzhou, Guangdong, China",
+    "founded": 2016,
+    "ipo": "2024 (Nasdaq, 27. November), 2025 (HKEX, 6. November – Dual-Primary-Listing, Erlös bis zu 7,7 Mrd. HKD)",
+    "industry": "Autonomes Fahren – Robotaxi-Flottenbetrieb, autonome Lkw (Robotrucks), Lizenzierung von AD-Software",
+    "competitors": [
+      "Baidu Apollo Go",
+      "WeRide",
+      "Waymo (Alphabet)",
+      "Tesla Robotaxi",
+      "Momenta",
+      "AutoX",
+      "Didi Autonomous Driving"
+    ]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3APONY",
+  "summary": "Pony.ai betreibt Robotaxis und autonome Lkw und ist neben Baidu Apollo Go und WeRide einer der drei chinesischen Anbieter, die den Sprung vom Pilotbetrieb zur Serienskalierung geschafft haben. Kern ist das Gen-7-Autonomiesystem, das vollständig aus automotive-tauglichen Komponenten besteht und die Stücklistenkosten gegenüber der Vorgängergeneration um rund 70 % senkt – die Voraussetzung dafür, Robotaxis überhaupt in Serie bauen zu lassen. Gefertigt wird gemeinsam mit OEMs: Toyota bZ4X über das Joint Venture GAC Toyota, dazu der BAIC ARCFOX Alpha T5 und der GAC Aion V der zweiten Generation. Im zweiten Quartal 2026 stieg der Konzernumsatz um 68,8 % auf 36,2 Mio. USD, wobei die Robotaxi-Erlöse um 691,2 % auf 12,1 Mio. USD sprangen und das Robotruck-Geschäft mit Sinotrans um 40,0 % auf 13,3 Mio. USD zulegte. Die Flotte umfasste zum Quartalsende 1.975 Fahrzeuge, angestrebt sind über 3.500 Fahrzeuge in mehr als 20 Städten bis Jahresende. International expandiert Pony.ai vor allem über Uber: Nach dem Start in Zagreb im März 2026 mit dem kroatischen Partner Verne kündigten beide Unternehmen im August 2026 den Einsatz von über 2.000 Robotaxis in Europa an; die gesamte Auslandspipeline liegt bei mehr als 4.000 Fahrzeugen. Trotz dieser operativen Dynamik ist das Unternehmen klar defizitär: 125 Mio. USD Umsatz und 148 Mio. USD Verlust in den letzten zwölf Monaten stehen einer Börsenbewertung von rund 3,3 Mrd. USD gegenüber.",
+  "products": [
+    "Robotaxi-Flottenbetrieb in Guangzhou, Peking, Shanghai und Shenzhen sowie internationale Märkte (u. a. Naher Osten, Europa)",
+    "Gen-7 Autonomous-Driving-System (100 % automotive-grade Komponenten, ~70 % niedrigere Stücklistenkosten)",
+    "Gen-7-Robotaxi-Fahrzeugmodelle: Toyota bZ4X (GAC Toyota), BAIC ARCFOX Alpha T5, GAC Aion V (2. Generation)",
+    "Robotrucks: Gen-4-Generation in Serienfertigung, Logistikbetrieb u. a. gemeinsam mit Sinotrans",
+    "PonyPilot+ Ride-Hailing-App sowie Integration der Flotte in die Uber-Plattform",
+    "Virtual-Driver-Technologiestack: Sensorfusion (Lidar/Radar/Kamera), Wahrnehmung, Verhaltensplanung, Steuerung",
+    "AV-Engineering-Dienstleistungen für OEMs und Mobility-Plattformen: Software-Deployment, Fahrzeugintegration, Straßentests"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "indirekt und thematisch – KEIN Humanoid-Programm; die Verbindung zur Robotik besteht ausschließlich über autonome Fahrzeuge und Embodied AI",
+    "reasons": [
+      "Klarstellung vorab: Pony AI entwickelt und verkauft keine humanoiden Roboter. Das gesamte Produktportfolio besteht aus autonomen Pkw und Lkw",
+      "Der thematische Bezug liegt in der gemeinsamen technologischen Grundlage: Sensorfusion, Umgebungswahrnehmung, Verhaltensplanung und Sicherheitsvalidierung autonomer Maschinen in offenen, unstrukturierten Umgebungen",
+      "Robotaxis sind der kommerziell am weitesten fortgeschrittene Fall autonomer Maschinen im öffentlichen Raum – Regulierung, Haftungsfragen und Skalierungsökonomie werden hier zuerst gelöst und sind Referenz für spätere Humanoid-Anwendungen",
+      "Skaleneffekte bei Lidar, Radar, Kameras und Compute-Plattformen verbilligen Komponenten für die gesamte Robotik-Lieferkette",
+      "Die Aufnahme in Robotik-ETFs erfolgt über die breite Definition 'autonome Systeme / Physical AI', nicht über Humanoid-Exposure",
+      "Wer gezielt auf humanoide Roboter setzen will, findet dieses Exposure bei Pony AI nicht – der Titel ist eine reine Wette auf autonome Mobilität"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "USD",
+    "52w_low": 6.37,
+    "52w_high": 24.92,
+    "market_cap_usd_bn": 3.27,
+    "enterprise_value_usd_bn": 2.07,
+    "pe_trailing": null,
+    "pe_forward": null,
+    "price_to_sales_ttm": 25.29,
+    "price_to_sales_forward": 12.1,
+    "price_to_book": 2.0,
+    "eps_usd_ttm": -0.36,
+    "revenue_fy25_usd_mn": 90.0,
+    "revenue_ttm_usd_mn": 125.04,
+    "revenue_growth_yoy_pct": 20.0,
+    "revenue_growth_ttm_yoy_pct": 45.8,
+    "gross_margin_pct": 16.2,
+    "net_income_usd_mn": -133.97,
+    "net_income_ttm_usd_mn": -148.13,
+    "dividend": null,
+    "beta_5y": null,
+    "debt_to_equity": 0.01,
+    "current_ratio": 15.94,
+    "analyst_consensus": "Strong Buy",
+    "analyst_price_target_usd": 20.37,
+    "shares_outstanding_mn": 434.41,
+    "cash_and_equivalents_usd_bn": 1.11,
+    "sources": [
+      "https://stockanalysis.com/stocks/pony/statistics/",
+      "https://stockanalysis.com/stocks/pony/",
+      "https://ir.pony.ai/news-releases/news-release-details/pony-ai-inc-reports-second-quarter-2026-financial-results-total",
+      "https://www.globenewswire.com/news-release/2026/08/18/3346631/0/en/pony-ai-inc-reports-second-quarter-2026-financial-results-total-revenues-up-68-8-yoy-to-us-36-2-mm-with-robotaxi-services-revenue-up-691-2-to-us-12-1-mm.html",
+      "https://www.prnewswire.com/apac/news-releases/ponyai-lists-on-hkex-ushering-in-a-new-era-of-scaled-commercialization-in-autonomous-driving-302606546.html",
+      "https://www.reuters.com/business/autos-transportation/chinas-ponyais-overseas-robotaxi-pipeline-expands-over-4000-vehicles-2026-08-18/",
+      "https://techcrunch.com/2026/08/14/uber-and-pony-ai-plan-to-bring-2000-robotaxis-to-europe/"
+    ]
+  },
+  "risk_notes": "Pony AI ist defizitär – KGV trailing und forward entfallen daher. Der Bewertungsabstand ist extrem: 125 Mio. USD Umsatz (TTM) tragen eine Marktkapitalisierung von rund 3,3 Mrd. USD, entsprechend einem P/S von 25. Die Aktie hat in zwölf Monaten rund 50 % verloren und notiert nahe dem 52-Wochen-Tief von 6,37 USD, während das durchschnittliche Analystenkursziel bei 20,37 USD liegt (18 Analysten, Konsens 'Strong Buy') – die Diskrepanz zwischen Sell-Side-Optimismus und Marktpreis ist ungewöhnlich groß und sollte als Warnsignal gelesen werden, nicht als Kurschance. Verwässerung ist ein reales Thema: Die Aktienzahl stieg binnen eines Jahres um 68 %, unter anderem durch die HKEX-Zweitnotiz im November 2025. Strukturell ist der US-Markt für ein chinesisches AV-Unternehmen faktisch verschlossen; die Wachstumsphantasie hängt an China, dem Nahen Osten und Europa und damit an Genehmigungen, die Stadt für Stadt erteilt werden. Dazu kommen ADR-/Delisting-Risiken, Datenexport- und Kartierungsvorschriften sowie geopolitische Sanktionsrisiken. Der Wettbewerb ist hochkarätig besetzt (Baidu Apollo Go, WeRide, Waymo, Tesla, Momenta). Kein 5-Jahres-Beta verfügbar, da die Kurshistorie erst seit November 2024 besteht – das Feld steht auf null. Gegenposten: eine sehr solide Bilanz mit 1,11 Mrd. USD Liquidität, Debt/Equity 0,01 und einer Current Ratio von 15,9; der Cash-Puffer finanziert den Skalierungsplan über mehrere Jahre. Entscheidend für ETF-Anleger: Dieser Titel liefert Exposure zu autonomer Mobilität, nicht zu humanoider Robotik."
+}

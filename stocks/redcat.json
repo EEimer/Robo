@@ -1,0 +1,74 @@
+{
+  "company": {
+    "name": "Red Cat Holdings, Inc.",
+    "ticker": "RCAT",
+    "exchange": "Nasdaq",
+    "headquarters": "South Salt Lake, Utah, USA",
+    "founded": 2016,
+    "ipo": "April 2021 (Nasdaq-Uplisting; zuvor OTCQB-Notierung)",
+    "industry": "Verteidigungstechnologie – taktische Kleindrohnen (sUAS), FPV-Systeme, unbemannte Überwasserfahrzeuge",
+    "competitors": ["AeroVironment", "Skydio (privat)", "Anduril Industries (privat)", "Neros Technologies (privat)", "Unusual Machines", "Ondas", "Kratos Defense", "Parrot"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3ARCAT",
+  "summary": "Red Cat Holdings entwickelt und fertigt über die Tochtergesellschaft Teal Drones taktische Kleindrohnen für die US-Streitkräfte und verbündete Nationen. Der Investment Case steht und fällt mit einem einzigen Programm: Im November 2024 wurde die Black Widow als Gewinner des US-Army-Programms Short Range Reconnaissance (SRR) Tranche 2 ausgewählt und damit zum Program of Record für die Aufklärungsdrohne auf Zugebene. Ergänzt wird das Portfolio durch Teal 2 (Nachtaufklärung), FANG (FPV-Angriffsdrohne), die Langstrecken-VTOL-Plattform Edge 130 aus der Übernahme von FlightWave Aerospace sowie seit 2025 die maritime Sparte Blue Ops mit unbemannten Überwasserfahrzeugen. Als US-Fertiger mit NDAA-konformer Lieferkette profitiert Red Cat direkt von der Blue-UAS-Politik und den im August 2026 verhängten US-Zöllen auf importierte Drohnenkomponenten. Operativ hinkt die Umsetzung der Erwartung jedoch hinterher: Im zweiten Quartal 2026 lag der Umsatz mit 20,2 Mio. USD trotz +527% gegenüber Vorjahr unter dem Konsens, die Bruttomarge erreichte nur 16,1%. Die bestätigte Jahresprognose von 150–180 Mio. USD verlangt einen sehr steilen Hochlauf im zweiten Halbjahr. Eine Netto-Cash-Position von 311 Mio. USD finanziert die hohe Verlustrate vorerst komfortabel.",
+  "products": [
+    "Black Widow (taktische Kleindrohne, Program of Record im US-Army-SRR-Programm)",
+    "WEB (Bodenkontrollstation und Bediensoftware für Black Widow)",
+    "Teal 2 (Blue-UAS-Nachtaufklärungsdrohne mit Wärmebildsensorik)",
+    "FANG (FPV-Angriffsdrohne, Teil der ARACHNID-Familie)",
+    "Edge 130 (VTOL-Fixed-Wing-Langstreckendrohne für erweiterte ISR-Missionen)",
+    "Blue Ops Variant 7 (unbemanntes Überwasserfahrzeug, USV, mit Volvo-Penta-Antrieb)",
+    "SPiDRWORX (Innovationseinheit für die Integration von Partner-Nutzlasten)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "kein Humanoid-Bezug – taktische Luft- und Seedrohnen für Verteidigungskunden",
+    "reasons": [
+      "Red Cat baut ausschließlich unbemannte Luft- und Überwasserfahrzeuge. Humanoide Systeme, Laufroboter oder bodengebundene Manipulatoren sind nicht Teil des Portfolios und auch nicht Teil der Roadmap",
+      "Die Überlappung mit der Robotik-Wertschöpfungskette beschränkt sich auf generische Bausteine: Autonomie- und Flugregelungssoftware, Bildverarbeitung und Zielverfolgung, bürstenlose Antriebe, Batterietechnik und robuste Datenlinks",
+      "Die im August 2026 angekündigte Partnerschaft mit Havoc bringt kollaborative Autonomie-Software für USV-Flotten ins Haus – Schwarm- und Multi-Agenten-Koordination ist konzeptionell verwandt mit der Steuerung von Roboterflotten, adressiert aber keine humanoide Fragestellung",
+      "Die vertikal integrierte US-Fertigung von Rahmen, Motoren und Elektronik schafft Lieferketten-Kompetenz, die theoretisch auf andere Roboterklassen übertragbar wäre – bislang gibt es dafür jedoch keinerlei Anzeichen im Unternehmen",
+      "Kein Zulieferverhältnis zu Humanoid-OEMs, keine Präzisionsgetriebe, keine Aktuatorik-Module, keine Ganzkörper-Regelung, keine taktile Sensorik",
+      "Einordnung fürs Dashboard: ein reines Defense-Drohnen-Play. Kurstreiber sind Beschaffungsentscheidungen der US Army, NDAA-Regulierung und Zollpolitik – nicht die Adoptionskurve humanoider Roboter"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "USD",
+    "price_usd": 9.28,
+    "52w_low": 5.77,
+    "52w_high": 18.78,
+    "market_cap_usd_bn": 1.42,
+    "enterprise_value_usd_bn": 1.11,
+    "pe_trailing": null,
+    "pe_forward": null,
+    "price_to_sales_ttm": 19.87,
+    "price_to_book": 2.89,
+    "eps_ttm_usd": -0.82,
+    "revenue_ttm_usd_mn": 71.54,
+    "revenue_fy25_usd_mn": 40.73,
+    "revenue_fy24_usd_mn": 7.28,
+    "revenue_growth_yoy_pct": 459.8,
+    "revenue_guidance_fy26_usd_mn_low": 150,
+    "revenue_guidance_fy26_usd_mn_high": 180,
+    "gross_margin_pct": 9.75,
+    "net_income_usd_mn": -97.49,
+    "net_cash_usd_mn": 310.68,
+    "dividend": null,
+    "beta_5y": 1.35,
+    "debt_to_equity": 0.03,
+    "current_ratio": 14.86,
+    "analyst_consensus": "Strong Buy",
+    "analyst_price_target_usd": 18.33,
+    "analyst_count": 6,
+    "shares_outstanding_mn": 152.71,
+    "short_interest_pct_of_shares": 21.11,
+    "sources": [
+      "https://stockanalysis.com/stocks/rcat/",
+      "https://stockanalysis.com/stocks/rcat/statistics/",
+      "https://stockanalysis.com/stocks/rcat/company/",
+      "https://ir.redcatholdings.com/news-events/press-releases/detail/237/red-cat-reports-q2-2026-revenue-growth-of-527-yy-q2-gross-margins-increase-39-vs-q2-2025-gross-margins-increased-27-sequentially-from-q1-2026",
+      "https://ir.redcatholdings.com/news-events/press-releases/detail/160/red-cat-announces-production-selection-for-u-s-army-short-range-reconnaissance-program"
+    ]
+  },
+  "risk_notes": "Zuerst die Einordnung fürs Dashboard: RCAT ist der reinste Defense-Titel der drei Drohnenwerte und hat mit Robotik im Sinne des ETF-Themas praktisch nichts zu tun. Wer hier investiert, spielt US-Beschaffungspolitik. Operativ ist das Unternehmen weit von Skaleneffekten entfernt: Bei 71,5 Mio. USD TTM-Umsatz stehen ein operativer Verlust von 107,4 Mio. USD und eine TTM-Bruttomarge von 9,75%. Im Q2 2026 verbesserte sich die Bruttomarge zwar auf 16,1%, blieb aber weit unter dem Niveau, das eine Bewertung mit einem Kurs-Umsatz-Verhältnis von 19,9 rechtfertigen würde. Der freie Cashflow lag bei -157,7 Mio. USD; die Netto-Cash-Position von 311 Mio. USD reicht bei unveränderter Burn-Rate rund zwei Jahre, danach droht erneute Verwässerung – die Aktienzahl ist bereits um 42% binnen zwölf Monaten gestiegen, im letzten Quartal allein um 13,3%. Das größte Einzelrisiko ist das Klumpenrisiko: Die These hängt am US-Army-SRR-Programm. Verzögerungen beim Übergang von der Low-Rate-Initial-Production in die Serienfertigung, Budgetverschiebungen oder eine Programmänderung würden die Bewertung unmittelbar treffen. Die bestätigte Jahresprognose von 150–180 Mio. USD verlangt nach einem Q2-Umsatz von 20,2 Mio. USD einen Hochlauf, den das Unternehmen bislang nicht demonstriert hat; Needham senkte das Kursziel nach den Q2-Zahlen von 20 auf 15 USD. Hinzu kommen 21,1% Short-Interest an den ausstehenden Aktien beziehungsweise 23,2% des Streubesitzes, was den Titel in beide Richtungen hebelt, sowie ein Governance-Signal: Die Entlassung des Chief Revenue Officer im Juli 2026 zog eine Zivilklage nach sich. Positiv sind die praktisch schuldenfreie Bilanz (Debt/Equity 0,03), eine Current Ratio von 14,9 und die internationale Diversifikation über Aufträge aus Australien, Japan und einem NATO-Staat, die die Abhängigkeit von einem einzigen Kunden mittelfristig reduzieren könnte."
+}

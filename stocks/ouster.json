@@ -1,0 +1,117 @@
+{
+  "company": {
+    "name": "Ouster, Inc.",
+    "ticker": "OUST",
+    "exchange": "Nasdaq",
+    "headquarters": "San Francisco, Kalifornien, USA",
+    "founded": 2015,
+    "ipo": "März 2021 (SPAC-Fusion mit Colonnade Acquisition Corp., Erstnotiz NYSE; heute Nasdaq)",
+    "industry": "Digitales Lidar & Wahrnehmungssysteme – Industrie, Robotik, Smart Infrastructure, Automotive",
+    "competitors": ["Hesai", "RoboSense", "Seyond", "Innoviz", "Aeva", "Valeo", "Huawei (Automotive-Lidar)"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3AOUST",
+  "summary": "Ouster baut digitale Lidar-Sensoren auf Basis eigener CMOS-Chips (Ouster Silicon) – im Gegensatz zu analogen Systemen mit diskreten Bauteilen sitzt die gesamte Sende- und Empfangselektronik auf einem Halbleiter. Das senkt Stückkosten und Fertigungskomplexität und ist der zentrale technologische Hebel des Unternehmens. Durch die Fusion mit Velodyne (Februar 2023, formal ein Merger of Equals) wurde Ouster zum größten westlichen Lidar-Anbieter und übernahm Velodynes Patentportfolio, aus dem seither Lizenzerlöse fließen. Im Mai 2026 kam mit der REV8-Generation (L4- und L4-Max-Silizium) das erste native Farb-Lidar auf den Markt: doppelte Reichweite und Auflösung gegenüber REV7, punktgenaue Farbinformation und funktionale Sicherheitsauslegung. Anfang 2026 hat Ouster zusätzlich Stereolabs (ZED-Stereokameras) übernommen und positioniert sich damit als Anbieter einer kombinierten Wahrnehmungsplattform aus Lidar, Kamera, Sensorfusion und Software statt als reiner Sensorhersteller. Umsatzträger sind heute Industrie und Smart Infrastructure (Lagerautomatisierung, Hoflogistik, Verkehrsmanagement), nicht Automotive. Das Geschäft wächst schnell und mit steigender Marge, ist aber weiterhin defizitär.",
+  "business_segments": [
+    {
+      "name": "Industrial",
+      "description": "Lagerautomatisierung, Hoflogistik, autonome Flurförderzeuge, Bergbau- und Agrartechnik. Zusammen mit Smart Infrastructure der Haupttreiber des Q2-2026-Wachstums. Beispiel: GUSS Automation (John-Deere-Tochter) integriert REV8-OS0-Sensoren in autonome Landmaschinen."
+    },
+    {
+      "name": "Smart Infrastructure",
+      "description": "BlueCity – schlüsselfertige Lidar-Verkehrsmanagementlösung für Kreuzungen, Tunnel und Mautanlagen. Vertrieb u.a. über Econolite; im August 2026 mehrstellige Millionen-Erweiterung mit dem Utah Department of Transportation."
+    },
+    {
+      "name": "Robotics",
+      "description": "Sensorik für mobile Roboter, Lieferroboter, Drohnen und Forschungsplattformen. Ouster beziffert den adressierbaren Robotikmarkt selbst auf rund 14 Mrd. USD. REV8 ist über dedizierte JetPack-Plugins in die NVIDIA-Jetson-Plattform integriert; die Stereolabs-Kameras (ZED X Mini/Nano) laufen u.a. in Trossen Robotics' Physical-AI-Datenerfassungssystemen."
+    },
+    {
+      "name": "Automotive",
+      "description": "DF-Serie (Solid-State) und REV8 für ADAS und autonomes Fahren; REV8 ist seit Mai 2026 auf NVIDIA DRIVE Hyperion verfügbar. Umsatzanteil bislang gering – Ouster hat sich bewusst aus dem Preiskampf um chinesische Serien-OEM-Programme herausgehalten."
+    },
+    {
+      "name": "Lizenzen / Royalties",
+      "description": "Erlöse aus dem über Velodyne zugekauften Patentportfolio. TTM rund 44,6 Mio. USD, aber stark schwankend und nicht planbar (Q2 2026: 1,9 Mio. USD gegenüber 0,03 Mio. USD im Vorjahresquartal). Kein Kerngeschäft, sondern Sondereffekt."
+    }
+  ],
+  "products": [
+    "REV8 OS-Familie (seit Mai 2026 – weltweit erstes natives Farb-Lidar, L4 / L4 Max Ouster Silicon)",
+    "OS0 / OS1 / OS2 / OSDome (Sensorreihe nach Sichtfeld und Reichweite; OS1 Max als Flaggschiff)",
+    "REV7 (Vorgängergeneration, weiter im Feld und in Serie)",
+    "DF-Serie (Solid-State-Lidar für ADAS, kurz/mittel/lang)",
+    "Ouster Silicon (proprietärer SPAD-CMOS-Chip – Kern des digitalen Lidar-Ansatzes, mit Fujifilm-Farbwissenschaft im L4)",
+    "BlueCity (Lidar-Verkehrsmanagement für Smart Infrastructure)",
+    "Gemini (Perception-Software für Objekterkennung und Tracking)",
+    "ZED X Mini / ZED X Nano (KI-Stereokameras der Tochter Stereolabs, Launch April 2026)",
+    "NVIDIA-JetPack-Plugins (direkte Anbindung an Jetson-Edge-Compute für Robotikanwendungen)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Wahrnehmung/Sensorik als physischer Baustein von Robotersystemen",
+    "reasons": [
+      "Lidar liefert metrisch exakte 3D-Tiefeninformation und ist damit ein realer Hardwarebaustein autonomer Systeme – kein Narrativ, sondern verbautes Bauteil mit Stückumsatz",
+      "REV8 ist über dedizierte JetPack-Plugins in die NVIDIA-Jetson-Plattform integriert; Jetson ist das gängige Edge-Compute-Modul in Humanoid-Prototypen",
+      "Die 2026 übernommene Stereolabs-Tochter liefert Stereokameras für Robot-Learning-Datenerfassung (Kooperation mit Trossen Robotics) – Teil der Trainingsdatenkette humanoider Systeme",
+      "Ouster beziffert den adressierbaren Robotikmarkt auf rund 14 Mrd. USD und hat Robotik als eigenes Zielsegment neben Industrie, Infrastruktur und Automotive definiert",
+      "Native Farbe plus Tiefe in einem Sensor reduziert den Fusionsaufwand zwischen Kamera und Lidar – relevant für platz- und rechenlimitierte mobile Plattformen",
+      "Einschränkung: Ob humanoide Roboter dauerhaft Lidar tragen, ist offen. Mehrere führende Humanoid-Entwickler setzen bewusst auf rein kamerabasierte Wahrnehmung, weil Lidar Gewicht, Kosten und Bauraum kostet. Ousters heutiger Umsatz kommt aus Industrie und Smart Infrastructure, nicht aus Humanoiden."
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "USD",
+    "price_usd": 36.54,
+    "price_as_of": "2026-08-27 (Schlusskurs)",
+    "52w_low": 16.40,
+    "52w_high": 63.79,
+    "market_cap_usd_bn": 2.63,
+    "enterprise_value_usd_bn": 2.39,
+    "pe_trailing": null,
+    "pe_forward": null,
+    "price_to_sales_ttm": 12.87,
+    "price_to_book": 6.62,
+    "eps_ttm_usd": -0.87,
+    "revenue_ttm_usd_mn": 204.91,
+    "revenue_fy25_usd_mn": 169.38,
+    "revenue_fy24_usd_mn": 111.10,
+    "revenue_growth_yoy_pct": 52.5,
+    "revenue_growth_ttm_pct": 62.8,
+    "revenue_q2_2026_usd_mn": 54.63,
+    "revenue_growth_q2_yoy_pct": 56,
+    "revenue_guidance_q3_2026_low_usd_mn": 54.5,
+    "revenue_guidance_q3_2026_high_usd_mn": 57.5,
+    "gross_margin_pct": 46.6,
+    "gross_margin_q2_2026_pct": 49,
+    "net_income_ttm_usd_mn": -53.33,
+    "net_income_fy25_usd_mn": -60.38,
+    "adjusted_ebitda_q2_2026_usd_mn": -4.45,
+    "cash_and_investments_usd_mn": 263,
+    "cash_as_of": "2026-06-30 (Zahlungsmittel, Restricted Cash und kurzfristige Anlagen)",
+    "cash_pro_forma_post_offering_usd_mn": 455,
+    "cash_pro_forma_note": "Rechnerisch: 263 Mio. USD per 30.06.2026 zzgl. 191,9 Mio. USD Nettoerlös aus der am 06.07.2026 abgeschlossenen Kapitalerhöhung (3.621.876 Aktien zu 55,22 USD)",
+    "total_debt_usd_mn": 16.40,
+    "operating_cash_flow_ttm_usd_mn": -53.81,
+    "operating_cash_flow_h1_2026_usd_mn": -20.04,
+    "free_cash_flow_ttm_usd_mn": -82.47,
+    "dividend": null,
+    "beta_5y": 3.27,
+    "debt_to_equity": 0.04,
+    "current_ratio": 4.16,
+    "analyst_consensus": "Strong Buy",
+    "analyst_count": 7,
+    "analyst_price_target_usd": 57.83,
+    "shares_outstanding_mn": 72.11,
+    "shares_change_yoy_pct": 19.7,
+    "short_interest_pct_of_shares_out": 8.65,
+    "employees": 320,
+    "sources": [
+      "https://stockanalysis.com/stocks/oust/statistics/",
+      "https://stockanalysis.com/stocks/oust/financials/",
+      "https://stockanalysis.com/stocks/oust/",
+      "https://www.businesswire.com/news/home/20260806343526/en/Ouster-Announces-Results-for-Second-Quarter-2026/",
+      "https://investors.ouster.com/news-releases/news-release-details/ouster-inc-announces-pricing-public-offering-common-stock",
+      "https://investors.ouster.com/news-releases/news-release-details/ouster-releases-rev8-os-family-worlds-first-native-color-lidar",
+      "https://www.businesswire.com/news/home/20260512349586/en/Ouster-Brings-REV8-Native-Color-Lidar-to-the-NVIDIA-DRIVE-Hyperion-Platform-for-Autonomous-Vehicle-Development",
+      "https://techcrunch.com/2026/01/05/chinas-hesai-will-double-production-as-lidar-sensor-industry-shakes-out/"
+    ]
+  },
+  "risk_notes": "Zentrales Risiko ist der Preiskampf mit chinesischen Anbietern. Hesai hält im Automotive-Lidar rund 37–39% Marktanteil, verdoppelt die Jahreskapazität 2026 von 2 auf 4 Mio. Einheiten und gibt an, die Sensorkosten in acht Jahren um 99,5% gesenkt zu haben; RoboSense hat im April 2026 mit den EOCENE-basierten Chipsätzen Phoenix und Peacock nachgelegt. Beide sind ebenfalls im ETF – das Exposure ist innerhalb des Portfolios teilweise gegenläufig. Ouster entzieht sich dem Volumenpreiskampf, indem es auf höherpreisige Industrie- und Infrastrukturanwendungen ausweicht; das schützt die Bruttomarge (Q2 2026: 49%, allerdings mit Einmaleffekten), begrenzt aber die erreichbare Stückzahl. Wie brutal die Konsolidierung ist, zeigt die Chapter-11-Insolvenz des US-Wettbewerbers Luminar Ende 2025. Zweites Risiko ist die Verwässerung: Die Aktienzahl stieg binnen zwölf Monaten um 19,7%, im Juli 2026 kamen weitere rund 192 Mio. USD über eine mit Abschlag platzierte Kapitalerhöhung hinzu, die den Kurs deutlich belastete – die Bilanz ist damit zwar solide (netto schuldenfrei, kurzfristige Liquidität gut), aber auf Kosten der Altaktionäre. Drittens die Bewertung: rund 12,9x Umsatz für ein Unternehmen mit TTM-Verlust von 53 Mio. USD und operativem Mittelabfluss; das Beta von 3,27 und eine Leerverkaufsquote von 8,65% verstärken jede Enttäuschung. Die Q3-Prognose lag am oberen Ende gerade auf Konsensniveau. Die TTM-Lizenzerlöse von rund 45 Mio. USD aus dem Velodyne-Portfolio sind stark schwankend und dürfen nicht als wiederkehrend gerechnet werden. Hinzu kommen Integrationsrisiken aus der Stereolabs-Übernahme, Abhängigkeit von Auftragsfertigern (Benchmark Electronics, Fabrinet) sowie Zoll- und Exportkontrollrisiken. Fazit: technologisch ernstzunehmender Robotik-Baustein mit echtem Umsatz und verbesserter Marge, aber in einem Markt, in dem der Preis von Wettbewerbern mit strukturell niedrigeren Kosten gesetzt wird."
+}

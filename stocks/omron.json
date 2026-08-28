@@ -1,0 +1,98 @@
+{
+  "company": {
+    "name": "Omron Corporation",
+    "ticker": "6645",
+    "exchange": "Tokyo Stock Exchange (TSE Prime)",
+    "headquarters": "Kyoto, Japan",
+    "founded": 1933,
+    "ipo": "1962 (Osaka/Kyoto), seit 1966 Tokyo Stock Exchange",
+    "industry": "Fabrikautomation, Sensorik & Bildverarbeitung, elektronische Bauelemente, Medizintechnik",
+    "competitors": [
+      "Keyence",
+      "Mitsubishi Electric",
+      "Siemens",
+      "Rockwell Automation",
+      "Schneider Electric",
+      "SICK",
+      "Panasonic",
+      "Banner Engineering"
+    ]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=TSE%3A6645",
+  "summary": "Omron ist ein 1933 in Kyoto gegründeter Automatisierungskonzern, dessen Kern die Fabrikautomation ist: Sensoren, Sicherheitskomponenten, Relais, Steuerungen, Servoantriebe und industrielle Bildverarbeitung. Unter dem Konzept 'i-Automation' verkauft Omron nicht Einzelkomponenten, sondern integrierte Fertigungszellen – inklusive Robotik. Über die Übernahme von Adept Technology (2015) besitzt Omron mit der LD-Serie eine der etabliertesten Plattformen für autonome mobile Roboter (AMR) in der Intralogistik; auf der Automate 2026 wurden mit LD-150 und LD-300 zwei Modelle mit höherer Traglast, 360-Grad-Sicherheitsscannern, ISO 3691-4:2023-Konformität und Flottensteuerung über FLOW Core vorgestellt (Auslieferung ab Q4 2026). Daneben ist Omron ein Mischkonzern: Das Healthcare-Segment ist der weltweit führende Anbieter von Blutdruckmessgeräten für den Heimgebrauch, hinzu kommen Social Systems (Bahn- und Zahlungssysteme in Japan), Device & Module Solutions sowie ein kleines Data-Solutions-Geschäft. Im Geschäftsjahr FY2025 (bis 31. März 2026) stieg der Umsatz um 7,3% auf ¥767,4 Mrd., der Nettogewinn um 75% auf ¥28,5 Mrd. – getragen vor allem von KI- und Halbleiternachfrage im Automatisierungssegment.",
+  "business_segments": [
+    {
+      "name": "Industrial Automation (IAB)",
+      "description": "Sensorik, Steuerungen, Safety, Vision, Servo und Robotik; mit rund ¥410 Mrd. das mit Abstand größte Segment (etwa 53% des Konzernumsatzes FY2025)"
+    },
+    {
+      "name": "Device & Module Solutions (DMB)",
+      "description": "Relais, Schalter, Konnektoren und Module für Automotive, Konsumelektronik und Industrie"
+    },
+    {
+      "name": "Social Systems (SSB)",
+      "description": "Bahn- und Verkehrssysteme, Zahlungsterminals und Energiemanagement, überwiegend japanischer Heimatmarkt"
+    },
+    {
+      "name": "Healthcare (HCB)",
+      "description": "Blutdruckmessgeräte, Vernebler, EKG- und Thermometer-Produkte; globale Nummer eins bei der Heim-Blutdruckmessung"
+    }
+  ],
+  "products": [
+    "Fotoelektrische, induktive und Lasersensoren sowie Messsensorik",
+    "FH-/FHV-Bildverarbeitungssysteme und Vision-Sensoren für Inline-Qualitätsprüfung",
+    "Sysmac-Maschinensteuerungen (NJ/NX), Servoantriebe und Motion-Control-Software",
+    "Sicherheitstechnik: Sicherheitssteuerungen, Lichtvorhänge, Safety-Relais",
+    "LD-Serie autonome mobile Roboter (AMR), inkl. LD-150 und LD-300 mit FLOW-Core-Flottenmanagement",
+    "SCARA- und Delta-/Parallelroboter (Adept-Erbe) sowie kollaborative TM-Roboter",
+    "Elektromechanische und Halbleiterrelais, Schalter, Konnektoren, Netzteile",
+    "Blutdruckmessgeräte, Vernebler und EKG-Geräte für den Heimgebrauch",
+    "Bahn- und Verkehrsleitsysteme, Zahlungs- und Ticketsysteme (Japan)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Sensorik, Bildverarbeitung und Sicherheitssteuerung sind die Wahrnehmungs- und Sicherheitsschicht jeder Roboterplattform",
+    "reasons": [
+      "Omron ist einer der breitesten Sensorik-Anbieter weltweit; Näherungs-, Kraft- und Lasersensorik sowie Encoder sind Grundbausteine humanoider Wahrnehmung",
+      "Industrielle Bildverarbeitung (FH/FHV) liefert die Objekterkennung, die humanoide und mobile Roboter für Griff- und Navigationsaufgaben brauchen",
+      "Funktionale Sicherheit ist der eigentliche Engpass beim Einsatz von Robotern neben Menschen – Omron liefert zertifizierte Safety-Controller und Lichtvorhänge und kennt die Normenwelt (ISO 3691-4, ISO 13849)",
+      "Mit der LD-Serie betreibt Omron seit der Adept-Übernahme 2015 eine reale, im Feld erprobte mobile Roboterflotte inklusive Flottenmanagement – das operative Wissen, das Humanoide in der Intralogistik ebenfalls benötigen",
+      "Servoantriebe und Motion-Control aus dem Sysmac-Portfolio adressieren dieselbe Aktuator-Regelungsschicht wie Humanoid-Gelenke",
+      "Aber: Omron baut keine Humanoiden und hat kein eigenes Humanoid-Programm angekündigt – das Exposure ist Komponenten- und Systemzulieferung",
+      "Zudem verwässert der Mischkonzern-Charakter das Robotik-Exposure: Nur rund die Hälfte des Umsatzes stammt aus der Fabrikautomation, der Rest aus Healthcare, Social Systems und Bauelementen"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "JPY",
+    "52w_low": 3690,
+    "52w_high": 7245,
+    "market_cap_jpy_bn": 1240,
+    "market_cap_usd_bn": 7.8,
+    "enterprise_value_jpy_bn": 1480,
+    "pe_trailing": 28.5,
+    "pe_forward": 27.4,
+    "price_to_sales_ttm": 1.55,
+    "price_to_book": 1.25,
+    "eps_jpy_ttm": 175.5,
+    "revenue_fy25_jpy_bn": 767.4,
+    "revenue_growth_yoy_pct": 7.3,
+    "gross_margin_pct": 45.7,
+    "net_income_jpy_bn": 28.5,
+    "dividend_yield_pct": 1.71,
+    "beta_5y": 1.13,
+    "debt_to_equity": 0.24,
+    "current_ratio": 1.83,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_jpy": 6890,
+    "shares_outstanding_mn": 197,
+    "sources": [
+      "https://stockanalysis.com/quote/tyo/6645/",
+      "https://stockanalysis.com/quote/tyo/6645/statistics/",
+      "https://stockanalysis.com/quote/tyo/6645/financials/ratios/",
+      "https://www.omron.com/global/en/assets/file/ir/irlib/20260513_financial_results.pdf",
+      "https://robotics.omron.com/news/omron-robotics-at-automate-2026/",
+      "https://tradingeconomics.com/japan/currency"
+    ]
+  },
+  "risk_notes": "Omron ist erst am Anfang einer Ergebniswende: Trotz +7,3% Umsatz und +75% Nettogewinn in FY2025 liegen Nettomarge (3,7%) und Eigenkapitalrendite (3,8%) weit unter dem Niveau von FY2022/23 (ROE damals rund 10%). Die Aktie hat sich in zwölf Monaten dennoch fast verdoppelt (+68%) und steht mit KGV 28 bei einer Forward-Bewertung von 27 – der Bewertungsaufschlag lebt von der Erwartung, dass die Automatisierungsmarge zurückkehrt, nicht von der aktuellen Ertragskraft. Der Analystenkonsens 'Buy' impliziert nur noch etwa 8% Kurspotenzial. Strukturell belastend: Das Healthcare-Segment schwächelte zuletzt, Social Systems ist ein margenarmes Japan-Geschäft, und der Free Cashflow ist mit ¥7,8 Mrd. bei ¥53 Mrd. Investitionen sehr dünn (Payout Ratio bereits 72%). Die Bilanz ist solide, aber nicht mehr netto-schuldenfrei (Nettoverschuldung rund ¥75 Mrd., Debt/Equity 0,24, Altman-Z-Score 2,36). Hinzu kommen die üblichen Zyklusrisiken: China-Exposure im Automatisierungsgeschäft, Halbleiter- und Batterie-Capex, Zölle und Materialkosten. Für ein Robotik-Portfolio ist Omron ein Qualitäts-, aber kein Pure-Play-Titel."
+}

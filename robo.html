@@ -554,6 +554,20 @@ Promise.all([
   ['xpeng',    'stocks/xpeng.json'],
   ['robotis',  'stocks/robotis.json'],
   ['hyundai',  'stocks/hyundai.json'],
+  // WPAI Top 20 – Nachtrag
+  ['avav',     'stocks/avav.json'],
+  ['redcat',   'stocks/redcat.json'],
+  ['siasun',   'stocks/siasun.json'],
+  ['ponyai',   'stocks/ponyai.json'],
+  ['ouster',   'stocks/ouster.json'],
+  ['thundertiger','stocks/thundertiger.json'],
+  ['siemens',  'stocks/siemens.json'],
+  ['xiaomi',   'stocks/xiaomi.json'],
+  ['yaskawa',  'stocks/yaskawa.json'],
+  ['omron',    'stocks/omron.json'],
+  ['symbotic', 'stocks/symbotic.json'],
+  ['ondas',    'stocks/ondas.json'],
+  ['amprius',  'stocks/amprius.json'],
 ].map(([key, path]) => fetch(path).then(r => r.json()).then(d => { STOCKS[key] = d; })))
 .catch(err => console.error('Stock JSON load error:', err));
 
@@ -580,7 +594,21 @@ const TICKER_MAP = {
   '603666':'yijiahe',
   'XPEV':'xpeng','9868':'xpeng',
   '108490':'robotis',
-  '005380':'hyundai'
+  '005380':'hyundai',
+  // WPAI Top 20 – Nachtrag
+  'AVAV':'avav',
+  'RCAT':'redcat',
+  '300024':'siasun',
+  'PONY':'ponyai','2026':'ponyai',
+  'OUST':'ouster',
+  '8033':'thundertiger',
+  'SIE':'siemens',
+  '1810':'xiaomi',
+  '6506':'yaskawa',
+  '6645':'omron',
+  'SYM':'symbotic',
+  'ONDS':'ondas',
+  'AMPX':'amprius'
 };
 
 function getStockKey(ticker) {
@@ -1443,6 +1471,32 @@ function fmt(val, prefix, suffix) {
   return (prefix||'') + val + (suffix||'');
 }
 
+// Segment-Umsatz: erkennt revenue_fyNN_<währung>_<bn|mn> in beliebiger Währung/Jahr
+const CUR_SYM = {usd:'$', eur:'€', cny:'¥', jpy:'¥', krw:'₩', hkd:'HK$', twd:'NT$'};
+const SEG_REV_RE = /^revenue_fy(\d{2})_([a-z]{3})_(bn|mn)$/;
+
+function segRevKeys(seg) {
+  return Object.keys(seg).map(k => k.match(SEG_REV_RE)).filter(Boolean)
+    .sort((a,b) => Number(b[1]) - Number(a[1]));   // neuestes Geschäftsjahr zuerst
+}
+function segRev(seg) {
+  const m = segRevKeys(seg)[0];
+  if(!m) return '';
+  const v = seg[m[0]];
+  if(v === null || v === undefined) return '—';
+  const sym = CUR_SYM[m[2]] || '';
+  const suffix = m[3] === 'bn' ? 'B' : 'M';
+  const unit = (m[2] === 'usd' || m[2] === 'eur') ? '' : ' ' + m[2].toUpperCase();
+  return sym + (m[3] === 'bn' ? v.toFixed(1) : v) + suffix + unit;
+}
+function segRevYear(segs) {
+  for(const seg of segs) {
+    const m = segRevKeys(seg)[0];
+    if(m) return '20' + m[1];
+  }
+  return null;
+}
+
 function openModal(stockKey) {
   const s = STOCKS[stockKey];
   if(!s) return;
@@ -1465,6 +1519,9 @@ function openModal(stockKey) {
     : sd.market_cap_eur_bn ? '€'+sd.market_cap_eur_bn+'B'
     : sd.market_cap_cny_bn ? '¥'+sd.market_cap_cny_bn+'B CNY'
     : sd.market_cap_jpy_bn ? '¥'+sd.market_cap_jpy_bn+'B JPY'
+    : sd.market_cap_hkd_bn ? 'HK$'+sd.market_cap_hkd_bn+'B'
+    : sd.market_cap_twd_bn ? 'NT$'+sd.market_cap_twd_bn+'B'
+    : sd.market_cap_krw_bn ? '₩'+sd.market_cap_krw_bn+'B KRW'
     : '—';
   const rev = sd.revenue_fy26_usd_bn ? '$'+sd.revenue_fy26_usd_bn+'B'
     : sd.revenue_fy25_usd_bn ? '$'+sd.revenue_fy25_usd_bn+'B'
@@ -1473,6 +1530,8 @@ function openModal(stockKey) {
     : sd.revenue_fy25_cny_bn ? '¥'+sd.revenue_fy25_cny_bn+'B'
     : sd.revenue_fy25_jpy_bn ? '¥'+sd.revenue_fy25_jpy_bn+'B JPY'
     : sd.revenue_fy25_krw_bn ? '₩'+sd.revenue_fy25_krw_bn+'B KRW'
+    : sd.revenue_fy25_hkd_bn ? 'HK$'+sd.revenue_fy25_hkd_bn+'B'
+    : sd.revenue_fy25_twd_bn ? 'NT$'+sd.revenue_fy25_twd_bn+'B'
     : '—';
   const growthVal = sd.revenue_growth_yoy_pct;
   const growthStr = growthVal === null || growthVal === undefined ? '—'
@@ -1506,31 +1565,37 @@ function openModal(stockKey) {
         <div class="modal-section-lbl">Überblick</div>
         <p class="modal-summary">${s.summary}</p>
       </div>
-      ${s.business_segments ? `<div>
-        <div class="modal-section-lbl">Umsatz-Segmente <span style="font-size:9px;font-weight:500;opacity:.6">FY${s.business_segments[0].revenue_fy24_usd_bn ? '2024' : '2024'} actual</span></div>
-        <div class="modal-segments">${s.business_segments.map(seg => {
-          const revStr = seg.revenue_fy24_usd_bn ? '$'+seg.revenue_fy24_usd_bn.toFixed(1)+'B' : '—';
+      ${(s.business_segments && s.business_segments.length) ? (() => {
+        const segs = s.business_segments;
+        const hasShares = segs.some(seg => typeof seg.share_pct === 'number');
+        const yr = segRevYear(segs);
+        return `<div>
+        <div class="modal-section-lbl">${hasShares ? 'Umsatz-Segmente' : 'Geschäftsbereiche'}${yr ? ` <span style="font-size:9px;font-weight:500;opacity:.6">FY${yr} actual</span>` : ''}</div>
+        <div class="modal-segments">${segs.map(seg => {
+          const revStr = segRev(seg);
+          const pct = typeof seg.share_pct === 'number' ? seg.share_pct : null;
           const fillColor = accentColor;
           return `<div class="modal-seg">
             <div class="modal-seg-bar-row">
               <span class="modal-seg-lbl">${seg.name}</span>
-              <div class="modal-seg-track"><div class="modal-seg-fill" style="width:${seg.share_pct}%;background:${fillColor}">&nbsp;</div></div>
-              <span class="modal-seg-pct">${seg.share_pct}%</span>
+              ${hasShares ? `<div class="modal-seg-track"><div class="modal-seg-fill" style="width:${pct === null ? 0 : pct}%;background:${fillColor}">&nbsp;</div></div>
+              <span class="modal-seg-pct">${pct === null ? '—' : pct+'%'}</span>` : '<div class="modal-seg-track" style="visibility:hidden"></div>'}
               <span class="modal-seg-rev">${revStr}</span>
             </div>
-            <div class="modal-seg-desc">${seg.description}</div>
+            ${seg.description ? `<div class="modal-seg-desc">${seg.description}</div>` : ''}
           </div>`;
         }).join('')}</div>
-      </div>` : ''}
+      </div>`;
+      })() : ''}
       <div>
         <div class="modal-section-lbl">Kennzahlen <span style="font-size:9px;font-weight:500;opacity:.6">Stand: ${sd.updated_at}</span></div>
         <div class="modal-metrics">
           <div class="modal-metric"><div class="mv">${mcap}</div><div class="mk">Market Cap</div></div>
-          <div class="modal-metric"><div class="mv">${fmt(sd.pe_forward)}x</div><div class="mk">KGV Forward</div></div>
-          <div class="modal-metric"><div class="mv">${fmt(sd.pe_trailing)}x</div><div class="mk">KGV Trailing</div></div>
+          <div class="modal-metric"><div class="mv">${fmt(sd.pe_forward, '', 'x')}</div><div class="mk">KGV Forward</div></div>
+          <div class="modal-metric"><div class="mv">${fmt(sd.pe_trailing, '', 'x')}</div><div class="mk">KGV Trailing</div></div>
           <div class="modal-metric"><div class="mv" style="color:${growthColor}">${growthStr}</div><div class="mk">Umsatz YoY</div></div>
           <div class="modal-metric"><div class="mv">${rev}</div><div class="mk">Umsatz FY25</div></div>
-          <div class="modal-metric"><div class="mv">${fmt(sd.price_to_sales_ttm)}x</div><div class="mk">P/S TTM</div></div>
+          <div class="modal-metric"><div class="mv">${fmt(sd.price_to_sales_ttm, '', 'x')}</div><div class="mk">P/S TTM</div></div>
           <div class="modal-metric"><div class="mv" style="color:${acClass}">${sd.analyst_consensus||'—'}</div><div class="mk">Analysten</div></div>
           <div class="modal-metric"><div class="mv">${fmt(sd.beta_5y)}</div><div class="mk">Beta 5J</div></div>
         </div>

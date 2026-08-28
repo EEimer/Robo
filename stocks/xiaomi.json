@@ -1,0 +1,112 @@
+{
+  "company": {
+    "name": "Xiaomi Corporation (Class B)",
+    "ticker": "1810",
+    "exchange": "Hong Kong Stock Exchange (HKEX)",
+    "headquarters": "Peking, China",
+    "founded": 2010,
+    "ipo": "2018 (HKEX, Juli)",
+    "industry": "Consumer Electronics, IoT-Ökosystem, Elektrofahrzeuge, KI und Robotik",
+    "competitors": [
+      "Apple",
+      "Samsung Electronics",
+      "Honor",
+      "vivo",
+      "OPPO",
+      "Huawei",
+      "BYD",
+      "Tesla",
+      "XPeng"
+    ]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=HKEX%3A1810",
+  "summary": "Xiaomi ist ein Mischkonzern aus Smartphone-Hersteller, IoT-Ökosystem-Betreiber, Internet-Dienstleister und – seit 2024 – Elektroautobauer. Das Kerngeschäft Smartphones steht 2026 unter Druck: Der weltweite Markt schrumpft wegen der Speicherchip-Knappheit und steigender Bauteilkosten, Xiaomis Auslieferungen fielen im zweiten Quartal 2026 um 26,5 %, der bereinigte Nettogewinn um 42,6 %. Wachstumstreiber ist stattdessen das Autogeschäft: 104.199 ausgelieferte Fahrzeuge im zweiten Quartal (+28,2 % gegenüber Vorjahr), kumuliert über 500.000 Einheiten der SU7-Reihe, ergänzt um das Coupé-SUV YU7 und die im Juli 2026 vorgestellte Range-Extender-Baureihe SkyNomad (N90 Max / N70 Max). Das Sammelsegment 'Smart EV, AI and Other New Initiatives' erreichte 2025 bereits 106,1 Mrd. CNY Umsatz, arbeitet aber weiter defizitär – im zweiten Quartal 2026 mit 2,6 Mrd. CNY operativem Verlust. Der Robotik-Anteil an alledem ist klein: Der humanoide Roboter CyberOne wurde 2022 vorgestellt (177 cm, 52 kg, 21 Freiheitsgrade), eine zweite Generation im April 2026 gezeigt; verkauft wird er nicht. Xiaomi hat angekündigt, humanoide Roboter bis 2030 in den eigenen Werken einzusetzen. Der Kurs hat in zwölf Monaten rund 45 % verloren, von knapp 60 HKD auf rund 28 HKD – der Titel handelt damit erstmals seit Jahren wieder zu einem KGV nahe 20.",
+  "business_segments": [
+    {
+      "name": "Smartphones",
+      "revenue_fy25_cny_bn": 186.4,
+      "share_pct": 40.8
+    },
+    {
+      "name": "IoT und Lifestyle-Produkte",
+      "revenue_fy25_cny_bn": 123.2,
+      "share_pct": 26.9
+    },
+    {
+      "name": "Smart EV, AI und neue Geschäftsfelder",
+      "revenue_fy25_cny_bn": 106.1,
+      "share_pct": 23.2
+    },
+    {
+      "name": "Internet-Dienste",
+      "revenue_fy25_cny_bn": 37.4,
+      "share_pct": 8.2
+    },
+    {
+      "name": "Sonstiges verbundenes Geschäft",
+      "revenue_fy25_cny_bn": 4.1,
+      "share_pct": 0.9
+    }
+  ],
+  "products": [
+    "Smartphones der Xiaomi-, Redmi- und POCO-Serien",
+    "IoT- und Lifestyle-Produkte: Smart-TVs, Tablets, Wearables, smarte Großgeräte, Smart-Home-Ökosystem",
+    "Internet-Dienste: Werbung, Gaming, Abonnements auf Basis von HyperOS/MIUI",
+    "Elektrofahrzeuge: SU7 Limousine, YU7 Coupé-SUV, SkyNomad N90 Max und N70 Max (Range-Extender-SUVs)",
+    "CyberOne – humanoider Roboter (177 cm, 52 kg, 21 Freiheitsgrade, Mi-Sense-Tiefenbildmodul, MiAI-Umgebungs- und Emotionserkennung)",
+    "CyberDog und CyberDog 2 – vierbeinige Roboter (CyberDog 2 im Handel für rund 1.790 USD)",
+    "Xiaomi HyperOS und die Kunlun-Architektur als geräteübergreifende Software- und Fahrzeugplattform",
+    "MiMo-KI-Modellfamilie (u. a. MiMo-V2.5, MiMo Code) und agentische KI-Werkzeuge"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "indirekt und klein – Mischkonzern mit CyberOne als Nebenprojekt ohne nennenswerten Umsatzbeitrag",
+    "reasons": [
+      "CyberOne wurde im August 2022 vorgestellt und ist bis heute nicht käuflich; eine zweite Generation zeigte Xiaomi im April 2026, Aufnahmen von der Montagelinie folgten im Juli 2026",
+      "Xiaomi hat angekündigt, humanoide Roboter bis 2030 in den eigenen Fertigungswerken einzusetzen – das ist Eigenbedarf zur Kostensenkung, kein Produktgeschäft",
+      "CyberDog und CyberDog 2 sind seriennah und tatsächlich erhältlich, bleiben aber Nischenprodukte ohne Ergebnisrelevanz",
+      "Reale Synergien bestehen: Die EV-Fertigung liefert Know-how bei Aktuatoren, Batterien und Massenproduktion, die MiMo-Modellfamilie und HyperOS liefern den KI- und Software-Stack",
+      "Das Robotik-Geschäft wird nicht separat berichtet, sondern steckt im Sammelsegment 'Smart EV, AI and Other New Initiatives', das ganz überwiegend aus dem Autogeschäft besteht",
+      "Xiaomi wird in Robotik-ETFs primär wegen Größe, Liquidität und dem Physical-AI-Narrativ geführt – nicht wegen messbarer Robotik-Erlöse"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "HKD",
+    "52w_low": 21.3,
+    "52w_high": 59.9,
+    "market_cap_hkd_bn": 746.9,
+    "market_cap_usd_bn": 95.2,
+    "enterprise_value_hkd_bn": 651.8,
+    "pe_trailing": 20.42,
+    "pe_forward": 24.44,
+    "price_to_sales_ttm": 1.48,
+    "price_to_book": 2.4,
+    "eps_hkd_ttm": 1.42,
+    "eps_cny_fy25": 1.56,
+    "revenue_fy25_cny_bn": 457.3,
+    "revenue_ttm_hkd_bn": 505.8,
+    "revenue_growth_yoy_pct": 25.0,
+    "revenue_growth_ttm_yoy_pct": 10.8,
+    "gross_margin_pct": 22.1,
+    "net_income_cny_mn": 41643,
+    "dividend": null,
+    "beta_5y": 0.72,
+    "debt_to_equity": 0.15,
+    "current_ratio": 1.49,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_hkd": 36.54,
+    "shares_outstanding_mn": 25740,
+    "note": "Xiaomi berichtet in CNY und notiert in HKD. Marktbezogene Kennzahlen (Marktkapitalisierung, Enterprise Value, EPS TTM, Kursziel, 52-Wochen-Spanne) sind in HKD angegeben, Geschäftszahlen des Geschäftsjahres 2025 in der Berichtswährung CNY. Umrechnung in USD zu 7,847 HKD/USD (Stand 27.08.2026).",
+    "sources": [
+      "https://stockanalysis.com/quote/hkg/1810/statistics/",
+      "https://stockanalysis.com/quote/hkg/1810/financials/",
+      "https://stockanalysis.com/quote/hkg/1810/",
+      "https://www.reuters.com/world/asia-pacific/xiaomis-q2-profit-slides-426-component-cost-pressure-2026-08-18/",
+      "https://www.electrive.com/2026/08/21/xiaomi-posts-further-loss-in-q2-with-its-ev-division/",
+      "https://www.reuters.com/world/asia-pacific/chinas-xiaomi-launches-skynomad-suv-series-offering-space-reconfigurable-2026-07-30/",
+      "https://robotsguide.com/robots/cyberone",
+      "https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-hkd-rate/"
+    ]
+  },
+  "risk_notes": "Der wichtigste Vorbehalt für ein Robotik-Dashboard: Das Robotik-Exposure ist gemessen am Konzernumsatz sehr klein. CyberOne wird nicht verkauft, CyberDog ist ein Nischenprodukt, und Robotik-Erlöse werden nicht einmal separat ausgewiesen, sondern verschwinden im Sammelsegment 'Smart EV, AI and Other New Initiatives' (2025: 106,1 Mrd. CNY), das ganz überwiegend das Autogeschäft abbildet. Wer Xiaomi kauft, kauft zu über 40 % Smartphones, zu rund 27 % IoT-Hardware und zu rund 23 % Elektroautos – Humanoide sind eine Fußnote. Operativ steht das Kerngeschäft unter erheblichem Druck: Die Speicherchip-Knappheit treibt die Bauteilkosten, die Smartphone-Auslieferungen fielen im zweiten Quartal 2026 um 26,5 %, der bereinigte Nettogewinn um 42,6 %, und Marktanteile gehen an Samsung und Apple verloren. Das EV-Segment liefert Wachstum, aber noch keinen Gewinn: 2,6 Mrd. CNY operativer Verlust allein im zweiten Quartal 2026, bei einem der härtesten Preiskämpfe weltweit. Bezeichnend ist, dass das Forward-KGV (24,4) über dem Trailing-KGV (20,4) liegt – der Markt erwartet also sinkende Gewinne. Die Aktie hat in zwölf Monaten rund 45 % verloren; das Analystenkursziel von 36,54 HKD (31 Analysten, Konsens 'Buy') steht einer laufenden Abwärtsrevision gegenüber, unter anderem der Herabstufung durch China Renaissance im August 2026. Dazu kommen die üblichen China-/Hongkong-Risiken: regulatorische Eingriffe, Konsumschwäche, Exportkontrollen bei Halbleitern. Bilanz und Volatilität sind dagegen unauffällig: Debt/Equity 0,15, Current Ratio 1,49, Beta 0,72, Netto-Cash von rund 66 Mrd. CNY."
+}

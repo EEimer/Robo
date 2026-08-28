@@ -1,0 +1,114 @@
+{
+  "company": {
+    "name": "Amprius Technologies, Inc.",
+    "ticker": "AMPX",
+    "exchange": "NYSE",
+    "headquarters": "Fremont, Kalifornien, USA",
+    "founded": 2008,
+    "ipo": "September 2022 (SPAC-Fusion mit Kensington Capital Acquisition Corp. IV, NYSE)",
+    "industry": "Batterietechnik – Lithium-Ionen-Zellen mit Silizium-Anode für Drohnen, Defense und E-Mobilität",
+    "competitors": ["Sila Nanotechnologies", "Group14 Technologies", "Enovix", "Molicel", "EVE Energy", "CATL", "LG Energy Solution", "SES AI"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NYSE%3AAMPX",
+  "summary": "Amprius ersetzt die Graphit-Anode konventioneller Lithium-Ionen-Zellen durch eine Silizium-Anode und erreicht damit deutlich höhere Energiedichten: die SiMaxx-Plattform bis 450 Wh/kg und 1.150 Wh/L, die kostenoptimierte SiCore-Plattform bis zu 80% mehr Energie als vergleichbare Graphitzellen. Physikalisch ist das der entscheidende Punkt – Silizium speichert je Gewichtseinheit ein Vielfaches an Lithium, neigt aber beim Laden zu starker Volumenausdehnung; Amprius' Nanodraht- beziehungsweise Silizium-Materialsystem soll dieses Zyklenproblem beherrschbar machen. Das Unternehmen fertigt weitgehend fabless: eine eigene Pilotlinie in Fremont (teilfinanziert von der Defense Innovation Unit) für Entwicklung und Kleinserie, die Volumenproduktion läuft über Auftragsfertiger, seit 2026 verstärkt in Südkorea. Das erlaubt schnelles Skalieren ohne Milliardeninvestitionen, gibt aber Fertigungskontrolle und einen Teil der Marge ab. Der Umsatz kommt heute ganz überwiegend aus Drohnen und dem Verteidigungsbereich, wo Flugzeit unmittelbar monetarisierbar ist. 2026 kam mit einem Mehrjahresvertrag über mehr als 100 Mio. USD mit dem Elektromotorrad-Hersteller Stark Future erstmals ein substanzielles E-Mobility-Standbein dazu. Das Unternehmen ist noch defizitär, nähert sich aber dem Break-even: Für 2026 stellt das Management mindestens 140 Mio. USD Umsatz, über 28% Bruttomarge und ein erstmals positives bereinigtes EBITDA von mindestens 4 Mio. USD in Aussicht.",
+  "business_segments": [
+    {
+      "name": "Drohnen & Verteidigung",
+      "description": "Klar dominierender Umsatzträger. UAV-Hersteller und Defense-Kunden zahlen für Energiedichte, weil sie direkt in Reichweite, Flugzeit und Nutzlast umschlägt. 2026 u.a. ein 24-Mio.-USD-Auftrag eines europäischen Drohnenherstellers für zylindrische SiCore-Zellen sowie Lieferungen an Redwire für die Aufklärungsdrohne Stalker Block 30. NDAA-Konformität und eine Lieferkette außerhalb Chinas sind hier ein eigenständiges Verkaufsargument."
+    },
+    {
+      "name": "E-Mobility",
+      "description": "Neues, schnell wachsendes Segment. Mehrjahresvertrag mit Stark Future (Barcelona, Elektromotorräder) ab 2027 mit einem Umsatzpotenzial über 100 Mio. USD. Ergänzend leichte Elektrofahrzeuge und Zweiräder, in denen Gewicht ein harter Auslegungsparameter ist."
+    },
+    {
+      "name": "Luftfahrt & Raumfahrt",
+      "description": "Höhenplattformen (HAPS, u.a. von Airbus getestet), eVTOL-Entwicklungsprogramme und Satellitenanwendungen. Perspektivisch relevant, heute überwiegend Muster- und Entwicklungsvolumen."
+    },
+    {
+      "name": "KI & Robotik",
+      "description": "Von Amprius als Zielanwendung geführt und im Management-Ausblick regelmäßig genannt, bislang jedoch ohne separat ausgewiesenen, materiellen Umsatzbeitrag. Für ein Robotik-Dashboard ist das die Zukunftsoption, nicht das laufende Geschäft."
+    }
+  ],
+  "products": [
+    "SiMaxx (Hochleistungsplattform, bis 450 Wh/kg und 1.150 Wh/L; Drittvalidierung bis 500 Wh/kg / 1.300 Wh/L)",
+    "SiCore (kostenoptimierte Plattform für Volumenmärkte, bis zu 80% mehr Energie als Graphitzellen)",
+    "SiCore 450 Wh/kg Hochenergiezelle (2026 in Richtung Serienfertigung über globale Fertigungspartner)",
+    "Zylindrische SiCore-Zellen (Standardformate für Drohnenhersteller und Pack-Integratoren)",
+    "Silizium-Anodenmaterial als Kerntechnologie (eigene Pilotlinie Fremont, teilfinanziert von der Defense Innovation Unit)",
+    "Fabless-Fertigungsmodell über Auftragsfertiger inkl. Südkorea, ergänzt um ein wachsendes Netz von Pack-Partnern"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "indirekt – Energiespeicher; plausible, aber heute noch nicht durch Umsatz belegte Robotik-Verbindung",
+    "reasons": [
+      "Akkulaufzeit ist eine der härtesten praktischen Limitierungen mobiler und humanoider Roboter: aktuelle Systeme laufen meist nur wenige Stunden, bevor sie laden oder Akkus tauschen müssen – bei doppelter Energiedichte verdoppelt sich grob die Einsatzzeit oder halbiert sich das Akkugewicht",
+      "Gewicht wirkt bei Humanoiden doppelt: jedes Kilogramm Akku muss von den Aktuatoren mitbewegt werden und kostet zusätzliche Energie – Energiedichte ist deshalb hebelstärker als bei stationären oder radgebundenen Anwendungen",
+      "Die technische Anforderung von Drohnen (maximale Wh/kg bei hoher Entladeleistung) ist der von Humanoiden sehr ähnlich; ein Technologietransfer ist naheliegend und erfordert keine neue Zellchemie",
+      "Amprius führt 'KI & Robotik' selbst als Zielanwendung und nennt Robotik im Ausblick neben UAVs und leichten Elektrofahrzeugen",
+      "Ehrliche Einordnung: Der Umsatz stammt heute weit überwiegend aus Drohnen- und Defense-Anwendungen, ergänzt um E-Mobilität. Ein separat ausgewiesener Robotik-Umsatz existiert nicht. Die Verbindung zur humanoiden Robotik ist technologisch schlüssig, wirtschaftlich aber bislang eine Option und keine Erlösquelle",
+      "Zusatzrisiko für die These: Silizium-Anoden sind auf hohe Energiedichte optimiert, nicht auf Zyklenfestigkeit. Humanoide im Dauerbetrieb laden täglich – ein Anforderungsprofil, in dem Amprius seine Stärke erst noch nachweisen muss"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "USD",
+    "price_usd": 10.51,
+    "price_as_of": "2026-08-27 (Schlusskurs)",
+    "52w_low": 6.66,
+    "52w_high": 24.23,
+    "market_cap_usd_bn": 1.54,
+    "enterprise_value_usd_bn": 1.47,
+    "pe_trailing": null,
+    "pe_forward": null,
+    "pe_forward_note": "Bewusst null: Amprius ist auf GAAP-Basis defizitär. Die Quellen weisen zwar formal ein Forward-KGV aus, jedoch mit Werten zwischen 461 und 5.839 – aufgrund einer Ergebnisprognose nahe null ist die Kennzahl rechnerisch instabil und ohne Aussagekraft.",
+    "price_to_sales_ttm": 13.64,
+    "price_to_book": 11.86,
+    "eps_ttm_usd": -0.28,
+    "revenue_ttm_usd_mn": 109.23,
+    "revenue_fy25_usd_mn": 73.01,
+    "revenue_fy24_usd_mn": 24.17,
+    "revenue_growth_yoy_pct": 202.1,
+    "revenue_growth_ttm_pct": 143.6,
+    "revenue_q2_2026_usd_mn": 34.03,
+    "revenue_growth_q2_yoy_pct": 126,
+    "revenue_guidance_fy26_usd_mn": 140,
+    "gross_margin_pct": 22.3,
+    "gross_margin_q2_2026_pct": 27,
+    "gross_margin_guidance_fy26_pct": 28,
+    "net_income_ttm_usd_mn": -38.40,
+    "net_income_fy25_usd_mn": -44.02,
+    "net_loss_q2_2026_usd_mn": -5.08,
+    "net_loss_guidance_fy26_usd_mn": -10,
+    "adjusted_ebitda_q2_2026_usd_mn": -1.01,
+    "adjusted_ebitda_guidance_fy26_usd_mn": 4.0,
+    "cash_usd_mn": 74.52,
+    "cash_as_of": "2026-06-30",
+    "total_debt_usd_mn": 6.38,
+    "total_debt_note": "Im Wesentlichen Leasingverbindlichkeiten – keine wesentlichen Finanzschulden in der Bilanz",
+    "operating_cash_flow_ttm_usd_mn": -52.87,
+    "operating_cash_flow_h1_2026_usd_mn": -40.13,
+    "operating_cash_flow_h1_2026_note": "Enthält rund 20,9 Mio. USD einmalige Leasingzahlungen aus der Auflösung des Standorts Brighton, Colorado, sowie einen Forderungsaufbau von rund 16,8 Mio. USD durch den Umsatzhochlauf – die operative Kernverbrennung liegt deutlich darunter",
+    "free_cash_flow_ttm_usd_mn": -58.44,
+    "capex_guidance_fy26_usd_mn": 10,
+    "dividend": null,
+    "beta_5y": 2.35,
+    "debt_to_equity": 0.05,
+    "current_ratio": 7.17,
+    "analyst_consensus": "Strong Buy",
+    "analyst_count": 10,
+    "analyst_price_target_usd": 23.00,
+    "shares_outstanding_mn": 146.08,
+    "shares_change_yoy_pct": 17.2,
+    "short_interest_pct_of_shares_out": 15.16,
+    "employees": 97,
+    "sources": [
+      "https://stockanalysis.com/stocks/ampx/statistics/",
+      "https://stockanalysis.com/stocks/ampx/financials/",
+      "https://stockanalysis.com/stocks/ampx/",
+      "https://ir.amprius.com/news-events/press-releases/detail/172/amprius-technologies-reports-second-quarter-2026-financial-results-and-recent-business-highlights",
+      "https://amprius.com/solutions/sicore/",
+      "https://amprius.com/amprius-launches-sicore-450-wh-kg-high-energy-cell-with-near-term-mass-production-capability-to-scale/",
+      "https://ir.amprius.com/news-events/press-releases/detail/16/industry-disrupting-silicon-nanowire-battery-company-amprius-technologies-inc-to-list-on-nyse-through-merger-with-kensington-capital-acquisition-corp-iv"
+    ]
+  },
+  "risk_notes": "Die Robotik-Story ist bei Amprius heute überwiegend Erzählung: Der Umsatz stammt weit überwiegend aus Drohnen und Verteidigung, ergänzt um den 2026 gewonnenen E-Mobility-Vertrag mit Stark Future. Ein ausgewiesener Robotik-Umsatz existiert nicht – wer die Aktie wegen humanoider Roboter hält, kauft eine Option, kein laufendes Geschäft. Damit einher geht eine hohe Kundenkonzentration: ein einzelner Auftrag über 24 Mio. USD entspricht rund einem Sechstel der Jahresprognose; der Ausfall oder die Verschiebung weniger Großkunden trifft die Zahlen unmittelbar. Die Defense-Nachfrage ist zudem politisch getrieben und damit budget- und konjunkturunabhängig, aber eben auch politikabhängig. Das Fabless-Modell schont Kapital, verlagert die Fertigungskontrolle jedoch auf Auftragsfertiger – Qualität, Kapazität und Preis liegen nicht vollständig in eigener Hand, und die Verlagerung nach Südkorea bringt Zoll- und Handelsrisiken mit sich. Finanzierungsseitig ist die Lage angespannter als bei größeren Wettbewerbern: rund 74,5 Mio. USD Liquidität stehen einem operativen Mittelabfluss gegenüber, der zwar rückläufig ist, aber weiteres Wachstum vorfinanzieren muss; die Aktienzahl stieg in zwölf Monaten um 17,2%, weitere Verwässerung ist wahrscheinlich. Die gesamte Bewertung von rund 13,6x Umsatz hängt an der Prognose von mindestens 140 Mio. USD Umsatz und erstmals positivem bereinigtem EBITDA – ein Verfehlen würde hart bestraft. Das zeigt der Kursverlauf bereits: von 24,23 USD im 52-Wochen-Hoch auf rund 10,50 USD, also ein Rückgang von über 55%, bei einer Leerverkaufsquote von 15,2% und einem Beta von 2,35. Technologisch drängen Sila Nanotechnologies, Group14 und Enovix in denselben Markt, während die etablierten Zellhersteller (CATL, LG, EVE, Molicel) Silizium schrittweise in Standardzellen einmischen und den Energiedichte-Vorsprung sukzessive schmälern könnten. Für ein Robotik-Portfolio ist Amprius eine nachvollziehbare, aber spekulative Beimischung auf der Energieseite – kein Robotik-Pure-Play."
+}

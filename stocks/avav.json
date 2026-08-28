@@ -1,0 +1,103 @@
+{
+  "company": {
+    "name": "AeroVironment, Inc.",
+    "ticker": "AVAV",
+    "exchange": "Nasdaq",
+    "headquarters": "Arlington, Virginia, USA (Produktions- und Entwicklungsstandorte u.a. in Kalifornien, Alabama, Utah)",
+    "founded": 1971,
+    "ipo": "Januar 2007 (Nasdaq)",
+    "industry": "Verteidigungstechnologie – unbemannte Luftsysteme (UAS), Loitering Munition, Counter-UAS, Space & Directed Energy",
+    "competitors": [
+      "Anduril Industries (privat)",
+      "Kratos Defense",
+      "Red Cat Holdings",
+      "Ondas",
+      "Teledyne FLIR",
+      "Elbit Systems",
+      "Textron Systems",
+      "L3Harris",
+      "RTX"
+    ]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=NASDAQ%3AAVAV",
+  "summary": "AeroVironment (Markenauftritt 'AV') ist der etablierte US-Anbieter kleiner unbemannter Luftsysteme und von Loitering Munition. Die Switchblade-Familie hat sich in der Ukraine als Standard für abstandsfähige Präzisionswirkung durchgesetzt und liefert dem Unternehmen ein Verbrauchsgut-Geschäftsmodell mit wiederkehrenden Nachbestellungen. Mit der Übernahme von BlueHalo (abgeschlossen am 1. Mai 2025, überwiegend in Aktien bezahlt) hat sich AV vom Drohnen-Spezialisten zum Multi-Domain-Verteidigungskonzern gewandelt: Weltraumtechnik, Directed Energy (Laserwaffen), Cyber und elektronische Kampfführung kamen als zweites Berichtssegment hinzu. Im Geschäftsjahr 2026 (Ende 30. April 2026) verdreifachte sich der Umsatz nahezu auf 1,977 Mrd. USD, gleichzeitig entstand ein Nettoverlust von 265 Mio. USD – getrieben von 240,7 Mio. USD Goodwill-Abschreibung und 265 Mio. USD Abschreibungen aus der Kaufpreisallokation. Der Auftragsbestand (funded backlog) liegt bei 1,2 Mrd. USD, die Bookings bei 2,7 Mrd. USD (Book-to-Bill 1,4). Für FY2027 stellt das Management 2,125–2,225 Mrd. USD Umsatz und 305–325 Mio. USD bereinigtes EBITDA in Aussicht. Die Aktie hat vom 52-Wochen-Hoch rund 64% verloren, weil Integrationskosten, Margenverwässerung und ein Stop-Work-Order im Weltraumgeschäft die Wachstumsstory belastet haben.",
+  "business_segments": [
+    {
+      "name": "Autonomous Systems (AxS)",
+      "revenue_fy26_usd_bn": 1.358,
+      "revenue_fy25_usd_bn": 0.821,
+      "share_pct": 69,
+      "description": "Switchblade 300/600 Loitering Munition, Puma/Raven/Wasp Aufklärungsdrohnen, JUMP 20 als Gruppe-3-VTOL, Counter-UAS-Systeme, unbemannte Bodenfahrzeuge (Telerob) und die Kinesis-Kommandosoftware. Dazu MacCready Works als Vorentwicklungseinheit (u.a. Auftrag für drei autonome Mars-Helikopter der NASA-SkyFall-Mission, August 2026). Kerngeschäft mit US Army, US SOCOM und über 50 verbündeten Nationen."
+    },
+    {
+      "name": "Space, Cyber and Directed Energy (SCDE)",
+      "revenue_fy26_usd_bn": 0.619,
+      "revenue_fy25_usd_bn": 0.0,
+      "share_pct": 31,
+      "description": "Vollständig aus der BlueHalo-Übernahme entstanden, daher in FY2025 noch ohne Umsatzbeitrag. Umfasst Laser- und Directed-Energy-Waffen (LOCUST), Weltraum-Antennen und -Sensorik (BADGER Phased-Array), Cyber- und EW-Fähigkeiten. Im Januar 2026 erhielt AV einen Stop-Work-Order für das BADGER-Programm im Rahmen des SCAR-Vorhabens der US Space Force, was eine Goodwill-Abschreibung von 151,3 Mio. USD auslöste. Segment-EBITDA war im Q4 FY2026 mit 1,4 Mio. USD nahezu null – die Profitabilität liegt weit hinter AxS zurück."
+    }
+  ],
+  "products": [
+    "Switchblade 300 / 600 (Loitering Munition, Präzisionsschlag – Kernprodukt)",
+    "Puma / Puma LE (Gruppe-2-Aufklärungsdrohne für Bataillonsebene)",
+    "Raven / Wasp (handgestartete Kleinstdrohnen für Infanterie)",
+    "JUMP 20 (Gruppe-3-VTOL-UAS für Langstrecken-ISR)",
+    "P550 (modulares Gruppe-2-UAS der nächsten Generation)",
+    "Counter-UAS- und Anti-Drohnen-Systeme (inkl. Laser-Effektoren)",
+    "LOCUST Laser Weapon System (Directed Energy, aus BlueHalo)",
+    "BADGER Phased-Array-Antennen (Weltraum-Kommunikation, aus BlueHalo)",
+    "Kinesis (Kommando- und Kontrollsoftware für Multi-Domain-Autonomie)",
+    "Telerob tEODor / UGV-Roboter (Kampfmittelbeseitigung, mit Manipulatorarm)",
+    "MacCready Works (Fortgeschrittene Systeme, u.a. autonome Mars-Helikopter für NASA)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "kein Humanoid-Bezug – autonome Luft-, Boden- und Weltraumsysteme im Verteidigungssektor",
+    "reasons": [
+      "AeroVironment entwickelt und baut keine humanoiden Roboter. Das Portfolio besteht aus unbemannten Luftfahrzeugen, Loitering Munition, Counter-UAS sowie Weltraum- und Directed-Energy-Technik – ein Defense-Geschäft, kein Robotik-Geschäft im Sinne des ETF-Themas",
+      "Gemeinsame technologische Bausteine mit der Robotik: Autonomie-Stack für Navigation in GNSS-verweigerten Umgebungen, Sensorfusion, Edge-Computing sowie Objekterkennung und -verfolgung per Computer Vision",
+      "Telerob-UGVs (Kampfmittelbeseitigung) sind echte Bodenroboter mit Manipulatorarm und damit die einzige direkte Berührung mit klassischer Robotik-Aktuatorik – allerdings ein kleines Geschäft, dessen Goodwill im Q4 FY2025 mit 18,4 Mio. USD wertberichtigt wurde",
+      "Kinesis adressiert Mensch-Maschine-Teaming und die Steuerung heterogener autonomer Verbände – ein Problemfeld, das die Humanoid-Branche unter dem Stichwort Multi-Agenten-Koordination ebenfalls bearbeitet",
+      "Skalierungs-Know-how in der Serienfertigung von Elektromotoren, Leistungselektronik und Verbundstrukturen ist grundsätzlich übertragbar, ersetzt aber keine Humanoid-spezifischen Technologien wie Präzisionsgetriebe, Ganzkörper-Regelung oder taktile Sensorik",
+      "Keine Zulieferbeziehung zu Humanoid-OEMs, keine Beteiligung an Foundation Models für verkörperte KI, kein Anteil am Humanoid-Wertschöpfungspool",
+      "Einordnung fürs Dashboard: Defense-Play mit Autonomie-Anleihen. Die Kurstreiber sind Verteidigungshaushalte, Beschaffungszyklen und Konflikte – nicht der Robotik- oder Humanoid-Zyklus"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "USD",
+    "price_usd": 152.28,
+    "52w_low": 135.2,
+    "52w_high": 417.86,
+    "market_cap_usd_bn": 7.47,
+    "enterprise_value_usd_bn": 7.88,
+    "pe_trailing": null,
+    "pe_forward": 47.05,
+    "price_to_sales_ttm": 3.88,
+    "price_to_book": 1.74,
+    "eps_ttm_usd": -5.4,
+    "revenue_fy26_usd_bn": 1.977,
+    "revenue_fy25_usd_bn": 0.821,
+    "revenue_growth_yoy_pct": 140.9,
+    "revenue_guidance_fy27_usd_bn": 2.175,
+    "gross_margin_pct": 25.3,
+    "net_income_usd_mn": -265.1,
+    "adjusted_ebitda_fy26_usd_mn": 286.1,
+    "funded_backlog_usd_bn": 1.2,
+    "dividend": null,
+    "beta_5y": 1.41,
+    "debt_to_equity": 0.19,
+    "current_ratio": 4.3,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_usd": 225.77,
+    "analyst_count": 20,
+    "shares_outstanding_mn": 50.42,
+    "sources": [
+      "https://stockanalysis.com/stocks/avav/",
+      "https://stockanalysis.com/stocks/avav/statistics/",
+      "https://stockanalysis.com/stocks/avav/financials/",
+      "https://www.sec.gov/Archives/edgar/data/0001368622/000110465926078824/avav-20260629xex99d1.htm",
+      "https://investor.avinc.com/news-releases/news-release-details/aerovironment-announces-fiscal-2026-fourth-quarter-and-fiscal"
+    ]
+  },
+  "risk_notes": "Zuerst die Einordnung fürs Dashboard: AVAV ist ein Defense-Titel, kein Robotik-Titel. Wer über dieses Papier Robotik-Exposure sucht, kauft in Wahrheit US-Verteidigungshaushalte. Bilanziell dominiert die BlueHalo-Integration: Die Aktienzahl stieg binnen zwölf Monaten um 74% (Kaufpreis überwiegend in Aktien, 2,78 Mrd. USD), die Bruttomarge fiel von 39,4% auf 25,3%, weil das übernommene Geschäft einen deutlich höheren Anteil margenschwacher Serviceumsätze mitbringt – im Q4 FY2026 war die Contract-Services-Marge sogar negativ. Im Geschäftsjahr 2026 wurden 240,7 Mio. USD Goodwill abgeschrieben, davon 151,3 Mio. USD nach dem Stop-Work-Order für das BADGER-Programm der Space Force. Das SCDE-Segment liefert bei 31% Umsatzanteil bislang praktisch kein Segment-EBITDA. Der freie Cashflow lag bei -141 Mio. USD, die Nettoverschuldung bei 202 Mio. USD; Goodwill (2,49 Mrd. USD) und immaterielle Vermögenswerte (0,93 Mrd. USD) machen zusammen rund 60% der Bilanzsumme aus und bergen weiteres Abschreibungspotenzial. Der Kurs hat vom 52-Wochen-Hoch bei 417,86 USD rund 64% verloren; mehrere Kanzleien untersuchen seit August 2026 mögliche Pflichtverletzungen des Verwaltungsrats. Das Forward-KGV von 47 bewertet ein Unternehmen, das GAAP noch defizitär ist und dessen FY2027-Nettoergebnis laut eigener Guidance nur 8–24 Mio. USD betragen soll. Positiv: Book-to-Bill von 1,4, funded backlog von 1,2 Mrd. USD, Current Ratio 4,3, Debt/Equity 0,19 und ein struktureller Rückenwind aus westlichen Aufrüstungsprogrammen sowie den US-Zöllen auf importierte Drohnenkomponenten (August 2026). Zentrale Risiken bleiben die Abhängigkeit von wenigen US-Beschaffungsprogrammen, Continuing Resolutions und Haushaltsverschiebungen, sowie der Preisdruck durch Anduril und günstige Massenfertiger im FPV-Segment."
+}

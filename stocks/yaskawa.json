@@ -1,0 +1,70 @@
+{
+  "company": {
+    "name": "Yaskawa Electric Corporation",
+    "ticker": "6506",
+    "exchange": "Tokyo Stock Exchange (TSE Prime), zusätzlich Fukuoka",
+    "headquarters": "Kitakyushu, Präfektur Fukuoka, Japan",
+    "founded": 1915,
+    "ipo": "langjährige Notierung an TSE und Fukuoka; Mitglied des Nikkei 225",
+    "industry": "Motion Control & Industrierobotik – AC-Servomotoren, Frequenzumrichter, MOTOMAN-Roboter",
+    "competitors": ["FANUC", "ABB", "KUKA (Midea)", "Mitsubishi Electric", "Kawasaki Heavy Industries", "Estun Automation (CN)", "Inovance (CN)", "Rockwell Automation"]
+  },
+  "tradingview_url": "https://www.tradingview.com/chart/?symbol=TSE%3A6506",
+  "summary": "Yaskawa Electric ist einer der 'Big Four' der Industrierobotik neben FANUC, ABB und KUKA – und zugleich der Weltmarktführer bei hochwertigen AC-Servomotoren. Das 1915 in Kitakyushu gegründete Unternehmen steht auf drei Säulen: Motion Control (Servomotoren, Servoverstärker, Frequenzumrichter, Maschinencontroller), Robotics (MOTOMAN-Industrieroboter) und System Engineering. Die Besonderheit gegenüber den anderen Big Four: Yaskawa verkauft seine Antriebs- und Regelungstechnik in großem Umfang extern an Dritte – an Werkzeugmaschinenbauer, Halbleiterequipment-Hersteller und zunehmend an Robotik-OEMs. Damit verdient Yaskawa nicht nur am eigenen Roboter, sondern an fremden Robotern mit. 2026 hat das Unternehmen mit MOTOMAN NEXT eine KI-gestützte, adaptive Roboterplattform ausgerollt, die Foundation-Modelle (Google DeepMind Gemini Robotics ER, NVIDIA Isaac auf Jetson Orin) mit der eigenen Bewegungsregelung koppelt. Das Geschäftsjahr endet abweichend von den meisten japanischen Werten Ende Februar; FY2025 (bis Februar 2026) brachte mit ¥542,1 Mrd. Umsatz nur Stagnation und einen um 38% eingebrochenen Gewinn.",
+  "products": [
+    "MOTOMAN Industrieroboter (Lichtbogen- und Punktschweißen, Handling, Palettieren, Montage, Lackieren)",
+    "MOTOMAN NEXT – KI-gestützte adaptive Roboterplattform (NEX4 bis NEX35, 4–35 kg Traglast)",
+    "Kollaborative Roboter der HC-/NHC-Serie (u.a. NHC12, NHC30)",
+    "Sigma-Serie AC-Servomotoren und Servoverstärker (High-End-Weltmarktführer)",
+    "Direktantriebe, Linearmotoren, Linearschlitten und Positionsgeber/Encoder",
+    "Frequenzumrichter / AC Drives (GA-Serie) für Industrie-, Pumpen- und Energieanwendungen",
+    "MP-Maschinencontroller und die Systemlösung i3-Mechatronics",
+    "Halbleiter- und Vakuumroboter für die Waferfertigung und Flachdisplay-Produktion",
+    "Bio-/Medical-Robotik inkl. Zelltherapie-Fertigungsplattform (Joint Venture mit Astellas)"
+  ],
+  "humanoid_robot_relevance": {
+    "relevance_type": "direkt – Servomotoren, Antriebselektronik und Motion Control sind Kernkomponenten humanoider Aktuatoren",
+    "reasons": [
+      "Weltmarktführer bei High-End-AC-Servomotoren: Jedes Humanoid-Gelenk braucht Motor plus Regelung, Yaskawa liefert beides aus einer Hand",
+      "Über 50 Jahre Erfahrung in Mehrachs-Bewegungsregelung – genau das Know-how, das Humanoid-Start-ups extern zukaufen müssen",
+      "Externer Komponentenverkauf ist ein eigenständiges, margenstarkes Standbein – Yaskawa profitiert am Hochlauf, ohne selbst einen Humanoiden bauen zu müssen",
+      "MOTOMAN NEXT verbindet die eigene Antriebstechnik mit Foundation-Modellen (Gemini Robotics ER, NVIDIA Isaac/Jetson Orin) – dieselbe Physical-AI-Schicht, die humanoide Systeme benötigen",
+      "Japanische Anbieter halten bei Präzisionsgetrieben, Servomotoren und Lagern zusammen 60–70% Weltmarktanteil; Yaskawa gehört zu den strukturellen Gewinnern einer Massenfertigungsphase",
+      "Als einer der 'Big Four' verfügt Yaskawa über Serienfertigung in 12 Ländern, Qualifizierungsprozesse und ein globales Servicenetz im industriellen Maßstab",
+      "Aber: Kein eigenes Humanoid-Produkt angekündigt – der Investment-Case ist Komponenten- und Plattformzulieferung, nicht das Endgerät"
+    ]
+  },
+  "stock_data": {
+    "updated_at": "2026-08-28",
+    "currency": "JPY",
+    "52w_low": 2865,
+    "52w_high": 7915,
+    "market_cap_jpy_bn": 1280,
+    "market_cap_usd_bn": 8.0,
+    "enterprise_value_jpy_bn": 1345,
+    "pe_trailing": 38.1,
+    "pe_forward": 24.4,
+    "price_to_sales_ttm": 2.3,
+    "price_to_book": 2.6,
+    "eps_jpy_ttm": 129.9,
+    "revenue_fy25_jpy_bn": 542.1,
+    "revenue_growth_yoy_pct": 0.8,
+    "gross_margin_pct": 35.0,
+    "net_income_jpy_bn": 35.2,
+    "dividend_yield_pct": 1.39,
+    "beta_5y": 1.24,
+    "debt_to_equity": 0.24,
+    "current_ratio": 2.25,
+    "analyst_consensus": "Buy",
+    "analyst_price_target_jpy": 6966,
+    "shares_outstanding_mn": 259,
+    "sources": [
+      "https://stockanalysis.com/quote/tyo/6506/",
+      "https://stockanalysis.com/quote/tyo/6506/statistics/",
+      "https://www.yaskawa-global.com/company/profile/data",
+      "https://www.yaskawa-global.com/newsrelease/news/179679",
+      "https://tradingeconomics.com/japan/currency"
+    ]
+  },
+  "risk_notes": "Ausgeprägt zyklisches Geschäft: Yaskawa hängt an den Capex-Zyklen von Halbleiterequipment, Werkzeugmaschinen, Automotive und Batteriefertigung. FY2025 (bis Februar 2026) zeigt das deutlich – Umsatz praktisch stagnierend (+0,8%), Nettogewinn -38% auf ¥35,2 Mrd., Nettomarge nur noch rund 6%, ROE bei 7,5%. Der Kurs hat trotzdem +61% auf Jahressicht zugelegt und schwankte zwischen ¥2.865 und ¥7.915 – die Bewertung mit KGV 38 (Forward 24) preist eine Erholung bereits ein, die Aktie steht aktuell rund 37% unter ihrem 52-Wochen-Hoch. Wettbewerbsdruck aus China (Estun, Inovance, Efort) trifft sowohl Roboter als auch Servokomponenten und drückt strukturell auf Preise und Marktanteile in Yaskawas wichtigstem Auslandsmarkt. US-Zölle und die Verlagerung von Produktion nach Wisconsin (rund 180 Mio. USD Investition) belasten kurzfristig die Marge. Yen-Schwäche stützt den JPY-Umsatz, mindert aber die USD-Rendite ausländischer Anleger. Positiv: solide Bilanz (Debt/Equity 0,24, Current Ratio 2,25), technologischer Vorsprung bei Servos und ein Analystenkonsens 'Buy' mit Kursziel ¥6.966."
+}
